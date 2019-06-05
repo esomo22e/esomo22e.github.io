@@ -92,7 +92,7 @@ html {
 }
 
 body {
-    background-color: #fff7c2;
+    background: #ffffff;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -140,7 +140,7 @@ a {
 
 a:hover {
     border-bottom-color: transparent;
-    color: #d56073 !important;
+    color: #f2849e !important;
 }
 
 strong, b {
