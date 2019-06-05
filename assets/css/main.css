@@ -93,7 +93,7 @@ html {
 }
 
 body {
-    background: #fff7c2;
+    background: #ffffff;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2622,6 +2622,7 @@ body.is-touch .tiles article .content {
 		} */
 /* Main */
 #main {
+    background-color: #fff7c2;
     padding: 6em 0 6em 0;
 }
 
