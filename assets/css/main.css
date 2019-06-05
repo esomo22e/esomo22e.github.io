@@ -19,7 +19,6 @@ section, summary, time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    background-color: #ffff9d;
 }
 
 article, aside, details, figcaption, figure,
@@ -27,9 +26,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
-body {
-    /* line-height: 1; */
-}
+
 
 ol, ul {
     list-style: none;
@@ -51,6 +48,7 @@ table {
 
 body {
     -webkit-text-size-adjust: none;
+
 }
 
 mark {
@@ -94,7 +92,7 @@ html {
 }
 
 body {
-    background: #ffffff;
+    background-color: #fff7c2;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -142,7 +140,7 @@ a {
 
 a:hover {
     border-bottom-color: transparent;
-    color: #f2849e !important;
+    color: #d56073 !important;
 }
 
 strong, b {
