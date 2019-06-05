@@ -9,7 +9,7 @@
     /* float:right; */
     /* right: 1em; */
     padding: 1em 10px;
-    background-color: #733580;
+    background-color: #8d309b;
     display: flex;
     justify-content:space-between;
     z-index: 1000;
@@ -42,7 +42,7 @@ h1.name a{
 }
 
 .page_container a:hover {
-  background-color: #ddd;
+  /* background-color: #ddd; */
   color: black;
 }
 
@@ -59,7 +59,7 @@ h1.name a{
 .footer {
     position: absolute;
     /* padding: 2em 0 0 0 ; */
-    background-color: purple;
+    background-color: #8d309b;
     width:100%;
     height: 20px;
     z-index: 1000;
