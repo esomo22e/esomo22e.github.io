@@ -247,7 +247,7 @@ blockquote {
 
 code {
     background: rgba(144, 144, 144, 0.075);
-    border-radius: 4px;
+    border-radius: 10px;
     border: solid 1px #c9c9c9;
     font-family: "Courier New", monospace;
     font-size: 0.9em;
@@ -2494,7 +2494,9 @@ table.alt tfoot {
     font-size: 1.5em;
     font-weight: 600;
     margin: 0;
-    background-color: darkviolet;
+    background-color:#a02a63;
+    padding: 7px;
+    border-radius: 6px;
 }
 
 .tiles article>a .content {
@@ -2521,8 +2523,8 @@ body:not(.is-touch) .tiles article:hover>.image {
 }
 
 body:not(.is-touch) .tiles article:hover>.image:before {
-    background-color: red;
-    opacity: 0.5;
+    background-color: #ff6f61ff;
+    opacity: 0.75;
 }
 
 body:not(.is-touch) .tiles article:hover>.image:after {
