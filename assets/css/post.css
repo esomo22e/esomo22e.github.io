@@ -13,3 +13,7 @@ h1.page_title{
 .content{
     padding: 15px;
 }
+
+p.intro_class{
+    padding:10px;
+}
