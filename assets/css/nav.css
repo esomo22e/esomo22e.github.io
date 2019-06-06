@@ -23,11 +23,11 @@
 h1.name{
 
     font-weight: 600;
-    font-size: 2em;
+    font-size: 1.9em;
 }
 .page_container{
     /* float:right; */
-    padding: 0.5em;
+    padding: 20px 0.5em;
     /* z-index:1000; */
 }
 
@@ -66,6 +66,10 @@ h1.name a{
     /* bottom: 0; */
 }
 
+p.title{
+    font-size: 0.9em;
+    margin:0.5em 0 0 0;
+}
 
 @media screen and (max-width: 1280px) {
 }

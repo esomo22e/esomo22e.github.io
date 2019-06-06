@@ -136,7 +136,7 @@ a {
     transition: border-bottom-color 0.2s ease, color 0.2s ease;
     text-decoration: none;
     color: #585858;
-    border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
+    /* border-bottom: dotted 1px rgba(88, 88, 88, 0.5); */
 }
 
 a:hover {
@@ -2379,6 +2379,7 @@ table.alt tfoot {
     flex-wrap: wrap;
     postiion: relative;
     margin: -2.5em 0 0 -2.5em;
+    padding: 0 2em 0 2em;
 }
 
 .tiles article {
@@ -2625,7 +2626,7 @@ body.is-touch .tiles article .content {
 /* Main */
 #main {
     background-color: #fff7c2;
-    padding: 6em 0 6em 0;
+    padding: 8em 2em;
 }
 
 @media screen and (max-width: 736px) {
