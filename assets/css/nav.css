@@ -46,6 +46,12 @@ h1.name a{
   color: black;
 }
 
+.page_container a.page{
+    margin-left: auto;
+    margin-right:auto;
+    test-align: center;
+}
+
 .active {
   background-color: #4CAF50;
   color: white;
@@ -71,8 +77,14 @@ p.title{
     margin:0.5em 0 0 0;
 }
 
+
+
 @media screen and (max-width: 1280px) {
 
+    h1.name{
+        margin: 0 0 0.2em 0 ;
+
+    }
     .nav_container{
         width: 100%;
         position:absolute;
