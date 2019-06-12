@@ -60,8 +60,13 @@ h1.name a{
 
 .page_container .icon {
   display: none;
+  /* color:  #8d309b; */
+
 }
 
+.nav_toggle_container{
+    display:none;
+}
 /* Footer */
 .footer {
     position: absolute;
@@ -111,11 +116,14 @@ p.title{
 
 
 @media screen and (max-width: 736px) {
+    .nav_toggle_container{display:block;}
   .page_container a {display: none;}
   .page_container a.icon {
     float: right;
     display: block;
     margin: -1.1em 0;
+    color:  #8d309b;
+
   }
 
   .nav_container{
