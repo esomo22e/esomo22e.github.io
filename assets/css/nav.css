@@ -43,17 +43,17 @@ h1.name a{
 }
 
 .page_container a:hover {
-  /* background-color: #ddd; */
+  background-color: #ddd;
   color: black;
 }
 
 .page_container a.page{
     margin-left: auto;
     margin-right:auto;
-    test-align: center;
+    text-align: center;
 }
 
-.active {
+.page_container a.active {
   background-color: #4CAF50;
   color: white;
 }
@@ -113,7 +113,7 @@ p.title{
 @media screen and (max-width: 736px) {
   .page_container a {display: none;}
   .page_container a.icon {
-    /* float: right; */
+    float: right;
     display: block;
     margin: -1.1em 0;
   }
@@ -127,12 +127,13 @@ p.title{
       z-index: 1000;
   }
 
+
   .nav_page_content{
       margin: 60px 0 0 0;
   }
 }
 
-/* @media screen and (max-width: 736px) {
+@media screen and (max-width: 736px) {
   .page_container.responsive {position: relative;}
   .page_container.responsive .icon {
     position: absolute;
@@ -144,4 +145,4 @@ p.title{
     display: block;
     text-align: left;
   }
-} */
+}
