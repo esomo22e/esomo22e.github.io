@@ -96,11 +96,11 @@
 			// });
 })(jQuery);
 
-function myFunction() {
-  var x = document.getElementById("navBar");
-  if (x.className === "page_container") {
-	x.className += " responsive";
-  } else {
-	x.className = "page_container";
-  }
-}
+// function myFunction() {
+//   var x = document.getElementById("navBar");
+//   if (x.className === "page_container") {
+// 	x.className += " responsive";
+//   } else {
+// 	x.className = "page_container";
+//   }
+// }
