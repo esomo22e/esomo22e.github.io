@@ -157,19 +157,19 @@ p {
 }
 
 
-h1 {
+h1.title {
 		font-size:  3.5em;
 		font-weight: 600;
 		line-height: 1.3;
 		/* margin: 0 0 1em 0; */
         padding: 20px 0;
-		letter-spacing: -0.035em;
+		/* letter-spacing: -0.035em; */
 	}
-h1 a {
+h1.title a {
 			color: inherit;
 		}
 @media screen and (max-width: 736px) {
-    h1 {
+    h1.title {
         font-size: 2.75em;
         /* margin: 0 0 1em 0; */
         padding: 10px 0;
@@ -177,7 +177,7 @@ h1 a {
 }
 
 @media screen and (max-width: 360px) {
-    h1 {
+    h1.title {
         font-size: 2em;
         /* margin: 0 0 1em 0; */
         padding: 10px 0;
@@ -2253,6 +2253,7 @@ input[type="radio"]+label:before {
     border: 0;
     display: inline-block;
     position: relative;
+    margin: 10px 5px;
 }
 
 .image img {

@@ -3,3 +3,35 @@
     margin: 10px;
     flex-flow:wrap;
 }
+
+span.img_design{
+    /* margin: 20px; */
+}
+
+img.housing{
+    width: 450px;
+}
+
+img.publicworks{
+    width: 350px;
+}
+
+img.map{
+    width: 400px;
+}
+
+img.redsox{
+    width: 350px;
+}
+
+img.rankedchoice{
+    width: 300px;
+}
+
+img.starts{
+    width: 375px;
+}
+
+img.storm{
+    width: 400px;
+}
