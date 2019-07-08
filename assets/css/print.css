@@ -1,0 +1,5 @@
+.print_container{
+    display: flex;
+    margin: 10px;
+    flex-flow:wrap;
+}
