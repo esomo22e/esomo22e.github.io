@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Shrikhand&display=swap');
+
+body{
+  background: lavender;
+}
+
+h1{
+  font-family: 'Shrikhand', cursive;
+  font-size: 60px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+p{
+  font-family: 'Courgette', cursive;
+  font-size: 30px;
+  text-align: center;
+  padding: 0 30px;
+  margin: 10px;
+
+
+}
+
+img#philly{
+  width: 500px;
+  height: 500px;
+  transform: rotate(90deg);
+  display: block;
+  margin: 0 auto;
+ /* margin-left: auto;
+ margin-right: auto; */
+ /* width: 40%; */
+}
+
+#button{
+  font-size: 20px;
+  color: white;
+  background:#483D8B;
+  display: block;
+  margin: 20px auto;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+
+}
+
+#button:hover {
+  background-color:#8A2BE2;
+}
