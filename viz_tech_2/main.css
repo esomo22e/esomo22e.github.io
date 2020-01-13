@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One|Hind+Vadodara&display=swap');
+
+body{
+  background: #FFDAB9;
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  color: #3aa2ff;
+  font-family: 'Fugaz One', cursive;
+}
+
+#cont{
+  padding: 20px;
+}
+#homework{
+  /* background-color: #b9bbff; */
+  /* width: 150px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px; */
+}
+
+a{
+  background-color: #b9bbff;
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+    font-family: 'Hind Vadodara', sans-serif;
+
+}
+
+a:hover{
+  background-color: purple;
+  color: hotpink;
+}
