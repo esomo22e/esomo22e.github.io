@@ -1,9 +1,13 @@
 body{
 
   background: #CCFFE5;
+  display: table;
 }
 
 h1{
-  font-size: 60px;
+  font-size: 100px;
   color: #66b2ff;
+  text-align: center;
+
+
 }
