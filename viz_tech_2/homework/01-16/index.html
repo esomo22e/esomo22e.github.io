@@ -2,15 +2,103 @@
 
 <html>
 <head>
-  <title>Visual Technologies 2 - Homework 1</title>
+  <title>Visual Technologies 2 - Homework 2</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="main.css" />
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   </head>
     <body>
 
-      <h1>Hello Dave</h1>
+      <h1>Visual Technologies 2 - Homework 2</h1>
+      <div id = "users"></div>
+      <div id = "graph"></div>
+      <!-- <script src="main.js"></script> -->
+      <!-- <script>
+      var circleRadii = [40, 20, 10]
 
+       var svgContainer = d3.select("body").append("svg")
+                                       .attr("width", 600)
+                                     .attr("height", 100);
+
+       var circles = svgContainer.selectAll("circle")
+                                 .data(circleRadii)
+                                .enter()
+                                .append("circle")
+    console.log(circleRadii);
+    var circleAttributes = circles
+                             .attr("cx",function(d, i) {return (i * 50) + 30})
+                             .attr("cy", 50)
+                             .attr("r", function (d) { return 30; })
+                             .style("fill", "green");
+      // var realtimeUrl = "https://whiteboard.datawheel.us/api/google-analytics/realtime/111999474";
+      // var frequency = 2 * 1000;
+      //
+      // var svg = d3.select("body").append("svg")
+      //   .attr("width", 960)
+      //   .attr("height", 500);
+      //
+      //
+      //
+      //
+      // function fetchData() {
+      //   d3.json(realtimeUrl, function(err, users) {
+      //     console.log(users);
+      //
+      //     d3.select("#users").html("There are "+users+ " this morning");
+      //
+      //     var circle  = svg.append("circle")
+      //                 .attr("r", 30)
+      //                 .attr("cx", 480)
+      //                 .attr("cy", 250)
+      //                 .style("fill", "#ffe41e");
+      //   });
+      // }
+      //
+      // setInterval(fetchData, frequency);
+
+      </script> -->
       <script src="main.js"></script>
+
     </body>
 </html>
+<!-- <!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+  <style>
+    body { margin:0;position:fixed;top:0;right:0;bottom:0;left:0; }
+  </style>
+</head>
+
+<body>
+  <script>
+    var svg = d3.select("body").append("svg")
+      .attr("width", 960)
+      .attr("height", 500);
+      // .attrs({"width": 960,
+      // 			  "height": 500,
+      //         "bgcolor": "black"})
+
+    /*
+    var background = svg.append("rect")
+    		.attrs({
+          "width": "100%",
+          "height": "100%",
+          "fill": "black"
+        })
+        */
+
+    var ball = svg.append("circle")
+                .attr("r", 30)
+                .attr("cx", 480)
+                .attr("cy", 250)
+        // .attrs({  // provided by selection-multi module
+        //   "r": 73,
+        //   "cx": 480,
+        //   "cy": 250
+        //   })
+        .style("fill", "#ffe41e");
+
+  </script> -->

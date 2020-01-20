@@ -1,13 +1,17 @@
 body{
 
-  background: #CCFFE5;
+  /* background: #CCFFE5; */
   display: table;
 }
 
 h1{
-  font-size: 100px;
+  font-size: 60px;
   color: #66b2ff;
   text-align: center;
+  /* background-color: #EBEBEB; */
 
+}
 
+#graph{
+  width: 100%;
 }
