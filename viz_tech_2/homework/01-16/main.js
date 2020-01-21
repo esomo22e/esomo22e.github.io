@@ -1,6 +1,6 @@
 
 var realtimeUrl = "https://whiteboard.datawheel.us/api/google-analytics/realtime/51808252";
-var frequency = 1 * 1000;
+var frequency = 10 * 1000;
 
 var chartDiv = document.getElementById("graph");
 var width = chartDiv.clientWidth;
