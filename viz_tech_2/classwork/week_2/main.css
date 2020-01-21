@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One|Hind+Vadodara&display=swap');
+
+body{
+  background: #CCE5FF;
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+  color: #3aa2ff;
+  font-family: 'Fugaz One', cursive;
+}
