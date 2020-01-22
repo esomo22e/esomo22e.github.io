@@ -35,7 +35,7 @@ var svg = d3.select("#graph").append("svg")
                                                  circles
                                                       // .attr("cx", width/2)
                                                       .attr("cx",function(d, i) {
-                                                        return (i * 10) + (width/4);
+                                                        return (i * 10) + (width/8);
                                                       })
                                                       .attr("cy", (height/2))
                                                       .attr("r", function (d,i) {
@@ -72,6 +72,6 @@ var svg = d3.select("#graph").append("svg")
 
       }
 
-
+      fetchData();
 
       setInterval(fetchData, frequency);
