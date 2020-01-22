@@ -1,5 +1,5 @@
 
-var realtimeUrl = "https://whiteboard.datawheel.us/api/google-analytics/realtime/51808252";
+var realtimeUrl = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random";
 var frequency = 10 * 1000;
 
 var chartDiv = document.getElementById("graph");
