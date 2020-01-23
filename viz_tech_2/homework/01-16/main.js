@@ -72,6 +72,6 @@ var svg = d3.select("#graph").append("svg")
 
       }
 
-      fetchData();
+      // fetchData();
 
       setInterval(fetchData, frequency);
