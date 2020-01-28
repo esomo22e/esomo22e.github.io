@@ -43,11 +43,11 @@ function fetchData(){
 
       var yAxis = d3.axisLeft(y);
 
-      svg
+   svg
       .append("g")
       .attr("class", "y_axis")
-      .attr("transform", "translate(30,0)")      // This controls the vertical position of the Axis
-      .call(yAxis);
+      .attr("transform", "translate(30,0)");      // This controls the vertical position of the Axis
+      // .call(yAxis);
 
       svg.select('.y_axis')
    .transition()
