@@ -58,7 +58,7 @@ function fetchData() {
       // .attr("height", function(d){
       //   barHeight(d);
       // })
-      .attr("fill", "lavender")
+      .attr("fill", "red")
       .attr("stroke", "purple")
       .attr("x", function(d, i) {
         return x(i + 1);
