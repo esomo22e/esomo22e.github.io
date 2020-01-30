@@ -46,28 +46,18 @@ function fetchData() {
         return d.timestamp;
       });
 
-    // bars.enter().append("rect")
-    //     .attr("class", "bar")
-    //
-    //
     //Enter Function
     var enterBars = bars.enter().append("rect")
       .attr("class", "bar")
       .attr("width", barWidth)
       .attr("height", 0)
-      // .attr("height", function(d){
-      //   barHeight(d);
-      // })
       .attr("fill", "lavender")
-      .attr("stroke", "lavender")
+      .attr("stroke", "purple")
       .attr("x", function(d, i) {
         return x(i + 1);
       })
       .attr("y", height);
-    // .attr("y", function(d){
-    //   var h = barHeight(d);
-    //   return height -h;
-    // });
+
 
     bars.merge(enterBars)
       .transition().duration(frequency / 2)
