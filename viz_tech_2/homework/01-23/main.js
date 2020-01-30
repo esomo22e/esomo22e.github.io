@@ -62,6 +62,7 @@ function fetchData(){
                     return d.timestamp;
                   });
 
+//Enter Bars
     var enterBars = bars.enter().append("rect")
                         .attr("class", "bar")
                         .attr("width", barWidth)
@@ -71,7 +72,7 @@ function fetchData(){
                           return "lavender";
                         })
                         .attr("transform", "translate(30," + 0 + ")")
-                        .attr("stroke", "purple")
+                        .attr("stroke", "lavender")
                         .attr("x", function(d, i){
                           return x(i+1);
                         })
