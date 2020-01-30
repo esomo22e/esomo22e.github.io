@@ -16,10 +16,6 @@ var svg = d3.select("#chart")
             .domain([dataMax, 1])
             .range([0, width]);
 
-
-  // var colors = ["red", "green", "black"];
-//
-
 function fetchData(){
   d3.json(realtimeURL, function(error, users){
 
@@ -54,7 +50,7 @@ function fetchData(){
    .duration(frequency/2)
    .call(yAxis);
 
-//Bar Height
+//Get Bar Height
     var barHeight = d3.scaleLinear()
       .domain([0,maximum])
       .range([0, height]);
@@ -99,7 +95,6 @@ function fetchData(){
 
 
                 bars.exit().remove();
-                // yAxis.exit().remove();
 
   });
 
