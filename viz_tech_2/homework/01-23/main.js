@@ -54,20 +54,7 @@ function fetchData(){
    .duration(frequency/2)
    .call(yAxis);
 
-   //    svg.select(".y_axis")
-   //       .remove();
-   //
-   //
-   //    svg.select('.y_axis')
-   // .transition()
-   // .duration(frequency/2)
-   // .call(yAxis);
-
-
-
-    //   d3.select("g.y_axis").exit().remove();
-    //
-    //
+//Bar Height
     var barHeight = d3.scaleLinear()
       .domain([0,maximum])
       .range([0, height]);
@@ -111,24 +98,12 @@ function fetchData(){
           });
 
 
-
-        // bars.append("g")
-        //       .attr("class", "y-axis")
-        //       // .attr("transform", "translate(20," + 0 + ")")
-        //       .call(d3.axisLeft(barHeight));
-
                 bars.exit().remove();
                 // yAxis.exit().remove();
 
   });
 
-  // svg.append("g")
-  // .attr("transform", )
-  // .attr("transform", "translate(0," + height + ")")
-  //   .call(d3.axisBottom(x));
-  //
-  // svg.append("g")
-  //     .call(d3.axisLeft(y));
+
 
 
 
