@@ -54,20 +54,7 @@ function fetchData(){
    .duration(frequency/2)
    .call(yAxis);
 
-   //    svg.select(".y_axis")
-   //       .remove();
-   //
-   //
-   //    svg.select('.y_axis')
-   // .transition()
-   // .duration(frequency/2)
-   // .call(yAxis);
-
-
-
-    //   d3.select("g.y_axis").exit().remove();
-    //
-    //
+//Get Bar Height
     var barHeight = d3.scaleLinear()
       .domain([0,maximum])
       .range([0, height]);
