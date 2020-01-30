@@ -52,7 +52,7 @@ function fetchData() {
       .attr("width", barWidth)
       .attr("height", 0)
       .attr("fill", "lavender")
-      .attr("stroke", "green")
+      .attr("stroke", "purple")
       .attr("x", function(d, i) {
         return x(i + 1);
       })
