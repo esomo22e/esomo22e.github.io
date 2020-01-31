@@ -72,7 +72,7 @@ function fetchData(){
                           return "lavender";
                         })
                         .attr("transform", "translate(30," + 0 + ")")
-                        .attr("stroke", "lavender")
+                        .attr("stroke", "purple")
                         .attr("x", function(d, i){
                           return x(i+1);
                         })
