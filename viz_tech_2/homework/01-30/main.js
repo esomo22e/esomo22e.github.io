@@ -1,5 +1,5 @@
 var realtimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random";
-var frequency = 2 * 1000; // 10 seconds
+var frequency = 4 * 1000; // 10 seconds
 var dataMax = 10;
 var data = [];
 
@@ -14,7 +14,7 @@ var width = window.innerWidth - margin.left - margin.right;
 var height = (window.innerHeight/1.15) - margin.top - margin.bottom;
 
 var svg = d3.select("#chart")
-  .attr("width", width)
+  .attr("width", width + 100)
   .attr("height", height + 100);
 
 var barWidth = width / dataMax;
@@ -112,7 +112,7 @@ function fetchData() {
 
 
     ///////////Text////////////
-    var data2 =["One little string is " + users];
+    var data2 =["There are " + users + " on DATA USA today!!!!"];
 
     // console.log(data2);
     // console.log(users);
@@ -121,7 +121,7 @@ function fetchData() {
 
     var fontSize = 20;
       // console.log(labels);
-    var enterLabels = bars.enter().append("text")
+    var enterLabels = labels.enter().append("text")
                         .attr("class", "label")
                         .attr("width", barWidth-5)
                         .attr("height", 0)
@@ -130,28 +130,29 @@ function fetchData() {
                         .attr("y", 0)
                         .attr("x", function(d, i) {
                           // console.log("Bar Location:"+ x(i+1))
-                          // return x(i + 1);
-                          return i * barWidth;
+                          return x(i + 1);
+                          // return i * barWidth;
                         });
 
       labels.merge(enterBars)
-            .transition().duration(frequency/2)
+            // .transition().duration(frequency/2)
             .each(function(d,i){
               // console.log(d)
-              var textElement = d3.select(this)
-              textElement.text("");
+              var textElement = d3.select(this);
+              textElement.text(d);
 
-              var words = d.toString().split(" ");
+              var words = d.split(" ");
               console.log(words);
 
               var tspan = textElement.append("tspan")
-              .attr("text-anchor", "middle");
+                .attr("text-anchor", "middle");
 
               var line = 0;
 
               words.forEach(function(word){
                 var sent = tspan.text();
-                tspan.text(sent + " " + word);
+                // console.log(sent);
+                tspan.text(sent + "" + word);
                 var domElement = tspan.node();
                 var tspanWidth = domElement.getBoundingClientRect().width;
 
@@ -160,29 +161,27 @@ function fetchData() {
 
                   tspan.text(sent);
                   tspan = textElement.append("tspan")
+                  .attr("width", barWidth-5)
+                  .attr("height", function(d) {
+                    return barHeight(d.users);
+                  })
                             .attr("y", function(){
                               var h = barHeight(users);
 
                               return (height -h ) +(fontSize * line) - 20;
 
                             })
-                            // .attr("y", function(){
-                            //                     // console.log(barHeight(d.users));
-                            //     var h = barHeight(d.users);
-                            //     return (height-h) * line;
-                            //   })
-                            // .attr("y", function(){
-                            //     // console.log(barHeight(d.users));
-                            //     var h = barHeight(d.users);
-                            //     return (height-h) * line;
-                            //   })
-                            .attr("x", function(d, i) {
-                              // return x(i +1);
-                              return x(i + 1);
+                            .attr("x", function() {
+                              // console.log(i);
+                              // console.log("X LABEL:" +(barWidth- x(i+1)));
+
+                              return x(i+1);
 
                               // return i * barWidth;
                             })
                             .text(word);
+
+                            console.log(tspan);
                 }
               })
             });
