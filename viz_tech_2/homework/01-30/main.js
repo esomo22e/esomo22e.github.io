@@ -1,5 +1,5 @@
 var realtimeURL = "https://whiteboard.datawheel.us/api/google-analytics/realtime/random";
-var frequency = 4 * 1000; // 10 seconds
+var frequency = 2* 1000; // 10 seconds
 var dataMax = 10;
 var data = [];
 
@@ -111,81 +111,156 @@ function fetchData() {
     .remove();
 
 
-    ///////////Text////////////
-    var data2 =["There are " + users + " on DATA USA today!!!!"];
+    var labels = svg.selectAll(".labels")
+      .data(data,function(d) {
+        return d.timestamp;
+      });
 
-    // console.log(data2);
-    // console.log(users);
-    var labels = svg.selectAll(".label")
-                    .data(data2);
+      var fontSize = 20;
 
-    var fontSize = 20;
-      // console.log(labels);
-    var enterLabels = labels.enter().append("text")
-                        .attr("class", "label")
+
+      var enterLabels = labels.enter().append("text")
+        .attr("class", "labels")
+        .attr("width", barWidth-5)
+        .attr("height", 0)
+        .attr("transform", "translate(30," + 0 + ")")
+        .attr("font-size", fontSize)
+        .attr("y", height)
+        .attr("x", function(d, i) {
+          // console.log("Bar Location:"+ x(i+1))
+          return x(i + 1);
+          // return i * barWidth;
+        });
+
+      labels.merge(enterLabels)
+          // .transition().duration(frequency/2)
+                  .each(function(d,i){
+                    // console.log(d)
+                    var textElement = d3.select(this);
+                    textElement.text(d);
+
+                    var sentUsers = "One little string is " + d.users;
+                    var words = sentUsers.split(" ");
+
+
+                    var tspan = textElement.append("tspan")
+                      .attr("text-anchor", "middle");
+
+                    var line = 0;
+
+                    words.forEach(function(word){
+                      var sent = tspan.text();
+                      // console.log(sent);
+                      tspan.text(sent + "" + word);
+                      var domElement = tspan.node();
+                      var tspanWidth = domElement.getBoundingClientRect().width;
+
+                      if(tspanWidth > barWidth){
+                        line++;
+
+                        tspan.text(sent);
+                        tspan = textElement.append("tspan")
                         .attr("width", barWidth-5)
-                        .attr("height", 0)
-                        .attr("transform", "translate(30," + 0 + ")")
-                        .attr("font-size", fontSize)
-                        .attr("y", 0)
-                        .attr("x", function(d, i) {
-                          // console.log("Bar Location:"+ x(i+1))
-                          return x(i + 1);
-                          // return i * barWidth;
-                        });
+                        .attr("height", function(d) {
+                          return barHeight(d.users);
+                        })
+                                  .attr("y", function(){
+                                    var h = barHeight(d.users);
 
-      labels.merge(enterBars)
-            // .transition().duration(frequency/2)
-            .each(function(d,i){
-              // console.log(d)
-              var textElement = d3.select(this);
-              textElement.text(d);
+                                    return (height -h ) +(fontSize * line) - 20;
 
-              var words = d.split(" ");
-              console.log(words);
+                                  })
+                                  .attr("x", function() {
+                                    // console.log(i);
+                                    // console.log("X LABEL:" +(barWidth- x(i+1)));
 
-              var tspan = textElement.append("tspan")
-                .attr("text-anchor", "middle");
+                                    return x(i+1);
 
-              var line = 0;
+                                    // return i * barWidth;
+                                  })
+                                  .text(word);
+                                  // console.log(word);
+                      }
+                    })
+                  });
 
-              words.forEach(function(word){
-                var sent = tspan.text();
-                // console.log(sent);
-                tspan.text(sent + "" + word);
-                var domElement = tspan.node();
-                var tspanWidth = domElement.getBoundingClientRect().width;
-
-                if(tspanWidth > barWidth){
-                  line++;
-
-                  tspan.text(sent);
-                  tspan = textElement.append("tspan")
-                  .attr("width", barWidth-5)
-                  .attr("height", function(d) {
-                    return barHeight(d.users);
-                  })
-                            .attr("y", function(){
-                              var h = barHeight(users);
-
-                              return (height -h ) +(fontSize * line) - 20;
-
-                            })
-                            .attr("x", function() {
-                              // console.log(i);
-                              // console.log("X LABEL:" +(barWidth- x(i+1)));
-
-                              return x(i+1);
-
-                              // return i * barWidth;
-                            })
-                            .text(word);
-
-                            console.log(tspan);
-                }
-              })
-            });
-            labels.exit().remove();
+                  labels.exit().remove();
+    ///////////Text////////////
+    // var data2 =["There are " + users + " on DATA USA today!!!!"];
+    //
+    // // console.log(data2);
+    // // console.log(users);
+    // var labels = svg.selectAll(".label")
+    //                 .data(data2);
+    //
+    // var fontSize = 20;
+    //   // console.log(labels);
+    // var enterLabels = labels.enter().append("text")
+    //                     .attr("class", "label")
+    //                     .attr("width", barWidth-5)
+    //                     .attr("height",height)
+    //                     .attr("transform", "translate(30," + 0 + ")")
+    //                     .attr("font-size", fontSize)
+    //                     .attr("y", 0)
+    //                     .attr("x", function(d, i) {
+    //                       // console.log("Bar Location:"+ x(i+1))
+    //
+    //                       return x(i + 1);
+    //                       // return i * barWidth;
+    //                     });
+    //
+    //   labels.merge(enterLabels)
+    //         // .transition().duration(frequency/2)
+    //         .each(function(d,i){
+    //           // console.log(d)
+    //           var textElement = d3.select(this);
+    //           textElement.text(d);
+    //
+    //           var words = d.split(" ");
+    //           console.log(words);
+    //
+    //           var tspan = textElement.append("tspan")
+    //             .attr("text-anchor", "middle");
+    //
+    //           var line = 0;
+    //
+    //           words.forEach(function(word){
+    //             var sent = tspan.text();
+    //             // console.log(sent);
+    //             tspan.text(sent + "" + word);
+    //             var domElement = tspan.node();
+    //             var tspanWidth = domElement.getBoundingClientRect().width;
+    //
+    //             if(tspanWidth > barWidth){
+    //               line++;
+    //
+    //               tspan.text(sent);
+    //               tspan = textElement.append("tspan")
+    //               .attr("width", barWidth-5)
+    //               .attr("height", function(d) {
+    //                 return barHeight(d.users);
+    //               })
+    //                         .attr("y", function(){
+    //                           var h = barHeight(users);
+    //
+    //                           return (height -h ) +(fontSize * line) - 20;
+    //
+    //                         })
+    //                         .attr("x", function() {
+    //                           // console.log(i);
+    //                           // console.log("X LABEL:" +(barWidth- x(i+1)));
+    //
+    //                           return x(i+1);
+    //
+    //                           // return i * barWidth;
+    //                         })
+    //                         .text(word);
+    //
+    //                         console.log(tspan);
+    //             }
+    //           })
+    //         });
+    //         labels.exit().remove();
 
 
 

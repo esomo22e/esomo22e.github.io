@@ -1,0 +1,15 @@
+body{
+  background: pink;
+}
+
+.box{
+  fill:transparent;
+  stroke:red;
+  stroke-width:2px;
+}
+
+
+tspan{
+  fill: purple;
+  baseline-shift: -100%;
+}

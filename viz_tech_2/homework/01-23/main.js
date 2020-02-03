@@ -73,6 +73,7 @@ function fetchData(){
                         })
                         .attr("transform", "translate(30," + 0 + ")")
                         .attr("stroke", "purple")
+                        .attr("stroke-weight", "10px")
                         .attr("x", function(d, i){
                           return x(i+1);
                         })
