@@ -137,9 +137,10 @@ function fetchData() {
                   .each(function(d,i){
                     // console.log(d)
                     var textElement = d3.select(this);
-                    textElement.text(d);
+                    console.log(this);
+                    textElement.text("");
 
-                    var sentUsers = "One little string is " + d.users;
+                    var sentUsers =  d.users + " users are using DATA USA today!!!";
                     var words = sentUsers.split(" ");
 
 
@@ -151,30 +152,30 @@ function fetchData() {
                     words.forEach(function(word){
                       var sent = tspan.text();
                       // console.log(sent);
-                      tspan.text(sent + "" + word);
+                      tspan.text(sent + " " + word);
                       var domElement = tspan.node();
+                    console.log(domElement);
                       var tspanWidth = domElement.getBoundingClientRect().width;
-
-                      if(tspanWidth > barWidth){
+                      // console.log(sent);
+                      // console.log(word);
+                      if(tspanWidth > barWidth/6-20){
+                        console.log(barWidth);
+                        console.log(tspanWidth);
                         line++;
 
                         tspan.text(sent);
                         tspan = textElement.append("tspan")
-                        .attr("width", barWidth-5)
-                        .attr("height", function(d) {
-                          return barHeight(d.users);
-                        })
                                   .attr("y", function(){
                                     var h = barHeight(d.users);
 
-                                    return (height -h ) +(fontSize * line) - 20;
+                                    return (height -h ) +(fontSize * line) + 50;
 
                                   })
                                   .attr("x", function() {
                                     // console.log(i);
                                     // console.log("X LABEL:" +(barWidth- x(i+1)));
 
-                                    return x(i+1);
+                                    return x(i+1) + (barWidth/4);
 
                                     // return i * barWidth;
                                   })
