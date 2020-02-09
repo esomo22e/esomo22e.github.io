@@ -1,0 +1,28 @@
+body{
+  background: #E5CCFF;
+  margin:0;
+}
+
+h1{
+  font-size: 54px;
+  text-align: center;
+  color: #660033;
+}
+
+#chart rect{
+  stroke: #660033;
+  fill: #48D1CC;
+  stroke-width: 2px;
+}
+
+#quote{
+  text-align: center;
+  color: #660033;
+  font-size: 20px;
+}
+
+#num{
+  text-align: center;
+  color: #660033;
+  font-size: 20px;
+}
