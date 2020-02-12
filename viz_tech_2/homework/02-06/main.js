@@ -1,5 +1,5 @@
 // var apiUrl = "https://www.metaweather.com/api/location/search/?lattlong=50.96,-122.02";
-var apiUrl = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
+var apiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
 var frequency = 5 * 1000;
 var dataMax = 5;
