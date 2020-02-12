@@ -132,7 +132,7 @@ function fetchData() {
         .attr("baseline-shift", "-100%")
         .attr("y", function(d){
           var h = barHeight(d.users);
-          return (height -h );
+          return (height - h) + fontSize;
         })
         .attr("x", function(d, i) {
           // console.log("Bar Location:"+ x(i+1))
@@ -156,7 +156,7 @@ function fetchData() {
                       .attr("y", function(){
                         var h = barHeight(d.users);
 
-                        return h +(fontSize * line) + 50;
+                        return(height -h ) +(fontSize * line);
 
                       })
                       .attr("x", function() {
@@ -187,7 +187,7 @@ function fetchData() {
                                   .attr("y", function(){
                                     var h = barHeight(d.users);
 
-                                    return (height -h ) +(fontSize * line) + 50;
+                                    return (height -h ) +(fontSize * line);
 
                                   })
                                   .attr("x", function() {
