@@ -47,7 +47,6 @@ function fetchData(){
 
   d3.json(apiUrl, function(error, sent){
     d3.select("#quote").html("<strong>Ron Swanson said:</strong> " + sent[0] + "");
-      .attr("fill", )
     d3.select("#num").html("Ron Swanson quote has <strong>" + sent[0].length + "</strong> characters.");
 
     console.log(sent[0]);
