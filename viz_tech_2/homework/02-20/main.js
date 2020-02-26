@@ -49,8 +49,6 @@ function fetchData(){
     d3.select("#quote").html("<strong>Ron Swanson said:</strong> " + sent[0] + "");
     d3.select("#num").html("Ron Swanson quote has <strong>" + sent[0].length + "</strong> characters.");
 
-    console.log(sent[0]);
-    console.log(sent[0].length);
       var dataObject = {
         sent: sent[0].length,
         timestamp: new Date()
@@ -58,7 +56,6 @@ function fetchData(){
 
       data.unshift(dataObject);
       if (data.length > dataMax) data.pop();
-      console.log(data);
 
       var maximum = d3.max(data, function(d){
         return d.sent;
@@ -144,7 +141,6 @@ function fetchData(){
 
                     var bars = svg.select("#shapes").selectAll(".bar")
                                   .data(data, function(d){
-                                    console.log(data);
                                     return d.timestamp;
                                   });
 
