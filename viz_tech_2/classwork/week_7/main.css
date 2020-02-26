@@ -1,0 +1,18 @@
+body{
+  background: #FFE4E1;
+  margin: 0;
+}
+
+h1{
+  font-size: 54px;
+  text-align: center;
+  color: #8A2BE2;
+}
+
+#x .tick text{
+  fill: purple;
+}
+
+#scaleRect{
+  stroke: black;
+}
