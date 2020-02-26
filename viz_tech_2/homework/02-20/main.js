@@ -21,6 +21,19 @@ var svg = d3.select("#chart")
             .attr("width", width)
             .attr("height", height);
 
+              var scaleWidth = 300;
+              var scaleHeight = 20;
+              var scaleX = margin.left + chartWidth / 2 - (scaleWidth / 2);
+              var scaleY = margin.top + chartHeight + 40;
+
+              var scale = svg.select("#scale")
+                .attr("transform", "translate(" + scaleX + "," + scaleY + ")");
+
+              scale.select("#scaleRect")
+                .attr("width", scaleWidth)
+                .attr("height", scaleHeight);
+
+
 var domainValue = d3.range(1, dataMax +1);
 
 var x = d3.scaleBand()
@@ -49,6 +62,33 @@ function fetchData(){
       var maximum = d3.max(data, function(d){
         return d.sent;
       });
+
+      var barColor = d3.scaleSequential(d3.interpolateCubehelixDefault)
+              .domain([0, maximum]);
+
+              var stops = d3.range(0, 1.25, 0.25);
+
+              svg.select("#colorGradient").selectAll("stop")
+                  .data(stops).enter()
+                  .append("stop")
+                  .attr("offset", function(d){
+                    return d * 100 + "%";
+                  })
+                  .attr("stop-color", function(d){
+                    return barColor(d * maximum);
+                  });
+
+                  var gradiantScale = d3.scaleLinear()
+                    .domain([0, maximum])
+                    .range([0, scaleWidth]);
+
+                  var scaleAxis = d3.axisBottom(gradiantScale);
+
+
+                  scale.select("#scaleAxis")
+                    .attr("transform", "translate(0," + scaleHeight + ")")
+                    .transition().duration(frequency / 2)
+                    .call(scaleAxis);
 
       var barHeight = d3.scaleLinear()
                         .domain([0, maximum])
@@ -115,6 +155,9 @@ function fetchData(){
 
                       bars.merge(enterBars)
                           .transition().duration(frequency/2)
+                          .attr("fill", function(d){
+                              return barColor(d.sent);
+                            })
                           .attr("width", barWidth)
                           .attr("height", function(d){
                             return barHeight(d.sent);
