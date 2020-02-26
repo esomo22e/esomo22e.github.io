@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>VIZ TECH Homework 6</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+    <body>
+
+      <h1>Visual Technologies 2 - Homework 6</h1>
+
+      <div id = "text_cont">
+      <img src="https://raw.githubusercontent.com/esomo22e/esomo22e.github.io/master/viz_tech_2/homework/02-06/assets/ron_swanson.png" alt="Ron swanson face">
+      <div id = "text">
+      <div id = "quote"></div>
+      <div id = "num"></div>
+    </div>
+    <img src="https://raw.githubusercontent.com/esomo22e/esomo22e.github.io/master/viz_tech_2/homework/02-06/assets/ron_swanson.png" alt="Ron swanson face">
+    </div>
+
+      <svg id="chart">
+        <defs>
+       <linearGradient id="colorGradient">
+         <!-- <stop offset="0%" stop-color="lavender" />
+         <stop offset="100%" stop-color="red" /> -->
+       </linearGradient>
+     </defs>
+        <g id="shapes"></g>
+        <g id="x"></g>
+        <g id="y"></g>
+        <g id="scale">
+      <rect id = "scaleRect" fill="url(#colorGradient)"/>
+        <g id="scaleAxis"></g>
+    </g>
+
+      </svg>
+
+      <script src="main.js"></script>
+
+    </body>
+</html>

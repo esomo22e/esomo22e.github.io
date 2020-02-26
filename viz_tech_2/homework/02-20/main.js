@@ -2,7 +2,7 @@
 var apiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
 var frequency = 5 * 1000;
-var dataMax = 5;
+var dataMax = 10;
 var data = [];
 
 var width = window.innerWidth;
@@ -10,7 +10,7 @@ var height = window.innerHeight * 3/4;
 var margin = {
   top: 20,
   right: 20,
-  bottom: 50,
+  bottom: 150,
   left: 100
 };
 
@@ -20,6 +20,18 @@ var chartHeight = height - margin.top - margin.bottom;
 var svg = d3.select("#chart")
             .attr("width", width)
             .attr("height", height);
+
+            var scaleWidth = 300;
+            var scaleHeight = 20;
+            var scaleX = margin.left + chartWidth / 2 - (scaleWidth / 2);
+            var scaleY = margin.top + chartHeight + 40;
+
+            var scale = svg.select("#scale")
+              .attr("transform", "translate(" + scaleX + "," + scaleY + ")");
+
+            scale.select("#scaleRect")
+              .attr("width", scaleWidth)
+              .attr("height", scaleHeight);
 
 var domainValue = d3.range(1, dataMax +1);
 
@@ -35,6 +47,7 @@ function fetchData(){
 
   d3.json(apiUrl, function(error, sent){
     d3.select("#quote").html("<strong>Ron Swanson said:</strong> " + sent[0] + "");
+      .attr("fill", )
     d3.select("#num").html("Ron Swanson quote has <strong>" + sent[0].length + "</strong> characters.");
 
     console.log(sent[0]);
@@ -52,7 +65,36 @@ function fetchData(){
         return d.sent;
       });
 
-      var barHeight = d3.scaleLinear()
+      // if (data.length === dataMax) clearInterval(myInterval);
+
+      var barColor = d3.scaleSequential(d3.interpolateCubehelixDefault)
+        .domain([0, maximum]);
+
+      var stops = d3.range(0, 1.25, 0.25);
+
+      svg.select("#colorGradient").selectAll("stop")
+          .data(stops).enter()
+          .append("stop")
+          .attr("offset", function(d){
+            return d * 100 + "%";
+          })
+          .attr("stop-color", function(d){
+            return barColor(d * maximum);
+          });
+
+          var gradiantScale = d3.scaleLinear()
+            .domain([0, maximum])
+            .range([0, scaleWidth]);
+
+          var scaleAxis = d3.axisBottom(gradiantScale);
+
+
+          scale.select("#scaleAxis")
+            .attr("transform", "translate(0," + scaleHeight + ")")
+            .transition().duration(frequency / 2)
+            .call(scaleAxis);
+
+        var barHeight = d3.scaleLinear()
                         .domain([0, maximum])
                         .range([0, chartHeight]);
 
@@ -75,11 +117,11 @@ function fetchData(){
                         var secAgo = Math.round(msAgo/1000);
 
                         if(secAgo === 0){
-                          return "Recent Quote";
+                          return "Most Recent Quote";
                         }
                         else{
                           var word = secAgo === 1 ? "second" : "seconds";
-                          return secAgo + " " + word  + " ago";
+                          return secAgo + " " + word  + " Ron Swanson quote";
                         }
                       }
                       else{
@@ -118,6 +160,9 @@ function fetchData(){
 
                       bars.merge(enterBars)
                           .transition().duration(frequency/2)
+                          .attr("fill", function(d){
+                            return barColor(d.sent);
+                          })
                           .attr("width", barWidth)
                           .attr("height", function(d){
                             return barHeight(d.sent);
@@ -137,6 +182,8 @@ function fetchData(){
   });
 }
 fetchData();
+// var myInterval = setInterval(fetchData, frequency);
+
 setInterval(fetchData, frequency);
 
 // d3.json(apiUrl, function(error, data){
