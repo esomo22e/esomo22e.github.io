@@ -2,7 +2,7 @@
 var apiUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
 var frequency = 5 * 1000;
-var dataMax = 5;
+var dataMax = 10;
 var data = [];
 
 var width = window.innerWidth;
@@ -10,7 +10,7 @@ var height = window.innerHeight * 3/4;
 var margin = {
   top: 20,
   right: 20,
-  bottom: 50,
+  bottom: 150,
   left: 100
 };
 
@@ -73,11 +73,11 @@ function fetchData(){
                         var secAgo = Math.round(msAgo/1000);
 
                         if(secAgo === 0){
-                          return "Recent Quote";
+                          return "Ron said what?!";
                         }
                         else{
                           var word = secAgo === 1 ? "second" : "seconds";
-                          return secAgo + " " + word  + " ago";
+                          return "Ron said what " + secAgo + " " + word  + " ago?!";
                         }
                       }
                       else{
