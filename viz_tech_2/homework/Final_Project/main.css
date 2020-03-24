@@ -1,0 +1,140 @@
+body{
+  background: #FFCCE5;
+  margin:0 auto;
+  max-width: 900px;
+  /* font-family: "Comic Sans MS"; */
+
+}
+
+
+h1{
+  text-align: center;
+}
+
+.content_cont{
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+p.intro{
+  font-size: 20px;
+}
+
+#container{
+  position: relative;
+}
+
+#sections{
+  width: 340px;
+}
+
+#sections > div{
+  opacity: .2;
+  margin-bottom: 300px;
+}
+
+#sections > div:last-child{
+  margin-bottom: 50px;
+}
+
+#sections > div.graph-scroll-active{
+  opacity: 1;
+}
+
+#graph{
+  margin-left: 40px;
+  width: 500px;
+  position: sticky;
+  top: 0px;
+  float: right;
+}
+
+@media (max-width: 925px)  {
+  #graph{
+    width: 100%;
+    margin-left: 0px;
+    float: none;
+    transform: translate(-50%, 0);
+    margin-left: 50%; 
+  }
+
+  #sections{
+    position: relative;
+    margin: 0px auto;
+    padding-top: 400px;
+  }
+}
+
+
+
+
+/*
+.graph-scroll-fixed #graph{
+  position: fixed;
+  top: 0px;
+}
+
+.graph-scroll-below #graph{
+  bottom: 0px;
+  top: auto;
+}
+
+@media (max-width: 925px)  {
+  #graph{
+    width: 100%;
+    transform: translate(-50%, 0);
+    margin-left: 50%;
+  }
+
+  #sections{
+    position: relative;
+    margin: 0px auto;
+    padding-top: 400px;
+  }
+
+  #sections div{
+    background: rgba(255,218,41,0.9); /* alpha parameter */
+    padding: 10px;
+    /* border: 1px solid; */
+    max-width: 400px;
+    margin-bottom: 500px;
+  }
+}
+
+h1{
+  margin: 50px;
+}
+
+h1, h3, h4{
+  text-align: center;
+}
+
+
+
+text {
+  font-family: 'Khula', sans-serif;
+        font-size: 15px;
+        fill: #4f4f4f;
+        font-weight: bold;
+    }
+
+text.footnote{
+          font-size:12px;
+          font-weight: normal;
+     }
+
+text.value {
+        fill: #ffda29;
+        opacity:1;
+    }
+
+text.title {
+          font-size:16px;
+          font-weight: bold;
+          line-height:20px;
+    }
+
+a {
+  color: #4f4f4f;
+}
+ */

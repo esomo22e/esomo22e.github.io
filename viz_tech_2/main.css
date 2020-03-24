@@ -15,7 +15,8 @@ h1{
 #cont{
   padding: 20px;
   display: flex;
-
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 #homework{
   /* margin: 20px; */
