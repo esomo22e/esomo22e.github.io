@@ -79,13 +79,11 @@ d3.queue()
       .eventId('uniqueId1')
       .on('active', function(i){
 
-          // sec_1();
-          // sec_3();
+
 
               [
                   sec_1,
                 sec_2,
-                // sec_2,
                 sec_3,
                 sec_4,
                 sec_5 ][i]();
