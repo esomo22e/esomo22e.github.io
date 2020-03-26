@@ -2,8 +2,6 @@ body{
   background: #FFCCE5;
   margin:0 auto;
   max-width: 900px;
-  /* font-family: "Comic Sans MS"; */
-
 }
 
 
@@ -47,6 +45,7 @@ p.intro{
   position: sticky;
   top: 0px;
   float: right;
+  background: red;
 }
 
 @media (max-width: 925px)  {
@@ -55,34 +54,6 @@ p.intro{
     margin-left: 0px;
     float: none;
     transform: translate(-50%, 0);
-    margin-left: 50%; 
-  }
-
-  #sections{
-    position: relative;
-    margin: 0px auto;
-    padding-top: 400px;
-  }
-}
-
-
-
-
-/*
-.graph-scroll-fixed #graph{
-  position: fixed;
-  top: 0px;
-}
-
-.graph-scroll-below #graph{
-  bottom: 0px;
-  top: auto;
-}
-
-@media (max-width: 925px)  {
-  #graph{
-    width: 100%;
-    transform: translate(-50%, 0);
     margin-left: 50%;
   }
 
@@ -90,14 +61,6 @@ p.intro{
     position: relative;
     margin: 0px auto;
     padding-top: 400px;
-  }
-
-  #sections div{
-    background: rgba(255,218,41,0.9); /* alpha parameter */
-    padding: 10px;
-    /* border: 1px solid; */
-    max-width: 400px;
-    margin-bottom: 500px;
   }
 }
 
@@ -137,4 +100,3 @@ text.title {
 a {
   color: #4f4f4f;
 }
- */
