@@ -1,3 +1,25 @@
+var width = d3.select('#graph').node().offsetWidth;
+var height = window.innerHeight * 0.7;
+
+var margin = {
+  top: 20,
+  right: 20,
+  bottom: 50,
+  left: 100
+};
+
+var chartWidth = width - margin.left - margin.right;
+var chartHeight = height - margin.top - margin.bottom;
+
+
+var svg = d3.select("#graph")
+.attr("width", width)
+.attr("height", height);
+
+var radius = 5;
+
+
+
 d3.queue()
 .defer(d3.csv, "./data/clothes_perc.csv")
 .defer(d3.csv, "./data/words_perc.csv")
@@ -7,23 +29,7 @@ d3.queue()
   console.log(data_words);
   console.log(data_schools);
 
-  var width = d3.select('#graph').node().offsetWidth;
-  var height = window.innerHeight * 0.7;
 
-  var margin = {
-    top: 20,
-    right: 20,
-    bottom: 50,
-    left: 100
-  };
-
-  var chartWidth = width - margin.left - margin.right;
-  var chartHeight = height - margin.top - margin.bottom;
-
-
-  var svg = d3.select("#graph")
-  .attr("width", width)
-  .attr("height", height);
 
   function canvas_clear(){
 
@@ -35,6 +41,20 @@ d3.queue()
   function sec_1(){
     console.log("section 1")
     canvas_clear();
+
+    data_schools.forEach(function(d){
+      d.r = radius;
+      d.x = width/2;
+      d.y = height/2;
+    })
+
+    var simulation = d3.forceSimulation()
+            .force("collide",d3.forceCollide( function(d){
+                return d.r + 8 }).iterations(16)
+            )
+            .force("charge", d3.forceManyBody())
+            .force("y", d3.forceY().y(height / 2))
+            .force("x", d3.forceX().x(width / 2));
 
   }
 

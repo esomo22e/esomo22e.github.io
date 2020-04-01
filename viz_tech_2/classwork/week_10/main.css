@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da+2|Courgette|Handlee|Marko+One|Merienda|Spicy+Rice&display=swap');
+
 body{
   margin: 0;
-  font-family: "Comic Sans MS";
+
   /* background-color: aquamarine;  */
 
 }
@@ -26,9 +28,11 @@ body{
 .section {
   display: flex;
   padding: 50px;
+  font-family: 'Marko One', serif;
 }
 
 .section p {
+
   flex: 1;
 }
 
