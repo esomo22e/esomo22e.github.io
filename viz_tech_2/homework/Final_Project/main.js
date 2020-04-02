@@ -1,5 +1,5 @@
-// var width = d3.select('#graph').node().offsetWidth;
-console.log(d3.select('#graph').node().offsetWidth)
+var width = d3.select('#graph').node().offsetWidth;
+// console.log(d3.select('#graph').node().offsetWidth)
 var width = 500;
 var height = window.innerHeight * 0.7;
 
@@ -15,11 +15,12 @@ var margin = {
 
 
 var svg = d3.select("#graph")
+// .append('svg')
 .attr("width", width)
 .attr("height", height);
 
-var radius = 3;
-    var forceStrength = 0.01;
+var radius = 5;
+    var forceStrength = 0.05;
 
 
 d3.queue()
@@ -70,14 +71,10 @@ d3.queue()
       	.attr("r", function(d, i){
            return d.r;
          })
-         .attr("cx", function(d, i){
-           return 175 + 25* i + 2;
-       })
        .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
 				.attr("cy", function(d, i){ return 250; })
       	.style("fill", function(d, i){ return "#000"; })
-      	.style("stroke", function(d, i){ return "#000"; })
-      	.style("stroke-width", 10);
+      	.style("stroke", function(d, i){ return "#000"; });
 
         circles = circles.merge(circlesEnter);
 
