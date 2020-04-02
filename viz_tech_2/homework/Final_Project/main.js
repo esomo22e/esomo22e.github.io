@@ -48,13 +48,127 @@ d3.queue()
       d.y = height/2;
     })
 
-    var simulation = d3.forceSimulation()
-            .force("collide",d3.forceCollide( function(d){
-                return d.r + 8 }).iterations(16)
-            )
-            .force("charge", d3.forceManyBody())
-            .force("y", d3.forceY().y(height / 2))
-            .force("x", d3.forceX().x(width / 2));
+    var nodes = svg.selectAll("circle")
+                     .data(data_schools);
+
+       var node_circle = nodes.enter().append("circle")
+             	.attr("r", function(d, i){ return d.r; })
+                             .attr("cx", function(d, i){
+                                 return 175 + 25* i + 2
+                             })
+                             .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+                               .attr("cy", function(d, i){ return 250; })
+                               // .attr("xlink:href",  function(d) { return icon[d.gender];})
+                               .attr("height", 30)
+                               .attr("width", 30);
+
+           nodes = nodes.merge(node_circle);
+
+           function ticked(){
+                   nodes
+                   .attr("x", function(d){ return d.x = Math.max(d.r, Math.min(width - d.r, d.x)); })
+                  .attr("y", function(d){ return d.y = Math.max(d.r, Math.min(height - d.r, d.y)); })
+           }
+
+           var simulation = d3
+                  .forceSimulation()
+                  //keeping the commented lines below in case I need them later
+                  .force("collide",d3.forceCollide( function(d){
+                     return d.r + 0 }).iterations(16))
+                  //d.r is defined as radius above
+                  .force("charge", d3.forceManyBody()
+                    .strength(-10 ))
+
+                    simulation
+                          .nodes(data_schools)
+                          .on("tick", ticked);
+
+                var forceStrength = //1;
+                                     0.05;
+
+
+                    function groupBubbles() {
+
+                      simulation.force('x', d3.forceX()
+                                            .strength(forceStrength)
+                                            .x(width / 2))
+                              .force('y', d3.forceY()
+                                            .strength(forceStrength)
+                                            .y(width / 2));
+
+                  simulation
+                      .alpha(1)
+                      .restart();
+                      // .restart();
+
+
+
+                    }
+
+              groupBubbles();
+
+    // var circle = svg.selectAll("circle")
+    //                 .data(data_schools);
+    //
+    // var circleEnter =  circle.enter().append("circle")
+    //                           .attr("r", function(d, i){ return d.r; })
+    //                           .attr("cx", function(d, i){
+    //                               return 175 + 25* i + 2
+    //                           })
+    //                           .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+    //                             .attr("cy", function(d, i){ return 250; })
+    //                             .style("fill", function(d, i){ return "#000"; })
+    //   	                         .style("stroke", function(d, i){ return "#000"; })
+    //                             .attr("height", 30)
+    //                             .attr("width", 30);
+    //
+    //   circle = circle.merge(circleEnter);
+    //
+    //
+    //         function ticked(){
+    //                 circle
+    //                 .attr("x", function(d){ return d.x = Math.max(d.r, Math.min(width - d.r, d.x)); })
+    //                .attr("y", function(d){ return d.y = Math.max(d.r, Math.min(height - d.r, d.y)); })
+    //         }
+    //
+    //
+    //
+    // var simulation = d3
+    //                .forceSimulation()
+    //                //keeping the commented lines below in case I need them later
+    //                .force("collide",d3.forceCollide( function(d){
+    //                   return d.r + 0 }).iterations(16))
+    //                //d.r is defined as radius above
+    //                .force("charge", d3.forceManyBody()
+    //                  .strength(-10 ))
+    //
+    //                  simulation
+    //                        .nodes(data_schools)
+    //                        .on("tick", ticked);
+    //
+    //              var forceStrength = //1;
+    //                                   0.05;
+    //
+    //
+    //                  function groupBubbles() {
+    //
+    //                    simulation.force('x', d3.forceX()
+    //                                          .strength(forceStrength)
+    //                                          .x(width / 2))
+    //                            .force('y', d3.forceY()
+    //                                          .strength(forceStrength)
+    //                                          .y(width / 2));
+    //
+    //                simulation
+    //                    .alpha(1)
+    //                    .restart();
+    //                    // .restart();
+    //
+    //
+    //
+    //                  }
+    //
+    //            groupBubbles();
 
   }
 
