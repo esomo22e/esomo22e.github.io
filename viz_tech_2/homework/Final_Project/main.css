@@ -33,6 +33,9 @@ p.intro{
   width: 340px;
 font-family: 'Handlee', cursive;
 font-size: 20px;
+position: relative;
+margin: 0px auto;
+padding-top: 400px;
 }
 
 #sections > div{
@@ -49,11 +52,17 @@ font-size: 20px;
 }
 
 #graph{
-  margin-left: 40px;
-  width: 500px;
+  /* margin-left: 40px; */
+  /* width: 500px; */
+  width: 100%;
+  height: 90vh;
+  margin-left: 0px;
+  float: none;
+  transform: translate(-50%, 0);
+  margin-left: 50%;
   position: sticky;
   top: 0px;
-  float: right;
+  /* float: right; */
   border: 3px solid red;
 }
 
