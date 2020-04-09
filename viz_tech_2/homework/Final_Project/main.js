@@ -200,14 +200,14 @@ d3.queue()
 
       console.log("section 2")
 //       console.log(data_clothes);
-//       var num = 20;
+// //       var num = 20;
+// //
+// // returns random int between 0 and num
+// function getRandomInt() {returnx Math.floor(Math.random() * (num));}
 //
-// returns random int between 0 and num
-function getRandomInt() {return Math.floor(Math.random() * (num));}
-
-// nodes returns a [list] of {id: 1, fixed:true}
-var nodes = d3.range(num).map(function(d) { return {id: d}; });
-console.log(nodes);
+// // nodes returns a [list] of {id: 1, fixed:true}
+// var nodes = d3.range(num).map(function(d) { return {id: d}; });
+// console.log(nodes);
 
 
     }
