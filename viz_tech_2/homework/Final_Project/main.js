@@ -11,7 +11,9 @@ var margin = {
 
 // var chartWidth = width - margin.left - margin.right;
 // var chartHeight = height - margin.top - margin.bottom;
-
+var icon = {
+    "school": "./assets/school.png"
+}
 
 var svg = d3.select("#graph")
   .append('svg')
@@ -52,36 +54,69 @@ d3.queue()
         d.y = height / 2;
       })
 
-      console.log(data_schools);
+      // console.log(data_schools);
 
       var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function(d) {
-          return d.r + 2;
+          return d.r + 6;
         }).iterations(16))
         .force("charge", d3.forceManyBody())
-        .force("y", d3.forceY().y(height / 4))
-        .force("x", d3.forceX().x(width / 4));
+        .force("y", d3.forceY().y(height / 2))
+        .force("x", d3.forceX().x(width / 2));
 
-      var circles = svg.selectAll("circle")
-        .data(data_schools);
+      var circles =  svg
+                    .selectAll("image")
+                    .data(data_schools);
+
+        var circlesEnter = circles
+        .enter()
+                  .append("image")
+                  .data(data_schools)
+
+                 // .attr("r", function(d, i){ return d.r + 4; })
+                  .attr("x", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+                  .attr("y", function(d, i){ return 250; })
+                  .attr("xlink:href",  function(d) { return icon.school;})
+                  .attr("height", 20)
+                  .attr("width", 20)
+                  .attr("fill", function(d, i) {
+                      return "#000";
+                    })
+                    .style("stroke", function(d, i) {
+                      return "#000";
+                    })
+                    .on("mouseover, mousemove", function(d){
+
+                      d3.select(this)
+                     .transition()
+                       .duration(550)
+                     .attr("height", 30)
+                     .attr("width", 30);
+                    })
+                    .on("mouseout", function(d){
+                      d3.select(this).transition()
+                      .duration(550)
+                      .attr("height", 20)
+                      .attr("width", 20);
+                    });
 
 
-      var circlesEnter = circles.enter().append("circle")
-        .attr("r", function(d, i) {
-          return d.r;
-        })
-        .attr("cx", function(d, i) {
-          return 175 + 25 * i + 2 * i ** 2;
-        })
-        .attr("cy", function(d, i) {
-          return 250;
-        })
-        .style("fill", function(d, i) {
-          return "#000";
-        })
-        .style("stroke", function(d, i) {
-          return "#000";
-        });
+      // var circlesEnter = circles.enter().append("circle")
+      //   .attr("r", function(d, i) {
+      //     return d.r;
+      //   })
+      //   .attr("cx", function(d, i) {
+      //     return 175 + 25 * i + 2 * i ** 2;
+      //   })
+      //   .attr("cy", function(d, i) {
+      //     return 250;
+      //   })
+      //   .style("fill", function(d, i) {
+      //     return "#000";
+      //   })
+      //   .style("stroke", function(d, i) {
+      //     return "#000";
+      //   });
 
       circles = circles.merge(circlesEnter);
 
@@ -90,11 +125,11 @@ d3.queue()
         //console.log("tick")
         //console.log(data.map(function(d){ return d.x; }));
         circles
-          .attr("cx", function(d) {
+          .attr("x", function(d) {
             return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
 
           })
-          .attr("cy", function(d) {
+          .attr("y", function(d) {
             return d.y = Math.max(d.r, Math.min(height - d.r, d.y));
           });
       }
@@ -128,6 +163,15 @@ d3.queue()
       canvas_clear();
 
       console.log("section 2")
+      console.log(data_clothes);
+      var num = 20;
+
+// returns random int between 0 and num
+function getRandomInt() {return Math.floor(Math.random() * (num));}
+
+// nodes returns a [list] of {id: 1, fixed:true}
+var nodes = d3.range(num).map(function(d) { return {id: d}; });
+console.log(nodes);
 
     }
 
