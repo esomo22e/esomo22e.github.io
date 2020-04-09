@@ -23,16 +23,15 @@ var svg = d3.select("#graph")
 var radius = 8;
 var forceStrength = 0.3;
 
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 d3.queue()
-  .defer(d3.csv, "./data/test.csv")
   .defer(d3.csv, "./data/clothes_perc.csv")
   .defer(d3.csv, "./data/words_perc.csv")
   .defer(d3.csv, "./data/schools.csv")
-  .await(function(error, data_test, data_clothes, data_words, data_schools) {
-    // console.log(data_test);
-    console.log(data_clothes);
-    console.log(data_words);
+  .await(function(error, data_clothes, data_words, data_schools) {
     console.log(data_schools);
 
 
@@ -65,58 +64,90 @@ d3.queue()
         .force("x", d3.forceX().x(width / 2));
 
       var circles =  svg
-                    .selectAll("image")
+                    // .selectAll("image")
+                    .selectAll("circle")
                     .data(data_schools);
 
-        var circlesEnter = circles
-        .enter()
-                  .append("image")
-                  .data(data_schools)
+        // var circlesEnter = circles
+        // .enter()
+        //           .append("image")
+        //           .data(data_schools)
+        //
+        //          // .attr("r", function(d, i){ return d.r + 4; })
+        //           .attr("x", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+        //           .attr("y", function(d, i){ return 250; })
+        //           .attr("xlink:href",  function(d) { return icon.school;})
+        //           .attr("height", 20)
+        //           .attr("width", 20)
+        //           .attr("fill", function(d, i) {
+        //               return "#000";
+        //             })
+        //             .style("stroke", function(d, i) {
+        //               return "#000";
+        //             })
+        //             .on("mouseover, mousemove", function(d){
+        //
+        //               d3.select(this)
+        //              .transition()
+        //                .duration(550)
+        //              .attr("height", 30)
+        //              .attr("width", 30);
+        //             })
+        //             .on("mouseout", function(d){
+        //               d3.select(this).transition()
+        //               .duration(550)
+        //               .attr("height", 20)
+        //               .attr("width", 20);
+        //             });
 
-                 // .attr("r", function(d, i){ return d.r + 4; })
-                  .attr("x", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
-                  .attr("y", function(d, i){ return 250; })
-                  .attr("xlink:href",  function(d) { return icon.school;})
-                  .attr("height", 20)
-                  .attr("width", 20)
-                  .attr("fill", function(d, i) {
-                      return "#000";
-                    })
-                    .style("stroke", function(d, i) {
-                      return "#000";
-                    })
-                    .on("mouseover, mousemove", function(d){
 
-                      d3.select(this)
-                     .transition()
-                       .duration(550)
-                     .attr("height", 30)
-                     .attr("width", 30);
-                    })
-                    .on("mouseout", function(d){
-                      d3.select(this).transition()
-                      .duration(550)
-                      .attr("height", 20)
-                      .attr("width", 20);
-                    });
+      var circlesEnter = circles.enter().append("circle")
+      .attr("r", function(d, i) {
+          return d.r;
+      })
+      .attr("cx", function(d, i) {
+          return 175 + 25 * i + 2 * i ** 2;
+      })
+      .attr("cy", function(d, i) {
+          return 250;
+      })
+      .style("fill", function(d, i) {
+          return "#000";
+      })
+      .style("stroke", function(d, i) {
+          return "#000";
+      })
+      .on("mouseover, mousemove", function(d) {
 
+          d3.select(this)
+              .transition()
+              .duration(550)
+              .style("fill", function(d, i) {
+                  return "red";
+              })
+              .attr("r", 15);
+              console.log(d.schoolName);
+              div.transition()
+                .duration(200)
+                .style("opacity", .9);
+            div	.html("<b>" + "School: "+ "</b>"+ d.schoolName + "<br/>"
+            + "<b>Students: </b>"+ d.totalStudents)
+            .style("font-size", "14px")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          d3.select(this).transition()
+              .duration(550)
+              .style("fill", function(d, i) {
+                  return "#000";
+              })
+              .attr("r", 8);
 
-      // var circlesEnter = circles.enter().append("circle")
-      //   .attr("r", function(d, i) {
-      //     return d.r;
-      //   })
-      //   .attr("cx", function(d, i) {
-      //     return 175 + 25 * i + 2 * i ** 2;
-      //   })
-      //   .attr("cy", function(d, i) {
-      //     return 250;
-      //   })
-      //   .style("fill", function(d, i) {
-      //     return "#000";
-      //   })
-      //   .style("stroke", function(d, i) {
-      //     return "#000";
-      //   });
+              div.transition()
+        .duration(500)
+        .style("opacity", 0);
+      });
 
       circles = circles.merge(circlesEnter);
 
@@ -124,12 +155,20 @@ d3.queue()
       function ticked() {
         //console.log("tick")
         //console.log(data.map(function(d){ return d.x; }));
+        // circles
+        //   .attr("x", function(d) {
+        //     return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
+        //
+        //   })
+        //   .attr("y", function(d) {
+        //     return d.y = Math.max(d.r, Math.min(height - d.r, d.y));
+        //   });
         circles
-          .attr("x", function(d) {
+          .attr("cx", function(d) {
             return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
 
           })
-          .attr("y", function(d) {
+          .attr("cy", function(d) {
             return d.y = Math.max(d.r, Math.min(height - d.r, d.y));
           });
       }
@@ -154,24 +193,22 @@ d3.queue()
       groupBubbles();
 
 
-
-
-
     }
 
     function sec_2() { //who's won more
       canvas_clear();
 
       console.log("section 2")
-      console.log(data_clothes);
-      var num = 20;
-
+//       console.log(data_clothes);
+//       var num = 20;
+//
 // returns random int between 0 and num
 function getRandomInt() {return Math.floor(Math.random() * (num));}
 
 // nodes returns a [list] of {id: 1, fixed:true}
 var nodes = d3.range(num).map(function(d) { return {id: d}; });
 console.log(nodes);
+
 
     }
 

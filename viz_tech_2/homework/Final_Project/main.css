@@ -9,7 +9,6 @@ body{
 
 h1{
   text-align: center;
-  /* font-family: 'Marko One', serif; */
   font-family: 'Merienda', cursive;
   font-weight: 600;
   font-size: 40px;
@@ -30,17 +29,30 @@ p.intro{
 }
 
 #sections{
-  width: 80%;
-font-family: 'Handlee', cursive;
-font-size: 20px;
-position: relative;
-margin: 0px auto;
-padding-top: 400px;
+  // width: 340px;
+  width: auto;
+  position: relative;
+  margin: 0px auto;
+  font-family: 'Handlee', cursive;
+  font-size: 20px;
+  padding-bottom: 25vh;
 }
 
+
 #sections > div{
-  opacity: .2;
-  margin-bottom: 300px;
+  background: #fff;
+  opacity: 0.2;
+
+  padding: 20px 18px;
+  border: 1px solid #d2d2d2;
+  box-shadow: -1px -1px 5px -1px rgba(0, 0, 0, 0.19), 3px 4px 5px 0px
+    rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    overflow: auto;
+
+  margin-bottom: 90vh;
+
+
 }
 
 #sections > div:last-child{
@@ -48,7 +60,7 @@ padding-top: 400px;
 }
 
 #sections > div.graph-scroll-active{
-  opacity: 1;
+  opacity: 0.9;
 }
 
 #graph{
@@ -56,6 +68,9 @@ padding-top: 400px;
   /* width: 500px; */
   width: 100%;
   height: 90vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top:20px
   margin-left: 0px;
   float: none;
   transform: translate(-50%, 0);
@@ -66,6 +81,17 @@ padding-top: 400px;
   border: 3px solid red;
 }
 
+pre{
+  overflow: hidden;
+}
+
+#glowrange {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    width: auto !important;
+    -webkit-appearance: slider-horizontal !important;
+}
 @media (max-width: 925px)  {
   #graph{
     width: 100%;
@@ -117,4 +143,18 @@ text.title {
 
 a {
   color: #4f4f4f;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: 160px;
+    height: 50px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }
