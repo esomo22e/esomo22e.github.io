@@ -22,7 +22,7 @@ var svg = d3.select("#graph")
 
 var radius = 8;
 var forceStrength = 0.3;
-
+var forceStrength2 = 0.05;
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
@@ -32,7 +32,7 @@ d3.queue()
   .defer(d3.csv, "./data/words_perc.csv")
   .defer(d3.csv, "./data/schools.csv")
   .await(function(error, data_clothes, data_words, data_schools) {
-    console.log(data_schools);
+    // console.log(data_schools);
 
 
 
@@ -126,7 +126,7 @@ d3.queue()
                   return "red";
               })
               .attr("r", 15);
-              console.log(d.schoolName);
+              // console.log(d.schoolName);
               div.transition()
                 .duration(200)
                 .style("opacity", .9);
@@ -199,15 +199,112 @@ d3.queue()
       canvas_clear();
 
       console.log("section 2")
-//       console.log(data_clothes);
-// //       var num = 20;
-// //
-// // returns random int between 0 and num
-// function getRandomInt() {returnx Math.floor(Math.random() * (num));}
-//
-// // nodes returns a [list] of {id: 1, fixed:true}
-// var nodes = d3.range(num).map(function(d) { return {id: d}; });
-// console.log(nodes);
+
+      data_clothes.forEach(function(d) {
+        // d.r = radius;
+        d.x = width / 2;
+        d.y = height / 2;
+      })
+
+      var simulation = d3.forceSimulation()
+        .force("collide", d3.forceCollide(function(d) {
+          return d.n/3 + 3;
+        }).iterations(16))
+        .force("charge", d3.forceManyBody())
+        .force("y", d3.forceY().y(height / 2))
+        .force("x", d3.forceX().x(width / 2));
+
+      var circles =  svg
+                    // .selectAll("image")
+                    .selectAll("circle")
+                    .data(data_clothes);
+
+                    var circlesEnter = circles.enter().append("circle")
+                    .attr("r", function(d, i) {
+                      // console.log(d);
+                        return d.n/3;
+                    })
+                    .attr("cx", function(d, i) {
+                        return 175 + 25 * i + 2 * i ** 2;
+                    })
+                    .attr("cy", function(d, i) {
+                        return 250;
+                    })
+                    .style("fill", function(d, i) {
+
+                      if(d.market == "f"){
+                        return "blue";
+                      }
+                      else if(d.market == "n"){
+                        return "purple";
+                      }
+                      else{
+                        return "#000";
+
+                      }
+                    })
+                    .style("stroke", function(d, i) {
+                        return "#000";
+                    })
+                    .on("mouseover, mousemove", function(d) {
+
+                        d3.select(this)
+                            .transition()
+                            .duration(550)
+                            .style("fill", function(d, i) {
+                                return "red";
+                            })
+                            .attr("r", 15);
+
+                    })
+                    .on("mouseout", function(d) {
+                        d3.select(this).transition()
+                            .duration(550)
+                            .style("fill", function(d, i) {
+                                return "#000";
+                            })
+                            .attr("r", 8);
+
+
+                    });
+
+                    circles = circles.merge(circlesEnter);
+
+                    function ticked() {
+
+                      circles
+                      .attr("cx", function(d) {
+                        return d.x = Math.max(d.n/3, Math.min(width - d.n/3, d.x));
+                        // return d.x;
+
+                      })
+                      .attr("cy", function(d) {
+                        return d.y = Math.max(d.n/3, Math.min(height - d.n/3, d.y));
+                        // return d.y;
+                      });
+
+                    }
+
+                    simulation
+                      .nodes(data_clothes)
+                      .on("tick", ticked);
+
+                    function groupBubbles() {
+                      // hideTitles();
+
+                      // @v4 Reset the 'x' force to draw the bubbles to the center.
+                      simulation
+                        .force('x', d3.forceX().strength(forceStrength2).x(width / 2))
+                        .force('y', d3.forceY()
+                          .strength(forceStrength2)
+                          .y(height / 2));
+                      // @v4 We can reset the alpha value and restart the simulation
+                      simulation.alpha(1).restart();
+                    }
+
+                    groupBubbles();
+
+
 
 
     }
@@ -216,6 +313,137 @@ d3.queue()
       canvas_clear();
 
       console.log("section 3")
+
+      data_clothes.forEach(function(d) {
+        // d.r = radius;
+        d.x = width / 2;
+        d.y = height / 2;
+      })
+
+      var simulation = d3.forceSimulation()
+        .force("collide", d3.forceCollide(function(d) {
+          return d.n/3 + 3;
+        }).iterations(16))
+        .force("charge", d3.forceManyBody().strength(-6));
+
+      var circles =  svg
+                    // .selectAll("image")
+                    .selectAll("circle")
+                    .data(data_clothes);
+
+    var circles =  svg
+                  // .selectAll("image")
+                  .selectAll("circle")
+                  .data(data_clothes);
+
+                  var circlesEnter = circles.enter().append("circle")
+                  .attr("r", function(d, i) {
+                    // console.log(d);
+                      return d.n/3;
+                  })
+                  .attr("cx", function(d, i) {
+                      return 175 + 25 * i + 2 * i ** 2;
+                  })
+                  .attr("cy", function(d, i) {
+                      return 250;
+                  })
+                  .style("fill", function(d, i) {
+
+                    if(d.market == "f"){
+                      return "blue";
+                    }
+                    else if(d.market == "n"){
+                      return "purple";
+                    }
+                    else{
+                      return "#000";
+
+                    }
+                  })
+                  .style("stroke", function(d, i) {
+                      return "#000";
+                  })
+                  .on("mouseover, mousemove", function(d) {
+
+                      d3.select(this)
+                          .transition()
+                          .duration(550)
+                          .style("fill", function(d, i) {
+                              return "red";
+                          })
+                          .attr("r", 15);
+
+                  })
+                  .on("mouseout", function(d) {
+                      d3.select(this).transition()
+                          .duration(550)
+                          .style("fill", function(d, i) {
+                              return "#000";
+                          })
+                          .attr("r", 8);
+
+
+                  });
+
+                  circles = circles.merge(circlesEnter);
+
+
+                  function ticked() {
+
+                    circles
+                    .attr("cx", function(d) {
+                      return d.x = Math.max(d.n/3, Math.min(width - d.n/3, d.x));
+                      // return d.x;
+
+                    })
+                    .attr("cy", function(d) {
+                      return d.y = Math.max(d.n/3, Math.min(height - d.n/3, d.y));
+                      // return d.y;
+                    });
+
+                  }
+
+                  simulation
+                    .nodes(data_clothes)
+                    .on("tick", ticked);
+
+                    var push_market = {
+                      // f:{ x: width *1/3, y: height *1.25/3 },
+                      // m: { x: width *3/6, y: height *1.25/3 },
+                      // n: { x: width *2/3, y: height *1.22/3 }
+                      f: { x: width / 2, y: height / 3 },
+                      m: { x: width / 3, y: 2*height / 3 },
+                      n: { x: 2*width / 3, y: 2*height / 3 }
+                    }
+
+
+                    function splitBubbles(byVar) {
+                      console.log(byVar);
+                        function bubble_position_x(d) {
+                            console.log(d[byVar]);
+                            return push_market[d[byVar]].x;
+                          }
+
+                        function bubble_position_y(d) {
+                            return push_market[d[byVar]].y;
+                          }
+
+                          simulation
+                        .force('x', d3
+                                      .forceX()
+                                      .strength(forceStrength2)
+                                      .x(bubble_position_x)
+                                      )
+                      .force('y', d3
+                                    .forceY()
+                                    .strength(forceStrength2)
+                                    .y(bubble_position_y)
+                                    );
+
+simulation.alpha(2).restart();
+                        }
+
+                        splitBubbles('market');
 
     }
 
