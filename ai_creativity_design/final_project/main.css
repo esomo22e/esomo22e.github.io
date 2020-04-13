@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@100&display=swap');
 body{
     background: lavender;
     margin: 0 auto;
@@ -5,4 +6,10 @@ body{
 
 h1{
     text-align: center;
+    font-size: 60px;
+    font-family: 'Lobster', sans-serif;
+}
+
+p#status{
+  text-align: center;
 }
