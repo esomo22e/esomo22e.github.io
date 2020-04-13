@@ -1,8 +1,10 @@
 let video;
 let poseNet;
 let poses;
-
 let particles = [];
+
+let input;
+let button;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -19,6 +21,14 @@ function setup() {
   });
   // Hide the video element, and just show the canvas
   video.hide();
+
+  input = createInput();
+  input.position(20, 65);
+
+  button = createButton('submit');
+button.position(input.x + input.width, 65);
+  button.mousePressed(draw);
+
 }
 
 
@@ -29,7 +39,10 @@ function modelReady() {
 
 function draw() {
   background(0);
+  const name = input.value();
+  // input.value?('');
 
+  // console.log(name);
   if (poses != undefined ) {
     for (let i = 0; i < poses.length; i++) {
       for (let j=0; j< poses[i].pose.keypoints.length; j++) {
@@ -38,14 +51,15 @@ function draw() {
         let score = poses[i].pose.keypoints[j].score;
         let x = poses[i].pose.keypoints[j].position.x;
         let y = poses[i].pose.keypoints[j].position.y;
-
-        if (score > 0.8) {
-          if (partname == "leftEye") {
-            particles.push( new Particle(x, y, random(1, 3), random(-1, 1)));
+        console.log(partname);
+        if (score > 0.4) {
+          if (partname == name) {
+            // console.log(partname);
+            particles.push( new Particle(x, y, random(1, 3), random(-3, 3)));
           }
-          else if (partname == "rightEar") {
-            particles.push( new Particle(x, y, random(-3, -1), random(-1, 1)));
-          }
+          // else if (partname == "rightEar") {
+          //   particles.push( new Particle(x, y, random(-3, -1), random(-1, 1)));
+          // }
           // else if (partname == "rightWrist") {
           //   particles.push( new Particle(x, y, random(-3, -1), random(-1, 1)));
           // }
@@ -58,7 +72,7 @@ function draw() {
     }
   }
 
-  image(video, 0, 0, width, height);
+  // image(video, 0, 0, width, height);
 
   // update and display particles
   for (let i=0; i<particles.length; i++) {
