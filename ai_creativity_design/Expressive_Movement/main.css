@@ -4,3 +4,78 @@ body{
   /* position: absolute; */
   overflow-x:hidden;
 }
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#dropdown{
+    position:absolute;
+}
+
+#check_content{
+    display: flex;
+}
+
+#checkbox{
+    background: purple;
+/* position: absolute; */
+color: white;
+padding: 10px;
+/* margin: 10px; */
+
+display: none;
+  border: 1px #dadada solid;
+
+}
+
+
+#checkbox label {
+  display: block;
+}
+
+#checkbox label:hover {
+  background-color: #1e90ff;
+}
+
+#check_content{
+    display: flex;
+}
+
+#checkbox2{
+    background: purple;
+/* position: absolute; */
+color: white;
+padding: 10px;
+/* margin: 10px; */
+
+display: none;
+  border: 1px #dadada solid;
+
+}
+
+
+#checkbox2 label {
+  display: block;
+}
+
+#checkbox2 label:hover {
+  background-color: #1e90ff;
+}

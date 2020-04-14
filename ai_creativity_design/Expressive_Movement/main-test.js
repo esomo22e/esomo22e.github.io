@@ -1,34 +1,103 @@
-let input, button, greeting;
+let video;
+let poseNet;
+let poses;
+let particles = [];
+
+let input;
+let button;
 
 function setup() {
-  // create canvas
-  createCanvas(710, 400);
+  createCanvas(windowWidth, windowHeight);
+  video = createCapture(VIDEO);
+  video.size(width, height);
 
-  input = createInput();
-  input.position(20, 65);
+  // Create a new poseNet method with a single detection
+  poseNet = ml5.poseNet(video);
+  // video.hide();
+  // This sets up an event that fills the global variable "poses"
+  // with an array every time new poses are detected
+  poseNet.on('pose', function(results) {
+    poses = results;
+  });
+  // Hide the video element, and just show the canvas
+  video.hide();
 
-  button = createButton('submit');
-  button.position(input.x + input.width, 65);
-  button.mousePressed(greet);
 
-  greeting = createElement('h2', 'what is your name?');
-  greeting.position(20, 5);
-
-  textAlign(CENTER);
-  textSize(50);
 }
 
-function greet() {
-  const name = input.value();
-  greeting.html('hello ' + name + '!');
-  input.value('');
-  console.log(name);
-  for (let i = 0; i < 200; i++) {
-    push();
-    fill(random(255), 255, 255);
-    translate(random(width), random(height));
-    rotate(random(2 * PI));
-    text(name, 0, 0);
-    pop();
+
+// function modelReady() {
+//   console.log("Model Ready!");
+// }
+
+
+function draw() {
+  background(0);
+  // input.value?('');
+
+  // console.log(name);
+  if (poses != undefined ) {
+    for (let i = 0; i < poses.length; i++) {
+      for (let j=0; j< poses[i].pose.keypoints.length; j++) {
+
+        let partname = poses[i].pose.keypoints[j].part;
+        let score = poses[i].pose.keypoints[j].score;
+        let x = poses[i].pose.keypoints[j].position.x;
+        let y = poses[i].pose.keypoints[j].position.y;
+        console.log(partname);
+        if (score > 0.4) {
+          if (partname == "nose") {
+            // console.log(partname);
+            particles.push( new Particle(x, y, random(1, 3), random(-3, 3)));
+          }
+          // else if (partname == "rightEar") {
+          //   particles.push( new Particle(x, y, random(-3, -1), random(-1, 1)));
+          // }
+          // else if (partname == "rightWrist") {
+          //   particles.push( new Particle(x, y, random(-3, -1), random(-1, 1)));
+          // }
+          //  else if (partname == "rightAnkle") {
+          //   particles.push( new Particle(x, y, random(-3, -1), random(-1, 1)));
+          // }
+        }
+
+      }
+    }
+  }
+
+  // image(video, 0, 0, width, height);
+
+  // update and display particles
+  for (let i=0; i<particles.length; i++) {
+    let p = particles[i];
+    p.move();
+    p.display();
+  }
+
+  // limit the number of particles
+  if (particles.length > 400) {
+    particles.splice(0, 1);
+  }
+}
+
+
+
+class Particle {
+  constructor(x, y, velX, velY) {
+    this.x = x;
+    this.y = y;
+    this.velX = velX;
+    this.velY = velY;
+    this.size = random(1, 100);
+    this.color = color(random(225),random(225),random(225));
+  }
+  display() {
+    // noStroke();
+    fill(this.color);
+    ellipse(this.x, this.y, this.size, this.size);
+  }
+  move() {
+    this.x += this.velX;
+    this.y += this.velY;
   }
 }
