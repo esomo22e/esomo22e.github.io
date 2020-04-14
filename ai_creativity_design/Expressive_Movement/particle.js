@@ -17,10 +17,11 @@ class Particle {
   }
   display() {
     // noStroke();
-    // stroke(100, this.lifespan);
+    stroke(100, this.lifespan);
     fill(this.color, this.lifespan);
     // strokeWeight(this.size);
     // point(this.x, this.y);
+    // fill(127, this.lifespan);
     ellipse(this.x, this.y, this.size, this.size);
   }
 
@@ -30,5 +31,6 @@ class Particle {
   move() {
     this.x += this.velX ;
     this.y += this.velY;
+    this.lifespan -= 4.0;
   }
 }

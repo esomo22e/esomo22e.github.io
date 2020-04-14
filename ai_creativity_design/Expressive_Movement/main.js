@@ -163,7 +163,7 @@ function drawSkeleton() {
 }
 
 function drawParticles() {
-    if (poses != undefined) {
+
         for (let i = 0; i < poses.length; i++) {
             for (let j = 0; j < poses[i].pose.keypoints.length; j++) {
 
@@ -179,13 +179,13 @@ function drawParticles() {
                     if (point0.checked) {
                         if (partname == "nose") {
                             print("score: " + score);
-                            particles.push(new Particle(x, y, random(1, 3), random(3), random(-2, 2), random(2, 50)));
+                            particles.push(new Particle(x, y, random(1, 3), random(3), random(-5, 5), random(2, 50)));
                         }
                     }
                     if (point1.checked) {
                         if (partname == "leftEye") {
                             print("score: " + score);
-                            particles.push(new Particle(x, y, random(1, 3), random(3), random(-2, 2), random(2, 50)));
+                            particles.push(new Particle(x, y, random(1, 3), random(3), random(-2, 2), random(1, 20)));
                         }
                     }
                     if (point2.checked) {
@@ -294,7 +294,6 @@ function drawParticles() {
                 }
 
             }
-        }
     }
     // image(graphic, 0, 0, width, height);
     // image(video, 0, 0, width, height);

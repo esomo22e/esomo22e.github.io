@@ -28,6 +28,7 @@ body{
 
 #dropdown{
     position:absolute;
+    margin: 10px;
 }
 
 #check_content{
