@@ -9,12 +9,6 @@ var margin = {
   left: 100
 };
 
-// var chartWidth = width - margin.left - margin.right;
-// var chartHeight = height - margin.top - margin.bottom;
-var icon = {
-    "school": "./assets/school.png"
-}
-
 var svg = d3.select("#graph")
   .append('svg')
   .attr("width", width)
@@ -23,6 +17,11 @@ var svg = d3.select("#graph")
 var radius = 8;
 var forceStrength = 0.3;
 var forceStrength2 = 0.05;
+
+var colors = ["#9370DB", "#B0C4DE", "#008080"];
+var colorscale = d3.scaleOrdinal()
+ .range(colors);
+
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
@@ -32,7 +31,7 @@ d3.queue()
   .defer(d3.csv, "./data/words_perc.csv")
   .defer(d3.csv, "./data/schools.csv")
   .await(function(error, data_clothes, data_words, data_schools) {
-    // console.log(data_schools);
+    // //console.log(data_schools);
 
 
 
@@ -53,7 +52,7 @@ d3.queue()
         d.y = height / 2;
       })
 
-      // console.log(data_schools);
+      // //console.log(data_schools);
 
       var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function(d) {
@@ -112,10 +111,10 @@ d3.queue()
           return 250;
       })
       .style("fill", function(d, i) {
-          return "#000";
+          return "#003366";
       })
       .style("stroke", function(d, i) {
-          return "#000";
+          return "#001933";
       })
       .on("mouseover, mousemove", function(d) {
 
@@ -123,10 +122,10 @@ d3.queue()
               .transition()
               .duration(550)
               .style("fill", function(d, i) {
-                  return "red";
+                  return "#FF6666";
               })
               .attr("r", 15);
-              // console.log(d.schoolName);
+              // //console.log(d.schoolName);
               div.transition()
                 .duration(200)
                 .style("opacity", .9);
@@ -140,7 +139,7 @@ d3.queue()
           d3.select(this).transition()
               .duration(550)
               .style("fill", function(d, i) {
-                  return "#000";
+                  return "#003366";
               })
               .attr("r", 8);
 
@@ -153,8 +152,8 @@ d3.queue()
 
 
       function ticked() {
-        //console.log("tick")
-        //console.log(data.map(function(d){ return d.x; }));
+        ////console.log("tick")
+        ////console.log(data.map(function(d){ return d.x; }));
         // circles
         //   .attr("x", function(d) {
         //     return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
@@ -221,7 +220,7 @@ d3.queue()
 
                     var circlesEnter = circles.enter().append("circle")
                     .attr("r", function(d, i) {
-                      // console.log(d);
+                      // //console.log(d);
                         return d.n/3;
                     })
                     .attr("cx", function(d, i) {
@@ -231,44 +230,74 @@ d3.queue()
                         return 250;
                     })
                     .style("fill", function(d, i) {
+                      return colorscale(d.market);
+                      // if(d.market == "f"){
+                      //   return "blue";
+                      // }
+                      // else if(d.market == "n"){
+                      //   return "purple";
+                      // }
+                      // else{
+                      //   return "#000";
 
-                      if(d.market == "f"){
-                        return "blue";
-                      }
-                      else if(d.market == "n"){
-                        return "purple";
-                      }
-                      else{
-                        return "#000";
-
-                      }
+                      // }
                     })
                     .style("stroke", function(d, i) {
                         return "#000";
                     })
-                    .on("mouseover, mousemove", function(d) {
+                    .on("mouseover", function(d) {
+                                 // //console.log(d3.select(this))
 
-                        d3.select(this)
-                            .transition()
-                            .duration(550)
-                            .style("fill", function(d, i) {
-                                return "red";
-                            })
-                            .attr("r", 15);
-
-                    })
+                        // d3.select(this)
+                        //     .transition()
+                        //     .duration(550)
+                        //     .style("fill", function(d, i) {
+                        //         return "red";
+                        //     });
+                        //     //console.log(d)
+                            // //console.log(d.schoolName);
+                    //         div.transition()
+                    //           .duration(200)
+                    //           .style("opacity", .9);
+                    //       div	.html("<b>" + "School: "+ "</b>"+ d.slug + "<br/>"
+                    //       + "<b>Students: </b>"+ d.totalStudents)
+                    //       .style("font-size", "14px")
+                    //           .style("left", (d3.event.pageX) + "px")
+                    //           .style("top", (d3.event.pageY - 28) + "px");
+                  })
                     .on("mouseout", function(d) {
                         d3.select(this).transition()
                             .duration(550)
                             .style("fill", function(d, i) {
                                 return "#000";
-                            })
-                            .attr("r", 8);
+                            });
 
-
+                      //       div.transition()
+                      // .duration(500)
+                      // .style("opacity", 0);
                     });
 
+                  // var circlesText =  circles
+                  // .enter()
+                  // .append("text")
+                  // .attr("x", function(d, i) {
+                  //   // //console.log
+                  //     return d.x = Math.max(d.n/3, Math.min(width - d.n/3, d.x))
+                  //    }
+                  //   )
+                  // .attr("y", function(d, i) {
+                  //   //console.log(d.r, Math.min(width - d.r, d.x));
+                  //
+                  //     return d.y;
+                  // })
+                  // .style("fill", "#000").text(function (d) {
+                  //       return d.slug;
+                  //
+                  //   });;
+
                     circles = circles.merge(circlesEnter);
+                    // circles = circles.merge(circlesText);
+
 
                     function ticked() {
 
@@ -302,6 +331,31 @@ d3.queue()
                       simulation.alpha(1).restart();
                     }
 
+                    // svg
+                    //  .selectAll('text')
+                    //     .data(data_clothes)
+                    //     .enter()
+                    //     .append('text')
+                    //     .attr('x', function (d,i) {
+                    //
+                    //         // return 175 + 25 * i + 2 * i ** 2;
+                    //         return d.x * i;
+                    //
+                    //     })
+                    //     .attr('y', function (d,i) {
+                    //       //console.log(d);
+                    //       return d.y = Math.max(d.n/3, Math.min(height - d.n/3, d.y));
+                    //
+                    //     })
+                    //     .attr('text-anchor', 'start')
+                    //     .attr('alignment-baseline',"hanging")
+                    //     .text(function (d) {
+                    //
+                    //         return d.slug;
+                    //
+                    //     });
+
+
                     groupBubbles();
 
 
@@ -322,7 +376,7 @@ d3.queue()
 
       var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function(d) {
-          return d.n/3 + 3;
+          return d.n/3;
         }).iterations(16))
         .force("charge", d3.forceManyBody().strength(-6));
 
@@ -338,7 +392,7 @@ d3.queue()
 
                   var circlesEnter = circles.enter().append("circle")
                   .attr("r", function(d, i) {
-                    // console.log(d);
+                    // //console.log(d);
                       return d.n/3;
                   })
                   .attr("cx", function(d, i) {
@@ -348,17 +402,8 @@ d3.queue()
                       return 250;
                   })
                   .style("fill", function(d, i) {
+                    return colorscale(d.market);
 
-                    if(d.market == "f"){
-                      return "blue";
-                    }
-                    else if(d.market == "n"){
-                      return "purple";
-                    }
-                    else{
-                      return "#000";
-
-                    }
                   })
                   .style("stroke", function(d, i) {
                       return "#000";
@@ -408,9 +453,9 @@ d3.queue()
                     .on("tick", ticked);
 
                     var push_market = {
-                      f:{ x: width *3/6, y: height *1.25/6 },
-                      m: { x: width *5/6, y: height *5/6},
-                      n: { x: width *1/6, y: height *5/6 }
+                      Female:{ x: width *3/6, y: height *1.5/6 },
+                      Men: { x: width *5/6, y: height *5/6},
+                      Both: { x: width *1/6, y: height *5.25/6 }
                       // f: { x: width / 2, y: height / 3 },
                       // m: { x: width / 3, y: 2*height / 3 },
                       // n: { x: 2*width / 3, y: 2*height / 3 }
@@ -418,9 +463,9 @@ d3.queue()
 
 
                     function splitBubbles(byVar) {
-                      console.log(byVar);
+                      //conso.log(byVar);
                         function bubble_position_x(d) {
-                            console.log(d[byVar]);
+                            //console.log(d[byVar]);
                             return push_market[d[byVar]].x;
                           }
 
@@ -440,8 +485,37 @@ d3.queue()
                                     .y(bubble_position_y)
                                     );
 
-simulation.alpha(2).restart();
+                            simulation.alpha(2).restart();
+
+                            svg
+            .selectAll('rect')
+            .data(data_clothes)
+            .enter()
+            .append('rect')
+            .attr("fill", "#fff")
+            .style("fill-opacity", 0.7)
+            .attr("width", 65)
+            .attr("height", 24)
+            .attr("rx",'5')
+            .attr("ry",'5')
+            .attr('x', function (d) { return bubble_position_x(d)-10; })
+            .attr('y', function (d) { return bubble_position_y(d)- 16; });
+
+                            svg
+                            .selectAll('text')
+                            //.data(data, function(d){ return d[byVar];})
+                            .attr("class", "text-group")
+                            .data(data_clothes)
+                            .enter()
+                            .append('text')
+                            .attr('x', function (d) { return bubble_position_x(d); })
+                            .attr('y', function (d) { return bubble_position_y(d); })
+                            .attr('text-anchor', 'start')
+                            .attr('alignment-baseline',"hanging")
+                            .text(function (d) { return d[byVar]; });
                         }
+
+
 
                         splitBubbles('market');
 
@@ -450,7 +524,7 @@ simulation.alpha(2).restart();
     function sec_4() {
       canvas_clear();
 
-      console.log("section 4")
+      //console.log("section 4")
 
 
     }
@@ -459,7 +533,7 @@ simulation.alpha(2).restart();
 
       canvas_clear();
 
-      console.log("section 5")
+      //console.log("section 5")
 
 
     }
@@ -524,7 +598,7 @@ simulation.alpha(2).restart();
 //
 //       canvas_clear();
 //
-//     console.log("part 1 of final project");
+//     //console.log("part 1 of final project");
 //
 //
 // }
@@ -532,7 +606,7 @@ simulation.alpha(2).restart();
 // function sec_2(){
 //
 //       canvas_clear();
-//       console.log("part 2 of final project");
+//       //console.log("part 2 of final project");
 //
 //
 //
@@ -542,7 +616,7 @@ simulation.alpha(2).restart();
 //
 //       canvas_clear();
 //
-//       console.log("part 3 of final project");
+//       //console.log("part 3 of final project");
 //
 //
 // }
@@ -552,7 +626,7 @@ simulation.alpha(2).restart();
 //
 //       canvas_clear();
 //
-//       console.log("part 4 of final project");
+//       //console.log("part 4 of final project");
 //
 //
 // }
@@ -563,7 +637,7 @@ simulation.alpha(2).restart();
 //
 //       canvas_clear();
 //
-//       console.log("part 5 of final project");
+//       //console.log("part 5 of final project");
 //
 //
 // }
@@ -575,7 +649,7 @@ simulation.alpha(2).restart();
 //
 //       canvas_clear();
 //
-//       console.log("part 6 of final project");
+//       //console.log("part 6 of final project");
 //
 // }
 //

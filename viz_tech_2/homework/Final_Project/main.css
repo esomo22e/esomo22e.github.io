@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Da+2|Carter+One|Courgette|Handlee|Marko+One|Merienda|Spicy+Rice&display=swap');
 body{
-  background: #FFCCE5;
+  background: #FFE5CC;
   margin:0 auto;
   max-width: 900px;
   overflow-x: hidden;
@@ -12,6 +12,7 @@ h1{
   font-family: 'Merienda', cursive;
   font-weight: 600;
   font-size: 40px;
+  color: #003366;
 }
 
 .content_cont{
@@ -22,6 +23,28 @@ h1{
 p.intro{
   font-size: 25px;
   font-family: 'Handlee', cursive;
+  color: #003366;
+
+}
+
+.text-group{
+    background: "#fff";
+    opacity: 0.8;
+}
+
+a.link{
+    color: #009999;
+}
+
+a:hover{
+  color: #005555;
+}
+circle{
+    fill: pink;
+}
+
+circle: hover {
+  fill: orangered ;
 }
 
 #container{
@@ -78,7 +101,7 @@ p.intro{
   position: sticky;
   top: 0px;
   /* float: right; */
-  border: 3px solid red;
+  /* border: 3px solid red; */
 }
 
 pre{
