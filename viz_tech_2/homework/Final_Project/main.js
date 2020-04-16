@@ -197,7 +197,10 @@ d3.queue()
     function sec_2() { //who's won more
       canvas_clear();
 
-      console.log("section 2")
+      console.log("section 2");
+
+      var keys = ["Female    ", "Both     ", "Male"];
+
 
       data_clothes.forEach(function(d) {
         // d.r = radius;
@@ -223,49 +226,25 @@ d3.queue()
                       // //console.log(d);
                         return d.n/3;
                     })
-                    .attr("cx", function(d, i) {
-                        return 175 + 25 * i + 2 * i ** 2;
-                    })
-                    .attr("cy", function(d, i) {
-                        return 250;
-                    })
+                    // .attr("cx", function(d, i) {
+                    //     return 175 + 25 * i + 2 * i ** 2;
+                    // })
+                    // .attr("cy", function(d, i) {
+                    //     return 250;
+                    // })
                     .style("fill", function(d, i) {
                       return colorscale(d.market);
-                      // if(d.market == "f"){
-                      //   return "blue";
-                      // }
-                      // else if(d.market == "n"){
-                      //   return "purple";
-                      // }
-                      // else{
-                      //   return "#000";
 
-                      // }
                     })
                     .style("stroke", function(d, i) {
                         return "#000";
                     })
-                    .on("mouseover", function(d) {
+                 .on('mouseover, mousemove', function(d) {
                                  // //console.log(d3.select(this))
+                                 console.log(d);
 
-                        // d3.select(this)
-                        //     .transition()
-                        //     .duration(550)
-                        //     .style("fill", function(d, i) {
-                        //         return "red";
-                        //     });
-                        //     //console.log(d)
-                            // //console.log(d.schoolName);
-                    //         div.transition()
-                    //           .duration(200)
-                    //           .style("opacity", .9);
-                    //       div	.html("<b>" + "School: "+ "</b>"+ d.slug + "<br/>"
-                    //       + "<b>Students: </b>"+ d.totalStudents)
-                    //       .style("font-size", "14px")
-                    //           .style("left", (d3.event.pageX) + "px")
-                    //           .style("top", (d3.event.pageY - 28) + "px");
                   })
-                    .on("mouseout", function(d) {
+                    .on("mouseout", function(d,i) {
                         d3.select(this).transition()
                             .duration(550)
                             .style("fill", function(d, i) {
@@ -354,6 +333,31 @@ d3.queue()
                     //         return d.slug;
                     //
                     //     });
+                    svg.selectAll("mydots")
+                        .data(keys)
+                        .enter()
+                        .append("circle")
+                          .attr("cx", 100)
+                          .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                          .attr("r", 7)
+                          .style("fill", function(d){
+                            console.log(d);
+                            // return colorscale(d);
+                            return colorscale(d);
+
+                          });
+
+                          svg.selectAll("mylabels")
+                              .data(keys)
+                              .enter()
+                              .append("text")
+                                .attr("x", 120)
+                                .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                                .style("fill", function(d){ return colorscale(d)})
+                                .text(function(d){ return d})
+                                .attr("text-anchor", "left")
+                                .style("alignment-baseline", "middle");
+
 
 
                     groupBubbles();
@@ -367,6 +371,7 @@ d3.queue()
       canvas_clear();
 
       console.log("section 3")
+
 
       data_clothes.forEach(function(d) {
         // d.r = radius;
@@ -492,7 +497,7 @@ d3.queue()
             .data(data_clothes)
             .enter()
             .append('rect')
-            .attr("fill", "#fff")
+            .attr("fill", "#FFFAF0")
             .style("fill-opacity", 0.7)
             .attr("width", 65)
             .attr("height", 24)
