@@ -408,12 +408,12 @@ d3.queue()
                     .on("tick", ticked);
 
                     var push_market = {
-                      // f:{ x: width *1/3, y: height *1.25/3 },
-                      // m: { x: width *3/6, y: height *1.25/3 },
-                      // n: { x: width *2/3, y: height *1.22/3 }
-                      f: { x: width / 2, y: height / 3 },
-                      m: { x: width / 3, y: 2*height / 3 },
-                      n: { x: 2*width / 3, y: 2*height / 3 }
+                      f:{ x: width *3/6, y: height *1.25/6 },
+                      m: { x: width *5/6, y: height *5/6},
+                      n: { x: width *1/6, y: height *5/6 }
+                      // f: { x: width / 2, y: height / 3 },
+                      // m: { x: width / 3, y: 2*height / 3 },
+                      // n: { x: 2*width / 3, y: 2*height / 3 }
                     }
 
 
