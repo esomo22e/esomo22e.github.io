@@ -43,10 +43,40 @@ circle{
     fill: pink;
 }
 
+
 circle: hover {
-  fill: orangered ;
+  fill: #FF4704 ;
 }
 
+h4{
+  font-size: 40px;
+  font-weight: 600;
+  color: #004386;
+}
+
+p.content{
+    font-size: 24px;
+    color: #004386;
+}
+span.dress{
+    font-weight: 600;
+    color: #FF4704;
+}
+
+span.fem{
+    font-weight: 600;
+    color: #9370DB;
+}
+
+span.male{
+    font-weight: 600;
+    color: #008080;
+}
+
+span.both{
+    font-weight: 600;
+    color: #8496AE;
+}
 #container{
   position: relative;
 }

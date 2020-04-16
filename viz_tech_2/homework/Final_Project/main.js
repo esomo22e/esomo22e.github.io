@@ -256,6 +256,7 @@ d3.queue()
                       // .style("opacity", 0);
                     });
 
+
                   // var circlesText =  circles
                   // .enter()
                   // .append("text")
@@ -318,12 +319,12 @@ d3.queue()
                     //     .attr('x', function (d,i) {
                     //
                     //         // return 175 + 25 * i + 2 * i ** 2;
-                    //         return d.x * i;
+                    //         return d.x;
                     //
                     //     })
                     //     .attr('y', function (d,i) {
                     //       //console.log(d);
-                    //       return d.y = Math.max(d.n/3, Math.min(height - d.n/3, d.y));
+                    //       return d.y;
                     //
                     //     })
                     //     .attr('text-anchor', 'start')
@@ -333,6 +334,7 @@ d3.queue()
                     //         return d.slug;
                     //
                     //     });
+
                     svg.selectAll("mydots")
                         .data(keys)
                         .enter()
@@ -442,12 +444,12 @@ d3.queue()
 
                     circles
                     .attr("cx", function(d) {
-                      return d.x = Math.max(d.n/3, Math.min(width - d.n/3, d.x));
+                      return d.x = Math.max(d.n/4, Math.min(width - d.n/4, d.x));
                       // return d.x;
 
                     })
                     .attr("cy", function(d) {
-                      return d.y = Math.max(d.n/3, Math.min(height - d.n/3, d.y));
+                      return d.y = Math.max(d.n/4, Math.min(height - d.n/4, d.y));
                       // return d.y;
                     });
 
@@ -460,7 +462,7 @@ d3.queue()
                     var push_market = {
                       Female:{ x: width *3/6, y: height *1.5/6 },
                       Men: { x: width *5/6, y: height *5/6},
-                      Both: { x: width *1/6, y: height *5.25/6 }
+                      Both: { x: width *1.5/6, y: height *5/6 }
                       // f: { x: width / 2, y: height / 3 },
                       // m: { x: width / 3, y: 2*height / 3 },
                       // n: { x: 2*width / 3, y: 2*height / 3 }
@@ -558,9 +560,7 @@ d3.queue()
         [
           sec_1,
           sec_2,
-          sec_3,
-          sec_4,
-          sec_5
+          sec_3
         ][i]();
 
       });
@@ -569,119 +569,3 @@ d3.queue()
 
 
   });
-
-
-// var oldWidth = 0
-// function render(){
-//
-//   if (oldWidth == innerWidth) return
-//   oldWidth = innerWidth
-//
-//   var width = d3.select('#graph').node().offsetWidth,
-//       height = innerWidth > 925 ? width : innerHeight * 0.9
-//       ;
-//       //,
-//       //this sets the graph on mobile at a 7th of the height, while on desktop it'll be a square
-//
-// var svg = d3
-//             .select('#graph')
-//             .html('')
-//             .append('svg')
-//             .attrs({width: width, height: height})
-//             ;
-//
-// function canvas_clear(){
-//
-// svg
-//     .selectAll("*")
-//     .remove();
-// }
-//
-//
-//
-// function sec_1(){
-//
-//       canvas_clear();
-//
-//     //console.log("part 1 of final project");
-//
-//
-// }
-//
-// function sec_2(){
-//
-//       canvas_clear();
-//       //console.log("part 2 of final project");
-//
-//
-//
-// }
-//
-// function sec_3(){    //how has dominance changed over the decades
-//
-//       canvas_clear();
-//
-//       //console.log("part 3 of final project");
-//
-//
-// }
-//
-//
-// function sec_4(){   //where have they played each other?
-//
-//       canvas_clear();
-//
-//       //console.log("part 4 of final project");
-//
-//
-// }
-//
-//
-//
-// function sec_5(){
-//
-//       canvas_clear();
-//
-//       //console.log("part 5 of final project");
-//
-//
-// }
-//
-//
-// function sec_6(){    //categorising or 'binning' the victory margins
-//                       //find how close Ind-Pak matches have been
-//
-//
-//       canvas_clear();
-//
-//       //console.log("part 6 of final project");
-//
-// }
-//
-//
-//
-//   var gs = d3.graphScroll()
-//       .container(d3.select('#container'))
-//       .graph(d3.selectAll('#graph'))
-//       .sections(d3.selectAll('#sections > div'))
-//       // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
-//       .eventId('uniqueId1')
-//       .on('active', function(i){
-//
-//               [
-//                 sec_1,
-//                 sec_2,
-//                 sec_3,
-//                 sec_4,
-//                 sec_5
-//                        ][i]();
-//
-// })
-//
-// //the brace above is completed by the brace appearing before the list of function names
-//
-// }
-// //this is the brace that closes the render function
-//
-// render()
-// d3.select(window).on('resize', render)
