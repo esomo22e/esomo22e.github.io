@@ -245,11 +245,7 @@ d3.queue()
 
                   })
                     .on("mouseout", function(d,i) {
-                        d3.select(this).transition()
-                            .duration(550)
-                            .style("fill", function(d, i) {
-                                return "#000";
-                            });
+                
 
                       //       div.transition()
                       // .duration(500)

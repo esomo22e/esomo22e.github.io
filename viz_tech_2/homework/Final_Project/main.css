@@ -82,9 +82,9 @@ span.both{
 }
 
 #sections{
-  // width: 340px;
+  /* // width: 340px; */
   width: auto;
-  position: relative;
+  /* position: relative */
   margin: 0px auto;
   font-family: 'Handlee', cursive;
   font-size: 20px;
