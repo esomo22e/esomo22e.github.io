@@ -1,41 +1,41 @@
 slug,market,reveal_body,n,per,group
-short* shorts,Female,y,334,69,60
-visible underwear,Both,y,332,69,60
-short* skirt,Female,y,290,60,60
-sagging pants,Men,y,219,45,40
-sheer clothing,Female,y,201,42,40
-strapless top,Female,y,187,39,30
-spaghetti strap,Female,y,184,38,30
-halter top,Female,y,183,38,30
-low neckline,Female,y,177,37,30
-short* dresses,Female,y,172,36,30
-pajamas,Both,n,161,33,30
-muscle shirt,Men,y,133,28,20
-tank top,Both,y,131,27,20
-narrow straps,Female,y,127,26,20
-leggings,Female,y,124,26,20
-tight clothing,Female,y,108,22,20
-loose clothing,Both,n,86,18,10
-crop top,Female,y,82,17,10
-backless shirt,Female,y,81,17,10
-fishnet clothing,Female,y,73,15,10
-visible bra straps,Female,y,71,15,10
-sleeveless shirt,Both,y,69,14,10
-holes above thigh,Both,y,65,13,10
-frayed clothing,Both,y,58,12,10
-bike shorts,Both,y,54,11,10
-short* clothing,Female,y,50,10,10
-cutoff shorts,Female,y,49,10,10
-spandex clothing,Both,y,41,8,0
-backless dress,Female,y,40,8,0
-no underwear,Both,y,32,7,0
-off shoulder shirt,Female,y,31,6,0
-undershirt,Both,y,31,6,0
-holes above knee,Both,y,26,5,0
-swimwear,Both,y,25,5,0
-cutoff pants,Both,n,24,5,0
-very long shirt,Both,n,24,5,0
-gym shorts,Both,y,24,5,0
-pants with holes,Both,y,23,5,0
-low backline,Female,y,22,5,0
-strapless dress,Female,y,22,5,0
+Short shorts,Female,y,334,69,60
+Visible underwear,Both,y,332,69,60
+Short skirt,Female,y,290,60,60
+Sagging pants,Men,y,219,45,40
+Sheer clothing,Female,y,201,42,40
+Strapless top,Female,y,187,39,30
+Spaghetti strap,Female,y,184,38,30
+Halter top,Female,y,183,38,30
+Low neckline,Female,y,177,37,30
+Short dresses,Female,y,172,36,30
+Pajamas,Both,n,161,33,30
+Muscle shirt,Men,y,133,28,20
+Tank top,Both,y,131,27,20
+Narrow straps,Female,y,127,26,20
+Leggings,Female,y,124,26,20
+Tight clothing,Female,y,108,22,20
+Loose clothing,Both,n,86,18,10
+Crop top,Female,y,82,17,10
+Backless shirt,Female,y,81,17,10
+Fishnet clothing,Female,y,73,15,10
+Visible bra straps,Female,y,71,15,10
+Sleeveless shirt,Both,y,69,14,10
+Holes above thigh,Both,y,65,13,10
+Frayed clothing,Both,y,58,12,10
+Bike shorts,Both,y,54,11,10
+Short clothing,Female,y,50,10,10
+Cutoff shorts,Female,y,49,10,10
+Spandex clothing,Both,y,41,8,0
+Backless dress,Female,y,40,8,0
+No underwear,Both,y,32,7,0
+Off shoulder shirt,Female,y,31,6,0
+Undershirt,Both,y,31,6,0
+Holes above knee,Both,y,26,5,0
+Swimwear,Both,y,25,5,0
+Cutoff pants,Both,n,24,5,0
+Very long shirt,Both,n,24,5,0
+Gym shorts,Both,y,24,5,0
+Pants with holes,Both,y,23,5,0
+Low backline,Female,y,22,5,0
+Strapless dress,Female,y,22,5,0

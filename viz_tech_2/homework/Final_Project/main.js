@@ -19,9 +19,12 @@ var forceStrength = 0.3;
 var forceStrength2 = 0.05;
 
 var colors = ["#9370DB", "#B0C4DE", "#008080"];
+var colorHighlight = [ "#7870db", "#7a9cc7", "#004d4d" ];
 var colorscale = d3.scaleOrdinal()
  .range(colors);
 
+var colorscaleHigh = d3.scaleOrdinal()
+.range(colorHighlight);
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
@@ -226,12 +229,12 @@ d3.queue()
                       // //console.log(d);
                         return d.n/3;
                     })
-                    // .attr("cx", function(d, i) {
-                    //     return 175 + 25 * i + 2 * i ** 2;
-                    // })
-                    // .attr("cy", function(d, i) {
-                    //     return 250;
-                    // })
+                    .attr("cx", function(d, i) {
+                        return 175 + 25 * i + 2 * i ** 2;
+                    })
+                    .attr("cy", function(d, i) {
+                        return 250;
+                    })
                     .style("fill", function(d, i) {
                       return colorscale(d.market);
 
@@ -242,11 +245,32 @@ d3.queue()
                  .on('mouseover, mousemove', function(d) {
                                  // //console.log(d3.select(this))
                                  console.log(d);
+                                 d3.select(this)
+                                     .transition()
+                                     .duration(200)
+                                     .style("fill", function(d, i) {
+                                         return colorscaleHigh(d.market);
+                                     })
+
+                                     div.transition()
+                                       .duration(200)
+                                       .style("opacity", .9);
+                                   div.html("<b>"+d.slug + "</b>" + "<br>" +"Number of Schools: "+ d.n + "<br>" +"Marketed: " + d.market)
+                                   .style("font-size", "14px")
+                                       .style("left", (d3.event.pageX) + "px")
+                                       .style("top", (d3.event.pageY - 28) + "px");
 
                   })
                     .on("mouseout", function(d,i) {
-                
-
+                      div.transition()
+                        .duration(200)
+                        .style("opacity", 0);
+                      d3.select(this)
+                          .transition()
+                          .duration(200)
+                          .style("fill", function(d, i) {
+                              return colorscale(d.market);
+                          })
                       //       div.transition()
                       // .duration(500)
                       // .style("opacity", 0);
@@ -413,22 +437,22 @@ d3.queue()
                   })
                   .on("mouseover, mousemove", function(d) {
 
-                      d3.select(this)
-                          .transition()
-                          .duration(550)
-                          .style("fill", function(d, i) {
-                              return "red";
-                          })
-                          .attr("r", 15);
+                      // d3.select(this)
+                      //     .transition()
+                      //     .duration(550)
+                      //     .style("fill", function(d, i) {
+                      //         return "red";
+                      //     })
+                      //     .attr("r", 15);
 
                   })
                   .on("mouseout", function(d) {
-                      d3.select(this).transition()
-                          .duration(550)
-                          .style("fill", function(d, i) {
-                              return "#000";
-                          })
-                          .attr("r", 8);
+                      // d3.select(this).transition()
+                      //     .duration(550)
+                      //     .style("fill", function(d, i) {
+                      //         return "#000";
+                      //     })
+                      //     .attr("r", 8);
 
 
                   });
