@@ -261,10 +261,7 @@ text.footnote{
           font-weight: normal;
      }
 
-text.value {
-        fill: #ffda29;
-        opacity:1;
-    }
+
 
 text.title {
           font-size:16px;

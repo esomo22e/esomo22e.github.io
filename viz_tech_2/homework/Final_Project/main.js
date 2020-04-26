@@ -158,16 +158,7 @@ d3.queue()
 
 
       function ticked() {
-        ////console.log("tick")
-        ////console.log(data.map(function(d){ return d.x; }));
-        // circles
-        //   .attr("x", function(d) {
-        //     return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
-        //
-        //   })
-        //   .attr("y", function(d) {
-        //     return d.y = Math.max(d.r, Math.min(height - d.r, d.y));
-        //   });
+
         circles
           .attr("cx", function(d) {
             return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
@@ -285,7 +276,17 @@ d3.queue()
                                      .transition()
                                      .duration(200)
                                      .style("fill", function(d, i) {
-                                         return colorscaleHigh(d.market);
+                                         // return colorscaleHigh(d.market);
+                                         if(d.market == "Female"){
+                                           return "#5247d1";
+                                         }
+                                         else if(d.market == "Male"){
+                                           return "#004d4d";
+                                         }
+                                         else{
+                                           return "#7a9cc7";
+
+                                         }
                                      })
 
                                      div.transition()
@@ -352,29 +353,6 @@ d3.queue()
                       simulation.alpha(1).restart();
                     }
 
-                    // svg
-                    //  .selectAll('text')
-                    //     .data(data_clothes)
-                    //     .enter()
-                    //     .append('text')
-                    //     .attr('x', function (d,i) {
-                    //
-                    //         // return 175 + 25 * i + 2 * i ** 2;
-                    //         return d.x;
-                    //
-                    //     })
-                    //     .attr('y', function (d,i) {
-                    //       //console.log(d);
-                    //       return d.y;
-                    //
-                    //     })
-                    //     .attr('text-anchor', 'start')
-                    //     .attr('alignment-baseline',"hanging")
-                    //     .text(function (d) {
-                    //
-                    //         return d.slug;
-                    //
-                    //     });
 
                     svg.selectAll("mydots")
                         .data(keys)
@@ -458,23 +436,45 @@ d3.queue()
                   })
                   .on("mouseover, mousemove", function(d) {
 
-                      // d3.select(this)
-                      //     .transition()
-                      //     .duration(550)
-                      //     .style("fill", function(d, i) {
-                      //         return "red";
-                      //     })
-                      //     .attr("r", 15);
+                    d3.select(this)
+                        .transition()
+                        .duration(200)
+                        .style("fill", function(d, i) {
+                            // return colorscaleHigh(d.market);
+                            if(d.market == "Female"){
+                              return "#5247d1";
+                            }
+                            else if(d.market == "Male"){
+                              return "#004d4d";
+                            }
+                            else{
+                              return "#7a9cc7";
 
-                  })
-                  .on("mouseout", function(d) {
-                      // d3.select(this).transition()
-                      //     .duration(550)
-                      //     .style("fill", function(d, i) {
-                      //         return "#000";
-                      //     })
-                      //     .attr("r", 8);
+                            }
+                        })
 
+                        div.transition()
+                          .duration(200)
+                          .style("opacity", .9);
+                      div.html("<b>"+d.slug + "</b>" + "<br>"
+                      +"<b>" + "Number of Schools: "+ "</b>"+d.n
+                      + "<br>" +"<b>" +"Market: " + "</b>" +d.market)
+                      .style("font-size", "14px")
+                          .style("left", (d3.event.pageX) + "px")
+                          .style("top", (d3.event.pageY - 28) + "px");
+
+         })
+         .on("mouseout", function(d,i) {
+         div.transition()
+           .duration(200)
+           .style("opacity", 0);
+
+                    d3.select(this)
+                        .transition()
+                        .duration(200)
+                        .style("fill", function(d, i) {
+                            return colorscale(d.market);
+                        })
 
                   });
 
@@ -501,9 +501,9 @@ d3.queue()
                     .on("tick", ticked);
 
                     var push_market = {
-                      Female:{ x: width *3/6, y: height *1.5/6 },
-                      Men: { x: width *5/6, y: height *5/6},
-                      Both: { x: width *1.5/6, y: height *5/6 }
+                      Female:{ x: width *3/6, y: height *1/6 },
+                      Male: { x: width *5/6, y: height *5/6},
+                      Both: { x: width *1.5/6, y: height *4.5/6 }
                       // f: { x: width / 2, y: height / 3 },
                       // m: { x: width / 3, y: 2*height / 3 },
                       // n: { x: 2*width / 3, y: 2*height / 3 }
