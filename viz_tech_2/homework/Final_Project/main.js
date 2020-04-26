@@ -197,32 +197,38 @@ d3.queue()
 
       groupBubbles();
 
-      svg
-      .selectAll('rect')
-      .data(data_schools)
-      .enter()
-      .append('rect')
-      .attr("class", "rect-center")
-      // .attr("fill", "#FFFAF0")
-      // .style("fill-opacity", 0.7)
-      // .attr("width", 65)
-      // .attr("height", 24)
-      .attr("rx",'10')
-      .attr("ry",'10')
-      .attr('x', function (d) { return width/4; })
-      .attr('y', function (d) { return height * (1.25/3); });
-
-      svg
-      .selectAll('text')
-      .data(data_schools)
-      .enter()
-      .append('text')
-      .attr("class", "text-center")
-      .attr('x', function (d) { return width/2.65; })
-      .attr('y', function (d) { return height * (1.35/3); })
-      .attr('text-anchor', 'start')
-      .attr('alignment-baseline',"hanging")
-      .text(function (d) { return "481 schools"; });
+      // svg
+      // .selectAll('rect')
+      // .data(data_schools)
+      // .enter()
+      // .append('rect')
+      // .attr("class", "rect-center")
+      // // .attr("fill", "#FFFAF0")
+      // // .style("fill-opacity", 0.7)
+      // // .attr("width", 65)
+      // // .attr("height", 24)
+      // .attr("rx",'10')
+      // .attr("ry",'10')
+      // .attr('x', function (d) { return width/4; })
+      // .attr('y', function (d) { return height * (1.25/3); })
+      // .transition()
+			// .duration(8000)
+			// .style("opacity", 0);
+      //
+      // svg
+      // .selectAll('text')
+      // .data(data_schools)
+      // .enter()
+      // .append('text')
+      // .attr("class", "text-center")
+      // .attr('x', function (d) { return width/2.65; })
+      // .attr('y', function (d) { return height * (1.35/3); })
+      // // .attr('text-anchor', 'start')
+      // // .attr('alignment-baseline',"hanging")
+      // .text(function (d) { return "481 schools"; })
+      // .transition()
+      // .duration(8000)
+      // .style("opacity", 0);
 
 
     }

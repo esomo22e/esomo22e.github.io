@@ -149,7 +149,7 @@ pre{
 .rect-center{
   width: 50%;
   height: 10%;
-  opacity: 0.05;
+  opacity: 0.5;
   fill: #FFFAF0;
   margin: 0 auto;
 }
@@ -159,8 +159,70 @@ pre{
   text-align: center;
   margin: 0 auto;
   font-family: 'Handlee', cursive;
+  text-anchor: start;
+  alignment-baseline: hanging;
+/*
+  animation: fadeOut ease 5s;
+  -webkit-animation: fadeOut ease 5s;
+  -moz-animation: fadeOut ease 5s;
+  -o-animation: fadeOut ease 5s;
+  -ms-animation: fadeOut ease 5s; */
 
 }
+/*
+.fade-out {
+  animation: fadeOut ease 8s;
+  -webkit-animation: fadeOut ease 8s;
+  -moz-animation: fadeOut ease 8s;
+  -o-animation: fadeOut ease 8s;
+  -ms-animation: fadeOut ease 8s;
+} */
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+}
+}
+
 @media (max-width: 925px)  {
   #graph{
     width: 100%;
