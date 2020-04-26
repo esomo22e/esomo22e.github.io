@@ -188,38 +188,7 @@ d3.queue()
 
       groupBubbles();
 
-      // svg
-      // .selectAll('rect')
-      // .data(data_schools)
-      // .enter()
-      // .append('rect')
-      // .attr("class", "rect-center")
-      // // .attr("fill", "#FFFAF0")
-      // // .style("fill-opacity", 0.7)
-      // // .attr("width", 65)
-      // // .attr("height", 24)
-      // .attr("rx",'10')
-      // .attr("ry",'10')
-      // .attr('x', function (d) { return width/4; })
-      // .attr('y', function (d) { return height * (1.25/3); })
-      // .transition()
-			// .duration(8000)
-			// .style("opacity", 0);
-      //
-      // svg
-      // .selectAll('text')
-      // .data(data_schools)
-      // .enter()
-      // .append('text')
-      // .attr("class", "text-center")
-      // .attr('x', function (d) { return width/2.65; })
-      // .attr('y', function (d) { return height * (1.35/3); })
-      // // .attr('text-anchor', 'start')
-      // // .attr('alignment-baseline',"hanging")
-      // .text(function (d) { return "481 schools"; })
-      // .transition()
-      // .duration(8000)
-      // .style("opacity", 0);
+
 
 
     }
@@ -240,7 +209,7 @@ d3.queue()
 
       var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function(d) {
-          return d.n/3 + 3;
+          return d.n/3.05;
         }).iterations(16))
         .force("charge", d3.forceManyBody())
         .force("y", d3.forceY().y(height / 2))
@@ -402,7 +371,7 @@ d3.queue()
 
       var simulation = d3.forceSimulation()
         .force("collide", d3.forceCollide(function(d) {
-          return d.n/3;
+          return d.n/3.05;
         }).iterations(16))
         .force("charge", d3.forceManyBody().strength(-6));
 
@@ -501,9 +470,9 @@ d3.queue()
                     .on("tick", ticked);
 
                     var push_market = {
-                      Female:{ x: width *3/6, y: height *1/6 },
+                      Female:{ x: width *3/6, y: height *1.3/6 },
                       Male: { x: width *5/6, y: height *5/6},
-                      Both: { x: width *1.5/6, y: height *4.5/6 }
+                      Both: { x: width *1.25/6, y: height *4.85/6 }
                       // f: { x: width / 2, y: height / 3 },
                       // m: { x: width / 3, y: 2*height / 3 },
                       // n: { x: 2*width / 3, y: 2*height / 3 }
