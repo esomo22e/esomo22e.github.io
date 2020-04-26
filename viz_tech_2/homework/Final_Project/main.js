@@ -19,12 +19,15 @@ var forceStrength = 0.3;
 var forceStrength2 = 0.05;
 
 var colors = ["#9370DB", "#B0C4DE", "#008080"];
-var colorHighlight = [ "#7870db", "#7a9cc7", "#004d4d" ];
+
+var colorHighlight = ["#7870db", "#7a9cc7", "#004d4d"];
 var colorscale = d3.scaleOrdinal()
  .range(colors);
 
 var colorscaleHigh = d3.scaleOrdinal()
 .range(colorHighlight);
+
+
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
@@ -194,6 +197,33 @@ d3.queue()
 
       groupBubbles();
 
+      svg
+      .selectAll('rect')
+      .data(data_schools)
+      .enter()
+      .append('rect')
+      .attr("class", "rect-center")
+      // .attr("fill", "#FFFAF0")
+      // .style("fill-opacity", 0.7)
+      // .attr("width", 65)
+      // .attr("height", 24)
+      .attr("rx",'10')
+      .attr("ry",'10')
+      .attr('x', function (d) { return width/4; })
+      .attr('y', function (d) { return height * (1.25/3); });
+
+      svg
+      .selectAll('text')
+      .data(data_schools)
+      .enter()
+      .append('text')
+      .attr("class", "text-center")
+      .attr('x', function (d) { return width/2.65; })
+      .attr('y', function (d) { return height * (1.35/3); })
+      .attr('text-anchor', 'start')
+      .attr('alignment-baseline',"hanging")
+      .text(function (d) { return "481 schools"; });
+
 
     }
 
@@ -255,7 +285,9 @@ d3.queue()
                                      div.transition()
                                        .duration(200)
                                        .style("opacity", .9);
-                                   div.html("<b>"+d.slug + "</b>" + "<br>" +"Number of Schools: "+ d.n + "<br>" +"Marketed: " + d.market)
+                                   div.html("<b>"+d.slug + "</b>" + "<br>"
+                                   +"<b>" + "Number of Schools: "+ "</b>"+d.n
+                                   + "<br>" +"<b>" +"Market: " + "</b>" +d.market)
                                    .style("font-size", "14px")
                                        .style("left", (d3.event.pageX) + "px")
                                        .style("top", (d3.event.pageY - 28) + "px");
@@ -277,23 +309,6 @@ d3.queue()
                     });
 
 
-                  // var circlesText =  circles
-                  // .enter()
-                  // .append("text")
-                  // .attr("x", function(d, i) {
-                  //   // //console.log
-                  //     return d.x = Math.max(d.n/3, Math.min(width - d.n/3, d.x))
-                  //    }
-                  //   )
-                  // .attr("y", function(d, i) {
-                  //   //console.log(d.r, Math.min(width - d.r, d.x));
-                  //
-                  //     return d.y;
-                  // })
-                  // .style("fill", "#000").text(function (d) {
-                  //       return d.slug;
-                  //
-                  //   });;
 
                     circles = circles.merge(circlesEnter);
                     // circles = circles.merge(circlesText);
@@ -515,18 +530,18 @@ d3.queue()
                             simulation.alpha(2).restart();
 
                             svg
-            .selectAll('rect')
-            .data(data_clothes)
-            .enter()
-            .append('rect')
-            .attr("fill", "#FFFAF0")
-            .style("fill-opacity", 0.7)
-            .attr("width", 65)
-            .attr("height", 24)
-            .attr("rx",'5')
-            .attr("ry",'5')
-            .attr('x', function (d) { return bubble_position_x(d)-10; })
-            .attr('y', function (d) { return bubble_position_y(d)- 16; });
+                            .selectAll('rect')
+                            .data(data_clothes)
+                            .enter()
+                            .append('rect')
+                            .attr("fill", "#FFFAF0")
+                            .style("fill-opacity", 0.7)
+                            .attr("width", 65)
+                            .attr("height", 24)
+                            .attr("rx",'5')
+                            .attr("ry",'5')
+                            .attr('x', function (d) { return bubble_position_x(d)-10; })
+                            .attr('y', function (d) { return bubble_position_y(d)-5; });
 
                             svg
                             .selectAll('text')
@@ -545,23 +560,6 @@ d3.queue()
 
 
                         splitBubbles('market');
-
-    }
-
-    function sec_4() {
-      canvas_clear();
-
-      //console.log("section 4")
-
-
-    }
-
-    function sec_5() {
-
-      canvas_clear();
-
-      //console.log("section 5")
-
 
     }
 

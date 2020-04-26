@@ -145,6 +145,22 @@ pre{
     width: auto !important;
     -webkit-appearance: slider-horizontal !important;
 }
+
+.rect-center{
+  width: 50%;
+  height: 10%;
+  opacity: 0.05;
+  fill: #FFFAF0;
+  margin: 0 auto;
+}
+
+.text-center{
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Handlee', cursive;
+
+}
 @media (max-width: 925px)  {
   #graph{
     width: 100%;
@@ -202,8 +218,9 @@ div.tooltip {
     position: absolute;
     text-align: center;
     margin: 0 auto;
-    width: 160px;
-    height: 55px;
+    width: 180px;
+    /* height: 55px; */
+
     padding: 2px;
     font: 12px sans-serif;
     background: lightsteelblue;
