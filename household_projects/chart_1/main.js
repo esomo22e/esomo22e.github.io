@@ -33,29 +33,24 @@ d3.json("./data/aggregation_query.json", function(error, data) {
     .attr("cx", width / 2)
     .attr("cy", height / 2)
     .style("fill", function(d){ return color(d.geo.PUMA)})
-    // .style("fill", function(d){
-    //   console.log(d.geo.PUMA);
-    //   if(d.geo.PUMA == 3301){
-    //     return "#69b3a2";
-    //
-    //   }
-    //   else if(d.geo.PUMA == 3302){
-    //     return "#FFA07A";
-    //   }
-    //   else if(d.geo.PUMA == 3303){
-    //     return "#beaed4";
-    //   }
-    //   else if(d.geo.PUMA == 3304){
-    //     return "#e7298a";
-    //   }
-    //   else if(d.geo.PUMA == 3305){
-    //     return "#386cb0";
-    //   }
-    //
-    // })
-    // .style("fill-opacity", 0.3)
+    .style("fill-opacity", 0.8)
     .attr("stroke", "#69a2b2")
-    .style("stroke-width", 1)
+    .style("stroke-width", 1);
+
+
+    var text = svg.selectAll("text")
+                   .data(data)
+                     .enter()
+                     .append("text");
+
+    //Add SVG Text Element Attributes
+    var textLabels = text
+                .attr("x", function(d) { return (x(d.geo.PUMA)) + 300; })
+               .attr("y", function(d) { return 200; })
+                 .text( function (d) { return d.geo.PUMA; })
+                 .attr("font-family", "sans-serif")
+                .attr("font-size", "20px")
+                 .attr("fill", "black");
 
 // Features of the forces applied to the nodes:
 var simulation = d3.forceSimulation()
