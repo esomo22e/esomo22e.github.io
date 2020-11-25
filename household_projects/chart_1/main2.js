@@ -1,10 +1,10 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = d3.select("#chart").node().getBoundingClientRect().width - margin.left - margin.right,
-    height = d3.select("#chart").node().getBoundingClientRect().height - margin.top - margin.bottom;
+    width = d3.select("#chart2").node().getBoundingClientRect().width - margin.left - margin.right,
+    height = d3.select("#chart2").node().getBoundingClientRect().height - margin.top - margin.bottom;
 
 
 
-var svg = d3.select("#chart").append("svg")
+var svg = d3.select("#chart2").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
