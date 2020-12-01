@@ -3,27 +3,41 @@
 var s = function( p ) { // p could be any variable name
   var x = 100;
   var y = 100;
+
+  var text = 'Nail Process';
   p.setup = function() {
     p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
   };
 
   p.draw = function() {
 
-    p.background(0);
-    p.fill(255);
-    p.rect(x,y,50,50);
 
-    // console.log(p.mouseX);
+    // p.background(0);
+    // p.fill(255);
+    // p.rect(x,y,50,50);
+    //
+
+
 
     if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
-      p.background(50,120,120);
-      p.fill(124,45,230);
-      p.rect(x,y,50,50);
+      // p.background(50,120,120);
+      // p.fill(124,45,230);
+      // p.rect(x,y,50,50);
+
+      p.textSize(mouseX);
+        p.fill(255);
+        p.text(text, 0, p.windowHeight/6.05);
     }
     else{
+
+      //
       p.background(0);
-      p.fill(255);
-      p.rect(x,y,50,50);
+      // p.fill(255);
+      // p.rect(x,y,50,50);
+
+      p.textSize(52);
+        p.fill(255);
+      p.text(text, 0, p.windowHeight/6.05);
     }
   };
 };
@@ -41,8 +55,8 @@ var t = function( p ) {
   p.draw = function() {
     p.fill(1);
      p.background(100);
-     console.log(p.windowWidth/3.05)
-     console.log(p.windowWidth * (2/3.05))
+     // console.log(p.windowWidth/3.05)
+     // console.log(p.windowWidth * (2/3.05))
      if ((p.mouseX >0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
 
        p.background(50,50,100);
