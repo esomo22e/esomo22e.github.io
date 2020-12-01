@@ -1,10 +1,10 @@
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = d3.select("#chart").node().getBoundingClientRect().width - margin.left - margin.right,
-    height = d3.select("#chart").node().getBoundingClientRect().height - margin.top - margin.bottom;
+    width = d3.select("#chart2").node().getBoundingClientRect().width - margin.left - margin.right,
+    height = d3.select("#chart2").node().getBoundingClientRect().height - margin.top - margin.bottom;
 
 
 
-var svg = d3.select("#chart").append("svg")
+var svg = d3.select("#chart2").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -33,24 +33,29 @@ d3.json("./data/aggregation_query.json", function(error, data) {
     .attr("cx", width / 2)
     .attr("cy", height / 2)
     .style("fill", function(d){ return color(d.geo.PUMA)})
-    .style("fill-opacity", 0.8)
+    // .style("fill", function(d){
+    //   console.log(d.geo.PUMA);
+    //   if(d.geo.PUMA == 3301){
+    //     return "#69b3a2";
+    //
+    //   }
+    //   else if(d.geo.PUMA == 3302){
+    //     return "#FFA07A";
+    //   }
+    //   else if(d.geo.PUMA == 3303){
+    //     return "#beaed4";
+    //   }
+    //   else if(d.geo.PUMA == 3304){
+    //     return "#e7298a";
+    //   }
+    //   else if(d.geo.PUMA == 3305){
+    //     return "#386cb0";
+    //   }
+    //
+    // })
+    // .style("fill-opacity", 0.3)
     .attr("stroke", "#69a2b2")
-    .style("stroke-width", 1);
-
-
-    var text = svg.selectAll("text")
-                   .data(data)
-                     .enter()
-                     .append("text");
-
-    //Add SVG Text Element Attributes
-    var textLabels = text
-                .attr("x", function(d) { return (x(d.geo.PUMA)) + 300; })
-               .attr("y", function(d) { return 200; })
-                 .text( function (d) { return d.geo.PUMA; })
-                 .attr("font-family", "sans-serif")
-                .attr("font-size", "20px")
-                 .attr("fill", "black");
+    .style("stroke-width", 1)
 
 // Features of the forces applied to the nodes:
 var simulation = d3.forceSimulation()
