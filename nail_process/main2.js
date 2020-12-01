@@ -4,7 +4,7 @@ var s = function( p ) { // p could be any variable name
   var x = 100;
   var y = 100;
   p.setup = function() {
-    p.createCanvas(p.windowWidth/3, p.windowHeight/3);
+    p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
   };
 
   p.draw = function() {
@@ -12,7 +12,7 @@ var s = function( p ) { // p could be any variable name
     p.fill(255);
     p.rect(x,y,50,50);
 
-    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3))){
+    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
       p.background(100,200,100);
       p.fill(255,0,255);
       p.rect(x,y,50,50);
@@ -33,13 +33,13 @@ var t = function( p ) {
   var y = 100;
   var speed = 2.5;
   p.setup = function() {
-    p.createCanvas(p.windowWidth/3, p.windowHeight/3);
+    p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
   };
 
   p.draw = function() {
     p.background(100);
     p.fill(1);
-    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3))){
+    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
       p.background(100, 50, 187);
 
       x += speed;
@@ -64,13 +64,13 @@ var t = function( p ) {
   var y = 100;
   var speed = 2.5;
   p.setup = function() {
-    p.createCanvas(p.windowWidth/3, p.windowHeight/3);
+    p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
   };
 
   p.draw = function() {
     p.background(20,10,100);
     p.fill(1);
-    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3))){
+    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
       p.background(220,150,220);
 
     x += speed;

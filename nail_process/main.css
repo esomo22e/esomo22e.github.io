@@ -1,22 +1,19 @@
 body{
-  margin: 0;
+  margin: 3px 0 0 0;
   overflow-x: hidden;
-  overflow-y: hidden;
+overflow-y: hidden;
   background: salmon;
 }
 
 .sketch{
-  /* margin:0;s */
-  width: 33.333vw;
-  height: 33vh;
-  /* box-sizing: border-box; */
-  /* margin: 0 5px; */
-  /* border: 15px solid red; */
-  /* padding:5px; */
-  /* padding:5px; */
+  /* width: 33.33vw;
+  height: 33.33vh; */
 
-
+  /* margin: 5px; */
+/* margin: -5px; */
 }
+
+
 .total_sketches{
   /* border: 40px solid cyan; */
   width: 100vw;
@@ -24,4 +21,11 @@ body{
   flex-flow: wrap;
   /* margin: 0 auto; */
   height:100vh;
+  /* padding: 5px; */
+  justify-content: space-around;
+}
+
+canvas{
+    /* padding: 10px; */
+    /* margin: 10px; */
 }
