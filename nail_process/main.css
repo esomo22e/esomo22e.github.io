@@ -6,9 +6,9 @@ overflow-y: hidden;
 }
 
 .sketch{
-  /* width: 33.33vw;
-  height: 33.33vh; */
-
+  /* width: 33.33vw ;
+  height: 33.33vh;
+  margin: 0 auto; */
   /* margin: 5px; */
 /* margin: -5px; */
 }
