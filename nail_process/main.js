@@ -1,5 +1,6 @@
 // save this file as sketch.js
 // Sketch One
+  var tileW, tileHt, centerItemX, centerItemY;
 var s = function( p ) { // p could be any variable name
   var x = 100;
   var y = 100;
@@ -8,10 +9,9 @@ var s = function( p ) { // p could be any variable name
   var text2 = 'NAIL PROCESS';
   var textSize;
   var font;
-  var img;
-  var img2;
+  var img, img2;
 
-  var tileW, tileHt, centerItemX, centerItemY;
+
 
 
   p.preload = function(){
