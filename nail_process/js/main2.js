@@ -1,10 +1,10 @@
 // save this file as sketch.js
-// Sketch Seven
+// Sketch Four
 var s = function( p ) { // p could be any variable name
   var x = 100;
   var y = 100;
   p.setup = function() {
-    p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
+    p.createCanvas(window.innerWidth/3.05, window.innerHeight/3.05);
   };
 
   p.draw = function() {
@@ -12,10 +12,11 @@ var s = function( p ) { // p could be any variable name
     p.fill(255);
     p.rect(x,y,50,50);
 
-    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
-      p.background(150,120,220);
-      p.fill(224,45,130);
+    if ((p.mouseX > 0) && (p.mouseX < (window.innerWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (window.innerHeight/3.05))){
+      p.background(100,200,100);
+      p.fill(255,0,255);
       p.rect(x,y,50,50);
+
     }
     else{
       p.background(0);
@@ -24,22 +25,22 @@ var s = function( p ) { // p could be any variable name
     }
   };
 };
-var myp5 = new p5(s, 'sketch7');
+var myp5 = new p5(s, 'sketch4');
 
-// Sketch Eight
+// Sketch Five
 var t = function( p ) {
   var x = 100.0;
   var y = 100;
   var speed = 2.5;
   p.setup = function() {
-    p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
+    p.createCanvas(window.innerWidth/3.05, window.innerHeight/3.05);
   };
 
   p.draw = function() {
     p.background(100);
     p.fill(1);
-    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
-      p.background(200, 50, 137);
+    if ((p.mouseX > 0) && (p.mouseX < (window.innerWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (window.innerHeight/3.05))){
+      p.background(100, 50, 187);
 
       x += speed;
       if(x > p.width){
@@ -52,24 +53,25 @@ var t = function( p ) {
 
     }
 
+
   };
 };
-var myp5 = new p5(t, 'sketch8');
+var myp5 = new p5(t, 'sketch5');
 
-// Sketch Nine
+// Sketch Six
 var t = function( p ) {
   var x = 100.0;
   var y = 100;
   var speed = 2.5;
   p.setup = function() {
-    p.createCanvas(p.windowWidth/3.05, p.windowHeight/3.05);
+    p.createCanvas(window.innerWidth/3.05, window.innerHeight/3.05);
   };
 
   p.draw = function() {
-    p.background(120,10,100);
+    p.background(20,10,100);
     p.fill(1);
-    if ((p.mouseX > 0) && (p.mouseX < (p.windowWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (p.windowHeight/3.05))){
-      p.background(20,150,20);
+    if ((p.mouseX > 0) && (p.mouseX < (window.innerWidth/3.05)) && (p.mouseY > 0) && (p.mouseY < (window.innerHeight/3.05))){
+      p.background(220,150,220);
 
     x += speed;
     if(x > p.width){
@@ -78,10 +80,10 @@ var t = function( p ) {
     p.ellipse(x,y,50,50);
   }
   else{
-    p.background(120,10,100);
+    p.background(20,10,100);
 
   }
 
   };
 };
-var myp5 = new p5(t, 'sketch9');
+var myp5 = new p5(t, 'sketch6');
