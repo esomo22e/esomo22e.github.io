@@ -16,7 +16,7 @@ var s = function(p) { // p could be any variable name
 
   p.preload = function() {
     img = p.loadImage('assets/tile-1-hands.png');
-    img2 = p.loadImage('assets/tile-1-hands.gif');
+    // img2 = p.loadImage('assets/testHands.gif');
 
     // gif_createImg = createImg("tile-1-hands.gif");
 
@@ -36,6 +36,7 @@ var s = function(p) { // p could be any variable name
     // console.log(window.innerHeight);
     //
     // console.log("WIDTH/2:" + ((window.innerWidth/3.05) - (window.innerWidth/6.10)));
+    img2 = p.loadGif('assets/testHands.gif');
 
 
 
@@ -139,7 +140,7 @@ var t = function(p) {
   var speed = 2.5;
   p.preload = function() {
     img3 = p.loadImage('assets/tile-2-water.png');
-    img4 = p.loadImage('assets/hand_2.png');
+    // img4 = p.loadImage('assets/testWater.gif');
 
 
   }
@@ -151,6 +152,8 @@ var t = function(p) {
     tileH = (window.innerHeight / 3.05);
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
+
+    img4=  p.loadGif('assets/testWater.gif');
   };
 
   p.draw = function() {
