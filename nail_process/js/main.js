@@ -187,7 +187,7 @@ var t = function(p) {
       p.image(img4, centerItemX, centerItemY, 300, 300);
 
 
-      num = "";
+      num2= "";
       p.textSize(textSize);
       p.text(num2, centerItemX, centerItemY);
 
