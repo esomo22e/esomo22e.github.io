@@ -12,6 +12,7 @@ body {
 h1{
     text-align: center;
     font-size: 60px;
+    margin: 0;
 }
 
 .axis path,
@@ -28,4 +29,23 @@ h1{
 .labels{
     margin: 0 auto;
     text-align: center;
+}
+
+.node:hover{
+  stroke-width: 5px !important;
+  /* opacity: 1 !important; */
+}
+
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    height: 80px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }

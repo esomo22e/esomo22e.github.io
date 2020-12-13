@@ -13,15 +13,58 @@ var svg = d3.select("#chart").append("svg")
     // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     var color = d3.scaleOrdinal()
       // .domain([3301,3302,3303,3304,3305])
-      .range([ "#69b3a2", "#FFA07A", "#beaed4", "#e7298a", "#386cb0"])
+      .range([ "#2c574d", "#ff692e", "#57006b", "#b01463", "#264876"])
+
+
+  var opacityScale = d3.scaleLinear()
+  // .domain([0, 1300000])
+  // .range([0, 1])
+		.domain([0, 433333.33, 866666.67, 1300000])
+    .range([0, 0.33,0.67,1])
+
+
+    // var strokeScale = d3.scaleLinear()
+    // .domain([0, 9])
+    // .range([0,3])
+
+		// .range(['#ededed','#57006b'])
 
       // A scale that gives a X target position for each group
 var x = d3.scaleOrdinal()
   // .domain([1, 2, 3])
-  .range([50, width/5,2 * (width/5), 3 *(width/5), 4 * (width/5)])
+  .range([0, width/5,2 * (width/5), 3 *(width/5), 4 * (width/5)])
 
-d3.json("./data/aggregation_query.json", function(error, data) {
+d3.json("./data/results3.json", function(error, data) {
   console.log(data);
+
+  var tooltip = d3.select("body")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    tooltip
+      .style("opacity", 1)
+  }
+  var mousemove = function(d) {
+
+
+    tooltip
+      .html('<u>' + d.geo.PUMA + '</u>' + "<br>" + d.couple.RACE + '</u>' + "<br>" + "Family Count: " + (d["childrenCount"] + d["coupleCount"]) + '</u>' + "<br>" + "Total Income: " + (d.couple[0].INCTOT + d.couple[1].INCTOT))
+      .style("left", (d3.event.pageX)+ "px")
+      .style("top", (d3.event.pageY) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+  }
 
   var node = svg.append("g")
   // .attr("viewBox", "0 0 " + width+ " " + height )
@@ -30,16 +73,44 @@ d3.json("./data/aggregation_query.json", function(error, data) {
   .data(data)
   .enter()
   .append("circle")
+  .attr("class", "node")
     .attr("r",function(d){
         d["coupleCount"]
       return  d["childrenCount"] + d["coupleCount"];
     })
     .attr("cx", width / 2)
     .attr("cy", height / 2)
-    .style("fill", function(d){ return color(d.geo.PUMA)})
-    .style("fill-opacity", 0.8)
+    .style("fill", function(d){
+      return color(d.geo.PUMA);
+      // if(d.geo.PUMA == "3303"){
+      //   return color(d.geo.PUMA);
+      // }
+      // else if(d.geo.PUMA == "3302"){
+      //   // return "Back Bay, Beacon Hill, Charlestown, East Boston, Central & South End";
+      //
+      //    }
+      //    else if(d.geo.PUMA == "3301"){
+      //      // return "Allston, Brighton & Fenway";
+      //
+      //       }
+      //       else if(d.geo.PUMA == "3304"){
+      //         // return "Mattapan & Roxbury";
+      //
+      //          }
+      //          else if(d.geo.PUMA == "3305"){
+      //              // return "Hyde Park, Jamaica Plain, Roslindale & West Roxbury";
+      //             }
+
+    })
+    .style("fill-opacity", function(d,i){
+      console.log(d.couple[0].INCTOT + d.couple[1].INCTOT);
+      return opacityScale(d.couple[0].INCTOT + d.couple[1].INCTOT);
+    })
     .attr("stroke", "#69a2b2")
-    .style("stroke-width", 1);
+    .style("stroke-width", 1)
+    .on("mouseover", mouseover) // What to do when hovered
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave);
 
 
     var text = svg.selectAll("text")
@@ -54,7 +125,28 @@ d3.json("./data/aggregation_query.json", function(error, data) {
                // .select("p")
                  .text( function (d,i) {
                    return d.geo.PUMA;
-             })
+             }
+             // .text(function(d){
+             //   if(d.geo.PUMA == "3303"){
+             //     return "3303";
+             //   }
+             //   else if(d.geo.PUMA == "3302"){
+             //     return "3303";
+             //
+             //      }
+             //      else if(d.geo.PUMA == "3301"){
+             //        return "3301";
+             //
+             //         }
+             //         else if(d.geo.PUMA == "3304"){
+             //           return "3304";
+             //
+             //            }
+             //            else if(d.geo.PUMA == "3305"){
+             //                return "3305";
+             //               }
+             // }
+           )
                  // .attr("font-family", "sans-serif")
                 .attr("font-size", "30px");
 
@@ -89,8 +181,9 @@ d3.json("./data/aggregation_query.json", function(error, data) {
                                                           else if(d.geo.PUMA == "3305"){
                                                               return "Hyde Park, Jamaica Plain, Roslindale & West Roxbury";
                                                              }
-                                               })
-                                               .attr("font-size", "20px");
+                                               }
+                                             )
+                                               .attr("font-size", "15px");
 
 // Features of the forces applied to the nodes:
 var simulation = d3.forceSimulation()
