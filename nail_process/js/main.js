@@ -222,7 +222,7 @@ var t = function(p) {
   var speed = 2.5;
   p.preload = function() {
     img5 = p.loadImage('assets/tile-3-file.png');
-    img6 = p.loadImage('assets/hand_2.png');
+    // img6 = p.loadImage('assets/hand_2.png');
 
 
   }
@@ -234,6 +234,9 @@ var t = function(p) {
     tileH = (window.innerHeight / 3.05);
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
+
+    img6 = p.loadGif('assets/tile-3-file.gif');
+
   };
 
   p.draw = function() {
