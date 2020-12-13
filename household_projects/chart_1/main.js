@@ -53,11 +53,11 @@ d3.json("./data/results3.json", function(error, data) {
     tooltip
       .style("opacity", 1)
   }
-  var mousemove = function(d) {
+  var mousemove = function(d,i) {
 
 
     tooltip
-      .html('<u>' + d.geo.PUMA + '</u>' + "<br>" + d.couple.RACE + '</u>' + "<br>" + "Family Count: " + (d["childrenCount"] + d["coupleCount"]) + '</u>' + "<br>" + "Total Income: " + (d.couple[0].INCTOT + d.couple[1].INCTOT))
+      .html('<u>' + d.geo.PUMA + '</u>' + "<br>" + "Race: " + d.couple[0].RACE + '</u>' + "<br>" + "Family Count: " + (d["childrenCount"] + d["coupleCount"]) + '</u>' + "<br>" + "Total Income: " + (d.couple[0].INCTOT + d.couple[1].INCTOT))
       .style("left", (d3.event.pageX)+ "px")
       .style("top", (d3.event.pageY) + "px")
   }
@@ -126,26 +126,6 @@ d3.json("./data/results3.json", function(error, data) {
                  .text( function (d,i) {
                    return d.geo.PUMA;
              }
-             // .text(function(d){
-             //   if(d.geo.PUMA == "3303"){
-             //     return "3303";
-             //   }
-             //   else if(d.geo.PUMA == "3302"){
-             //     return "3303";
-             //
-             //      }
-             //      else if(d.geo.PUMA == "3301"){
-             //        return "3301";
-             //
-             //         }
-             //         else if(d.geo.PUMA == "3304"){
-             //           return "3304";
-             //
-             //            }
-             //            else if(d.geo.PUMA == "3305"){
-             //                return "3305";
-             //               }
-             // }
            )
                  // .attr("font-family", "sans-serif")
                 .attr("font-size", "30px");
@@ -184,6 +164,15 @@ d3.json("./data/results3.json", function(error, data) {
                                                }
                                              )
                                                .attr("font-size", "15px");
+
+var n = data.length/2;
+
+                                               var legend = svg.selectAll(".legend")
+                                           	.data(data)
+                                           	.enter()
+                                           	.append("g")
+                                           	.attr("transform", function(d,i) { return "translate(" + i%n * width + "," + Math.floor(i/n) * height + ")"; })
+                                           	.attr("class","legend");
 
 // Features of the forces applied to the nodes:
 var simulation = d3.forceSimulation()
