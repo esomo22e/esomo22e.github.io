@@ -153,7 +153,7 @@ var t = function(p) {
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
 
-    img4=  p.loadGif('assets/testWater.gif');
+    img4=  p.loadGif('assets/tile-2-water.gif');
   };
 
   p.draw = function() {

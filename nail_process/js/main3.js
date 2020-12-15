@@ -16,7 +16,7 @@ var s = function(p) { // p could be any variable name
 
   p.preload = function() {
     img = p.loadImage('assets/tile-7-glue.png');
-    img2 = p.loadImage('assets/hand_2.png');
+    // img2 = p.loadImage('assets/hand_2.png');
 
 
   }
@@ -35,6 +35,7 @@ var s = function(p) { // p could be any variable name
     //
     // console.log("WIDTH/2:" + ((window.innerWidth/3.05) - (window.innerWidth/6.10)));
 
+    img2 = p.loadGif('assets/tile-7-glue.gif');
 
 
   };
@@ -111,7 +112,7 @@ var t = function(p) {
   var speed = 2.5;
   p.preload = function() {
     img3 = p.loadImage('assets/tile-8-press.png');
-    img4 = p.loadImage('assets/hand_2.png');
+    // img4 = p.loadImage('assets/hand_2.png');
 
 
   }
@@ -123,6 +124,9 @@ var t = function(p) {
     tileH = (window.innerHeight / 3.05);
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
+
+    img4=  p.loadGif('assets/tile-8-press.gif');
+
   };
 
   p.draw = function() {
@@ -189,7 +193,7 @@ var t = function(p) {
   var speed = 2.5;
   p.preload = function() {
     img5 = p.loadImage('assets/tile-9-fake-complete.png');
-    img6 = p.loadImage('assets/hand_2.png');
+    // img6 = p.loadImage('assets/hand_2.png');
 
 
   }
@@ -201,6 +205,9 @@ var t = function(p) {
     tileH = (window.innerHeight / 3.05);
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
+
+    img6 = p.loadGif('assets/tile-9-complete.gif');
+
   };
 
   p.draw = function() {

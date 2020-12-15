@@ -28,6 +28,7 @@ var s = function( p ) { // p could be any variable name
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
 
 
+    img2 = p.loadGif('assets/tile-4-cuticle.gif');
 
 
   };
@@ -109,7 +110,7 @@ var t = function(p) {
   var speed = 2.5;
   p.preload = function() {
     img3 = p.loadImage('assets/tile-5-buff.png');
-    img4 = p.loadImage('assets/hand_2.png');
+    // img4 = p.loadImage('assets/hand_2.png');
 
 
   }
@@ -121,6 +122,9 @@ var t = function(p) {
     tileH = (window.innerHeight / 3.05);
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
+
+    img4=  p.loadGif('assets/tile-5-buff.gif');
+
   };
 
   p.draw = function() {
@@ -187,7 +191,7 @@ var t = function(p) {
   var speed = 2.5;
   p.preload = function() {
     img5 = p.loadImage('assets/tile-6-match-hands.png');
-    img6 = p.loadImage('assets/hand_2.png');
+    // img6 = p.loadImage('assets/hand_2.png');
 
 
   }
@@ -199,6 +203,9 @@ var t = function(p) {
     tileH = (window.innerHeight / 3.05);
     centerItemX = ((window.innerWidth / 3.05) - (window.innerWidth / 6.10));
     centerItemY = window.innerHeight / 6.05;
+
+    img6 = p.loadGif('assets/tile-6-match.gif');
+
   };
 
   p.draw = function() {
