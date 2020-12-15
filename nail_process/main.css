@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand:ital,wght@0,400;1,700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@500&display=swap');
+
 html,body{
   margin:5px 0 00;
-  /* overflow-x: hidden;
-overflow-y: hidden; */
-  background: #66b2ff;
-}
+  overflow-x: hidden;
+overflow-y: hidden;
+  background: #006a8b;
+    font-family: 'Kreon', serif;
+  }
 
 
 #hed_container{
@@ -20,16 +25,18 @@ h1{
   color: #fff;
   font-weight: 600;
   text-align: center;
-  font-size: 60px;
+  font-size: 70px;
+  font-family: 'Shrikhand', sans-serif;
+      /* font-family: 'Roboto', sans-serif; */
   /* text-align: center; */
 }
 #intro-page{
-  margin: 0;
+  margin: -10px 0;
   padding:0;
   width:100vw;
   height:100vh;
   position:absolute;
-  opacity: 0.8;
+  opacity: 0.9;
   background: black;  /* position:absolute; */
 }
 #total-sketches{
@@ -49,10 +56,11 @@ canvas{
 }
 
 #center-button{
-   margin: 0;
+   margin: 20px;
    display: flex;
 justify-content: center;
 align-items: center;
+
 /* position: absolute;
 top: 50%;
 left: 50%;
@@ -62,7 +70,7 @@ transform: translateY(-50%);  */
 }
 
 #directions{
-  color: #fff;
+  color: #FFFAF0;
   margin: 0 auto;
   font-size: 30px;
   text-align: center;
@@ -72,15 +80,28 @@ transform: translateY(-50%);  */
 }
 
 button#intro_button{
+      font-family: 'Kreon', serif;
   margin: 0 auto;
-background-color: #ff9800;
+    border-radius: 10px;
+background-color: #cc99ff;
   font-weight: 600;
   font-size: 25px;
 
   border: none;
 display: inline-block;
-padding: 8px 16px;
+padding: 12px 24px;
 vertical-align: middle;
 overflow: hidden;
 text-decoration: none;
+}
+
+#item-container{
+  display: flex;
+}
+
+h4{
+  color: #FFFAF0;
+  font-weight:600;
+  font-size: 20px;
+  text-align: center;
 }
