@@ -1,77 +1,77 @@
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = d3.select("#chart2").node().getBoundingClientRect().width - margin.left - margin.right,
-    height = d3.select("#chart2").node().getBoundingClientRect().height - margin.top - margin.bottom;
+var margin = {
+        top: 20,
+        right: 20,
+        bottom: 30,
+        left: 40
+    },
+    width = d3.select("#legend").node().getBoundingClientRect().width - margin.left - margin.right ,
+    height = d3.select("#chart").node().getBoundingClientRect().height - margin.top - margin.bottom;
 
 
 
-var svg = d3.select("#chart2").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    var color = d3.scaleOrdinal()
-      // .domain([3301,3302,3303,3304,3305])
-      .range([ "#69b3a2", "#FFA07A", "#beaed4", "#e7298a", "#386cb0"])
+var colorScale = d3.scaleLinear()
+  	.domain([0,	400000])
+  	.range(['#ededed',  '#57006b']);
 
-      // A scale that gives a X target position for each group
-var x = d3.scaleOrdinal()
-  // .domain([1, 2, 3])
-  .range([0, 300, 640, 900, 1200])
+  // append a defs (for definition) element to your SVG
+	var svgLegend = d3.select('#legend').append('svg');
+	var defs = svgLegend.append('defs');
 
-d3.json("./data/aggregation_query.json", function(error, data) {
-  console.log(data);
+	// append a linearGradient element to the defs and give it a unique id
+	var linearGradient = defs.append('linearGradient')
+		.attr('id', 'linear-gradient');
 
-  var node = svg.append("g")
-  .selectAll("circle")
-  .data(data)
-  .enter()
-  .append("circle")
-    .attr("r",function(d){
-        d["coupleCount"]
-      return  d["childrenCount"] + d["coupleCount"];
-    })
-    .attr("cx", width / 2)
-    .attr("cy", height / 2)
-    .style("fill", function(d){ return color(d.geo.PUMA)})
-    // .style("fill", function(d){
-    //   console.log(d.geo.PUMA);
-    //   if(d.geo.PUMA == 3301){
-    //     return "#69b3a2";
-    //
-    //   }
-    //   else if(d.geo.PUMA == 3302){
-    //     return "#FFA07A";
-    //   }
-    //   else if(d.geo.PUMA == 3303){
-    //     return "#beaed4";
-    //   }
-    //   else if(d.geo.PUMA == 3304){
-    //     return "#e7298a";
-    //   }
-    //   else if(d.geo.PUMA == 3305){
-    //     return "#386cb0";
-    //   }
-    //
-    // })
-    // .style("fill-opacity", 0.3)
-    .attr("stroke", "#69a2b2")
-    .style("stroke-width", 1)
+	// horizontal gradient
+	linearGradient
+		.attr("x1", "0%")
+		.attr("y1", "0%")
+		.attr("x2", "100%")
+		.attr("y2", "0%");
 
-// Features of the forces applied to the nodes:
-var simulation = d3.forceSimulation()
-.force("x", d3.forceX().strength(0.5).x( function(d){ return x(d.geo.PUMA) } ))
-    .force("y", d3.forceY().strength(0.1).y( height/2 ))
-    .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
-    .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
-    .force("collide", d3.forceCollide().strength(.01).radius(20).iterations(1)) // Force that avoids circle overlapping
+	// append multiple color stops by using D3's data/enter step
+	linearGradient.selectAll("stop")
+		.data([
+			{offset: "0%", color: "#ededed"},
+			// {offset: "10%", color: "#EC93AB"},
+			// {offset: "15%", color: "#CEB1DE"},
+			// {offset: "20%", color: "#95D3F0"},
+			// {offset: "25%", color: "#77EDD9"},
+			{offset: "100%", color: "#57006b"}
+		])
+		.enter().append("stop")
+		.attr("offset", function(d) {
+			return d.offset;
+		})
+		.attr("stop-color", function(d) {
+			return d.color;
+		});
 
-// Apply these forces to the nodes and update their positions.
-// Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
-simulation
-    .nodes(data)
-    .on("tick", function(d){
-      node
-          .attr("cx", function(d){ return d.x; })
-          .attr("cy", function(d){ return d.y; })
-    });
-});
+	// append title
+	// svgLegend.append("text")
+	// 	.attr("class", "legend")
+	// 	.attr("x", 0)
+	// 	.attr("y", 20)
+	// 	.at
+	// 	.style("text-anchor", "left")
+	// 	.text("Household Projects");
+
+	// draw the rectangle and fill with gradient
+	svgLegend.append("rect")
+		.attr("x", 0)
+		.attr("y", 30)
+		.attr("width", width)
+		.attr("height", 15)
+		.style("fill", "url(#linear-gradient)");
+
+	//create tick marks
+	var xLeg = d3.scaleLinear()
+		.domain([0, 400000])
+		.range([10, width]);
+
+	var axisLeg = d3.axisBottom(xLeg);
+
+	svgLegend
+		.attr("class", "axis")
+		.append("g")
+		.attr("transform", "translate(0, 50)")
+		.call(axisLeg);
