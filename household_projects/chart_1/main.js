@@ -126,8 +126,10 @@ d3.json("./data/results3.json", function(error, data) {
 
     var text = svg.selectAll("text")
         .attr("class", "labels")
-        .data(data)
-        .enter()
+        .data(data.filter(function(d,i) {
+
+            return i==0 || i == 1 || i == 4 || i == 7 || i == 8;
+        }))        .enter()
         .append("text")
     //Add SVG Text Element Attributes
     var textLabels = text
@@ -135,7 +137,7 @@ d3.json("./data/results3.json", function(error, data) {
             return x(d.geo.PUMA) + 100;
         })
         .attr("y", function(d) {
-            return 200;
+            return 50;
         })
         // .select("p")
         .text(function(d, i) {
@@ -149,9 +151,7 @@ d3.json("./data/results3.json", function(error, data) {
     var text2 = svg.selectAll("text2")
         .attr("class", "labels2")
         .data(data.filter(function(d,i) {
-            console.log(d.geo.PUMA);
-            console.log(i)
-            // return !(i%150);
+
             return i==0 || i == 1 || i == 4 || i == 7 || i == 8;
         }))
         .enter()
@@ -162,7 +162,7 @@ d3.json("./data/results3.json", function(error, data) {
             return x(d.geo.PUMA);
         })
         .attr("y", function(d) {
-            return 240;
+            return 90;
         })
         // .select("p")
         .text(function(d,i) {
@@ -192,7 +192,7 @@ d3.json("./data/results3.json", function(error, data) {
         // console.log(i);
          var text = d3.select(this),
            width =200,
-           x = (i * 375) + 30,
+           x = (i * (width * 1.4)),
            y = text2.attr("y"),
            words = text.text().split(/\s+/).reverse(),
            word,
