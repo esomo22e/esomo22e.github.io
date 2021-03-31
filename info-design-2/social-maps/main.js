@@ -10,7 +10,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/eesomonu/ckm4zoimo0mwz17mpq12lvjbd', // style URL
     center: [-95.7129, 37.0902], // starting position [lng, lat]
     // center: [-71.0589, 42.3601], // starting position [lng, lat]
-    zoom: 4 // starting zoom
+    zoom: 3 // starting zoom
 });
 
 

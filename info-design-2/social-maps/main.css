@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1{
@@ -9,8 +11,11 @@ h1{
   padding: 0; */
 }
 
+.intro_text{
+  padding: 0 30px;
+}
 #map{
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
   margin: 0;
 }
@@ -62,4 +67,47 @@ max-width: 200px;
 .mapboxgl-popup-content {
 text-align: center;
 font-family: 'Open Sans', sans-serif;
+}
+.subtitle{
+    text-align: center;
+}
+.total-content{
+    display: flex;
+}
+.content-element{
+    width: 50vw;
+}
+/* Graph of the  Chart*/
+#graph{
+  /* margin-left: 40px; */
+  /* width: 500px; */
+  width: 50vw;
+  height: 90vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top:20px
+  margin-left: 0px;
+  float: none;
+  transform: translate(-50%, 0);
+  margin-left: 50%;
+  position: relative;
+  top: 0px;
+  /* float: right; */
+  /* border: 3px solid red; */
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: 180px;
+    /* height: 55px; */
+
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #a0e0ca;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    padding: 5px;
 }
