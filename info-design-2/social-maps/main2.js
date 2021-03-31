@@ -39,7 +39,7 @@ d3.queue()
 
 var simulation = d3.forceSimulation()
   .force("collide", d3.forceCollide(function(d) {
-    return d.count*3.1;
+    return d.count*2.6;
   }).iterations(16))
   .force("charge", d3.forceManyBody())
   .force("y", d3.forceY().y(height))
@@ -52,7 +52,7 @@ var simulation = d3.forceSimulation()
 
               var circlesEnter = circles.enter().append("circle")
             .attr("r", function(d, i) {
-                return d.count * 3;
+                return d.count * 2.5;
             })
             .attr("cx", function(d, i) {
                 return 175 + 25 * i + 2 * i ** 2;
@@ -75,7 +75,7 @@ var simulation = d3.forceSimulation()
               .style("fill", function(d, i) {
                   return "#FF6666";
               })
-              .attr("r", d.count*3);
+              .attr("r", d.count*2.5);
               // //console.log(d.schoolName);
               div.transition()
                 .duration(200)
@@ -94,7 +94,7 @@ var simulation = d3.forceSimulation()
             // return color(d.place_info__state);
             return "#00CED1"
         })
-        .attr("r", d.count *3);
+        .attr("r", d.count *2.5);
 
         div.transition()
   .duration(500)
@@ -108,11 +108,11 @@ var simulation = d3.forceSimulation()
 
       circles
         .attr("cx", function(d) {
-          return d.x = Math.max(d.count*3, Math.min(width - (d.count*3), d.x));
+          return d.x = Math.max(d.count*2.5, Math.min(width - (d.count*2.5), d.x));
 
         })
         .attr("cy", function(d) {
-          return d.y = Math.max(d.count*3, Math.min(height - (d.count*3), d.y));
+          return d.y = Math.max(d.count*2.5, Math.min(height - (d.count*2.5), d.y));
         });
     }
 

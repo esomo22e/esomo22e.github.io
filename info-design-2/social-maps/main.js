@@ -43,17 +43,17 @@ map.on('load', function() {
 
     map.addLayer({
         'id': 'tweet',
-        "type": "symbol",
-        // "type": "circle",
+        // "type": "symbol",
+        "type": "circle",
         'source': 'sample',
-        // "paint": {
-        //     "circle-radius": 5,
-        //     "circle-color": "red"
-        // }
-        'layout': {
-            'icon-image': 'cat',
-            'icon-size': 0.025
-        },
+        "paint": {
+            "circle-radius": 5,
+            "circle-color": "#00CED1"
+        }
+        // 'layout': {
+        //     'icon-image': 'cat',
+        //     'icon-size': 0.025
+        // },
     });
 
     // When a click event occurs on a feature in the places layer, open a popup at the
