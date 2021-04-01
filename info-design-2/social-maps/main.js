@@ -45,7 +45,7 @@ map.on('load', function() {
     // });
 
 
-
+//changing layers
     map.addLayer({
         'id': 'tweet2',
         // "type": "symbol",
@@ -62,6 +62,7 @@ map.on('load', function() {
         // },
     });
 
+// adding icons
     map.addLayer({
         'id': 'tweet',
         "type": "symbol",
