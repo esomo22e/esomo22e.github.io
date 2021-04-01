@@ -13,22 +13,47 @@
 </head>
 
 <body>
-  <div class = "hed-content">
+  <div id = "hed-content">
   <h1>Mutual-Aid Maps</h1>
   <p class = "intro_text">For this project, we wanted to document mutual-aid efforts, that have been showcased on twitter.
       We scraped with mutual aid and community donation data on twitter using key words such as 'mutual aid', 'funds', and 'donations'
       to gather mutual aid efforts for various social causes. On the left, we showcased where each mutual aid is located and on the right we count
       how many mutual aid funds per state, witht he size of the circle being represent the amount. Also, click each circle to see the tweet.</p>
+      <div id = "center-button">
+         <button onclick="myFunction()" id = "intro_button">Click Me</button>
+         </div>
   </div>
 
-<div class = "total-content">
-    <div class = "content-element">
-  <h3 class = "subtitle">Mutual Aid Map</h3>
+<div id = "total-content">
 
+    <div class = "content-element">
+    <div class = "title-state">
+  <h3 class = "subtitle">
+    <div id = "map-button">
+       <button onclick="myFunction()" id = "return_button">Click Me</button>
+       </div>
+    Mutual Aid Map</h3>
+
+</div>
   <div id="map"></div>
   </div>
   <div class = "content-element">
+          <div class = "title-state">
     <h3 class = "subtitle">Mutual Aid Count per State</h3>
+    <div id = "total-legend">
+    <div class = "legend">
+        <span class="dot"></span>
+        <p class = "leg-text">Each circle represent a state that created funds</p>
+    </div>
+    <div class = "legend">
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
+
+        <p class = "leg-text">Size represents the amount of funds</p>
+    </div>
+    </div>
+    </div>
   <div id="graph"></div>
 </div>
 
@@ -38,6 +63,7 @@
 
 </body>
 
+    <script src="intro.js"></script>
 	<script src="main.js"></script>
     <script src="main2.js"></script>
 
