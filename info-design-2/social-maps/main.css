@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -9,11 +11,11 @@ body{
 h1{
 
 
-  color: #faf6f2;
+  color: #1a4b8b;
 font-weight: 600;
 text-align: center;
 font-size: 70px;
-
+font-family: 'Montserrat', sans-serif;
 }
 
 #hed-content{
@@ -45,7 +47,13 @@ width: 80vw;
 margin: 0;
 /* background-color: red; */
 padding: 10px;
+color: #1a4b8b;
+font-size: 28px;
+font-weight: 600;
 
+}
+span{
+  margin: 0 2px;
 }
 #map{
   width: 50vw;
@@ -64,7 +72,7 @@ align-items: center;
     /* font-family: kreon,serif; */
 margin: 0 auto;
 border-radius: 10px;
-/* background-color: #c9f; */
+background-color: #d14774;
 font-weight: 600;
 font-size: 25px;
 border: none;
@@ -164,38 +172,45 @@ font-family: 'Open Sans', sans-serif;
 #total-legend{
   margin: 0 auto;
 width: 50%;
+color: #1a4b8b;
 }
 
 .dot {
   height: 20px;
   width: 20px;
-  background-color: #00CED1;
+  background-color: #C9C16B;
   border-radius: 50%;
   display: inline-block;
+border: 1px solid #001933;
 }
 
 .dot1 {
   height: 10px;
   width: 10px;
-  background-color: #00CED1;
+  background-color: #C9C16B;
   border-radius: 50%;
   display: inline-block;
+  border: 1px solid #001933;
 }
 
 .dot2 {
   height: 20px;
   width: 20px;
-  background-color: #00CED1;
+  background-color: #C9C16B;
   border-radius: 50%;
   display: inline-block;
+  border: 1px solid #001933;
+
 }
 
 .dot3 {
   height: 30px;
   width: 30px;
-  background-color: #00CED1;
+  background-color: #C9C16B;
   border-radius: 50%;
   display: inline-block;
+  border: 1px solid #001933;
+
 }
 
 p.leg-text{
@@ -226,4 +241,23 @@ div.tooltip {
   top: 5px;
   left: 5px;
 
+}
+
+#return_button{
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #d14774;
+    font-weight: 600;
+    font-size: 25px;
+    border: none;
+    display: inline-block;
+    padding: 0px 20px;
+    margin: 0 10px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+p.intro_text{
+    font-size: 28px;
 }

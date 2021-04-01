@@ -1,13 +1,16 @@
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
 // https://account.mapbox.com
-mapboxgl.accessToken = 'pk.eyJ1IjoiZWVzb21vbnUiLCJhIjoiY2sxaHdjOTE2MGJ3bzNscGtyMXlrM2EzMCJ9.wUCwEKSpzHun34BWXIsgoA';
+// mapboxgl.accessToken = 'pk.eyJ1IjoiZWVzb21vbnUiLCJhIjoiY2sxaHdjOTE2MGJ3bzNscGtyMXlrM2EzMCJ9.wUCwEKSpzHun34BWXIsgoA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWVsbGFmZXJuYW5kZXMiLCJhIjoiY2ttZGU1NnZpMGpobTJucDdrMDVjMDBwbCJ9.T-dEbrlcNLU2u3nLJcEeJw';
 
-var url = "./data/features.geojson"
+var url = "./data/features2.geojson"
 
 var map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/eesomonu/ckm4zoimo0mwz17mpq12lvjbd', // style URL
+    // style: 'mapbox://styles/eesomonu/ckm4zoimo0mwz17mpq12lvjbd', // style URL
+    style: 'mapbox://styles/daniellafernandes/ckmyefs2w1r6t17qjmlxm7gnp', // style URL
+
     center: [-95.7129, 37.0902], // starting position [lng, lat]
     // center: [-71.0589, 42.3601], // starting position [lng, lat]
     zoom: 3 // starting zoom
@@ -20,10 +23,10 @@ console.log(url);
 map.on('load', function() {
 
     map.loadImage(
-    './images/giving.png',
+    './images/solidarity.png',
     function (error, image) {
     if (error) throw error;
-    map.addImage('cat', image);
+    map.addImage('solidarity', image);
 
     map.addSource('sample', {
         type: 'geojson',
@@ -43,17 +46,17 @@ map.on('load', function() {
 
     map.addLayer({
         'id': 'tweet',
-        // "type": "symbol",
-        "type": "circle",
+        "type": "symbol",
+        // "type": "circle",
         'source': 'sample',
-        "paint": {
-            "circle-radius": 5,
-            "circle-color": "#00CED1"
-        }
-        // 'layout': {
-        //     'icon-image': 'cat',
-        //     'icon-size': 0.025
-        // },
+        // "paint": {
+        //     "circle-radius": 5,
+        //     "circle-color": "#00CED1"
+        // }
+        'layout': {
+            'icon-image': 'solidarity',
+            'icon-size': 0.03
+        },
     });
 
     // When a click event occurs on a feature in the places layer, open a popup at the
@@ -61,7 +64,9 @@ map.on('load', function() {
     map.on('click', 'tweet', function(e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.text;
+        var link = e.features[0].properties.link;
 
+        console.log(link);
         // Ensure that if the map is zoomed out such that multiple
         // copies of the feature are visible, the popup appears
         // over the copy being pointed to.
@@ -71,7 +76,7 @@ map.on('load', function() {
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(description)
+            .setHTML( description + '<a href="https://www.colorhexa.com/ca926d">' + link+ '</a>')
             .addTo(map);
     });
 
