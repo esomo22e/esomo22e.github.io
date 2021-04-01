@@ -52,8 +52,17 @@ font-size: 28px;
 font-weight: 600;
 
 }
-span{
+span.dot{
   margin: 0 2px;
+}
+
+span.image-use{
+  width: 10px;
+
+}
+
+img{
+  width: 80px;
 }
 #map{
   width: 50vw;
@@ -259,5 +268,7 @@ div.tooltip {
 }
 
 p.intro_text{
-    font-size: 28px;
+    font-size: 24px;
+    padding: 10px;
+
 }
