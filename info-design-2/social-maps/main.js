@@ -74,7 +74,7 @@ map.on('load', function() {
         // }
         'layout': {
             'icon-image': 'solidarity',
-            'icon-size': 0.08
+            'icon-size': 0.07
         },
     });
     // When a click event occurs on a feature in the places layer, open a popup at the
