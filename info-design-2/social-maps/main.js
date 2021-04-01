@@ -23,7 +23,7 @@ console.log(url);
 map.on('load', function() {
 
     map.loadImage(
-    './images/solidarity.png',
+    './images/solidarity4.png',
     function (error, image) {
     if (error) throw error;
     map.addImage('solidarity', image);
@@ -44,6 +44,24 @@ map.on('load', function() {
     // }
     // });
 
+
+
+    map.addLayer({
+        'id': 'tweet2',
+        // "type": "symbol",
+        "type": "circle",
+        'source': 'sample',
+        "paint": {
+            "circle-radius": 5,
+            "circle-color": "#C9C16B",
+            'circle-stroke-color': 'black',
+        }
+        // 'layout': {
+        //     'icon-image': 'solidarity',
+        //     'icon-size': 0.04
+        // },
+    });
+
     map.addLayer({
         'id': 'tweet',
         "type": "symbol",
@@ -55,10 +73,9 @@ map.on('load', function() {
         // }
         'layout': {
             'icon-image': 'solidarity',
-            'icon-size': 0.03
+            'icon-size': 0.08
         },
     });
-
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'tweet', function(e) {
