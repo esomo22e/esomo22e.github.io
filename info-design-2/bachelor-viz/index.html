@@ -1,214 +1,71 @@
 <!DOCTYPE html>
+<html>
+
 <head>
-  <meta charset="utf-8">
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <style>
-    body {
-      margin:0;
-      position:fixed;
-      top:0;
-      right:0;
-      bottom:0;
-      left:0;
-    	font-family: sans-serif;
-    }
-    .selected {
-      fill: none;
-    }
+    <meta charset="UTF-8">
+    <title>Bachelor Data Viz</title>
+    <link rel="stylesheet" href="main.css">
 
-    .button {
-      min-width: 130px;
-      padding: 4px 5px;
-      cursor: pointer;
-      text-align: center;
-      font-size: 13px;
-      border: 1px solid #e0e0e0;
-      text-decoration: none;
-    }
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.1/ScrollMagic.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script> -->
+    <!-- <script src="js/library/vega@5.3.5.min.js"></script>
+<script src="js/library/vega-lite@3.2.1.min.js"></script>
+<script src="js/library/vega-embed@4.0.0.min.js"></script> -->
+    <!-- <script src="js/library/d3.v5.min.js"></script> -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
-    .button.active {
-      background: #000;
-      color: #fff;
-    }
-  </style>
+    <!-- <script src="js/library/d3-tip.js"></script> -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src='https://russellgoldenberg.github.io/scrollama/stickyfill.min.js'></script>
+    <script src='https://russellgoldenberg.github.io/scrollama/scrollama.min.js'></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
-  <div id="toolbar">
-      <button id="all" class="button active">All</button>
-      <button id="Location" class="button">By Location</button>
-      <button id="Group" class="button">By Group</button>
-      <button id="Class" class="button">By Class</button>
-      <button id="Type" class="button">By Type</button>
+
+    <div class="wrapper">
+
+        <h1>Season 1 of the Bachelor</h1>
+
+        <main>
+            <section id="scrolly">
+
+
+                <figure>
+                    <!-- <p>0</p> -->
+                </figure>
+
+                <article>
+                    <div class='step' data-step='1'>
+                        <!-- <h3>Title</h3> -->
+                        <div class="content">
+                            <h3>Title</h3>
+                            <p>Across all years and disciplines, women account for 27% of authors, a number that hides important trends.</p>
+                        </div>
+                    </div>
+                    <div class='step' data-step='2'>
+                        <div class="content">
+                            <p>While in 1955 women represented only 12% of all active authors... </p>
+                        </div>
+                    </div>
+                    <div class='step' data-step='3'>
+                        <div class="content">
+                            <p>...that fraction steadily increased over the last century, reaching 35% by 2005. </p>
+                        </div>
+                    </div>
+                    <div class='step' data-step='4'>
+                        <div class="content">
+                            <p>Yet, these aggregate numbers hide considerable disciplinary differences, as the fraction of women is as low as 15% in math, physics and computer science, and reaches 33% in psychology. </p>
+                        </div>
+                    </div>
+                </article>
+             </section>
+                <section id="outro"></section>
+        </main>
     </div>
-  <script>
-    console.clear()
-    var w = 960, h = 500;
-
-    var radius = 25;
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
-    var centerScale = d3.scalePoint().padding(1).range([0, w]);
-    var forceStrength = 0.05;
-
-    var svg = d3.select("body").append("svg")
-      .attr("width", w)
-      .attr("height", h)
-
-    var simulation = d3.forceSimulation()
-            .force("collide",d3.forceCollide( function(d){
-              	return d.r + 8 }).iterations(16)
-            )
-            .force("charge", d3.forceManyBody())
-            .force("y", d3.forceY().y(h / 2))
-            .force("x", d3.forceX().x(w / 2))
-
-    d3.csv("data.csv", function(data){
-
-      data.forEach(function(d){
-        d.r = radius;
-        d.x = w / 2;
-        d.y = h / 2;
-      })
-
-      console.table(data);
-
-
-
-      var circles = svg.selectAll("circle")
-      	.data(data, function(d){ return d.ID ;});
-
-      var circlesEnter = circles.enter().append("circle")
-      	.attr("r", function(d, i){ return d.r; })
-        .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
-				.attr("cy", function(d, i){ return 250; })
-      	.style("fill", function(d, i){ return color(d.ID); })
-      	.style("stroke", function(d, i){ return color(d.ID); })
-      	.style("stroke-width", 10)
-      	.style("pointer-events", "all")
-      	.call(d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                .on("end", dragended));
-
-      circles = circles.merge(circlesEnter)
-
-      function ticked() {
-        //console.log("tick")
-        //console.log(data.map(function(d){ return d.x; }));
-        circles
-            .attr("cx", function(d){ return d.x; })
-            .attr("cy", function(d){ return d.y; });
-      }
-
-      simulation
-            .nodes(data)
-            .on("tick", ticked);
-
-      function dragstarted(d,i) {
-        //console.log("dragstarted " + i)
-        if (!d3.event.active) simulation.alpha(1).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-      }
-
-      function dragged(d,i) {
-        //console.log("dragged " + i)
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-      }
-
-      function dragended(d,i) {
-        //console.log("dragended " + i)
-        if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-        var me = d3.select(this)
-        console.log(me.classed("selected"))
-        me.classed("selected", !me.classed("selected"))
-
-        d3.selectAll("circle")
-          .style("fill", function(d, i){ return color(d.ID); })
-
-        d3.selectAll("circle.selected")
-          .style("fill", "none")
-
-      }
-
-      function groupBubbles() {
-        hideTitles();
-
-        // @v4 Reset the 'x' force to draw the bubbles to the center.
-        simulation.force('x', d3.forceX().strength(forceStrength).x(w / 2));
-
-        // @v4 We can reset the alpha value and restart the simulation
-        simulation.alpha(1).restart();
-      }
-
-      function splitBubbles(byVar) {
-
-        centerScale.domain(data.map(function(d){ return d[byVar]; }));
-
-        if(byVar == "all"){
-          hideTitles()
-        } else {
-	        showTitles(byVar, centerScale);
-        }
-
-        // @v4 Reset the 'x' force to draw the bubbles to their year centers
-        simulation.force('x', d3.forceX().strength(forceStrength).x(function(d){
-        	return centerScale(d[byVar]);
-        }));
-
-        // @v4 We can reset the alpha value and restart the simulation
-        simulation.alpha(2).restart();
-      }
-
-      function hideTitles() {
-        svg.selectAll('.title').remove();
-      }
-
-      function showTitles(byVar, scale) {
-        // Another way to do this would be to create
-        // the year texts once and then just hide them.
-       	var titles = svg.selectAll('.title')
-          .data(scale.domain());
-
-        titles.enter().append('text')
-          	.attr('class', 'title')
-        	.merge(titles)
-            .attr('x', function (d) { return scale(d); })
-            .attr('y', 40)
-            .attr('text-anchor', 'middle')
-            .text(function (d) { return byVar + ' ' + d; });
-
-        titles.exit().remove()
-      }
-
-      function setupButtons() {
-        d3.selectAll('.button')
-          .on('click', function () {
-
-            // Remove active class from all buttons
-            d3.selectAll('.button').classed('active', false);
-            // Find the button just clicked
-            var button = d3.select(this);
-
-            // Set it as the active button
-            button.classed('active', true);
-
-            // Get the id of the button
-            var buttonId = button.attr('id');
-
-	          console.log(buttonId)
-            // Toggle the bubble chart based on
-            // the currently clicked button.
-            splitBubbles(buttonId);
-          });
-      }
-
-      setupButtons()
-
-    })
-
-  </script>
+<script src="main.js"></script>
 </body>
+</html>
