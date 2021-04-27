@@ -59,10 +59,10 @@ d3.queue()
     .style("stroke", function(d, i){ return color(d.PARTICIPANTS); })
     .style("stroke-width", 10)
     .style("pointer-events", "all")
-    .call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
+    // .call(d3.drag()
+    //         .on("start", dragstarted)
+    //         .on("drag", dragged)
+    //         .on("end", dragended));
 
   circles = circles.merge(circlesEnter)
 
@@ -147,30 +147,13 @@ d3.queue()
             //   d.y = height  / 2;
             // })
 
-            var simulation = d3.forceSimulation()
-                    .force("center",d3.forceCollide( function(d){
-                        return d.r + 8 })
-                    )
-                    .force("charge", d3.forceManyBody().strength(5))
-                    .force("y", d3.forceY().y(height / 2).strength(0.1))
-                    .force("x", d3.forceX().x(width / 2).strength(0.1))
-
             var circles = svg.selectAll("circle")
               .data(data, function(d){ return d.ID ;});
 
             var circlesEnter = circles.enter().append("circle")
               .attr("r", function(d, i){ return d.r; })
-              // .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
-              // .attr("cy", function(d, i){ return 250; })
-              // .transition()
-              // .duration(2000)
-              // .attr("cy", function(d, i){
-              //   if(d["ELIMINATION-1"] == "E"){
-              //     return 850;
-              //
-              //   }
-              //
-              //  })
+              .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+              .attr("cy", function(d, i){ return 250; })
               .style("fill", function(d, i){ return color(d.PARTICIPANTS); })
               .style("stroke", function(d, i){ return color(d.PARTICIPANTS); })
               .style("stroke-width", 10)
@@ -179,19 +162,6 @@ d3.queue()
               //         .on("start", dragstarted)
               //         .on("drag", dragged)
               //         .on("end", dragended));
-
-              circlesEnter
-              .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
-              .attr("cy", function(d, i){ return 250; })
-
-              // .attr("cy", function(d, i){
-              //   if(d["ELIMINATION-1"] == "E"){
-              //     return 850;
-              //
-              //   }
-
-               })
-              //  .end();
 
             circles = circles.merge(circlesEnter)
 
@@ -239,6 +209,7 @@ d3.queue()
 
 
 
+
         }
 
         function sec_2() {
@@ -246,7 +217,99 @@ d3.queue()
 
             canvas_clear();
 
+            var simulation = d3.forceSimulation()
+                    .force("center",d3.forceCollide( function(d){
+                        return d.r + 8 })
+                    )
+                    .force("charge", d3.forceManyBody().strength(5))
+                    .force("y", d3.forceY().y(height / 2).strength(0.1))
+                    .force("x", d3.forceX().x(width / 2).strength(0.1))
 
+            var circles = svg.selectAll("circle")
+              .data(data, function(d){ return d.ID ;});
+
+            var circlesEnter = circles.enter().append("circle")
+              .attr("r", function(d, i){ return d.r; })
+              .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+              // .attr("cy", function(d, i){ return 250; })
+              // .transition()
+              // .duration(2000)
+              // .attr("cy", function(d, i){
+              //   if(d["ELIMINATION-1"] == "E"){
+              //     return 850;
+              //
+              //   }
+              //
+              //  })
+              .style("fill", function(d, i){ return color(d.PARTICIPANTS); })
+              .style("stroke", function(d, i){ return color(d.PARTICIPANTS); })
+              .style("stroke-width", 10)
+              .style("pointer-events", "all")
+              // .call(d3.drag()
+              //         .on("start", dragstarted)
+              //         .on("drag", dragged)
+              //         .on("end", dragended));
+
+              circlesEnter
+              // .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+              .attr("cy", function(d, i){ return 250; })
+              .transition()
+              .duration(2000)
+              .attr("cy", function(d, i){
+                if(d["ELIMINATION-1"] == "E"){
+                  return 850;
+
+                }
+                // else{
+                //   return 250;
+                // }
+
+               })
+              //  .end();
+
+            circles = circles.merge(circlesEnter)
+
+            function ticked() {
+              //console.log("tick")
+              //console.log(data.map(function(d){ return d.x; }));
+              circles
+                  .attr("cx", function(d){ return d.x; })
+                  .attr("cy", function(d){ return d.y; });
+            }
+
+            simulation
+                  .nodes(data)
+                  .on("tick", ticked);
+
+                  function dragstarted(d,i) {
+                    //console.log("dragstarted " + i)
+                    if (!d3.event.active) simulation.alpha(1).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                  }
+
+                  function dragged(d,i) {
+                    //console.log("dragged " + i)
+                    d.fx = d3.event.x;
+                    d.fy = d3.event.y;
+                  }
+
+                  function dragended(d,i) {
+                    //console.log("dragended " + i)
+                    if (!d3.event.active) simulation.alphaTarget(0);
+                    d.fx = null;
+                    d.fy = null;
+                    var me = d3.select(this)
+                    console.log(me.classed("selected"))
+                    me.classed("selected", !me.classed("selected"))
+
+                    // d3.selectAll("circle")
+                    //   .style("fill", function(d, i){ return color(d.ID); })
+                    //
+                    // d3.selectAll("circle.selected")
+                    //   .style("fill", "none")
+
+                  }
 
         }
 
