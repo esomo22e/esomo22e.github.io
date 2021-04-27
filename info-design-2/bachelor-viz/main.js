@@ -27,15 +27,17 @@ var svg = scrolly.select("figure")
     .attr("height", height + margin.top + margin.bottom);
 
     var simulation = d3.forceSimulation()
-            .force("collide",d3.forceCollide( function(d){
-                return d.r + 8 }).iterations(16)
+            .force("center",d3.forceCollide( function(d){
+                return d.r + 8 })
             )
-            .force("charge", d3.forceManyBody())
-            .force("y", d3.forceY().y(height / 2))
-            .force("x", d3.forceX().x(width / 2))
+            .force("charge", d3.forceManyBody().strength(5))
+            .force("y", d3.forceY().y(height / 2).strength(0.1))
+            .force("x", d3.forceX().x(width / 2).strength(0.1))
 
 
-d3.csv('bachelor.csv', function(data) {
+d3.queue()
+.defer(d3.csv, "./datasets/bachelor2.csv")
+.await(function(error, data) {
 
   data.forEach(function(d){
     d.r = radius;
@@ -43,6 +45,7 @@ d3.csv('bachelor.csv', function(data) {
     d.y = height  / 2;
   })
 
+  console.log(data);
   console.table(data);
 
   var circles = svg.selectAll("circle")
@@ -52,8 +55,8 @@ d3.csv('bachelor.csv', function(data) {
     .attr("r", function(d, i){ return d.r; })
     .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
     .attr("cy", function(d, i){ return 250; })
-    .style("fill", function(d, i){ return color(d.ID); })
-    .style("stroke", function(d, i){ return color(d.ID); })
+    .style("fill", function(d, i){ return color(d.PARTICIPANTS); })
+    .style("stroke", function(d, i){ return color(d.PARTICIPANTS); })
     .style("stroke-width", 10)
     .style("pointer-events", "all")
     .call(d3.drag()
@@ -138,33 +141,79 @@ d3.csv('bachelor.csv', function(data) {
             canvas_clear();
             console.log("section 1");
 
-            // svg
-            //     .selectAll("myLayers")
-            //     .data(stackedData.reverse())
-            //     .enter()
-            //     .append("path")
-            //     .attr("class", "stackLayers")
-            //     .attr("fill", function(d) {
-            //         // console.log(color(d.key));
-            //         return color(d.key);
-            //     })
-            //     .attr("stroke", "none")
-            //     .attr("transform", "translate(" + margin.left + ",5)")
-            //     .attr("d", d3.area()
-            //         .x(function(d, i) {
-            //
-            //             return x(d.data.year);
-            //         })
-            //         .y0(function(d) {
-            //             return y(d[0]);
-            //         })
-            //         .y1(function(d) {
-            //             return y(d[1]);
-            //         })
-            //     );
-            //
+            // data.forEach(function(d){
+            //   d.r = radius;
+            //   d.x = width / 2;
+            //   d.y = height  / 2;
+            // })
 
+            var simulation = d3.forceSimulation()
+                    .force("center",d3.forceCollide( function(d){
+                        return d.r + 8 })
+                    )
+                    .force("charge", d3.forceManyBody().strength(5))
+                    .force("y", d3.forceY().y(height / 2).strength(0.1))
+                    .force("x", d3.forceX().x(width / 2).strength(0.1))
 
+            var circles = svg.selectAll("circle")
+              .data(data, function(d){ return d.ID ;});
+
+            var circlesEnter = circles.enter().append("circle")
+              .attr("r", function(d, i){ return d.r; })
+              .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+              .attr("cy", function(d, i){ return 250; })
+              .style("fill", function(d, i){ return color(d.PARTICIPANTS); })
+              .style("stroke", function(d, i){ return color(d.PARTICIPANTS); })
+              .style("stroke-width", 10)
+              .style("pointer-events", "all")
+              .call(d3.drag()
+                      .on("start", dragstarted)
+                      .on("drag", dragged)
+                      .on("end", dragended));
+
+            circles = circles.merge(circlesEnter)
+
+            function ticked() {
+              //console.log("tick")
+              //console.log(data.map(function(d){ return d.x; }));
+              circles
+                  .attr("cx", function(d){ return d.x; })
+                  .attr("cy", function(d){ return d.y; });
+            }
+
+            simulation
+                  .nodes(data)
+                  .on("tick", ticked);
+
+                  function dragstarted(d,i) {
+                    //console.log("dragstarted " + i)
+                    if (!d3.event.active) simulation.alpha(1).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                  }
+
+                  function dragged(d,i) {
+                    //console.log("dragged " + i)
+                    d.fx = d3.event.x;
+                    d.fy = d3.event.y;
+                  }
+
+                  function dragended(d,i) {
+                    //console.log("dragended " + i)
+                    if (!d3.event.active) simulation.alphaTarget(0);
+                    d.fx = null;
+                    d.fy = null;
+                    var me = d3.select(this)
+                    console.log(me.classed("selected"))
+                    me.classed("selected", !me.classed("selected"))
+
+                    // d3.selectAll("circle")
+                    //   .style("fill", function(d, i){ return color(d.ID); })
+                    //
+                    // d3.selectAll("circle.selected")
+                    //   .style("fill", "none")
+
+                  }
 
 
 
@@ -174,127 +223,7 @@ d3.csv('bachelor.csv', function(data) {
             console.log("section 2");
 
             canvas_clear();
-            // svg
-            //     .selectAll("myLayers")
-            //     .data(stackedData.reverse())
-            //     .enter()
-            //     .append("path")
-            //     .attr("class", "stackLayers")
-            //     .attr("fill", function(d) {
-            //         // console.log(color(d.key));
-            //         return color(d.key);
-            //
-            //     })
-            //     .attr("stroke-width", function(d) {
-            //         // console.log(d.key)
-            //         if (d.key === "female") {
-            //             return 5;
-            //         }
-            //
-            //     })
-            //     .attr("stroke", "white")
-            //     .attr("transform", "translate(" + margin.left + ",5)")
-            //     .attr('opacity', 1)
-            //     .transition()
-            //     .ease(d3.easeLinear)
-            //     .duration(1000)
-            //     .attr('opacity', function(d) {
-            //         if (d.key === "female") {
-            //             return 1;
-            //         } else {
-            //             return 0.2;
-            //
-            //         }
-            //     })
-            //
-            //     .attr("d", d3.area()
-            //         .x(function(d, i) {
-            //
-            //             return x(d.data.year);
-            //
-            //         })
-            //         .y0(function(d) {
-            //             return y(d[0]);
-            //         })
-            //         .y1(function(d) {
-            //             return y(d[1]);
-            //         })
-            //     );
-            //
-            // svg.append("line")
-            //     .data(stackedData.reverse())
-            //     .attr("class", "stackLayers")
-            //     .attr("stroke", "#000")
-            //     .attr("stroke-dasharray", "6,6")
-            //     .attr("stroke-width", 2)
-            //     .attr("x1", function(d) {
-            //
-            //
-            //         // return d.year === 1955;
-            //         return x(d[1].data.year) + margin.left;
-            //     })
-            //     .attr("y1", 0)
-            //     .attr("x2", function(d) {
-            //         return x(d[1].data.year) + margin.left;
-            //     })
-            //     .attr("y2", figureHeight);
-            //
-            //
-            //
-            // circle
-            //     .data(stackedData.reverse())
-            //     .enter()
-            //     .append("circle")
-            //     .attr("id", "dot")
-            //     .attr("r", 7)
-            //     .attr("stroke", "white")
-            //     .attr("class", "stackLayers")
-            //     .attr("cx", function(d) {
-            //
-            //         return x(d[1].data.year) + margin.left;
-            //     })
-            //     .transition()
-            //     .duration(2000)
-            //     .attr("cy", function(d) {
-            //
-            //         return y(d[1].data.female);
-            //     });
-            //
-            //
-            // var annotations = [{
-            //     type: d3.annotationCalloutCircle,
-            //     note: {
-            //
-            //         title: "1955",
-            //         label: "12.3% authors are female."
-            //     },
-            //     connector: {
-            //         end: "arrow" // 'dot' also available
-            //     },
-            //     //settings for the subject, in this case the circle radius
-            //     subject: {
-            //         radius: 20
-            //     },
-            //     x: x(dataFilter[1].year) + margin.left,
-            //     y: y(dataFilter[1].female),
-            //     dy: -57,
-            //     dx: 162
-            // }].map(function(d) {
-            //     console.log(d);
-            //
-            //     d.color = "#000";
-            //     return d
-            // });
-            //
-            // var makeAnnotations = d3.annotation()
-            //     .type(d3.annotationLabel)
-            //     .annotations(annotations);
-            //
-            // svg
-            //     .append("g")
-            //     .attr("class", "stackLayers")
-            //     .attr("id", "annotation-group")
-            //     .call(makeAnnotations);
+
 
 
         }
@@ -304,201 +233,12 @@ d3.csv('bachelor.csv', function(data) {
 
 
             canvas_clear();
-            // svg
-            //     .selectAll("myLayers")
-            //     .data(stackedData.reverse())
-            //     .enter()
-            //     .append("path")
-            //     .attr("class", "stackLayers")
-            //     .attr("fill", function(d) {
-            //         // console.log(color(d.key));
-            //         return color(d.key);
-            //     })
-            //     .attr("stroke-width", function(d) {
-            //         // console.log(d.key)
-            //         if (d.key === "female") {
-            //             return 5;
-            //         }
-            //
-            //
-            //     })
-            //     .attr("opacity", function(d) {
-            //         if (d.key === "female") {
-            //             return 1;
-            //         } else {
-            //             return 0.2;
-            //
-            //         }
-            //     })
-            //     .attr("stroke", "white")
-            //     .attr("transform", "translate(" + margin.left + ",5)")
-            //     .attr("d", d3.area()
-            //         .x(function(d, i) {
-            //
-            //             return x(d.data.year);
-            //
-            //         })
-            //         .y0(function(d) {
-            //             return y(d[0]);
-            //         })
-            //         .y1(function(d) {
-            //             return y(d[1]);
-            //         })
-            //     );
-            //
-            // // console.log(stackedData)
-            //
-            // svg.append("line")
-            //     .data(stackedData.reverse())
-            //     .attr("class", "stackLayers")
-            //     .attr("stroke", "#000")
-            //     .attr("stroke-dasharray", "6,6")
-            //     .attr("stroke-width", 2)
-            //     .attr("x1", function(d) {
-            //
-            //         // console.log(d.length);
-            //         // return d.year === 1955;
-            //         return x(d[d.length - 2].data.year) + margin.left;
-            //     })
-            //     .attr("y1", 0)
-            //     .attr("x2", function(d) {
-            //         return x(d[d.length - 2].data.year) + margin.left;
-            //     })
-            //     .attr("y2", figureHeight);
-            //
-            // // svg.selectAll("circle")
-            // circle
-            //     .data(stackedData.reverse())
-            //     .enter()
-            //     .append("circle")
-            //     .attr("id", "dot")
-            //     .attr("r", 7)
-            //     .attr("stroke", "white")
-            //     .attr("class", "stackLayers")
-            //     .attr("cx", function(d) {
-            //
-            //         return x(d[d.length - 2].data.year) + margin.left;
-            //     })
-            //     .transition()
-            //     .duration(2000)
-            //     .attr("cy", function(d) {
-            //
-            //         return y(d[d.length - 2].data.female) + 5;
-            //     });
-            //
-            // var annotations = [{
-            //     type: d3.annotationCalloutCircle,
-            //     note: {
-            //
-            //         title: "2005",
-            //         label: "35.4% authors are female."
-            //     },
-            //     connector: {
-            //         end: "arrow" // 'dot' also available
-            //     },
-            //     //settings for the subject, in this case the circle radius
-            //     subject: {
-            //         radius: 20
-            //     },
-            //     x: x(dataFilter[dataFilter.length - 2].year) + margin.left,
-            //     y: y(dataFilter[dataFilter.length - 2].female) + 5,
-            //     dy: -87,
-            //     dx: -180
-            // }].map(function(d) {
-            //     d.color = "#000";
-            //     return d
-            // })
-            //
-            // var makeAnnotations = d3.annotation()
-            //     .type(d3.annotationLabel)
-            //     .annotations(annotations);
-            //
-            // svg
-            //     .append("g")
-            //     .attr("class", "stackLayers")
-            //     .attr("id", "annotation-group")
-            //     .call(makeAnnotations);
+
         }
 
         function sec_4() {
             console.log("section 4");
             canvas_clear();
-
-    //         var initialarea = d3.area()
-    //           .x(function(d) { return x(d.data.year); })
-    //           .y0(figureHeight + 5)
-    //           .y1(figureHeight + 5);
-    //
-    //
-    //         var area =  d3.area()
-    //             .x(function(d, i) {
-    //
-    //                 return x(d.data.year);
-    //             })
-    //             .y0(function(d) {
-    //                 return y(d[0]);
-    //             })
-    //             .y1(function(d) {
-    //                 return y(d[1]);
-    //             });
-    //
-    //         svg
-    //             .selectAll("myLayers")
-    //             .data(stackedData.reverse())
-    //             .enter()
-    //             .append("path")
-    //             .attr("class", "stackLayers")
-    //             .attr("fill", function(d) {
-    //                 // console.log(color(d.key));
-    //                 return color(d.key);
-    //             })
-    //             .attr("stroke", "none")
-    //             .attr("transform", "translate(" + margin.left + ",5)")
-    //             .attr("d", initialarea)
-    //             .transition()
-    // .duration(2000)
-    //             .attr("d", area);
-    //
-    //
-    //         svg.append("text")
-    //             .data(stackedData.reverse())
-    //             .attr("x", function(d) {
-    //                 console.log(d);
-    //                 return x(d[d.length - 2].data.year) * 7.5 / 8;
-    //             })
-    //             .attr("y", function(d) {
-    //                 return height - (y(d[d.length - 1].data.female) * 4 / 5);
-    //                 // return  height - (y(d[d.length -1].data.female)/2);
-    //             })
-    //             .transition()
-    //             .delay(3000)
-    //             .duration(3000)
-    //             .attr("class", "stackLayers")
-    //             .attr("id", "text-label-fem")
-    //             .attr("fill", "#fff")
-    //             // .attr("font-size", "30px")
-    //             // .attr("font-weight", 600)
-    //             .text("27.1%");
-    //
-    //         svg.append("text")
-    //             .data(stackedData.reverse())
-    //             .attr("x", function(d) {
-    //                 console.log(d);
-    //                 return x(d[d.length - 2].data.year) * 7.5 / 8;
-    //             })
-    //             .attr("y", function(d) {
-    //                 return y(d[d.length - 1].data.male);
-    //             })
-    //             .transition()
-    //             .delay(2000)
-    //             .duration(3000)
-    //             .attr("class", "stackLayers")
-    //             .attr("id", "text-label-male")
-    //             // .attr("dy", "0.71em")
-    //             .attr("fill", "#fff")
-    //             // .attr("font-size", "30px")
-    //             // .attr("font-weight", 600)
-    //             .text("72.9%");
 
 
         }

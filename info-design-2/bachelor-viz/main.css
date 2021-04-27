@@ -1,3 +1,4 @@
+
 #scrolly {
     position: relative;
     padding: 1rem;
@@ -124,3 +125,9 @@ overflow: auto;
     color:#606060;
 
   }
+
+
+/* The Rest */
+h1{
+    text-align: center;
+}
