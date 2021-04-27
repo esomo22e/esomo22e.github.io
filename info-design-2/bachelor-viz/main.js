@@ -160,16 +160,38 @@ d3.queue()
 
             var circlesEnter = circles.enter().append("circle")
               .attr("r", function(d, i){ return d.r; })
-              .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
-              .attr("cy", function(d, i){ return 250; })
+              // .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+              // .attr("cy", function(d, i){ return 250; })
+              // .transition()
+              // .duration(2000)
+              // .attr("cy", function(d, i){
+              //   if(d["ELIMINATION-1"] == "E"){
+              //     return 850;
+              //
+              //   }
+              //
+              //  })
               .style("fill", function(d, i){ return color(d.PARTICIPANTS); })
               .style("stroke", function(d, i){ return color(d.PARTICIPANTS); })
               .style("stroke-width", 10)
               .style("pointer-events", "all")
-              .call(d3.drag()
-                      .on("start", dragstarted)
-                      .on("drag", dragged)
-                      .on("end", dragended));
+              // .call(d3.drag()
+              //         .on("start", dragstarted)
+              //         .on("drag", dragged)
+              //         .on("end", dragended));
+
+              circlesEnter
+              .attr("cx", function(d, i){ return 175 + 25 * i + 2 * i ** 2; })
+              .attr("cy", function(d, i){ return 250; })
+
+              // .attr("cy", function(d, i){
+              //   if(d["ELIMINATION-1"] == "E"){
+              //     return 850;
+              //
+              //   }
+
+               })
+              //  .end();
 
             circles = circles.merge(circlesEnter)
 
