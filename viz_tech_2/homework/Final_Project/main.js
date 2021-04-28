@@ -198,6 +198,190 @@ d3.queue()
 
       console.log("section 2");
 
+
+
+
+                    data_clothes.forEach(function(d) {
+                      // d.r = radius;
+                      d.x = width / 2;
+                      d.y = height / 2;
+                    })
+
+                    var simulation = d3.forceSimulation()
+                      .force("collide", d3.forceCollide(function(d) {
+                        return d.n/3.05;
+                      }).iterations(16))
+                      .force("charge", d3.forceManyBody().strength(-6));
+
+                    var circles =  svg
+                                  // .selectAll("image")
+                                  .selectAll("circle")
+                                  .data(data_clothes);
+
+                  var circles =  svg
+                                // .selectAll("image")
+                                .selectAll("circle")
+                                .data(data_clothes);
+
+                                var circlesEnter = circles.enter().append("circle")
+                                .attr("r", function(d, i) {
+                                  // //console.log(d);
+                                    return d.n/3;
+                                })
+                                .attr("cx", function(d, i) {
+                                    return 175 + 25 * i + 2 * i ** 2;
+                                })
+                                .attr("cy", function(d, i) {
+                                    return 250;
+                                })
+                                .style("fill", function(d, i) {
+                                  return colorscale(d.market);
+
+                                })
+                                .style("stroke", function(d, i) {
+                                    return "#000";
+                                })
+                                .on("mouseover, mousemove", function(d) {
+
+                                  d3.select(this)
+                                      .transition()
+                                      .duration(200)
+                                      .style("fill", function(d, i) {
+                                          // return colorscaleHigh(d.market);
+                                          if(d.market == "Female"){
+                                            return "#5247d1";
+                                          }
+                                          else if(d.market == "Male"){
+                                            return "#004d4d";
+                                          }
+                                          else{
+                                            return "#7a9cc7";
+
+                                          }
+                                      })
+
+                                      div.transition()
+                                        .duration(200)
+                                        .style("opacity", .9);
+                                    div.html("<b>"+d.slug + "</b>" + "<br>"
+                                    +"<b>" + "Number of Schools: "+ "</b>"+d.n
+                                    + "<br>" +"<b>" +"Market: " + "</b>" +d.market)
+                                    .style("font-size", "14px")
+                                        .style("left", (d3.event.pageX) + "px")
+                                        .style("top", (d3.event.pageY - 28) + "px");
+
+                       })
+                       .on("mouseout", function(d,i) {
+                       div.transition()
+                         .duration(200)
+                         .style("opacity", 0);
+
+                                  d3.select(this)
+                                      .transition()
+                                      .duration(200)
+                                      .style("fill", function(d, i) {
+                                          return colorscale(d.market);
+                                      })
+
+                                });
+
+                                circles = circles.merge(circlesEnter);
+
+
+                                function ticked() {
+
+                                  circles
+                                  .attr("cx", function(d) {
+                                    return d.x = Math.max(d.n/4, Math.min(width - d.n/4, d.x));
+                                    // return d.x;
+
+                                  })
+                                  .attr("cy", function(d) {
+                                    return d.y = Math.max(d.n/4, Math.min(height - d.n/4, d.y));
+                                    // return d.y;
+                                  });
+
+                                }
+
+                                simulation
+                                  .nodes(data_clothes)
+                                  .on("tick", ticked);
+
+                                  var push_market = {
+                                    Female:{ x: width *3/6, y: height *1.3/6 },
+                                    Male: { x: width *5/6, y: height *5/6},
+                                    Both: { x: width *1.25/6, y: height *4.85/6 }
+                                    // f: { x: width / 2, y: height / 3 },
+                                    // m: { x: width / 3, y: 2*height / 3 },
+                                    // n: { x: 2*width / 3, y: 2*height / 3 }
+                                  }
+
+
+                                  function splitBubbles(byVar) {
+                                    //conso.log(byVar);
+                                      function bubble_position_x(d) {
+                                          //console.log(d[byVar]);
+                                          return push_market[d[byVar]].x;
+                                        }
+
+                                      function bubble_position_y(d) {
+                                          return push_market[d[byVar]].y;
+                                        }
+
+                                        simulation
+                                      .force('x', d3
+                                                    .forceX()
+                                                    .strength(forceStrength2)
+                                                    .x(bubble_position_x)
+                                                    )
+                                    .force('y', d3
+                                                  .forceY()
+                                                  .strength(forceStrength2)
+                                                  .y(bubble_position_y)
+                                                  );
+
+                                          simulation.alpha(2).restart();
+
+                                          svg
+                                          .selectAll('rect')
+                                          .data(data_clothes)
+                                          .enter()
+                                          .append('rect')
+                                          .attr("fill", "#FFFAF0")
+                                          .style("fill-opacity", 0.7)
+                                          .attr("width", 65)
+                                          .attr("height", 24)
+                                          .attr("rx",'5')
+                                          .attr("ry",'5')
+                                          .attr('x', function (d) { return bubble_position_x(d)-10; })
+                                          .attr('y', function (d) { return bubble_position_y(d)-5; });
+
+                                          svg
+                                          .selectAll('text')
+                                          //.data(data, function(d){ return d[byVar];})
+                                          .attr("class", "text-group")
+                                          .data(data_clothes)
+                                          .enter()
+                                          .append('text')
+                                          .attr('x', function (d) { return bubble_position_x(d); })
+                                          .attr('y', function (d) { return bubble_position_y(d); })
+                                          .attr('text-anchor', 'start')
+                                          .attr('alignment-baseline',"hanging")
+                                          .text(function (d) { return d[byVar]; });
+                                      }
+
+
+
+                                      splitBubbles('market');
+
+    }
+
+    function sec_3() {
+      canvas_clear();
+
+      console.log("section 3")
+
+
       var keys = ["Female    ", "Both     ", "Male"];
 
 
@@ -231,6 +415,11 @@ d3.queue()
                     .attr("cy", function(d, i) {
                         return 250;
                     })
+                    // .transition()
+                    // .duration(1000)
+                    // .attr("cy", function(d, i) {
+                    //     return 50;
+                    // })
                     .style("fill", function(d, i) {
                       return colorscale(d.market);
 
@@ -242,8 +431,8 @@ d3.queue()
                                  // //console.log(d3.select(this))
                                  console.log(d);
                                  d3.select(this)
-                                     .transition()
-                                     .duration(200)
+                                     // .transition()
+                                     // .duration(200)
                                      .style("fill", function(d, i) {
                                          // return colorscaleHigh(d.market);
                                          if(d.market == "Female"){
@@ -351,190 +540,6 @@ d3.queue()
 
 
                     groupBubbles();
-
-
-
-
-    }
-
-    function sec_3() {
-      canvas_clear();
-
-      console.log("section 3")
-
-
-      data_clothes.forEach(function(d) {
-        // d.r = radius;
-        d.x = width / 2;
-        d.y = height / 2;
-      })
-
-      var simulation = d3.forceSimulation()
-        .force("collide", d3.forceCollide(function(d) {
-          return d.n/3.05;
-        }).iterations(16))
-        .force("charge", d3.forceManyBody().strength(-6));
-
-      var circles =  svg
-                    // .selectAll("image")
-                    .selectAll("circle")
-                    .data(data_clothes);
-
-    var circles =  svg
-                  // .selectAll("image")
-                  .selectAll("circle")
-                  .data(data_clothes);
-
-                  var circlesEnter = circles.enter().append("circle")
-                  .attr("r", function(d, i) {
-                    // //console.log(d);
-                      return d.n/3;
-                  })
-                  .attr("cx", function(d, i) {
-                      return 175 + 25 * i + 2 * i ** 2;
-                  })
-                  .attr("cy", function(d, i) {
-                      return 250;
-                  })
-                  .style("fill", function(d, i) {
-                    return colorscale(d.market);
-
-                  })
-                  .style("stroke", function(d, i) {
-                      return "#000";
-                  })
-                  .on("mouseover, mousemove", function(d) {
-
-                    d3.select(this)
-                        .transition()
-                        .duration(200)
-                        .style("fill", function(d, i) {
-                            // return colorscaleHigh(d.market);
-                            if(d.market == "Female"){
-                              return "#5247d1";
-                            }
-                            else if(d.market == "Male"){
-                              return "#004d4d";
-                            }
-                            else{
-                              return "#7a9cc7";
-
-                            }
-                        })
-
-                        div.transition()
-                          .duration(200)
-                          .style("opacity", .9);
-                      div.html("<b>"+d.slug + "</b>" + "<br>"
-                      +"<b>" + "Number of Schools: "+ "</b>"+d.n
-                      + "<br>" +"<b>" +"Market: " + "</b>" +d.market)
-                      .style("font-size", "14px")
-                          .style("left", (d3.event.pageX) + "px")
-                          .style("top", (d3.event.pageY - 28) + "px");
-
-         })
-         .on("mouseout", function(d,i) {
-         div.transition()
-           .duration(200)
-           .style("opacity", 0);
-
-                    d3.select(this)
-                        .transition()
-                        .duration(200)
-                        .style("fill", function(d, i) {
-                            return colorscale(d.market);
-                        })
-
-                  });
-
-                  circles = circles.merge(circlesEnter);
-
-
-                  function ticked() {
-
-                    circles
-                    .attr("cx", function(d) {
-                      return d.x = Math.max(d.n/4, Math.min(width - d.n/4, d.x));
-                      // return d.x;
-
-                    })
-                    .attr("cy", function(d) {
-                      return d.y = Math.max(d.n/4, Math.min(height - d.n/4, d.y));
-                      // return d.y;
-                    });
-
-                  }
-
-                  simulation
-                    .nodes(data_clothes)
-                    .on("tick", ticked);
-
-                    var push_market = {
-                      Female:{ x: width *3/6, y: height *1.3/6 },
-                      Male: { x: width *5/6, y: height *5/6},
-                      Both: { x: width *1.25/6, y: height *4.85/6 }
-                      // f: { x: width / 2, y: height / 3 },
-                      // m: { x: width / 3, y: 2*height / 3 },
-                      // n: { x: 2*width / 3, y: 2*height / 3 }
-                    }
-
-
-                    function splitBubbles(byVar) {
-                      //conso.log(byVar);
-                        function bubble_position_x(d) {
-                            //console.log(d[byVar]);
-                            return push_market[d[byVar]].x;
-                          }
-
-                        function bubble_position_y(d) {
-                            return push_market[d[byVar]].y;
-                          }
-
-                          simulation
-                        .force('x', d3
-                                      .forceX()
-                                      .strength(forceStrength2)
-                                      .x(bubble_position_x)
-                                      )
-                      .force('y', d3
-                                    .forceY()
-                                    .strength(forceStrength2)
-                                    .y(bubble_position_y)
-                                    );
-
-                            simulation.alpha(2).restart();
-
-                            svg
-                            .selectAll('rect')
-                            .data(data_clothes)
-                            .enter()
-                            .append('rect')
-                            .attr("fill", "#FFFAF0")
-                            .style("fill-opacity", 0.7)
-                            .attr("width", 65)
-                            .attr("height", 24)
-                            .attr("rx",'5')
-                            .attr("ry",'5')
-                            .attr('x', function (d) { return bubble_position_x(d)-10; })
-                            .attr('y', function (d) { return bubble_position_y(d)-5; });
-
-                            svg
-                            .selectAll('text')
-                            //.data(data, function(d){ return d[byVar];})
-                            .attr("class", "text-group")
-                            .data(data_clothes)
-                            .enter()
-                            .append('text')
-                            .attr('x', function (d) { return bubble_position_x(d); })
-                            .attr('y', function (d) { return bubble_position_y(d); })
-                            .attr('text-anchor', 'start')
-                            .attr('alignment-baseline',"hanging")
-                            .text(function (d) { return d[byVar]; });
-                        }
-
-
-
-                        splitBubbles('market');
 
     }
 

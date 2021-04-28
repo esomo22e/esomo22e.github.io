@@ -1,73 +1,59 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>Bachelor Data Viz</title>
-    <link rel="stylesheet" href="main.css">
+  <title>Bachelor Season 13</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+    <body>
 
-    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.1/ScrollMagic.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script> -->
-    <!-- <script src="js/library/vega@5.3.5.min.js"></script>
-<script src="js/library/vega-lite@3.2.1.min.js"></script>
-<script src="js/library/vega-embed@4.0.0.min.js"></script> -->
-    <!-- <script src="js/library/d3.v5.min.js"></script> -->
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <!-- <script src='https://unpkg.com/d3@5.9.1/dist/d3.min.js'></script> -->
+<div class = "content_cont">
+      <h1>Bachelor Season 13</h1>
+      <p class = "intro">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in quam sed tellus sollicitudin facilisis at eget urna. Aliquam ligula sapien, dictum ultricies dignissim et, lobortis id lorem. Nam tristique erat vulputate lacus varius imperdiet nec vehicula orci. Nulla venenatis pulvinar eros. Sed sed lacinia velit. Praesent facilisis, elit eu egestas bibendum, orci metus porttitor urna, quis fringilla enim risus nec tellus. Integer lacinia sagittis vulputate. Morbi imperdiet venenatis felis, at sagittis lectus sagittis sit amet. Nunc mauris elit, porttitor accumsan blandit id, fringilla eget odio. Curabitur euismod tellus vitae ornare iaculis. In finibus enim eget ante ultricies, id commodo metus hendrerit. Nulla leo massa, vestibulum sollicitudin lacinia faucibus, bibendum facilisis lectus. Nullam nec risus in velit aliquet maximus. Etiam mattis facilisis elit id hendrerit. Phasellus vel lorem erat. Nulla aliquam dui sit amet ullamcorper pellentesque.
+      </p>
 
-    <!-- <script src="js/library/d3-tip.js"></script> -->
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-    <script src="https://unpkg.com/scrollama"></script>
-    <script src='https://russellgoldenberg.github.io/scrollama/stickyfill.min.js'></script>
-    <script src='https://russellgoldenberg.github.io/scrollama/scrollama.min.js'></script>
-    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>
-
-<body>
-
-    <div class="wrapper">
-
-        <h1>Season 1 of the Bachelor</h1>
-
-        <main>
-            <section id="scrolly">
+      <p class = "intro"> In aliquet risus sit amet nisl tincidunt, vel tempor lacus sollicitudin. Morbi convallis scelerisque odio ut egestas. Proin tempus sem nunc, vel condimentum mi maximus ut. Morbi in purus nec lectus tempus cursus at sed orci. Pellentesque vitae consequat urna. Phasellus faucibus est eget ante egestas, et efficitur arcu viverra. Praesent gravida fermentum neque nec eleifend. Praesent quis sagittis sapien, non eleifend odio. </p>
 
 
-                <figure>
-                    <!-- <p>0</p> -->
-                </figure>
+      <div id = "container">
+        <!-- <svg id="graph"></svg> -->
+        <div id='graph'></div>
+        <div id = 'sections'>
+            <div id = "part_1" class = "sec">
+                <h4>First Week</h4>
 
-                <article>
-                    <div class='step' data-step='1'>
-                        <!-- <h3>Title</h3> -->
-                        <div class="content">
-                            <h3>Title</h3>
-                            <!-- <p>Across all years and disciplines, women account for 27% of authors, a number that hides important trends.</p> -->
-                        </div>
-                    </div>
-                    <div class='step' data-step='2'>
-                        <div class="content">
-                            <!-- <p>While in 1955 women represented only 12% of all active authors... </p> -->
-                        </div>
-                    </div>
-                    <div class='step' data-step='3'>
-                        <div class="content">
-                            <!-- <p>...that fraction steadily increased over the last century, reaching 35% by 2005. </p> -->
-                        </div>
-                    </div>
-                    <div class='step' data-step='4'>
-                        <div class="content">
-                            <!-- <p>Yet, these aggregate numbers hide considerable disciplinary differences, as the fraction of women is as low as 15% in math, physics and computer science, and reaches 33% in psychology. </p> -->
-                        </div>
-                    </div>
-                </article>
-             </section>
-                <section id="outro"></section>
-        </main>
-    </div>
+            </div>
+            <div id = "part_2" class = "sec">
+                <h4>First Week Elimination</h4>
+
+
+            </div>
+            <div id = "part_3" class = "sec">
+                <h4>Second Week</h4>
+
+            </div>
+            <div id = "part_4" class = "sec">
+                <h4>Second Week Elimination</h4>
+
+            </div>
+            <div id = "part_5" class = "sec">
+                <h4>Remove Elimination</h4>
+
+            </div>
+
+        </div>
+      </div>
+
+
+</div>
+
+
+<script src="libraries/d3v4+jetpack.js"></script>
+<script src="libraries/graph-scroll.js"></script>
 <script src="main.js"></script>
-</body>
+
+    </body>
 </html>
