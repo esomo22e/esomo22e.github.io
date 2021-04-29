@@ -6,44 +6,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="main.css" />
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<script src="https://d3js.org/d3-selection.v1.min.js"></script>
+
+<script src="https://d3js.org/d3-collection.v1.min.js"></script>
+<script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
+<script src="https://d3js.org/d3-request.v1.min.js"></script>
+
+<script src="https://d3js.org/topojson.v1.min.js"></script>
   </head>
     <body>
 
 <div class = "content_cont">
-      <h1>Bachelor Season 13</h1>
+      <!-- <h1>Bachelor Season 13</h1> -->
+      <div class = "intro-container">
+          <div class = "intro_head"><img src="https://cdn1.edgedatg.com/aws/v2/abc/TheBachelor/showimages/aa1aaf694e794be4ed5f09aa48643011/350x117-Q80_aa1aaf694e794be4ed5f09aa48643011.png" alt="image-bachelor" style="width:50%;"></div>
+<div class = "intro-text">
       <p class = "intro">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in quam sed tellus sollicitudin facilisis at eget urna. Aliquam ligula sapien, dictum ultricies dignissim et, lobortis id lorem. Nam tristique erat vulputate lacus varius imperdiet nec vehicula orci. Nulla venenatis pulvinar eros. Sed sed lacinia velit. Praesent facilisis, elit eu egestas bibendum, orci metus porttitor urna, quis fringilla enim risus nec tellus. Integer lacinia sagittis vulputate. Morbi imperdiet venenatis felis, at sagittis lectus sagittis sit amet. Nunc mauris elit, porttitor accumsan blandit id, fringilla eget odio. Curabitur euismod tellus vitae ornare iaculis. In finibus enim eget ante ultricies, id commodo metus hendrerit. Nulla leo massa, vestibulum sollicitudin lacinia faucibus, bibendum facilisis lectus. Nullam nec risus in velit aliquet maximus. Etiam mattis facilisis elit id hendrerit. Phasellus vel lorem erat. Nulla aliquam dui sit amet ullamcorper pellentesque.
+          As a fan of reality television, the Bachelor is a reality tv show that has lasted for the test of time and was one of the first (if no the first) two integrate love and competition so for this project,
+          I wanted to showcase a season of the Bachelor and how interaction leads to a winner and maybe a marriage. After almost 20 years of more often than not solid ratings, the Bachelor franchise has become part of America’s
+          cultural fabric — scripted television is being made about it. Millions watch each week as the “bachelor” or “bachelorette” uses structured, on-camera dates to whittle down a group of previously unknown contestants
+          (always of the opposite sex) until the lucky one remains.
       </p>
 
-      <p class = "intro"> In aliquet risus sit amet nisl tincidunt, vel tempor lacus sollicitudin. Morbi convallis scelerisque odio ut egestas. Proin tempus sem nunc, vel condimentum mi maximus ut. Morbi in purus nec lectus tempus cursus at sed orci. Pellentesque vitae consequat urna. Phasellus faucibus est eget ante egestas, et efficitur arcu viverra. Praesent gravida fermentum neque nec eleifend. Praesent quis sagittis sapien, non eleifend odio. </p>
 
-
+      <p class = "intro"> Through an <a href = "https://ew.com/gallery/ranking-seasons-the-bachelor/">EW Ranking</a>, I decided to use season 13 because it was said to be the best season of the show, which features previous
+      Bachelorette runner-up and single father Jason Mesnick. The 13th season of The Bachelor premiered on January 5, 2009 and it features him courting and beginning relationships between 25 women.</p>
+</div>
+      <div class = "vid_container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Cpa7nVXtokQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
       <div id = "container">
         <!-- <svg id="graph"></svg> -->
         <div id='graph'></div>
         <div id = 'sections'>
             <div id = "part_1" class = "sec">
-                <h4>First Week</h4>
+                <h4>Introduction</h4>
+                <p>After being rejected by DeAnna Pappas in season 4 of the Bachelorette, he now gets the chance to find love
+                     among 25 young women in the season 13 of the Bachelor.</p>
 
             </div>
             <div id = "part_2" class = "sec">
-                <h4>First Week Elimination</h4>
-
+                <h4>Week 1</h4>
+                <p>In the first week, Jason greets the ladies in the L.A. Bachelor/Bachelorette mansion and hosts an introductory cocktail party where he chose Nikki Kapke to
+                have the first impression rose.</p>
+                <p>The contestants faced with a little twist, had the opportunity to vote off a contest from the mansion. They chose Megan Parris but Jason decided to let her
+                stay and get to know him better. Howevder, 10 contestants did not get a rose and were eliminated from this competition. </p>
 
             </div>
-            <div id = "part_3" class = "sec">
-                <h4>Second Week</h4>
+            <!-- <div id = "part_3" class = "sec">
+                <h4>Third</h4>
 
-            </div>
+            </div> -->
             <div id = "part_4" class = "sec">
-                <h4>Second Week Elimination</h4>
-
+                <h4>Week 2</h4>
+                <p>Lisa had a family emergency and decided to voluntarily leave the show. </p>
+                <p>In the second week, Jillian, at Downtown L.A., and Melissa, at the park,  received one-on-one dates and a rose on their date.  </p>
+                <p>There was an 8 people group date with Natalie, Erica, Naomi, Nikki, Lauren, Kari, Sharon and Molly. They meet with Jason for shopping and buying
+                    clothes at a mall in Hollywood. Jason gives an impromptu talent show for the ladies on top of the hotel in Hollywood for the evening and Kari, Molly and Sharon give some synchronized swimming routines. Molly receives a rose. </p>
+                <p>Later in the episode, the ladies tried to have one-on-one time with Jason and bonds are starting to develop and later Raquel, who never had a date, and Sharon were eliminated.</p>
             </div>
             <div id = "part_5" class = "sec">
-                <h4>Remove Elimination</h4>
+                <h4>Week 3</h4>
+                <p>In the third week, Stephanie, a single mother who lost her husband in a plane crash, received a solo date where they met up with Stephanie's daughter and celebrated her birthday. </p>
+                <p> Erica, Jillian, Kari, Megan, Melissa, Naomi, Nikki, Shannon go on a group date. They participate in an event for a breast cancer awareness group, some ladies cast their breasts and paint
+                  designs onto a mache cast for an auction.On the date, Jason and Jillian get closer and he givres her a rose for the date. </p>
+                  <p>Natalie  meets Jason and is given a necklace and bracelet with diamonds for a private jet ride to Las Vegas. They discuss their backgrounds while helicoptering through the city and seeing a private performance of Kate Voegelese but
+                  Jason did not see a emotional connection so she is sent home. </p>
+            </div>
+            <div id = "part_6" class = "sec">
+                <h4>Week 4</h4>
+                <p>Chris asks the ladies to write a love song for Jason, Molly impresses him with her song so she is chosen for a one-on-one date. They spend their time overnight camping and she receives a rose</p>
+                <p>Jillian, Lauren, Shannon, Megan, Melissa, and Naomi were sent  to Studio City to the set of General Hospital and act out a fantasy scene with Jason, where kissing seens between contestants cause friction and a rise of emotions between
+                contestants. </p>
+                <p>Nikki and Stephanie go on a romantic date where they ballroom dance. Stephanie, a former dance instructor excels, and Nikki confidence is shaken. Nikki opens up about her relationships but was sent home because of a lost of connection.
+                  Stephanie was given a rose.  </p>
+                  <p>Lauren, Megan and Shannon did not make a strong enough connection with Jason and are eliminated in the rose ceremony and leave shocked. </p>
+
 
             </div>
 
+            <div id = "part_7" class = "sec">
+                <h4>Week 5: Going to Seattle!!!</h4>
+                <p>Jason and the contestants go to Seattle, Washington to explore your hometown. </p>
+
+            </div>
+
+            <div id = "part_8" class = "sec">
+                <h4>Week 5 Continue</h4>
+                <p>Melissa and Naomi each had a one-on-one date, and Stephanie, Jillian and Molly had the only group date for this episode, but all of these dates end with receiving no rose. Melissa was flexibile and met Jason at his house and
+                Naomi went on a deaplane tour of Seattle, and the rest of the ladies went on  "Best of Seattle" tour and a radio station interview</p>
+                <p>Stephanie was eliminated in the Rose Ceremony. </p>
+
+
+            </div>
+            <div id = "part_9" class = "sec">
+                <h4>Week 6: Hometowns</h4>
+                <p>Jillian takes Jason to her childhood home in Kelowna to visit her grandparents' home, then she accompanies him to a local winery after being sheltered for many years earlier because her mother was diagnosed with depression. Later, Jason meets Jillian's immediate family including her father holding a Canadian flag that he is going to wear on his back.</p>
+
+                <p>Next is Molly on her hometown in Grand Rapids, Michigan on a golf course in a local country club for a quick game. And they traveled to her parents' home to meet with her family and Jason surprised on seeing a "hat box" from Molly's mom, and she was given for to draw a picture of Molly. Then, Molly's dad give Jason a reaction that he called him "a good kid",
+                meaning he is anxiously proud of her and she is giving an approval from her parents, Molly wants to pursue her romance with Jason.</p>
+
+                <p>Third is Naomi's hometown in Lake Elsinore for what is going to be an unconventional meeting. First, Naomi brings Jason to her mother's home for to meet her divorced parents, sister, half-sister and nieces and nephews. Telling that Naomi's worst fears are confirmed after her mother gave a eulogy with a dove struck on a wrecked car and plans to be bury it.</p>
+
+                <p>Last is Melissa's hometown in Dallas and she surprises him with a tooth fairy box that is to be given to Ty and he is very impressed. Even though Melissa is excited to introduce Jason to her parents, she revealed that they wouldn't be comfortable in the public eye and brings her friends instead, including their families to one of her friend's house.</p>
+
+            </div>
+
+            <div id = "part_9_1" class = "sec">
+                <h4>Sixth Elimination</h4>
+                    <p>He handed the roses to Molly, Jillian and Melissa, and Naomi was eliminated<p>
+
+            </div>
+            <div id = "part_10" class = "sec">
+                <h4>Week 7: Trip to New Zealand</h4>
+                <p> Molly, Jillian and Melissa go to New Zealand where each of them get to spend time with Jason.<p>
+
+
+            </div>
+
+            <div id = "part_11" class = "sec">
+                <h4>Seventh Elimination</h4>
+                <p>Jillian did not receive a rose and was eliminated from the competition. <p>
+
+
+            </div>
+            <div id = "part_12" class = "sec">
+                <h4>Finale</h4>
+                <p>Jason rejected Molly, and Melissa received the final rose and engagement ring.</p>
+
+            </div>
+            <div id = "part_13" class = "sec">
+                <h4>After the Final Rose </h4>
+                  <p>During the "After the Final Rose" special, which was taped six weeks after filming ended, and aired immediately after the season finale, Jason Mesnick told Chris Harrison that he felt the chemistry with Melissa changed and that he would break up with her and then ask Molly to give him another chance. Molly
+                and Jason have been married for over 10 years and have two children.</p>
+                  <p>Mellisa got married to her friend from high school</p>
+                  <p>Jillian became the next bachelorette for the fifth season of The Bachelorette</p>
+
+            </div>
         </div>
       </div>
 

@@ -52,21 +52,21 @@ geoJSON.features = geoJSON.features.filter(function(d){
           .attr("fill", "lavender")
           .attr("stroke", "purple");
 
-          var points = [
-            {"name": "Boston", "coords": [-71.0589, 42.3601]},
-            {"name": "London", "coords": [-0.1278, 51.5074]}
-          ];
-
-  var circ_points = map.selectAll("circle")
-                  .data(points);
-
-  circ_points.enter().append("circle")
-              .attr("transform", function(d){
-                return "translate(" + proj(d.coords) + ")";
-              })
-              .attr("r", 10)
-              .attr("fill", "aquamarine")
-              .attr("stroke", "blue");
+  //         var points = [
+  //           {"name": "Boston", "coords": [-71.0589, 42.3601]},
+  //           {"name": "London", "coords": [-0.1278, 51.5074]}
+  //         ];
+  //
+  // var circ_points = map.selectAll("circle")
+  //                 .data(points);
+  //
+  // circ_points.enter().append("circle")
+  //             .attr("transform", function(d){
+  //               return "translate(" + proj(d.coords) + ")";
+  //             })
+  //             .attr("r", 10)
+  //             .attr("fill", "aquamarine")
+  //             .attr("stroke", "blue");
   // geoJSON.features = geoJSON.features.filter(function(d){
   //   return d.id !== "ATA";
   //
