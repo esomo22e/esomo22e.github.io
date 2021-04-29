@@ -458,7 +458,7 @@ d3.queue()
 
             splitBubbles('PARTICIPANTS');
 
-            var keys = ["First Impression Rose", "Eliminated", "Received at Rose Ceremony "];
+            var keys = ["First Impression Rose", "Voted off but saved", "Received at Rose Ceremony "];
 
 
             var colorLabel = ["#FFD700","#228B22", "#EF2A2A" ]
@@ -482,7 +482,7 @@ d3.queue()
                         return "#FFD700"
 
                     }
-                    else if(d == "Eliminated"){
+                    else if(d == "Voted off but saved"){
                         return "#228B22"
 
                     }
