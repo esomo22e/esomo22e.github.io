@@ -601,10 +601,10 @@ d3.queue()
 
                         return 5000;
                     }
-                    if (d["ELIMINATION-2"] == "EQ") {
-
-                        return 10000;
-                    }
+                    // if (d["ELIMINATION-2"] == "EQ") {
+                    //
+                    //     return 10000;
+                    // }
                 })
 
 
