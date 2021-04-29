@@ -808,11 +808,39 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 4;
+                    return d.r + 3;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
                 .force("x", d3.forceX().x(width / 2));
+
+                var defs = svg.append("defs").attr("id", "imgdefs");
+
+                var catpattern = defs.append("pattern")
+
+
+                defs.selectAll(".circle-pattern")
+                    .data(data)
+                    .enter().append("pattern")
+                    .attr("class", "artist-pattern")
+                    .attr("id", function(d) {
+                        // return d.NAME.toLowerCase().replace(" ", "_");
+                        return d.ID_NAME;
+                    })
+                    .attr("height", "100%")
+                    .attr("width", "100%")
+                    .attr("patternContentUnits", "objectBoundingBox")
+                    .attr("x", "0")
+                    .attr("y", "0")
+                    .append("image")
+                    .attr("height", 1)
+                    .attr("width", 1)
+                    .attr("preserveAspectRatio", "none")
+                    .attr("xlink:href", function(d, i) {
+                        // return imgurl;
+                        console.log(d.NAME)
+                        return "./images/" + d.ID_NAME + ".jpeg"
+                    });
 
 
             var circles = svg
@@ -1031,41 +1059,6 @@ d3.queue()
             //             .style("alignment-baseline", "middle");
 
 
-                        var simulation = d3.forceSimulation()
-                            .force("collide", d3.forceCollide(function(d) {
-                                return d.r + 3;
-                            }).iterations(16))
-                            .force("charge", d3.forceManyBody())
-                            .force("y", d3.forceY().y(height / 2))
-                            .force("x", d3.forceX().x(width / 2));
-
-                            var defs = svg.append("defs").attr("id", "imgdefs");
-
-                            var catpattern = defs.append("pattern")
-
-
-                            defs.selectAll(".circle-pattern")
-                                .data(data)
-                                .enter().append("pattern")
-                                .attr("class", "artist-pattern")
-                                .attr("id", function(d) {
-                                    // return d.NAME.toLowerCase().replace(" ", "_");
-                                    return d.ID_NAME;
-                                })
-                                .attr("height", "100%")
-                                .attr("width", "100%")
-                                .attr("patternContentUnits", "objectBoundingBox")
-                                .attr("x", "0")
-                                .attr("y", "0")
-                                .append("image")
-                                .attr("height", 1)
-                                .attr("width", 1)
-                                .attr("preserveAspectRatio", "none")
-                                .attr("xlink:href", function(d, i) {
-                                    // return imgurl;
-                                    console.log(d.NAME)
-                                    return "./images/" + d.ID_NAME + ".jpeg"
-                                });
 
             splitBubbles('DATES-3');
 
