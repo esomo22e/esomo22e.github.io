@@ -724,32 +724,32 @@ d3.queue()
                     }
                 });
 
-            d3.selectAll(".fourth-circle")
-                .transition()
-                .delay(function(d, i) {
-                    if (d["ELIMINATION-3"] == "E") {
-                        return 3000;
-                    }
-                    // else if(d["ELIMINATION-3"] == "ED"){
-                    //       return 100;
-                    // }
-                })
-                .duration(function(d, i) {
-                    //   if(d["ELIMINATION-2"] == "EQ"){
-                    //   return 6000;
-                    // }
-                    // else if(d["ELIMINATION-2"] == "E"){
-                    //   return 8000;
-                    // }
-                    return 6000;
-                })
-                .attr("cy", function(d, i) {
-                    if (d["ELIMINATION-3"] == "E") {
-
-                        return 5000;
-                    }
-
-                })
+            // d3.selectAll(".fourth-circle")
+            //     .transition()
+            //     .delay(function(d, i) {
+            //         if (d["ELIMINATION-3"] == "E") {
+            //             return 3000;
+            //         }
+            //         // else if(d["ELIMINATION-3"] == "ED"){
+            //         //       return 100;
+            //         // }
+            //     })
+            //     .duration(function(d, i) {
+            //         //   if(d["ELIMINATION-2"] == "EQ"){
+            //         //   return 6000;
+            //         // }
+            //         // else if(d["ELIMINATION-2"] == "E"){
+            //         //   return 8000;
+            //         // }
+            //         return 6000;
+            //     })
+            //     .attr("cy", function(d, i) {
+            //         if (d["ELIMINATION-3"] == "E") {
+            //
+            //             return 5000;
+            //         }
+            //
+            //     })
 
                 var keys = ["Date Rose", "Received at Rose Ceremony "];
 
