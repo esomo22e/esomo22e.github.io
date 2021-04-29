@@ -458,188 +458,58 @@ d3.queue()
 
             splitBubbles('PARTICIPANTS');
 
+            var keys = ["First Impression Rose", "Eliminated", "Received at Rose Ceremony "];
+
+
+            var colorLabel = ["#FFD700","#228B22", "#EF2A2A" ]
+
+            // var colorscaleHigh = d3.scaleOrdinal()
+            // .range(colorHighlight);
+
+            // var colorscaleHigh = d3.scaleOrdinal()
+            // .range(colorLabel);
+            svg.selectAll("mydots")
+                .data(keys)
+                .enter()
+                .append("circle")
+                  .attr("cx", 100)
+                  .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                  .attr("r", 7)
+                  .style("fill", function(d){
+                    console.log(d);
+
+                    if(d == "First Impression Rose"){
+                        return "#FFD700"
+
+                    }
+                    else if(d == "Eliminated"){
+                        return "#228B22"
+
+                    }
+                    else{
+                        return "#EF2A2A"
+
+                    }
+                    // return colorscale(d);
+                    // return colorHigh(d);
+
+                  });
+
+                  svg.selectAll("mylabels")
+                      .data(keys)
+                      .enter()
+                      .append("text")
+                        .attr("x", 120)
+                        .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                        .style("fill", function(d){ return "#fff"})
+                        .text(function(d){ return d})
+                        .attr("text-anchor", "left")
+                        .style("alignment-baseline", "middle");
+
         }
 
 
 
-
-//       MAAAAAAY DELETE
-        // function sec_3() {
-        //
-        //     canvas_clear();
-        //
-        //     console.log("section 3");
-        //
-        //
-        //     var dataFilter = data.filter(function(d) {
-        //         // console.log(d)
-        //
-        //         return d["ELIMINATION-1"] != "E";
-        //     });
-        //
-        //     console.log(dataFilter)
-        //
-        //     var simulation = d3.forceSimulation()
-        //         .force("collide", d3.forceCollide(function(d) {
-        //             return d.r + 4;
-        //         }).iterations(16))
-        //         .force("charge", d3.forceManyBody())
-        //         .force("y", d3.forceY().y(height / 2))
-        //         .force("x", d3.forceX().x(width / 2));
-        //
-        //         var defs = svg.append("defs").attr("id", "imgdefs");
-        //
-        //         var catpattern = defs.append("pattern")
-        //
-        //
-        //         defs.selectAll(".circle-pattern")
-        //             .data(data)
-        //             .enter().append("pattern")
-        //             .attr("class", "artist-pattern")
-        //             .attr("id", function(d) {
-        //                 // return d.NAME.toLowerCase().replace(" ", "_");
-        //                 return d.ID_NAME;
-        //             })
-        //             .attr("height", "100%")
-        //             .attr("width", "100%")
-        //             .attr("patternContentUnits", "objectBoundingBox")
-        //             .attr("x", "0")
-        //             .attr("y", "0")
-        //             .append("image")
-        //             .attr("height", 1)
-        //             .attr("width", 1)
-        //             .attr("preserveAspectRatio", "none")
-        //             .attr("xlink:href", function(d, i) {
-        //                 // return imgurl;
-        //                 console.log(d.NAME)
-        //                 return "./images/" + d.ID_NAME + ".jpeg"
-        //             });
-        //
-        //     var circles = svg
-        //         // .selectAll("image")
-        //         .selectAll("circle")
-        //         .data(dataFilter);
-        //
-        //
-        //
-        //     var circlesEnter = circles.enter().append("circle")
-        //     .attr("class", "third-circle")
-        //     .style("fill", function(d, i) {
-        //         // return colorscale(d.PARTICIPANTS);
-        //         return "url(#" + d.ID_NAME + ")"
-        //     })
-        //     .attr("r", function(d, i) {
-        //
-        //         if (d.NAME == "Jason Mesnick") {
-        //
-        //             return d.r + 15;
-        //
-        //         } else {
-        //             return d.r;
-        //         }
-        //     })
-        //         .attr("cx", function(d, i) {
-        //             return 175 + 25 * i + 2 * i ** 2;
-        //         })
-        //         .attr("cy", function(d, i) {
-        //             return 250;
-        //         })
-        //
-        //
-        //
-        //     circles = circles.merge(circlesEnter);
-        //
-        //
-        //     function ticked() {
-        //
-        //         circles
-        //             .attr("cx", function(d) {
-        //                 return d.x = Math.max(d.r, Math.min(width - d.r, d.x));
-        //
-        //             })
-        //             .attr("cy", function(d) {
-        //                 return d.y = Math.max(d.r, Math.min(height - d.r, d.y));
-        //             });
-        //     }
-        //
-        //     simulation
-        //         .nodes(dataFilter)
-        //         .on("tick", ticked);
-        //
-        //     var push_bachelor = {
-        //         "D1_1": {
-        //             x: width * 0 / 3,
-        //             y: height * 4 / 6
-        //         },
-        //         "D1_2": {
-        //             x: width * 0.7 / 3,
-        //             y: height * 4 / 6
-        //         },
-        //         "D8": {
-        //             x: width * 1.5 / 3,
-        //             y: height * 4 / 6
-        //         },
-        //         "": {
-        //             x: width * 3/ 3,
-        //             y: height * 4 / 6
-        //         },
-        //         "N/A": {
-        //             x: width * 1.5 / 3,
-        //             y: height * 1 / 6
-        //         }
-        //
-        //     }
-        //
-        //     function splitBubbles(byVar) {
-        //         //conso.log(byVar);
-        //         function bubble_position_x(d) {
-        //             //console.log(d[byVar]);
-        //             return push_bachelor[d[byVar]].x;
-        //         }
-        //
-        //         function bubble_position_y(d) {
-        //             return push_bachelor[d[byVar]].y;
-        //         }
-        //
-        //         simulation
-        //             .force('x', d3
-        //                 .forceX()
-        //                 .strength(forceStrength)
-        //                 .x(bubble_position_x)
-        //             )
-        //             .force('y', d3
-        //                 .forceY()
-        //                 .strength(forceStrength)
-        //                 .y(bubble_position_y)
-        //             );
-        //
-        //         simulation.alpha(2).restart();
-        //
-        //
-        //     }
-        //
-        //     d3.selectAll(".third-circle")
-        //     .style("stroke", function(d,i){
-        //
-        //
-        //         if(d["ELIMINATION-2"] == "R"){
-        //             return  "#B266FF";
-        //         }
-        //         else if(d["ELIMINATION-2"] == ""){
-        //             return  "#EF2A2A";
-        //         }
-        //         // return colorscale(d.PARTICIPANTS);
-        //     })
-        //     .style("stroke-width", function(d){
-        //         return 4;
-        //     })
-        //
-        //
-        //
-        //     splitBubbles('DATES-2');
-        //
-        //
-        // }
 
         function sec_4() {
             canvas_clear();
@@ -881,6 +751,44 @@ d3.queue()
 
                 })
 
+                var keys = ["Date Rose", "Received at Rose Ceremony "];
+
+                svg.selectAll("mydots")
+                    .data(keys)
+                    .enter()
+                    .append("circle")
+                      .attr("cx", 100)
+                      .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                      .attr("r", 7)
+                      .style("fill", function(d){
+                        console.log(d);
+
+                        if(d == "Date Rose"){
+                            return "#B266FF";
+
+                        }
+                        else{
+                            return "#EF2A2A"
+
+                        }
+                        // return colorscale(d);
+                        // return colorHigh(d);
+
+                      });
+
+                      svg.selectAll("mylabels")
+                          .data(keys)
+                          .enter()
+                          .append("text")
+                            .attr("x", 120)
+                            .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                            .style("fill", function(d){ return "#fff"})
+                            .text(function(d){ return d})
+                            .attr("text-anchor", "left")
+                            .style("alignment-baseline", "middle");
+
+
+
             splitBubbles('DATES-2');
 
 
@@ -898,42 +806,14 @@ d3.queue()
 
             console.log(dataFilter2);
 
+            var simulation = d3.forceSimulation()
+                .force("collide", d3.forceCollide(function(d) {
+                    return d.r + 4;
+                }).iterations(16))
+                .force("charge", d3.forceManyBody())
+                .force("y", d3.forceY().y(height / 2))
+                .force("x", d3.forceX().x(width / 2));
 
-                        var simulation = d3.forceSimulation()
-                            .force("collide", d3.forceCollide(function(d) {
-                                return d.r + 3;
-                            }).iterations(16))
-                            .force("charge", d3.forceManyBody())
-                            .force("y", d3.forceY().y(height / 2))
-                            .force("x", d3.forceX().x(width / 2));
-
-                            var defs = svg.append("defs").attr("id", "imgdefs");
-
-                            var catpattern = defs.append("pattern")
-
-
-                            defs.selectAll(".circle-pattern")
-                                .data(data)
-                                .enter().append("pattern")
-                                .attr("class", "artist-pattern")
-                                .attr("id", function(d) {
-                                    // return d.NAME.toLowerCase().replace(" ", "_");
-                                    return d.ID_NAME;
-                                })
-                                .attr("height", "100%")
-                                .attr("width", "100%")
-                                .attr("patternContentUnits", "objectBoundingBox")
-                                .attr("x", "0")
-                                .attr("y", "0")
-                                .append("image")
-                                .attr("height", 1)
-                                .attr("width", 1)
-                                .attr("preserveAspectRatio", "none")
-                                .attr("xlink:href", function(d, i) {
-                                    // return imgurl;
-                                    console.log(d.NAME)
-                                    return "./images/" + d.ID_NAME + ".jpeg"
-                                });
 
             var circles = svg
                 // .selectAll("image")
@@ -1114,6 +994,79 @@ d3.queue()
                 })
             //
 
+            // var keys = ["Date Rose", "Received at Rose Ceremony "];
+            //
+            // svg.selectAll("mydots")
+            //     .data(keys)
+            //     .enter()
+            //     .append("circle")
+            //       .attr("cx", 100)
+            //       .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            //       .attr("r", 7)
+            //       .style("fill", function(d){
+            //         console.log(d);
+            //
+            //         if(d == "Date Rose"){
+            //             return "#B266FF";
+            //
+            //         }
+            //         else{
+            //             return "#EF2A2A"
+            //
+            //         }
+            //         // return colorscale(d);
+            //         // return colorHigh(d);
+            //
+            //       });
+            //
+            //       svg.selectAll("mylabels")
+            //           .data(keys)
+            //           .enter()
+            //           .append("text")
+            //             .attr("x", 120)
+            //             .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            //             .style("fill", function(d){ return "#fff"})
+            //             .text(function(d){ return d})
+            //             .attr("text-anchor", "left")
+            //             .style("alignment-baseline", "middle");
+
+
+                        var simulation = d3.forceSimulation()
+                            .force("collide", d3.forceCollide(function(d) {
+                                return d.r + 3;
+                            }).iterations(16))
+                            .force("charge", d3.forceManyBody())
+                            .force("y", d3.forceY().y(height / 2))
+                            .force("x", d3.forceX().x(width / 2));
+
+                            var defs = svg.append("defs").attr("id", "imgdefs");
+
+                            var catpattern = defs.append("pattern")
+
+
+                            defs.selectAll(".circle-pattern")
+                                .data(data)
+                                .enter().append("pattern")
+                                .attr("class", "artist-pattern")
+                                .attr("id", function(d) {
+                                    // return d.NAME.toLowerCase().replace(" ", "_");
+                                    return d.ID_NAME;
+                                })
+                                .attr("height", "100%")
+                                .attr("width", "100%")
+                                .attr("patternContentUnits", "objectBoundingBox")
+                                .attr("x", "0")
+                                .attr("y", "0")
+                                .append("image")
+                                .attr("height", 1)
+                                .attr("width", 1)
+                                .attr("preserveAspectRatio", "none")
+                                .attr("xlink:href", function(d, i) {
+                                    // return imgurl;
+                                    console.log(d.NAME)
+                                    return "./images/" + d.ID_NAME + ".jpeg"
+                                });
+
             splitBubbles('DATES-3');
 
 
@@ -1131,6 +1084,8 @@ d3.queue()
             });
 
             console.log(dataFilter3);
+
+
 
 
             var simulation = d3.forceSimulation()
@@ -1341,6 +1296,42 @@ d3.queue()
                     }
 
                 })
+
+                var keys = ["Date Rose", "Received at Rose Ceremony "];
+
+                svg.selectAll("mydots")
+                    .data(keys)
+                    .enter()
+                    .append("circle")
+                      .attr("cx", 100)
+                      .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                      .attr("r", 7)
+                      .style("fill", function(d){
+                        console.log(d);
+
+                        if(d == "Date Rose"){
+                            return "#B266FF";
+
+                        }
+                        else{
+                            return "#EF2A2A"
+
+                        }
+                        // return colorscale(d);
+                        // return colorHigh(d);
+
+                      });
+
+                      svg.selectAll("mylabels")
+                          .data(keys)
+                          .enter()
+                          .append("text")
+                            .attr("x", 120)
+                            .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                            .style("fill", function(d){ return "#fff"})
+                            .text(function(d){ return d})
+                            .attr("text-anchor", "left")
+                            .style("alignment-baseline", "middle");
 
             splitBubbles('DATES-4');
 
@@ -1643,6 +1634,42 @@ d3.queue()
 
                 })
 
+                var keys = ["Date Rose", "Received at Rose Ceremony "];
+
+                // svg.selectAll("mydots")
+                //     .data(keys)
+                //     .enter()
+                //     .append("circle")
+                //       .attr("cx", 100)
+                //       .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                //       .attr("r", 7)
+                //       .style("fill", function(d){
+                //         console.log(d);
+                //
+                //         if(d == "Date Rose"){
+                //             return "#B266FF";
+                //
+                //         }
+                //         else{
+                //             return "#EF2A2A"
+                //
+                //         }
+                //         // return colorscale(d);
+                //         // return colorHigh(d);
+                //
+                //       });
+                //
+                //       svg.selectAll("mylabels")
+                //           .data(keys)
+                //           .enter()
+                //           .append("text")
+                //             .attr("x", 120)
+                //             .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                //             .style("fill", function(d){ return "#fff"})
+                //             .text(function(d){ return d})
+                //             .attr("text-anchor", "left")
+                //             .style("alignment-baseline", "middle");
+
             splitBubbles('DATES-5');
         }
 
@@ -1747,6 +1774,8 @@ d3.queue()
             });
 
             // console.log(dataFilter4)
+
+
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
@@ -2167,6 +2196,8 @@ d3.queue()
                     }
 
                 })
+
+
 
             splitBubbles('DATES-6');
 
