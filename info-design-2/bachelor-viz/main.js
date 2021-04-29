@@ -1656,7 +1656,7 @@ d3.queue()
                 .attr("cy", function(d, i) {
                     if (d["ELIMINATION-5"] == "E") {
 
-                        return 5000;
+                        return 8000;
                     }
 
                 })
