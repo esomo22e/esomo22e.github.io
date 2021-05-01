@@ -640,48 +640,48 @@ d3.queue()
                     simulation.alpha(2).restart();
 
 
-                    svg
-                    .selectAll('text')
-                    //.data(data, function(d){ return d[byVar];})
-                    .data(data)
-                    .enter()
-                    .append('text')
-                    .attr("class", "text-group")
-                    // .attr("fill", "#FFFAF0")
-                    .attr('x', function (d) {
-                      if(d[byVar] == ""){
-                      return bubble_position_x(d) -150;
-                    }
-                    else{
-                      return bubble_position_x(d);
-
-                    }
-                    })
-                    .attr('y', function (d) { return bubble_position_y(d) -160; })
-                    .attr('text-anchor', 'start')
-                    .attr('alignment-baseline',"hanging")
-                    .text(function (d) {
-                      if(d[byVar] == ""){
-                        return "No Date";
-                      }
-                      else if(d[byVar] == "N/A"){
-                        return "";
-                      }
-                      else if(d[byVar] == "D1_2"){
-                        return "One-on-One Date";
-                      }
-                      else if(d[byVar] == "D8"){
-                        return "Group Date";
-                      }
-                      else{
-                        return d[byVar];
-
-                      }
-
-                      console.log(d[byVar]);
-
-                    }
-                    );
+                    // svg
+                    // .selectAll('text')
+                    // //.data(data, function(d){ return d[byVar];})
+                    // .data(data)
+                    // .enter()
+                    // .append('text')
+                    // .attr("class", "text-group")
+                    // // .attr("fill", "#FFFAF0")
+                    // .attr('x', function (d) {
+                    //   if(d[byVar] == ""){
+                    //   return bubble_position_x(d) -150;
+                    // }
+                    // else{
+                    //   return bubble_position_x(d);
+                    //
+                    // }
+                    // })
+                    // .attr('y', function (d) { return bubble_position_y(d) -160; })
+                    // .attr('text-anchor', 'start')
+                    // .attr('alignment-baseline',"hanging")
+                    // .text(function (d) {
+                    //   if(d[byVar] == ""){
+                    //     return "No Date";
+                    //   }
+                    //   else if(d[byVar] == "N/A"){
+                    //     return "";
+                    //   }
+                    //   else if(d[byVar] == "D1_2"){
+                    //     return "One-on-One Date";
+                    //   }
+                    //   else if(d[byVar] == "D8"){
+                    //     return "Group Date";
+                    //   }
+                    //   else{
+                    //     return d[byVar];
+                    //
+                    //   }
+                    //
+                    //   console.log(d[byVar]);
+                    //
+                    // }
+                    // );
                 }
 
             d3.selectAll(".fourth-circle")
@@ -760,7 +760,19 @@ d3.queue()
                             .style("alignment-baseline", "middle");
 
 
+                            var keys2 = ["One-one-one date (each)", "Two-on-one date", "Group Date"];
 
+                                                    svg.selectAll("mylabels")
+                                                        .data(keys2)
+                                                        .enter()
+                                                        .append("text")
+                                                        .attr("class", "legend-label2")
+                                                          .attr("x", function(d,i){ return 100 + i *320; })
+                                                          .attr("y", function(d){ return 350}) // 100 is where the first dot appears. 25 is the distance between dots
+                                                          .style("fill", function(){ return "#fff"})
+                                                          .text(function(d){ return d;})
+                                                          .attr("text-anchor", "left")
+                                                          .style("alignment-baseline", "middle");
 
 
             splitBubbles('DATES-2');
@@ -923,48 +935,48 @@ d3.queue()
 
                 simulation.alpha(2).restart();
 
-                svg
-                .selectAll('text')
-                //.data(data, function(d){ return d[byVar];})
-                .data(data)
-                .enter()
-                .append('text')
-                .attr("class", "text-group")
-                // .attr("fill", "#FFFAF0")
-                .attr('x', function (d) {
-                  if(d[byVar] == ""){
-                  return bubble_position_x(d) -100;
-                }
-                else{
-                  return bubble_position_x(d);
-
-                }
-                })
-                .attr('y', function (d) { return bubble_position_y(d) -160; })
-                .attr('text-anchor', 'start')
-                .attr('alignment-baseline',"hanging")
-                .text(function (d) {
-                  if(d[byVar] == ""){
-                    return "No Date";
-                  }
-                  else if(d[byVar] == "N/A"){
-                    return "";
-                  }
-                  else if(d[byVar] == "D1_1" || d[byVar] == "D1_2"){
-                    return "One-on-One Date";
-                  }
-                  else if(d[byVar] == "D8"){
-                    return "Group Date";
-                  }
-                  else{
-                    return d[byVar];
-
-                  }
-
-                  console.log(d[byVar]);
-
-                }
-                );
+                // svg
+                // .selectAll('text')
+                // //.data(data, function(d){ return d[byVar];})
+                // .data(data)
+                // .enter()
+                // .append('text')
+                // .attr("class", "text-group")
+                // // .attr("fill", "#FFFAF0")
+                // .attr('x', function (d) {
+                //   if(d[byVar] == ""){
+                //   return bubble_position_x(d) -100;
+                // }
+                // else{
+                //   return bubble_position_x(d);
+                //
+                // }
+                // })
+                // .attr('y', function (d) { return bubble_position_y(d) -160; })
+                // .attr('text-anchor', 'start')
+                // .attr('alignment-baseline',"hanging")
+                // .text(function (d) {
+                //   if(d[byVar] == ""){
+                //     return "No Date";
+                //   }
+                //   else if(d[byVar] == "N/A"){
+                //     return "";
+                //   }
+                //   else if(d[byVar] == "D1_1" || d[byVar] == "D1_2"){
+                //     return "One-on-One Date";
+                //   }
+                //   else if(d[byVar] == "D8"){
+                //     return "Group Date";
+                //   }
+                //   else{
+                //     return d[byVar];
+                //
+                //   }
+                //
+                //   console.log(d[byVar]);
+                //
+                // }
+                // );
 
 
             }
@@ -1065,6 +1077,20 @@ d3.queue()
                         .attr("text-anchor", "left")
                         .style("alignment-baseline", "middle");
 
+
+                        var keys2 = ["One-one-one date (each)", "Two-on-one date", "Group Date"];
+
+                        svg.selectAll("mylabels")
+                            .data(keys2)
+                            .enter()
+                            .append("text")
+                            .attr("class", "legend-label2")
+                              .attr("x", function(d,i){ return 100 + i *320; })
+                              .attr("y", function(d){ return 350}) // 100 is where the first dot appears. 25 is the distance between dots
+                              .style("fill", function(){ return "#fff"})
+                              .text(function(d){ return d;})
+                              .attr("text-anchor", "left")
+                              .style("alignment-baseline", "middle");
             splitBubbles('DATES-3');
 
 
@@ -1230,55 +1256,53 @@ d3.queue()
 
                 simulation.alpha(2).restart();
 
-                svg
-                .selectAll('text')
-                //.data(data, function(d){ return d[byVar];})
-                .data(dataFilter3)
-                .enter()
-                .append('text')
-                .attr("class", "text-group")
-                // .attr("fill", "#FFFAF0")
-                .attr('x', function (d) {
+                // svg
+                // .selectAll('text')
+                // //.data(data, function(d){ return d[byVar];})
+                // .data(dataFilter3)
+                // .enter()
+                // .append('text')
+                // .attr("class", "text-group")
+                // // .attr("fill", "#FFFAF0")
+                // .attr('x', function (d) {
+                //
+                //   if(d[byVar] == "D1"){
+                //     return bubble_position_x(d) + 100
+                //   }
+                //   else{
+                //     return bubble_position_x(d) -100;
+                //
+                //   }
+                //
+                //
+                // })
+                // .attr('y', function (d) { return bubble_position_y(d) -160; })
+                // .attr('text-anchor', 'start')
+                // .attr('alignment-baseline',"hanging")
+                // .text(function (d) {
+                //   if(d[byVar] == "D1"){
+                //     return "One-on-One Date";
+                //   }
+                //   else if(d[byVar] == "D2"){
+                //     return "Two-on-one Date";
+                //   }
+                //   else if(d[byVar] == "D6"){
+                //     return "Group Date";
+                //   }
+                //   else{
+                //     return d[byVar];
+                //
+                //   }
+                //
+                //   console.log(d[byVar]);
+                //
+                // }
+                // );
 
-                  if(d[byVar] == "D1"){
-                    console.log(bubble_position_x(d))
-s
-                    return bubble_position_x(d) + 100
-                  }
-                  else{
-                    return bubble_position_x(d) -100;
-
-                  }
-
-
-                })
-                .attr('y', function (d) { return bubble_position_y(d) -160; })
-                .attr('text-anchor', 'start')
-                .attr('alignment-baseline',"hanging")
-                .text(function (d) {
-                  if(d[byVar] == "D1"){
-                    return "One-on-One Date";
-                  }
-                  else if(d[byVar] == "D2"){
-                    return "Two-on-one Date";
-                  }
-                  else if(d[byVar] == "D6"){
-                    return "Group Date";
-                  }
-                  else{
-                    return d[byVar];
-
-                  }
-
-                  console.log(d[byVar]);
-
-                }
-                );
 
 
 
             }
-          
 
             d3.selectAll(".sixth-circle")
             .style("stroke", function(d,i){
@@ -1375,6 +1399,20 @@ s
                         .text(function(d){ return d})
                         .attr("text-anchor", "left")
                         .style("alignment-baseline", "middle");
+
+                        var keys2 = ["One-one-one date (each)", "Two-on-one date", "Group Date"];
+
+                        svg.selectAll("mylabels")
+                            .data(keys2)
+                            .enter()
+                            .append("text")
+                            .attr("class", "legend-label2")
+                              .attr("x", function(d,i){ return 100 + i *320; })
+                              .attr("y", function(d){ return 350}) // 100 is where the first dot appears. 25 is the distance between dots
+                              .style("fill", function(){ return "#fff"})
+                              .text(function(d){ return d;})
+                              .attr("text-anchor", "left")
+                              .style("alignment-baseline", "middle");
 
             splitBubbles('DATES-4');
 
@@ -1473,7 +1511,7 @@ s
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 4;
+                    return d.r + 2;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -1574,20 +1612,20 @@ s
 
             var push_bachelor = {
                 "D1_1": {
-                    x: width * 0 / 6,
-                    y: height * 1.3 / 6
+                    x: width * 0 / 3,
+                    y: height * 4 / 6
                 },
                 "D1_2": {
-                    x: width * 1.5 / 6,
-                    y: height * 1.3 / 6
+                    x: width * 1 / 3,
+                    y: height * 4 / 6
                 },
                 "D3": {
                     x: width * 5 / 6,
-                    y: height * 1.3 / 6
+                    y: height * 4 / 6
                 },
                 "N/A": {
                     x: width * 3 / 6,
-                    y: height * 4 / 6
+                    y: height * 1/ 6
                 }
                 // f: { x: width / 2, y: height / 3 },
                 // m: { x: width / 3, y: 2*height / 3 },
@@ -1630,7 +1668,7 @@ s
                 .transition()
                 .duration(function(d, i) {
 
-                    return 6000;
+                    return 7000;
                 })
                 // .attr("cx", function(d, i) {
                 //   // if(d["ELIMINATION-2"] == "E"){
@@ -1645,7 +1683,21 @@ s
 
                 })
 
-                var keys = ["Date Rose", "Received at Rose Ceremony "];
+                // var keys = ["Date Rose", "Received at Rose Ceremony "];
+                var keys2 = ["One-one-one date ",  "Group Date"];
+
+                                        svg.selectAll("mylabels")
+                                            .data(keys2)
+                                            .enter()
+                                            .append("text")
+                                            .attr("class", "legend-label2")
+                                              .attr("x", function(d,i){ return 200 + i *(width/2); })
+                                              .attr("y", function(d){ return 350}) // 100 is where the first dot appears. 25 is the distance between dots
+                                              .style("fill", function(){ return "#fff"})
+                                              .text(function(d){ return d;})
+                                              .attr("text-anchor", "left")
+                                              .style("alignment-baseline", "middle");
+
 
             splitBubbles('DATES-5');
         }
@@ -2333,6 +2385,14 @@ s
 
 
             }
+
+            var img = svg.append("svg:image")
+        // .attr("xlink:href", "./images/petals4.gif")
+        .attr("xlink:href", "./images/rose-vine-comp.gif")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("x", 0)
+        .attr("y",0);
 
             splitBubbles('ELIMINATION-8');
 
