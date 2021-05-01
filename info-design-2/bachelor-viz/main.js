@@ -15,10 +15,10 @@ var svg = d3.select("#graph")
     .attr("height", height);
 
 
-var radius = 37;
+var radius = 38;
 var colorscale = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([0, width]);
-var forceStrength = 0.05;
+var forceStrength = 0.095;
 
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -218,7 +218,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 5;
+                    return d.r + 10;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -283,64 +283,68 @@ d3.queue()
                 .attr("cy", function(d, i) {
                     return 250;
                 })
-                .on("mouseover, mousemove", function(d) {
-
-
-
-                    d3.select(this)
-                        .transition()
-                        .duration(400)
-                        //     .style("fill", function(d, i) {
-                        //         return "#FF6666";
-                        //     })
-                        .attr("r", function(d) {
-                            if (d.NAME == "Jason Mesnick") {
-                                return d.r + 25;
-
-                            } else {
-                                return d.r + 10;
-
-                            }
-                        });
-                    // //console.log(d.schoolName);
-                    div.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    div.html("<b>" + "Name: " + "</b>" + d.NAME + "<br/>" +
-                            "<b>Age: </b>" + d.AGE + "<br/>" +
-                            "<b>Hometown: </b>" + d.HOMETOWN + "<br/>" +
-                            "<b>Employment: </b>" + d.JOB)
-                        .style("font-size", "14px")
-                        .style("left", (d3.event.pageX) + "px")
-                        .style("top", (d3.event.pageY - 28) + "px");
+                .transition()
+                .duration(7000)
+                .attr("cy", function(d, i) {
+                    if (d["ELIMINATION-1"] == "E") {
+                        return 20000;
+                    }
                 })
-                .on("mouseout", function(d) {
-
-                    d3.select(this)
-                        .transition()
-                        .duration(400)
-                        .attr("r", function(d) {
-                            if (d.NAME == "Jason Mesnick") {
-                                return d.r + 15;
-
-                            } else {
-                                return d.r;
-
-                            }
-                        });
-
-                    div.transition()
-                        .duration(200)
-                        .style("opacity", 0);
-                });
+                // .on("mouseover, mousemove", function(d) {
+                //
+                //
+                //
+                //     d3.select(this)
+                //         .transition()
+                //         .duration(400)
+                //
+                //         .attr("r", function(d) {
+                //             if (d.NAME == "Jason Mesnick") {
+                //                 return d.r + 25;
+                //
+                //             } else {
+                //                 return d.r + 10;
+                //
+                //             }
+                //         });
+                //     // //console.log(d.schoolName);
+                //     div.transition()
+                //         .duration(200)
+                //         .style("opacity", .9);
+                //     div.html("<b>" + "Name: " + "</b>" + d.NAME + "<br/>" +
+                //             "<b>Age: </b>" + d.AGE + "<br/>" +
+                //             "<b>Hometown: </b>" + d.HOMETOWN + "<br/>" +
+                //             "<b>Employment: </b>" + d.JOB)
+                //         .style("font-size", "14px")
+                //         .style("left", (d3.event.pageX) + "px")
+                //         .style("top", (d3.event.pageY - 28) + "px");
+                // })
+                // .on("mouseout", function(d) {
+                //
+                //     d3.select(this)
+                //         .transition()
+                //         .duration(400)
+                //         .attr("r", function(d) {
+                //             if (d.NAME == "Jason Mesnick") {
+                //                 return d.r + 15;
+                //
+                //             } else {
+                //                 return d.r;
+                //
+                //             }
+                //         });
+                //
+                //     div.transition()
+                //         .duration(200)
+                //         .style("opacity", 0);
+                // });
 
             d3.selectAll(".second-circle")
                 .transition()
-                .duration(6000)
-
+                .duration(7000)
                 .attr("cy", function(d, i) {
                     if (d["ELIMINATION-1"] == "E") {
-                        return 10000;
+                        return 20000;
                     }
                 })
 
@@ -491,7 +495,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 2.5;
+                    return d.r + 3;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -591,12 +595,12 @@ d3.queue()
                 .on("tick", ticked);
 
                 var push_bachelor = {
-                    // "D1_1": {
-                    //     x: width * 0 / 3,
-                    //     y: height * 4 / 6
-                    // },
+                    "D1_1": {
+                        x: width * 0 / 3,
+                        y: height * 4 / 6
+                    },
                     "D1_2": {
-                        x: width * 0.1/ 2,
+                        x: width * 0.25/ 2,
                         y: height * 4 / 6
                     },
                     "D8": {
@@ -760,7 +764,7 @@ d3.queue()
                             .style("alignment-baseline", "middle");
 
 
-                            var keys2 = ["One-one-one date (each)", "Two-on-one date", "Group Date"];
+                            var keys2 = ["One-one-one date (each)", "Group Date", "No Date"];
 
                                                     svg.selectAll("mylabels")
                                                         .data(keys2)
@@ -794,7 +798,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 2.5;
+                    return d.r + 3;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -885,12 +889,12 @@ d3.queue()
                 .on("tick", ticked);
 
                 var push_bachelor = {
-                    // "D1_1": {
-                    //     x: width * 0 / 3,
-                    //     y: height * 4 / 6
-                    // },
+                    "D1_1": {
+                        x: width * 0 / 3,
+                        y: height * 4 / 6
+                    },
                     "D1_2": {
-                        x: width * 0 / 2,
+                        x: width * 0.25/ 2,
                         y: height * 4 / 6
                     },
                     "D8": {
@@ -1115,7 +1119,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 2.5;
+                    return d.r + 3;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -1211,7 +1215,7 @@ d3.queue()
                     //     y: height * 4 / 6
                     // },
                     "D1": {
-                        x: width * 0 / 2,
+                        x: width * 0.25 / 2,
                         y: height * 4 / 6
                     },
                     "D2": {
@@ -1400,7 +1404,7 @@ d3.queue()
                         .attr("text-anchor", "left")
                         .style("alignment-baseline", "middle");
 
-                        var keys2 = ["One-one-one date (each)", "Two-on-one date", "Group Date"];
+                        var keys2 = ["One-one-one date ", "Two-on-one date", "Group Date"];
 
                         svg.selectAll("mylabels")
                             .data(keys2)
@@ -1989,6 +1993,8 @@ d3.queue()
                 {
                     "name": "New Zealand",
                     "coords": [153.58708518866334, 2.0492002763844686]
+                    // "coords": [-172.834407, -41.5000831]
+
                 }
             ];
 
@@ -2156,16 +2162,16 @@ d3.queue()
             var push_bachelor = {
                 "D1": {
                     x: width * 3 / 6,
-                    y: height * 1.3 / 6
+                    y: height * 4 / 6
                 },
                 "N/A": {
                     x: width * 3 / 6,
-                    y: height * 4 / 6
+                    y: height * 1 / 6
                 }
-                // f: { x: width / 2, y: height / 3 },
-                // m: { x: width / 3, y: 2*height / 3 },
-                // n: { x: 2*width / 3, y: 2*height / 3 }
+
             }
+
+            // var forceStrength2 = 2;
 
 
             function splitBubbles(byVar) {
@@ -2204,11 +2210,7 @@ d3.queue()
 
                     return 6000;
                 })
-                // .attr("cx", function(d, i) {
-                //   // if(d["ELIMINATION-2"] == "E"){
-                //     return (15 + 25 * i + 2 * i ** 2) -100;
-                //         // }
-                // })
+
                 .attr("cy", function(d, i) {
                     if (d["ELIMINATION-7"] == "E") {
 
@@ -2243,7 +2245,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 4;
+                    return d.r + 2;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -2388,11 +2390,30 @@ d3.queue()
 
             var img = svg.append("svg:image")
         // .attr("xlink:href", "./images/petals4.gif")
-        .attr("xlink:href", "./images/rose-vine-comp.gif")
-        .attr("width", width)
+        .attr("xlink:href", "./images/engaged.png")
+        .attr("width", width/2)
         .attr("height", height)
-        .attr("x", 0)
-        .attr("y",0);
+        .attr("x", width/4)
+        .attr("y",-200);
+
+        d3.selectAll(".twelfth-circle")
+            .transition()
+
+
+            .duration(function(d, i) {
+
+                return 6000;
+            })
+
+            .attr("cy", function(d, i) {
+                if (d["ELIMINATION-8"] == "E") {
+
+                    return 7000;
+                }
+
+            })
+
+
 
             splitBubbles('ELIMINATION-8');
 
