@@ -16,7 +16,7 @@ var svg = d3.select("#graph")
 
 var radius = 8;
 var forceStrength = 0.3;
-var forceStrength2 = 0.05;
+var forceStrength2 = 0.1;
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
@@ -73,7 +73,7 @@ var simulation = d3.forceSimulation()
               .transition()
               .duration(550)
               .style("fill", function(d, i) {
-                  return "#FF6666";
+                  return "#d3cd88";
               })
               .attr("r", d.count*2.5);
               // //console.log(d.schoolName);
@@ -128,124 +128,7 @@ var simulation = d3.forceSimulation()
           .y(height / 2));
       // @v4 We can reset the alpha value and restart the simulation
       simulation.alpha(1).restart();
-// data_count.forEach(function(d) {
-//   // console.log(d);
-// // d.r = d.count * 2.5;
-// // d.r = 5;
-// d.x = width;
-// d.y = height;
-// })
-//
-// var simulation2= d3.forceSimulation()
-//   .force("collide", d3.forceCollide(function(d) {
-//     return d.count;
-//   }).iterations(16))
-//   .force("charge", d3.forceManyBody())
-//   .force("y", d3.forceY().y(height/2))
-//   .force("x", d3.forceX().x(width/2));
-//
-//   var images =  svg
-//               .selectAll("image")
-//               // .selectAll("circle")
-//               .data(data_count);
-//
-//               var imagesEnter = images
-//               .enter()
-//               .append("image")
-//             // .attr("r", function(d, i) {
-//             //     return d.count * 2.5;
-//             // })
-//             .attr("x", function(d, i) {
-//                 return 175 + 25 * i + 2 * i ** 2;
-//             })
-//             .attr("y", function(d, i) {
-//                 return 250;
-//             })
-//             .attr("xlink:href",  function(d) { return "./images/solidarity.png";})
-//             .attr("height", function(d){
-//               return d.count * 4;
-//             })
-//             .attr("width", function(d){
-//               return d.count * 4;
-//             })
-//             .style("fill", function(d, i) {
-//                 // return color(d.place_info__state
-//                 return "#C9C16B"
-//             })
-//             .style("stroke", function(d, i) {
-//                 return "#001933";
-//             })
-//             .on("mouseover, mousemove", function(d) {
-//
-//               d3.select(this)
-//               .transition()
-//               .duration(550)
-//               .style("fill", function(d, i) {
-//                   return "#FF6666";
-//               })
-//               .attr("height", function(d){
-//                 return d.count * 4;
-//               })
-//               .attr("width", function(d){
-//                 return d.count * 4;
-//               })
-//               // .attr("r", d.count*2.5);
-//               // //console.log(d.schoolName);
-//               div.transition()
-//                 .duration(200)
-//                 .style("opacity", .9);
-//             div	.html("<b>" + "State: "+ "</b>"+ d.place_info__state + "<br/>"
-//             + "<b>count: </b>"+ d.count + " mutual aid funds")
-//             .style("font-size", "14px")
-//                 .style("left", (d3.event.pageX) + "px")
-//                 .style("top", (d3.event.pageY - 28) + "px");
-//             })
-// .on("mouseout", function(d) {
-//
-//   d3.select(this).transition()
-//         .duration(550)
-//         .style("fill", function(d, i) {
-//             // return color(d.place_info__state);
-//             return "#C9C16B"
-//         })
-//         .attr("height", function(d){
-//           return d.count * 4;
-//         })
-//         .attr("width", function(d){
-//           return d.count * 4;
-//         })
-//         // .attr("r", d.count *2.5);
-//
-//         div.transition()
-//   .duration(500)
-//   .style("opacity", 0);
-//         });
-//
-//
-//         images = images.merge(imagesEnter);
-//
-//
-//               function ticked2() {
-//                                   images
-//                                      //  .attr("x", function(d){ return d.x; })
-//                                      // .attr("y", function(d){ return d.y; })
-//                                       .attr("x", function(d){ return d.x = Math.max((d.count* 3), Math.min(width - (d.count * 3), d.x)); })
-//                                      .attr("y", function(d){ return d.y = Math.max((d.count * 3), Math.min(height - (d.count * 3), d.y)); })
-//                                       ;
-//                                 }
-//                                 ;
 
-    // function ticked() {
-    //
-    //   circles
-    //     .attr("cx", function(d) {
-    //       return d.x = Math.max(d.count*2.5, Math.min(width - (d.count*2.5), d.x));
-    //
-    //     })
-    //     .attr("cy", function(d) {
-    //       return d.y = Math.max(d.count*2.5, Math.min(height - (d.count*2.5), d.y));
-    //     });
-    // }
 
     simulation2
       .nodes(data_count)
@@ -260,62 +143,4 @@ var simulation = d3.forceSimulation()
       // @v4 We can reset the alpha value and restart the simulation
       simulation2.alpha(2).restart();
 
-  //   var imagesEnter=   circles.enter().append('image')
-  // .attr('xlink:href', 'images/solidarity.png')
-  //               // .attr("r", function(d, i) {
-  //               //     return d.count * 2.5;
-  //               // })
-  //               .attr("height", function(d,i){
-  //                 return d.count * 2.5;
-  //               })
-  //               .attr("width", function(d,i){
-  //                 return d.count * 2.5;
-  //               })
-  //               .attr("x", function(d, i) {
-  //                   return 175 + 25 * i + 2 * i ** 2;
-  //               })
-  //               .attr("y", function(d, i) {
-  //                   return 250;
-  //               })
-  //               .style("fill", function(d, i) {
-  //                   // return color(d.place_info__state
-  //                   return "#C9C16B"
-  //               })
-  //
-  //               .style("stroke", function(d, i) {
-  //                   return "#001933";
-  //               })
-  //               .on("mouseover, mousemove", function(d) {
-  //
-  //                 d3.select(this)
-  //                 .transition()
-  //                 .duration(550)
-  //                 .style("fill", function(d, i) {
-  //                     return "#FF6666";
-  //                 })
-  //                 .attr("r", d.count*2.5);
-  //                 // //console.log(d.schoolName);
-  //                 div.transition()
-  //                   .duration(200)
-  //                   .style("opacity", .9);
-  //               div	.html("<b>" + "State: "+ "</b>"+ d.place_info__state + "<br/>"
-  //               + "<b>count: </b>"+ d.count + " mutual aid funds")
-  //               .style("font-size", "14px")
-  //                   .style("left", (d3.event.pageX) + "px")
-  //                   .style("top", (d3.event.pageY - 28) + "px");
-  //               })
-  //   .on("mouseout", function(d) {
-  //
-  //     d3.select(this).transition()
-  //           .duration(550)
-  //           .style("fill", function(d, i) {
-  //               // return color(d.place_info__state);
-  //               return "#C9C16B"
-  //           })
-  //           .attr("r", d.count *2.5);
-  //
-  //           div.transition()
-  //     .duration(500)
-  //     .style("opacity", 0);
-  //           });
   });

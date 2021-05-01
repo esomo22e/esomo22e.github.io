@@ -18,7 +18,7 @@ var svg = d3.select("#graph")
 var radius = 38;
 var colorscale = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([0, width]);
-var forceStrength = 0.095;
+var forceStrength = 0.085;
 
 var div = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -890,7 +890,7 @@ d3.queue()
 
                 var push_bachelor = {
                     "D1_1": {
-                        x: width * 0 / 3,
+                        x: width * 0 / 2,
                         y: height * 4 / 6
                     },
                     "D1_2": {
@@ -938,49 +938,6 @@ d3.queue()
                     );
 
                 simulation.alpha(2).restart();
-
-                // svg
-                // .selectAll('text')
-                // //.data(data, function(d){ return d[byVar];})
-                // .data(data)
-                // .enter()
-                // .append('text')
-                // .attr("class", "text-group")
-                // // .attr("fill", "#FFFAF0")
-                // .attr('x', function (d) {
-                //   if(d[byVar] == ""){
-                //   return bubble_position_x(d) -100;
-                // }
-                // else{
-                //   return bubble_position_x(d);
-                //
-                // }
-                // })
-                // .attr('y', function (d) { return bubble_position_y(d) -160; })
-                // .attr('text-anchor', 'start')
-                // .attr('alignment-baseline',"hanging")
-                // .text(function (d) {
-                //   if(d[byVar] == ""){
-                //     return "No Date";
-                //   }
-                //   else if(d[byVar] == "N/A"){
-                //     return "";
-                //   }
-                //   else if(d[byVar] == "D1_1" || d[byVar] == "D1_2"){
-                //     return "One-on-One Date";
-                //   }
-                //   else if(d[byVar] == "D8"){
-                //     return "Group Date";
-                //   }
-                //   else{
-                //     return d[byVar];
-                //
-                //   }
-                //
-                //   console.log(d[byVar]);
-                //
-                // }
-                // );
 
 
             }
@@ -1082,7 +1039,7 @@ d3.queue()
                         .style("alignment-baseline", "middle");
 
 
-                        var keys2 = ["One-one-one date (each)", "Two-on-one date", "Group Date"];
+                        var keys2 = ["One-one-one date (each)", "Group date", "No Date"];
 
                         svg.selectAll("mylabels")
                             .data(keys2)
@@ -1095,6 +1052,7 @@ d3.queue()
                               .text(function(d){ return d;})
                               .attr("text-anchor", "left")
                               .style("alignment-baseline", "middle");
+
             splitBubbles('DATES-3');
 
 
@@ -1215,7 +1173,7 @@ d3.queue()
                     //     y: height * 4 / 6
                     // },
                     "D1": {
-                        x: width * 0.25 / 2,
+                        x: width * 0.2 / 2,
                         y: height * 4 / 6
                     },
                     "D2": {
@@ -1515,7 +1473,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 2;
+                    return d.r + 3;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -1616,7 +1574,7 @@ d3.queue()
 
             var push_bachelor = {
                 "D1_1": {
-                    x: width * 0 / 3,
+                    x: width * 0.5 / 3,
                     y: height * 4 / 6
                 },
                 "D1_2": {
@@ -2349,11 +2307,11 @@ d3.queue()
 
             var push_bachelor = {
                 "E": {
-                    x: width * 0.5 / 2,
+                    x: width * 0.25 / 2,
                     y: height * 3 / 6
                 },
                 "W": {
-                    x: width * 1.5 / 2,
+                    x: width * 1 / 2,
                     y: height * 3 / 6
                 }
 
@@ -2394,7 +2352,16 @@ d3.queue()
         .attr("width", width/2)
         .attr("height", height)
         .attr("x", width/4)
-        .attr("y",-200);
+        .attr("y",-250);
+
+        var img = svg.append("svg:image")
+    // .attr("xlink:href", "./images/petals4.gif")
+    .attr("xlink:href", "./images/finalrose.png")
+    .attr("width", width/4)
+    .attr("height", height/2)
+    .attr("x", width/3)
+    .attr("y",50);
+
 
         d3.selectAll(".twelfth-circle")
             .transition()
