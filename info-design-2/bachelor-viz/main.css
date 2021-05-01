@@ -51,8 +51,11 @@ p.intro{
   font-size: 25px;
   /* font-family: 'Merriweather Sans', sans-serif; */
       font-family: 'Lora', serif;
+
   /* font-family: 'Handlee', cursive; */
   color: #fff;
+  text-align: left;
+
 
 }
 
@@ -128,11 +131,20 @@ span.schools{
 }
 
 h4{
-  font-family: 'Handlee', cursive !important
+  /* font-family: 'Handlee', cursive !important */
+  font-style: italic;
+
 
 }
 
+.legend-label{
+  font-family: 'Lora', serif;
 
+}
+
+.text-group{
+  fill: #fff;
+}
 #sections > div{
   background: #fff;
   opacity: 0.2;

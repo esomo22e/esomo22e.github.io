@@ -14,20 +14,8 @@ var svg = d3.select("#graph")
     .attr("width", width)
     .attr("height", height);
 
-// var radius = 8;
-// // var forceStrength = 0.3;
-// var forceStrengt2 = 0.05;
 
-// var colors = ["#9370DB", "#B0C4DE", "#008080"];
-
-// var colorHighlight = ["#7870db", "#7a9cc7", "#004d4d"];
-// var colorscale = d3.scaleOrdinal()
-//  .range(colors);
-//
-// var colorscaleHigh = d3.scaleOrdinal()
-// .range(colorHighlight);
-
-var radius = 40;
+var radius = 37;
 var colorscale = d3.scaleOrdinal(d3.schemeCategory20);
 var centerScale = d3.scalePoint().padding(1).range([0, width]);
 var forceStrength = 0.05;
@@ -98,7 +86,7 @@ d3.queue()
                 .attr("xlink:href", function(d, i) {
                     // return imgurl;
                     console.log(d.NAME)
-                    return "./images/" + d.ID_NAME + ".jpeg"
+                    return "./images/" + d.ID_NAME + ".jpg"
                 });;
 
             var circles = svg
@@ -178,13 +166,7 @@ d3.queue()
 
                             }
                         });
-                    // d3.select(this).transition()
-                    //     .duration(550)
-                    //     .style("fill", function(d, i) {
-                    //         return "#003366";
-                    //     })
-                    //       .attr("r", 8);
-                    //
+
                     div.transition()
                         .duration(200)
                         .style("opacity", 0);
@@ -236,7 +218,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 10;
+                    return d.r + 5;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -263,11 +245,11 @@ d3.queue()
                 .append("image")
                 .attr("height", 1)
                 .attr("width", 1)
-                .attr("preserveAspectRatio", "none")
+                .attr("preserveAspectRatio", "0 0 350 350")
                 .attr("xlink:href", function(d, i) {
                     // return imgurl;
                     console.log(d.NAME)
-                    return "./images/" + d.ID_NAME + ".jpeg"
+                    return "./images/" + d.ID_NAME + ".jpg"
                 });
 
             var circles = svg
@@ -337,9 +319,6 @@ d3.queue()
                     d3.select(this)
                         .transition()
                         .duration(400)
-                        //     .style("fill", function(d, i) {
-                        //         return "#FF6666";
-                        //     })
                         .attr("r", function(d) {
                             if (d.NAME == "Jason Mesnick") {
                                 return d.r + 15;
@@ -349,13 +328,7 @@ d3.queue()
 
                             }
                         });
-                    // d3.select(this).transition()
-                    //     .duration(550)
-                    //     .style("fill", function(d, i) {
-                    //         return "#003366";
-                    //     })
-                    //       .attr("r", 8);
-                    //
+
                     div.transition()
                         .duration(200)
                         .style("opacity", 0);
@@ -371,9 +344,6 @@ d3.queue()
                     }
                 })
 
-            // .style("stroke", function(d, i) {
-            //     return "#000";
-            // })
 
             circles = circles.merge(circlesEnter);
 
@@ -397,15 +367,13 @@ d3.queue()
             var push_bachelor = {
                 BACHELOR: {
                     x: width * 3 / 6,
-                    y: height * 0.5 / 6
+                    y: height * 1 / 6
                 },
                 CONTESTANT: {
                     x: width * 3 / 6,
                     y: height * 4 / 6
                 }
-                // f: { x: width / 2, y: height / 3 },
-                // m: { x: width / 3, y: 2*height / 3 },
-                // n: { x: 2*width / 3, y: 2*height / 3 }
+
             }
 
             function splitBubbles(byVar) {
@@ -463,11 +431,7 @@ d3.queue()
 
             var colorLabel = ["#FFD700","#228B22", "#EF2A2A" ]
 
-            // var colorscaleHigh = d3.scaleOrdinal()
-            // .range(colorHighlight);
 
-            // var colorscaleHigh = d3.scaleOrdinal()
-            // .range(colorLabel);
             svg.selectAll("mydots")
                 .data(keys)
                 .enter()
@@ -499,6 +463,7 @@ d3.queue()
                       .data(keys)
                       .enter()
                       .append("text")
+                      .attr("class", "legend-label")
                         .attr("x", 120)
                         .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
                         .style("fill", function(d){ return "#fff"})
@@ -526,7 +491,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 4;
+                    return d.r + 2.5;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -557,7 +522,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
 
@@ -594,17 +559,14 @@ d3.queue()
                 .transition()
                 .duration(function(d, i) {
 
-                    return 8000;
+                    return 10000;
                 })
                 .attr("cy", function(d, i) {
                     if (d["ELIMINATION-2"] == "E") {
 
-                        return 5000;
+                        return 8000;
                     }
-                    // if (d["ELIMINATION-2"] == "EQ") {
-                    //
-                    //     return 10000;
-                    // }
+
                 })
 
 
@@ -629,20 +591,20 @@ d3.queue()
                 .on("tick", ticked);
 
                 var push_bachelor = {
-                    "D1_1": {
-                        x: width * 0 / 3,
-                        y: height * 4 / 6
-                    },
+                    // "D1_1": {
+                    //     x: width * 0 / 3,
+                    //     y: height * 4 / 6
+                    // },
                     "D1_2": {
-                        x: width * 0.7 / 3,
+                        x: width * 0.1/ 2,
                         y: height * 4 / 6
                     },
                     "D8": {
-                        x: width * 1.5 / 3,
+                        x: width * 1/ 2,
                         y: height * 4/ 6
                     },
                     "": {
-                        x: width * 3/ 3,
+                        x: width * 2/ 2,
                         y: height * 4 / 6
                     },
                     "N/A": {
@@ -652,33 +614,75 @@ d3.queue()
 
                 }
 
+
             function splitBubbles(byVar) {
-                //conso.log(byVar);
-                function bubble_position_x(d) {
-                    //console.log(d[byVar]);
-                    return push_bachelor[d[byVar]].x;
-                }
+              //conso.log(byVar);
+              function bubble_position_x(d) {
+                  //console.log(d[byVar]);
+                  return push_bachelor[d[byVar]].x;
+              }
 
-                function bubble_position_y(d) {
-                    return push_bachelor[d[byVar]].y;
-                }
+              function bubble_position_y(d) {
+                  return push_bachelor[d[byVar]].y;
+              }
+                  simulation
+                .force('x', d3
+                              .forceX()
+                              .strength(forceStrength)
+                              .x(bubble_position_x)
+                              )
+              .force('y', d3
+                            .forceY()
+                            .strength(forceStrength)
+                            .y(bubble_position_y)
+                            );
 
-                simulation
-                    .force('x', d3
-                        .forceX()
-                        .strength(forceStrength)
-                        .x(bubble_position_x)
-                    )
-                    .force('y', d3
-                        .forceY()
-                        .strength(forceStrength)
-                        .y(bubble_position_y)
+                    simulation.alpha(2).restart();
+
+
+                    svg
+                    .selectAll('text')
+                    //.data(data, function(d){ return d[byVar];})
+                    .data(data)
+                    .enter()
+                    .append('text')
+                    .attr("class", "text-group")
+                    // .attr("fill", "#FFFAF0")
+                    .attr('x', function (d) {
+                      if(d[byVar] == ""){
+                      return bubble_position_x(d) -150;
+                    }
+                    else{
+                      return bubble_position_x(d);
+
+                    }
+                    })
+                    .attr('y', function (d) { return bubble_position_y(d) -160; })
+                    .attr('text-anchor', 'start')
+                    .attr('alignment-baseline',"hanging")
+                    .text(function (d) {
+                      if(d[byVar] == ""){
+                        return "No Date";
+                      }
+                      else if(d[byVar] == "N/A"){
+                        return "";
+                      }
+                      else if(d[byVar] == "D1_2"){
+                        return "One-on-One Date";
+                      }
+                      else if(d[byVar] == "D8"){
+                        return "Group Date";
+                      }
+                      else{
+                        return d[byVar];
+
+                      }
+
+                      console.log(d[byVar]);
+
+                    }
                     );
-
-                simulation.alpha(2).restart();
-
-
-            }
+                }
 
             d3.selectAll(".fourth-circle")
             .style("stroke", function(d,i){
@@ -704,52 +708,20 @@ d3.queue()
                     if (d["ELIMINATION-2"] == "EQ") {
                         return 1000;
                     }
-                    // else if(d["ELIMINATION-3"] == "ED"){
-                    //       return 100;
-                    // }
+
                 })
                 .duration(function(d, i) {
-                    //   if(d["ELIMINATION-2"] == "EQ"){
-                    //   return 6000;
-                    // }
-                    // else if(d["ELIMINATION-2"] == "E"){
-                    //   return 8000;
-                    // }
+
                     return 6000;
                 })
                 .attr("cx", function(d, i) {
                     if (d["ELIMINATION-2"] == "EQ") {
 
-                        return (175 + 25 * i + 2 * i ** 2) - 1000;
+                        return (175 + 25 * i + 2 * i ** 2) - 3000;
                     }
                 });
 
-            // d3.selectAll(".fourth-circle")
-            //     .transition()
-            //     .delay(function(d, i) {
-            //         if (d["ELIMINATION-3"] == "E") {
-            //             return 3000;
-            //         }
-            //         // else if(d["ELIMINATION-3"] == "ED"){
-            //         //       return 100;
-            //         // }
-            //     })
-            //     .duration(function(d, i) {
-            //         //   if(d["ELIMINATION-2"] == "EQ"){
-            //         //   return 6000;
-            //         // }
-            //         // else if(d["ELIMINATION-2"] == "E"){
-            //         //   return 8000;
-            //         // }
-            //         return 6000;
-            //     })
-            //     .attr("cy", function(d, i) {
-            //         if (d["ELIMINATION-3"] == "E") {
-            //
-            //             return 5000;
-            //         }
-            //
-            //     })
+
 
                 var keys = ["Date Rose", "Received at Rose Ceremony "];
 
@@ -758,7 +730,7 @@ d3.queue()
                     .enter()
                     .append("circle")
                       .attr("cx", 100)
-                      .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                      .attr("cy", function(d,i){ return 100 + i*25})
                       .attr("r", 7)
                       .style("fill", function(d){
                         console.log(d);
@@ -771,8 +743,7 @@ d3.queue()
                             return "#EF2A2A"
 
                         }
-                        // return colorscale(d);
-                        // return colorHigh(d);
+
 
                       });
 
@@ -780,12 +751,15 @@ d3.queue()
                           .data(keys)
                           .enter()
                           .append("text")
+                          .attr("class", "legend-label")
                             .attr("x", 120)
-                            .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                            .attr("y", function(d,i){ return 100 + i*25})
                             .style("fill", function(d){ return "#fff"})
                             .text(function(d){ return d})
                             .attr("text-anchor", "left")
                             .style("alignment-baseline", "middle");
+
+
 
 
 
@@ -808,7 +782,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 3;
+                    return d.r + 2.5;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -839,7 +813,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
 
@@ -899,20 +873,20 @@ d3.queue()
                 .on("tick", ticked);
 
                 var push_bachelor = {
-                    "D1_1": {
-                        x: width * 0 / 3,
-                        y: height * 4 / 6
-                    },
+                    // "D1_1": {
+                    //     x: width * 0 / 3,
+                    //     y: height * 4 / 6
+                    // },
                     "D1_2": {
-                        x: width * 1 / 3,
+                        x: width * 0 / 2,
                         y: height * 4 / 6
                     },
                     "D8": {
-                        x: width * 2 / 3,
+                        x: width * 1 / 2,
                         y: height * 4 / 6
                     },
                     "": {
-                        x: width * 3/ 3,
+                        x: width * 2/ 2,
                         y: height * 4 / 6
                     },
                     "N/A": {
@@ -949,6 +923,49 @@ d3.queue()
 
                 simulation.alpha(2).restart();
 
+                svg
+                .selectAll('text')
+                //.data(data, function(d){ return d[byVar];})
+                .data(data)
+                .enter()
+                .append('text')
+                .attr("class", "text-group")
+                // .attr("fill", "#FFFAF0")
+                .attr('x', function (d) {
+                  if(d[byVar] == ""){
+                  return bubble_position_x(d) -100;
+                }
+                else{
+                  return bubble_position_x(d);
+
+                }
+                })
+                .attr('y', function (d) { return bubble_position_y(d) -160; })
+                .attr('text-anchor', 'start')
+                .attr('alignment-baseline',"hanging")
+                .text(function (d) {
+                  if(d[byVar] == ""){
+                    return "No Date";
+                  }
+                  else if(d[byVar] == "N/A"){
+                    return "";
+                  }
+                  else if(d[byVar] == "D1_1" || d[byVar] == "D1_2"){
+                    return "One-on-One Date";
+                  }
+                  else if(d[byVar] == "D8"){
+                    return "Group Date";
+                  }
+                  else{
+                    return d[byVar];
+
+                  }
+
+                  console.log(d[byVar]);
+
+                }
+                );
+
 
             }
 
@@ -974,17 +991,10 @@ d3.queue()
                     if (d["ELIMINATION-3"] == "ED") {
                         return 1000;
                     }
-                    // else if(d["ELIMINATION-3"] == "ED"){
-                    //       return 100;
-                    // }
+
                 })
                 .duration(function(d, i) {
-                    //   if(d["ELIMINATION-2"] == "EQ"){
-                    //   return 6000;
-                    // }
-                    // else if(d["ELIMINATION-2"] == "E"){
-                    //   return 8000;
-                    // }
+
                     return 6000;
                 })
                 .attr("cx", function(d, i) {
@@ -1000,9 +1010,7 @@ d3.queue()
                     if (d["ELIMINATION-3"] == "E") {
                         return 3000;
                     }
-                    // else if(d["ELIMINATION-3"] == "ED"){
-                    //       return 100;
-                    // }
+
                 })
                 .duration(function(d, i) {
                     //   if(d["ELIMINATION-2"] == "EQ"){
@@ -1022,41 +1030,6 @@ d3.queue()
                 })
             //
 
-            // var keys = ["Date Rose", "Received at Rose Ceremony "];
-            //
-            // svg.selectAll("mydots")
-            //     .data(keys)
-            //     .enter()
-            //     .append("circle")
-            //       .attr("cx", 100)
-            //       .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            //       .attr("r", 7)
-            //       .style("fill", function(d){
-            //         console.log(d);
-            //
-            //         if(d == "Date Rose"){
-            //             return "#B266FF";
-            //
-            //         }
-            //         else{
-            //             return "#EF2A2A"
-            //
-            //         }
-            //         // return colorscale(d);
-            //         // return colorHigh(d);
-            //
-            //       });
-            //
-            //       svg.selectAll("mylabels")
-            //           .data(keys)
-            //           .enter()
-            //           .append("text")
-            //             .attr("x", 120)
-            //             .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            //             .style("fill", function(d){ return "#fff"})
-            //             .text(function(d){ return d})
-            //             .attr("text-anchor", "left")
-            //             .style("alignment-baseline", "middle");
 
             var keys = ["Date Rose", "Received at Rose Ceremony "];
 
@@ -1075,18 +1048,16 @@ d3.queue()
 
                     }
                     else{
-                        return "#EF2A2A"
+                        return "#EF2A2A";
 
-                    }
-                    // return colorscale(d);
-                    // return colorHigh(d);
-
+                      }
                   });
 
                   svg.selectAll("mylabels")
                       .data(keys)
                       .enter()
                       .append("text")
+                      .attr("class", "legend-label")
                         .attr("x", 120)
                         .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
                         .style("fill", function(d){ return "#fff"})
@@ -1098,6 +1069,8 @@ d3.queue()
 
 
         }
+
+
 
         function sec_6() {
 
@@ -1114,10 +1087,9 @@ d3.queue()
 
 
 
-
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 4;
+                    return d.r + 2.5;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -1148,8 +1120,9 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
+
 
             var circles = svg
                 // .selectAll("image")
@@ -1160,6 +1133,10 @@ d3.queue()
 
             var circlesEnter = circles.enter().append("circle")
                 .attr("class", "sixth-circle")
+                .style("fill", function(d, i) {
+                    // return colorscale(d.PARTICIPANTS);
+                    return "url(#" + d.ID_NAME + ")"
+                })
                 .style("fill", function(d, i) {
                     // return colorscale(d.PARTICIPANTS);
                     return "url(#" + d.ID_NAME + ")"
@@ -1202,29 +1179,31 @@ d3.queue()
                 .nodes(dataFilter3)
                 .on("tick", ticked);
 
-            var push_bachelor = {
-                "D1": {
-                    x: width * 0 / 2,
-                    y: height * 4 / 6
-                },
-                "D2": {
-                    x: width * 1 / 2,
-                    y: height * 4 / 6
-                },
-                "D6": {
-                    x: width * 2/ 2,
-                    y: height * 4 / 6
-                },
-                "N/A": {
-                    x: width * 1/2,
-                    y: height * 1 / 6
-                }
-                // f: { x: width / 2, y: height / 3 },
-                // m: { x: width / 3, y: 2*height / 3 },
-                // n: { x: 2*width / 3, y: 2*height / 3 }
-            }
+                var push_bachelor = {
+                    // "D1_1": {
+                    //     x: width * 0 / 3,
+                    //     y: height * 4 / 6
+                    // },
+                    "D1": {
+                        x: width * 0 / 2,
+                        y: height * 4 / 6
+                    },
+                    "D2": {
+                        x: width * 1 / 2,
+                        y: height * 4 / 6
+                    },
+                    "D6": {
+                        x: width * 2/ 2,
+                        y: height * 4 / 6
+                    },
+                    "N/A": {
+                        x: width * 1.5 / 3,
+                        y: height * 1 / 6
+                    }
 
-            console.log(push_bachelor);
+                }
+
+            // console.log(push_bachelor);
 
             function splitBubbles(byVar) {
                 //conso.log(byVar);
@@ -1251,8 +1230,55 @@ d3.queue()
 
                 simulation.alpha(2).restart();
 
+                svg
+                .selectAll('text')
+                //.data(data, function(d){ return d[byVar];})
+                .data(dataFilter3)
+                .enter()
+                .append('text')
+                .attr("class", "text-group")
+                // .attr("fill", "#FFFAF0")
+                .attr('x', function (d) {
+
+                  if(d[byVar] == "D1"){
+                    console.log(bubble_position_x(d))
+s
+                    return bubble_position_x(d) + 100
+                  }
+                  else{
+                    return bubble_position_x(d) -100;
+
+                  }
+
+
+                })
+                .attr('y', function (d) { return bubble_position_y(d) -160; })
+                .attr('text-anchor', 'start')
+                .attr('alignment-baseline',"hanging")
+                .text(function (d) {
+                  if(d[byVar] == "D1"){
+                    return "One-on-One Date";
+                  }
+                  else if(d[byVar] == "D2"){
+                    return "Two-on-one Date";
+                  }
+                  else if(d[byVar] == "D6"){
+                    return "Group Date";
+                  }
+                  else{
+                    return d[byVar];
+
+                  }
+
+                  console.log(d[byVar]);
+
+                }
+                );
+
+
 
             }
+          
 
             d3.selectAll(".sixth-circle")
             .style("stroke", function(d,i){
@@ -1270,30 +1296,22 @@ d3.queue()
                 return 4;
             })
 
-
             d3.selectAll(".sixth-circle")
                 .transition()
                 .delay(function(d, i) {
                     if (d["ELIMINATION-4"] == "ED") {
                         return 1000;
                     }
-                    // else if(d["ELIMINATION-3"] == "ED"){
-                    //       return 100;
-                    // }
+
                 })
                 .duration(function(d, i) {
-                    //   if(d["ELIMINATION-2"] == "EQ"){
-                    //   return 6000;
-                    // }
-                    // else if(d["ELIMINATION-2"] == "E"){
-                    //   return 8000;
-                    // }
+
                     return 6000;
                 })
                 .attr("cx", function(d, i) {
                     if (d["ELIMINATION-4"] == "ED") {
 
-                        return (175 + 25 * i + 2 * i ** 2) + 1000;
+                        return (175 + 25 * i + 2 * i ** 2) - 1000;
                     }
                 });
 
@@ -1303,9 +1321,7 @@ d3.queue()
                     if (d["ELIMINATION-4"] == "E") {
                         return 3000;
                     }
-                    // else if(d["ELIMINATION-3"] == "ED"){
-                    //       return 100;
-                    // }
+
                 })
                 .duration(function(d, i) {
                     //   if(d["ELIMINATION-2"] == "EQ"){
@@ -1323,42 +1339,42 @@ d3.queue()
                     }
 
                 })
+            //
 
-                var keys = ["Date Rose", "Received at Rose Ceremony "];
 
-                svg.selectAll("mydots")
-                    .data(keys)
-                    .enter()
-                    .append("circle")
-                      .attr("cx", 100)
-                      .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-                      .attr("r", 7)
-                      .style("fill", function(d){
-                        console.log(d);
+            var keys = ["Date Rose", "Received at Rose Ceremony "];
 
-                        if(d == "Date Rose"){
-                            return "#B266FF";
+            svg.selectAll("mydots")
+                .data(keys)
+                .enter()
+                .append("circle")
+                  .attr("cx", 100)
+                  .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                  .attr("r", 7)
+                  .style("fill", function(d){
+                    console.log(d);
 
-                        }
-                        else{
-                            return "#EF2A2A"
+                    if(d == "Date Rose"){
+                        return "#B266FF";
 
-                        }
-                        // return colorscale(d);
-                        // return colorHigh(d);
+                    }
+                    else{
+                        return "#EF2A2A";
 
-                      });
+                      }
+                  });
 
-                      svg.selectAll("mylabels")
-                          .data(keys)
-                          .enter()
-                          .append("text")
-                            .attr("x", 120)
-                            .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-                            .style("fill", function(d){ return "#fff"})
-                            .text(function(d){ return d})
-                            .attr("text-anchor", "left")
-                            .style("alignment-baseline", "middle");
+                  svg.selectAll("mylabels")
+                      .data(keys)
+                      .enter()
+                      .append("text")
+                      .attr("class", "legend-label")
+                        .attr("x", 120)
+                        .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+                        .style("fill", function(d){ return "#fff"})
+                        .text(function(d){ return d})
+                        .attr("text-anchor", "left")
+                        .style("alignment-baseline", "middle");
 
             splitBubbles('DATES-4');
 
@@ -1369,20 +1385,7 @@ d3.queue()
             canvas_clear();
             console.log("section 7 - 1ST US MAP TO SEATTLE");
 
-            // var zoom = d3.zoom()
-            //             .translateExtent([[0,0],
-            //               [width, height]
-            //             ])
-            //             .scaleExtent([1,8])
-            //             .on("zoom", zoomed);
-            //
-            // function zoomed(){
-            //   svg.attr("transform", d3.event.transform);
-            // }
-            //
-            // svg.call(zoom)
-            //     .on("dblclick.zoom", null);
-            // D3 Projection
+
             var projection = d3.geoMercator()
                 // .center([-41.2284, 70.9098])
                 .center([-100.2437, 60.05221])
@@ -1502,7 +1505,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
             var circles = svg
@@ -1548,11 +1551,6 @@ d3.queue()
                 .style("stroke-width", function(d){
                     return 4;
                 })
-
-
-                // .style("fill", function(d, i) {
-                //     return colorscale(d.PARTICIPANTS);
-                // })
 
 
             circles = circles.merge(circlesEnter);
@@ -1625,21 +1623,7 @@ d3.queue()
 
             }
 
-            // d3.selectAll(".eigght-circle")
-            // .style("stroke", function(d,i){
-            //
-            //
-            //     // if(d["ELIMINATION-4"] == "R"){
-            //     //     return  "#B266FF";
-            //     // }
-            //     if(d["ELIMINATION-5"] == ""){
-            //         return  "#EF2A2A";
-            //     }
-            //     // return colorscale(d.PARTICIPANTS);
-            // })
-            // .style("stroke-width", function(d){
-            //     return 4;
-            // })
+
 
 
             d3.selectAll(".eigth-circle")
@@ -1662,40 +1646,6 @@ d3.queue()
                 })
 
                 var keys = ["Date Rose", "Received at Rose Ceremony "];
-
-                // svg.selectAll("mydots")
-                //     .data(keys)
-                //     .enter()
-                //     .append("circle")
-                //       .attr("cx", 100)
-                //       .attr("cy", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-                //       .attr("r", 7)
-                //       .style("fill", function(d){
-                //         console.log(d);
-                //
-                //         if(d == "Date Rose"){
-                //             return "#B266FF";
-                //
-                //         }
-                //         else{
-                //             return "#EF2A2A"
-                //
-                //         }
-                //         // return colorscale(d);
-                //         // return colorHigh(d);
-                //
-                //       });
-                //
-                //       svg.selectAll("mylabels")
-                //           .data(keys)
-                //           .enter()
-                //           .append("text")
-                //             .attr("x", 120)
-                //             .attr("y", function(d,i){ return 100 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
-                //             .style("fill", function(d){ return "#fff"})
-                //             .text(function(d){ return d})
-                //             .attr("text-anchor", "left")
-                //             .style("alignment-baseline", "middle");
 
             splitBubbles('DATES-5');
         }
@@ -1838,7 +1788,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
             var circles = svg
@@ -1912,9 +1862,7 @@ d3.queue()
                     x: width * 3 / 6,
                     y: height * 4 / 6
                 }
-                // f: { x: width / 2, y: height / 3 },
-                // m: { x: width / 3, y: 2*height / 3 },
-                // n: { x: 2*width / 3, y: 2*height / 3 }
+
             }
 
 
@@ -1942,11 +1890,7 @@ d3.queue()
 
                     return 6000;
                 })
-                // .attr("cx", function(d, i) {
-                //   // if(d["ELIMINATION-2"] == "E"){
-                //     return (15 + 25 * i + 2 * i ** 2) -100;
-                //         // }
-                // })
+
                 .attr("cy", function(d, i) {
                     if (d["ELIMINATION-6"] == "E") {
 
@@ -1995,9 +1939,7 @@ d3.queue()
                     "coords": [153.58708518866334, 2.0492002763844686]
                 }
             ];
-// -43.597547304909334, 173.20130659406337
-            // -0.8191406583433406, -170.98942871328362
-            // -2.0492002763844686, -153.58708518866334
+
 
             var circ_points = svg.selectAll("circle")
                 .data(points);
@@ -2054,7 +1996,6 @@ d3.queue()
             });
             // D3 Projection
 
-            // console.log(dataFilter5)
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
@@ -2089,7 +2030,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
             var circles = svg
@@ -2281,7 +2222,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
             var circles = svg
@@ -2409,7 +2350,7 @@ d3.queue()
 
                 return d["ELIMINATION-1"] != "E" && d["ELIMINATION-2"] != "E" && d["ELIMINATION-2"] != "EQ" &&
                     d["ELIMINATION-3"] != "E" && d["ELIMINATION-3"] != "ED" && d["ELIMINATION-4"] != "E" && d["ELIMINATION-4"] != "ED" && d["ELIMINATION-5"] != "E" &&
-                    d["ELIMINATION-6"] != "E";
+                    d["ELIMINATION-6"] != "E"  && d["ELIMINATION-7"] != "E" && d["AFTERMATH"] != "E";
             });
             // D3 Projection
 
@@ -2418,7 +2359,7 @@ d3.queue()
 
             var simulation = d3.forceSimulation()
                 .force("collide", d3.forceCollide(function(d) {
-                    return d.r + 4;
+                    return d.r + 5;
                 }).iterations(16))
                 .force("charge", d3.forceManyBody())
                 .force("y", d3.forceY().y(height / 2))
@@ -2449,7 +2390,7 @@ d3.queue()
                     .attr("xlink:href", function(d, i) {
                         // return imgurl;
                         console.log(d.NAME)
-                        return "./images/" + d.ID_NAME + ".jpeg"
+                        return "./images/" + d.ID_NAME + ".jpg"
                     });
 
             var circles = svg
@@ -2506,53 +2447,28 @@ d3.queue()
                 .nodes(dataFilter7)
                 .on("tick", ticked);
 
-                var push_bachelor = {
-                    "Not Married": {
-                        x: width * 0 / 1,
-                        y: height * 3 / 6
-                    },
-                    "Married": {
-                        x: width * 1 / 2,
-                        y: height * 2 / 6
-                    },
-                    "Bachelorette": {
-                        x: width * 2 / 2,
-                        y: height * 3 / 6
-                    },
+                // var img = document.createElement("img");
+                //   img.src = "./images/13_ANN_L.jpg";
+                //   var src = document.getElementById("graph");
+                //   src.appendChild(img);
+
+                var img = svg.append("svg:image")
+    .attr("xlink:href", "./images/redroses.gif")
+    // .attr("xlink:href", "https://i.gifer.com/ZOHV.gif")
+
+    .attr("width", 1000)
+    .attr("height", 1000)
+    .attr("x", 0)
+    .attr("y",-100);
 
 
-                }
-
-
-                function splitBubbles(byVar) {
-                    //conso.log(byVar);
-                    function bubble_position_x(d) {
-                        //console.log(d[byVar]);
-                        return push_bachelor[d[byVar]].x;
-                    }
-
-                    function bubble_position_y(d) {
-                        return push_bachelor[d[byVar]].y;
-                    }
-
-                    simulation
-                        .force('x', d3
-                            .forceX()
-                            .strength(forceStrength)
-                            .x(bubble_position_x)
-                        )
-                        .force('y', d3
-                            .forceY()
-                            .strength(forceStrength)
-                            .y(bubble_position_y)
-                        );
-
-                    simulation.alpha(2).restart();
-
-
-                }
-
-                splitBubbles('AFTERMATH');
+    var img = svg.append("svg:image")
+// .attr("xlink:href", "./images/petals4.gif")
+.attr("xlink:href", "./images/justmarried2.gif")
+.attr("width", width/2)
+.attr("height", 200)
+.attr("x", width/4)
+.attr("y",0);
 
             // D3 Projection
 
