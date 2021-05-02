@@ -329,19 +329,24 @@ text.title {
 } */
 
 div.tooltip {
-    position: absolute;
-    text-align: center;
-    margin: 0 auto;
-    width: 180px;
-    /* height: 55px; */
-
-    padding: 2px;
-    font: 12px sans-serif;
-    background: #a0e0ca;
-    border: 0px;
-    border-radius: 8px;
-    pointer-events: none;
-    padding: 5px;
+  position: absolute;
+  text-align: left;
+  margin: 0 auto;
+  width: 180px;
+  height: 75px;
+  padding: 2px;
+  font: 12px sans-serif;
+      /* font-size: 12px;
+      font-family: sans-serif; */
+  /* background: #a0e0ca; */
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  padding: 10px;
+  /* color: #00002B; */
+  background: #fff;
+  color: #004386;
+  /* font-family: 'Lora', serif; */
 }
 
 /* .states :hover {
