@@ -155,6 +155,7 @@ font-family: 'Open Sans', sans-serif;
 } */
 #total-content{
     display: flex;
+    flex-flow: wrap;
 }
 .content-element:nth-child(2){
     width: 50vw;
