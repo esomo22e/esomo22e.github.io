@@ -2308,11 +2308,11 @@ d3.queue()
             var push_bachelor = {
                 "E": {
                     x: width * 0.25 / 2,
-                    y: height * 3 / 6
+                    y: height * 3.5/ 6
                 },
                 "W": {
                     x: width * 1 / 2,
-                    y: height * 3 / 6
+                    y: height * 3.5 / 6
                 }
 
             }

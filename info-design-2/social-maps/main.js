@@ -53,7 +53,7 @@ map.on('load', function() {
         'source': 'sample',
         "paint": {
             "circle-radius": 5,
-            "circle-color": "#C9C16B",
+            "circle-color": "#8073ac",
             'circle-stroke-color': 'black',
         }
         // 'layout': {
@@ -63,23 +63,23 @@ map.on('load', function() {
     });
 
 // adding icons
-    map.addLayer({
-        'id': 'tweet',
-        "type": "symbol",
-        // "type": "circle",
-        'source': 'sample',
-        // "paint": {
-        //     "circle-radius": 5,
-        //     "circle-color": "#00CED1"
-        // }
-        'layout': {
-            'icon-image': 'solidarity',
-            'icon-size': 0.07
-        },
-    });
+    // map.addLayer({
+    //     'id': 'tweet',
+    //     "type": "symbol",
+    //     // "type": "circle",
+    //     'source': 'sample',
+    //     // "paint": {
+    //     //     "circle-radius": 5,
+    //     //     "circle-color": "#00CED1"
+    //     // }
+    //     'layout': {
+    //         'icon-image': 'solidarity',
+    //         'icon-size': 0.07
+    //     },
+    // });
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
-    map.on('click', 'tweet', function(e) {
+    map.on('click', 'tweet2', function(e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.text;
         var link = e.features[0].properties.link;

@@ -15,7 +15,7 @@ var svg = d3.select("#graph")
   .attr("height", height);
 
 var radius = 8;
-var forceStrength = 0.3;
+var forceStrength = 0.5;
 var forceStrength2 = 0.1;
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -39,7 +39,7 @@ d3.queue()
 
 var simulation = d3.forceSimulation()
   .force("collide", d3.forceCollide(function(d) {
-    return d.count*2.6;
+    return d.count*2;
   }).iterations(16))
   .force("charge", d3.forceManyBody())
   .force("y", d3.forceY().y(height))
@@ -52,7 +52,7 @@ var simulation = d3.forceSimulation()
 
               var circlesEnter = circles.enter().append("circle")
             .attr("r", function(d, i) {
-                return d.count * 2.5;
+                return d.count * 2;
             })
             .attr("cx", function(d, i) {
                 return 175 + 25 * i + 2 * i ** 2;
@@ -62,7 +62,7 @@ var simulation = d3.forceSimulation()
             })
             .style("fill", function(d, i) {
                 // return color(d.place_info__state
-                return "#C9C16B"
+                return "#8073ac"
             })
             .style("stroke", function(d, i) {
                 return "#001933";
@@ -72,10 +72,12 @@ var simulation = d3.forceSimulation()
               d3.select(this)
               .transition()
               .duration(550)
+              // .style("opacity", .7)
               .style("fill", function(d, i) {
-                  return "#d3cd88";
+                  // return color(d.place_info__state);
+                  return "#998FBC";
               })
-              .attr("r", d.count*2.5);
+              .attr("r", d.count*2.2);
               // //console.log(d.schoolName);
               div.transition()
                 .duration(200)
@@ -92,9 +94,11 @@ var simulation = d3.forceSimulation()
         .duration(550)
         .style("fill", function(d, i) {
             // return color(d.place_info__state);
-            return "#C9C16B"
+            return "#8073ac"
         })
-        .attr("r", d.count *2.5);
+        .style("opacity", 1.0)
+
+        .attr("r", d.count *2);
 
         div.transition()
   .duration(500)
@@ -130,17 +134,5 @@ var simulation = d3.forceSimulation()
       simulation.alpha(1).restart();
 
 
-    simulation2
-      .nodes(data_count)
-      .on("tick", ticked2);
-
-      // @v4 Reset the 'x' force to draw the bubbles to the center.
-      simulation2
-        .force('x', d3.forceX().strength(forceStrength).x(width / 2))
-        .force('y', d3.forceY()
-          .strength(forceStrength)
-          .y(height / 2));
-      // @v4 We can reset the alpha value and restart the simulation
-      simulation2.alpha(2).restart();
 
   });
