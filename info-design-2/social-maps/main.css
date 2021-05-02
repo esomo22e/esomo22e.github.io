@@ -265,6 +265,7 @@ div.tooltip {
     border-radius: 8px;
     pointer-events: none;
     padding: 5px;
+    color: #1a4b8b;
 }
 
 #map-button{
