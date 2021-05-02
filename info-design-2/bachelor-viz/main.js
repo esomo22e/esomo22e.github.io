@@ -1387,9 +1387,9 @@ d3.queue()
 
 
             var projection = d3.geoMercator()
-                // .center([-41.2284, 70.9098])
-                .center([-100.2437, 60.05221])
-                .scale(400)
+            // .center([-41.2284, 70.9098])
+            .center([-100.2437, 60.05221])
+            .scale(500)
             // .scale(350);
             var path = d3.geoPath()
                 .projection(projection);
@@ -1402,7 +1402,7 @@ d3.queue()
                 .attr("title", function(d) {
                     return d.id;
                 })
-                .style("fill", "#43a2ca")
+                .style("fill", "#A2ADBC")
                 .style("stroke", "#fff")
                 .attr("d", path);
 
@@ -1427,7 +1427,7 @@ d3.queue()
                 })
                 .attr("r", 10)
                 .attr("fill", "aquamarine")
-                .attr("stroke", "blue");
+                .attr("stroke", "#7e0315");
 
             var route = svg.append("path")
                 .datum({
@@ -1685,7 +1685,7 @@ d3.queue()
                 .attr("title", function(d) {
                     return d.id;
                 })
-                .style("fill", "#43a2ca")
+                .style("fill", "#A2ADBC")
                 .style("stroke", "#fff")
                 .attr("d", path);
 
@@ -1718,7 +1718,7 @@ d3.queue()
                 })
                 .attr("r", 10)
                 .attr("fill", "aquamarine")
-                .attr("stroke", "blue");
+                .attr("stroke", "#7e0315");
 
             var route = svg.append("path")
                 .datum({
@@ -1940,7 +1940,7 @@ d3.queue()
                 .attr("title", function(d) {
                     return d.id;
                 })
-                .style("fill", "#43a2ca")
+                .style("fill", "#A2ADBC")
                 .style("stroke", "#fff")
                 .attr("d", path);
 
@@ -1968,7 +1968,7 @@ d3.queue()
                 })
                 .attr("r", 10)
                 .attr("fill", "aquamarine")
-                .attr("stroke", "blue");
+                .attr("stroke", "#7e0315");
 
             var route = svg.append("path")
                 .datum({
@@ -2308,11 +2308,11 @@ d3.queue()
             var push_bachelor = {
                 "E": {
                     x: width * 0.25 / 2,
-                    y: height * 3.5/ 6
+                    y: height * 4/ 6
                 },
                 "W": {
                     x: width * 1 / 2,
-                    y: height * 3.5 / 6
+                    y: height * 4 / 6
                 }
 
             }
@@ -2360,7 +2360,7 @@ d3.queue()
     .attr("width", width/4)
     .attr("height", height/2)
     .attr("x", width/3)
-    .attr("y",50);
+    .attr("y",40);
 
 
         d3.selectAll(".twelfth-circle")

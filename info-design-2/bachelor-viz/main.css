@@ -72,12 +72,13 @@ a:hover{
   color: #005555;
 }
 circle{
-    fill: #990000;
+    fill: #b70316;
 }
 
 
 circle: hover {
   fill: #FF4704 ;
+  stroke: #950217;
 }
 
 h4{
@@ -333,7 +334,7 @@ div.tooltip {
   text-align: left;
   margin: 0 auto;
   width: 180px;
-  height: 75px;
+  height: 80px;
   padding: 2px;
   font: 12px sans-serif;
       /* font-size: 12px;
