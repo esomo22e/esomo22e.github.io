@@ -2,16 +2,23 @@ body {
   margin: 0;
   padding: 0;
 }
-
 #map {
+
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
+  z-index: -2;
 }
+
+/* #map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+} */
 
 h1{
   position: absolute;
 z-index: 1;
-background: cadetblue;
 }
