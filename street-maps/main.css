@@ -24,6 +24,8 @@ background: cadetblue;
   background-color: #fff;
   position: absolute;
   z-index: 1;
+  height: 100%;
+  left: 60%;
 }
 
 .close {
@@ -39,7 +41,12 @@ background: cadetblue;
   position: relative;
   display: inline-block;
   width: 640px;
+jj
+}
 
+img{
+  width:640px;
+  height:480px;
 }
 
 .image-slider > div {

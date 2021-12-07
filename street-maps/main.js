@@ -58,10 +58,17 @@ data: './data/test.geojson'
 }
 });
 
+map.addSource('walk-markers', {
+type: 'geojson',
+// Use a URL for the value for the `data` property.
+data: './data/map_marker2.geojson'
+});
+
+
 map.addLayer({
 'id': 'earthquakes-layer',
 'type': 'circle',
-'source': 'walk-data-backBay',
+'source': 'walk-markers',
 'paint': {
 'circle-radius': 7,
 'circle-stroke-width': 2,
@@ -120,7 +127,7 @@ const coordinates = e.features[0].geometry.coordinates.slice();
  //   map.getCanvas().style.cursor = 'pointer'
  //
  // }
- createDiv(e.features[0].properties.name);
+ createDiv(e.features[0].properties.name, e.features[0].properties.name);
 
 
 // copies of the feature are visible, the popup appears
@@ -141,15 +148,15 @@ const coordinates = e.features[0].geometry.coordinates.slice();
 });
 var divTitle;
 var t;
-function createDiv(text) {
+function createDiv(text, imgBefore) {
 
 document.querySelector(".popup-content").style.display = "block";
 
 document.querySelector(".element-title").innerHTML = text;
 document.querySelector(".image-slider").style.display = "block";
 
-document.querySelector(".img_after").src = "./images/img_mountain_before.jpg";
-document.querySelector(".img_before").src = "./images/img_mountain_after.jpg";
+document.querySelector(".img_after").src = "./images/after_images/" + imgBefore +"_after.jpg";
+document.querySelector(".img_before").src = "./images/before_images/" + imgBefore+".jpg";
 
 
 //  divTitle = document.createElement("div"); // Create the H1 element
