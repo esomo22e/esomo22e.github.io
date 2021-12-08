@@ -70,7 +70,7 @@ map.addLayer({
 'type': 'circle',
 'source': 'walk-markers',
 'paint': {
-'circle-radius': 7,
+'circle-radius': 10,
 'circle-stroke-width': 2,
 'circle-color': 'purple',
 'circle-opacity': 0.5,
@@ -159,6 +159,7 @@ document.querySelector(".image-slider").style.display = "block";
 
 document.querySelector(".img_after").src = "./images/after_images/" + imgBefore +"_after.jpg";
 document.querySelector(".img_before").src = "./images/before_images/" + imgBefore+".jpg";
+document.querySelector(".intro-container").style.display = "none";
 
 
 //  divTitle = document.createElement("div"); // Create the H1 element
@@ -172,6 +173,8 @@ document.querySelector(".img_before").src = "./images/before_images/" + imgBefor
   // document.body.appendChild(div);
 }// Ensure that if the map is zoomed out such that multiple
 function removeElement() {
+    document.querySelector(".intro-container").style.display = "block";
+
   document.querySelector(".popup-content").style.display = "none";
   document.querySelector(".element-title").style.display = "none";
   document.querySelector(".image-slider").style.display = "none";
@@ -180,6 +183,6 @@ function removeElement() {
   // var t = document.removeTextNode("Your H2 text"); // Create a text element
   // h .removeChild(t); // Append the text node to the H1 element
 
-  document.querySelector(".popup-content").removeChild(h); // Append the H1 element to the document body
+  // document.querySelector(".popup-content").removeChild(h); // Append the H1 element to the document body
 
 }
