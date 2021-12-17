@@ -43,7 +43,8 @@
             },
             "properties": {
                 "description": "120_jersey_street",
-                "name": "120_jersey_street"
+                "name": "120_jersey_street",
+                "title": "120 Jersey Street"
             },
             "type": "Feature"
         },
@@ -57,7 +58,8 @@
             },
             "properties": {
                 "description": "7_custer_street\n",
-                "name": "7_custer_street\n"
+                "name": "7_custer_street\n",
+                "title": "7 Custer Street"
             },
             "type": "Feature"
         },
@@ -72,7 +74,8 @@
             },
             "properties": {
                 "description": "593_centre_Street",
-                "name": "593_centre_Street"
+                "name": "593_centre_Street",
+                "title": "593 Centre Street"
             },
             "type": "Feature"
         },
@@ -86,7 +89,8 @@
             },
             "properties": {
                 "description": "2_pond_street",
-                "name": "2_pond_street"
+                "name": "2_pond_street",
+                "title": "2 Pond Street"
             },
             "type": "Feature"
         }

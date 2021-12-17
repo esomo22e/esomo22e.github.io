@@ -61,7 +61,7 @@ data: './data/test.geojson'
 map.addSource('walk-markers', {
 type: 'geojson',
 // Use a URL for the value for the `data` property.
-data: './data/map_marker_photo.geojson'
+data: './data/map_marker_photo3.geojson'
 });
 
 
@@ -117,6 +117,7 @@ map.addLayer({
 // location of the feature, with description HTML from its properties.
 map.on('click', 'earthquakes-layer', (e) => {
 // Copy coordinates array.
+console.log(e.features[0].properties)
 const coordinates = e.features[0].geometry.coordinates.slice();
 // const description = e.features[0].properties.description;
 
@@ -132,14 +133,27 @@ const coordinates = e.features[0].geometry.coordinates.slice();
  // if(e.features[0].properties.name === "new_england_conservatory"){
  //
  // }
- createDiv(e.features[0].properties.description, e.features[0].properties.name);
+ createDiv(e.features[0].properties.title, e.features[0].properties.name);
 
  // else if(e.features[0].properties.name === "120_jersey_street"){
  //   createDiv("120 Jersey Street", e.features[0].properties.name);
  //
  // }
 
-
+ // "geometry": {
+ //     "coordinates": [
+ //         -71.0828785,
+ //         42.3431192
+ //     ],
+ //     "type": "Point"
+ // },
+ // "properties": {
+ //     "description": "177_st_botolph",
+ //     "name": "177_st_botolph",
+ //     "title": "New England Conservatory"
+ //
+ // },
+ // "type": "Feature"
 // copies of the feature are visible, the popup appears
 // // over the copy being pointed to.
 // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {

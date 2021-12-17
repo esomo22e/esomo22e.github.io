@@ -43,7 +43,8 @@
             },
             "properties": {
                 "description": "120_jersey_street",
-                "name": "120_jersey_street"
+                "name": "120_jersey_street",
+                "title": "120 Jersey Street"
             },
             "type": "Feature"
         },
