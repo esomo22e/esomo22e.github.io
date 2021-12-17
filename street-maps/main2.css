@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.container .left {
+    width: 40%;
+    background: silver;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  cursor: pointer;
+}
+
+.container .right {
+    padding: 1em;
+    width: 60%;
+    color: white;
+    /* background: black; */
+    background: #a85751;
+    overflow-y: scroll; /* allow long text to scroll */
+}
+
+.intro-container {
+    margin: 0 auto;
+    max-width: 32em; /* constrain max width so you have a reasonable line length */
+}
+
+h1 {
+    font-size: 1.75em;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* .element-title{
+    font-weight: bold;
+} */
+
+.pop-container{
+  display: flex;
+/* display: block; */
+align-items: center;
+align-content: center;
+justify-content: center;
+
+}
+
+button.exit-button{
+  display:inline-block;
+  padding:0.3em 1.2em;
+  border-radius: 10%;
+  background: purple;
+  margin: 20px 0;
+  box-sizing: border-box;
+   text-decoration:none;
+  font-weight:300;
+  border: 2px solid #fff;
+   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+   text-align:center;
+   font-family:'Roboto',sans-serif;
+  color: #fff;
+  font-weight: 600;
+  /* margin: 30px 0; */
+   /* margin:0 0.1em 1em 0; */
+  /*
+   color:#FFFFFF;
+  border:0.16em solid rgba(255,255,255,0);
+   border-radius:2em;
+   
+
+   transition: all 0.2s; */
+ /* padding:0.3em 1.2em;
+
+ 
+  */
+
+}
+
+.legend{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    padding: 10px;
+    top: 0;
+    /* left: 0; */
+    /* font-family: 'Merriweather', serif; */
+
+}
+
+li{
+    margin: 10px 0;
+}
+
+.element-title{
+    font-size: 25px;
+    margin: 10px 0;
+    /* font-family: 'Merriweather', serif; */
+    padding: 10px 0;
+    font-weight: 600;
+
+}
+
+.dot-element {
+  height: 20px;
+  width: 20px;
+  color: white;
+  background-color: purple;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-name{
+    color: #000;
+}
+
+.dot-container{
+    /* background: #fff; */
+    display: flex;
+    margin: 0 10px;
+}
+
+.line-container{
+    display: flex;
+
+    /* margin: 0 10px; */
+}
+
+.line-element{
+    /* border: 10px solid magenta; */
+    /* border-radius: 5px; */
+  /* border-top: 4px solid magenta; */
+  /* margin: 10px 20px; */
+  background: magenta;
+  /* display: block; */
+  height: 10px;
+  width: 25px;
+  margin: 0 10px 0 0px;
+
+}
+/* SLIDER */
+.image-slider {
+  position: relative;
+  display: inline-block;
+  /* width: 640px; */
+  width: 800px;
+
+}
+
+img{
+    width: 800px;
+    height: 600px;
+  /* width:640px;
+  height:480px; */
+}
+
+.image-slider > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+
+
+.image-slider img {
+  display: block;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+
+.image-slider input {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  bottom: 10px;
+  height: 100%;
+  width: 120%;
+  background: transparent;
+}
+
+.image-slider input::before {
+  content: '';
+  height: 100%;
+  width: 5px;
+  background: white;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 1em;
+  height: 1em;
+  border:  4px solid magenta;
+  border-radius: 100%;
+  background: radial-gradient(circle, #812D88 90%, #ED94CA 90%);
+  background-blend-mode: overlay;
+  padding: 3.5em 3.4em;
+  cursor: ew-resize;
+}
+
+#top-image {
+  border-right: 4px solid #E7489F;
+
+}
+alll a
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+p {
+    line-height: 1.5;
+}
+
+p + p {
+    margin-top: 1.5em;
+}

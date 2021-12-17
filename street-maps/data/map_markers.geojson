@@ -11,7 +11,7 @@
             "properties": {
                 "description": "whole_foods_area",
                 "name": "whole_foods_area",
-                "title": ""
+                "title": "hello"
             },
             "type": "Feature"
         },
@@ -26,7 +26,7 @@
             "properties": {
                 "description": "new_england_conservatory\n",
                 "name": "new_england_conservatory\n",
-                "title": ""
+                "title": "hello"
             },
             },
             "type": "Feature"
@@ -40,8 +40,10 @@
                 "type": "Point"
             },
             "properties": {
-                "description": "177_st_botolph",
-                "name": "177_st_botolph"
+                "description": "177 st botolph",
+                "name": "177_st_botolph",
+                "title": "hello"
+
             },
             "type": "Feature"
         },
@@ -56,7 +58,8 @@
             "properties": {
                 "description": "1754_washington_street",
                 "name": "1754_washington_street",
-                "title": ""
+                "title": "hello"
+
             },
             },
             "type": "Feature"
@@ -72,7 +75,8 @@
             "properties": {
                 "description": "120_jersey_street",
                 "name": "120_jersey_street",
-                "title": ""
+                "title": "hello"
+
             },
             },
             "type": "Feature"
@@ -88,7 +92,8 @@
             "properties": {
                 "description": "7_custer_street\n",
                 "name": "7_custer_street\n",
-                "title": ""
+                "title": "hello"
+
             },
             },
             "type": "Feature"
@@ -104,7 +109,8 @@
             "properties": {
                 "description": "757_centre_street",
                 "name": "757_centre_street",
-                "title": ""
+                "title": "hello"
+
             },
             },
             "type": "Feature"
@@ -119,7 +125,9 @@
             },
             "properties": {
                 "description": "593_centre_street",
-                "name": "593_centre_street"
+                "name": "593_centre_street",
+                "title": "hello"
+
             },
             "type": "Feature"
         },
@@ -134,7 +142,8 @@
             "properties": {
                 "description": "2_pond_street",
                 "name": "2_pond_street",
-                "title": ""
+                "title": "hello"
+
             },
             },
             "type": "Feature"
@@ -150,7 +159,8 @@
             "properties": {
                 "description": "801_centre_street",
                 "name": "801_centre_street",
-                "title": ""
+                "title": "hello"
+
             },
             },
             "type": "Feature"

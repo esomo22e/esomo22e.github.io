@@ -11,7 +11,7 @@
 <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.js"></script>
 <link rel = "stylesheet" href = "https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
 
-<link rel="stylesheet" href="./main.css" />
+<link rel="stylesheet" href="./main2.css" />
 
 </head>
 <body>
@@ -56,21 +56,44 @@
         <div id="map"></div>
     </div>
     <div class="right">
-        <div class = "title">Streets without Cars: Alternative views of our community</div>
+        <div class="intro-container">
+                   <h1>Streets without Cars: <br>Alternative views of our&nbsp;community</h1><!-- use nonbreaking space to preven awkward line breaks -->
+                   <p>
+Inspired by Constant Nieuwenhuys, through sculptures, drawings, and writings developed the concept of New Babylon which is a futuristic city concept that focuses on an alternative to what he viewed as a more accessible city to explore. A psychogeography concept on alternate ways to navigate cities. I was thinking about what was one of the reasons cities seem inaccessible to a large group of people and inspired by an article from the Boston Globe, <i>An opportunity to reimagine Boston’s open spaces, and </i> <i>I’ve Seen a Future Without Cars, and It’s Amazing</i>. I want to see how cities would be different without cars in them. I want to be able to explore the possibilities of ways that we can create alternate ways to navigate neighborhoods without cars.
 
-<div class = "intro-container">
+                   </p>
+                   <p>
+                       In most American cities, wherever you look, you will see a landscape constructed primarily for
+  the movement and storage of automobiles, not for the enjoyment of people: endless wide
+  boulevards and freeways for cars to move swiftly; each road lined with parking spaces for cars
+  at rest; retail establishments ringed with spots for cars; houses built around garages for cars;
+  and a gas station, for cars to feed, on every other corner.
+                   </p>
+                   <div class = "sources">
+                       <h2>Sources:</h2>
+
+                        <ul>
+                          <li>https://www.bostonglobe.com/2020/05/04/opinion/an-unprecedented-opportunity-reimagine-future-bostons-open-spaces/</li>
+                          <li>https://www.nytimes.com/2020/07/09/opinion/sunday/ban-cars-manhattan-cities.html</li>
+                          <li>https://thenounproject.com/</li>
+                          <li>https://maps.google.com</li>
+
+                        </ul>
+                   </div>
+              </div>
+<!-- <div class = "intro-container">
         <div class = "intro">For my project, I used photography and icons (created by both me and taken from the Noun project) to envision various streets that I walked through without cars. I want to explore alternative ways that one can fill up space without vehicles driving or parked in various streets and neighborhoods.</div>
         <div class = "intro">I used Google maps, and QGIS to gather data from my walks and to gather data. I wanted the opportunity to focus on my own information and gather which part of the cities are surrounded by cars and parking and how can ways that it can be more walkable. </div>
         <div class = "intro">In most American cities, wherever you look, you will see a landscape constructed primarily for the movement and storage of automobiles, not for the enjoyment of people: endless wide boulevards and freeways for cars to move swiftly; each road lined with parking spaces for cars at rest; retail establishments ringed with spots for cars; houses built around garages for cars; and a gas station, for cars to feed, on every other corner.</div>
         <div class = "intro">In Boston especially, a lot of street space is dedicated to parking and driving of cars. I wanted to explore ways that allow for could give priority to more equitable and accessible ways of getting around, including an extensive system of bike “superhighways” or more accessible walkable areas, creating a service that allows for more housing and space for parks and predestrian promenades, improving of health, cleaner health, and more livability in Boston.</div>
         <div class = "intro">Press on the circle markers to see the image of the street and how I altered them without cars.</div>
-</div>
+</div> -->
         <!-- <div id="control-panel">
             <button id="btncenter">Center</button>
         </div> -->
         <div class = "pop-container">
         <div class="popup-content" style="display: none;">
-            <button onclick="removeElement()">x</button>
+            <button class = "exit-button" onclick="removeElement()">x</button>
 
           <div class = "element-title"></div>
           <div class="image-slider">

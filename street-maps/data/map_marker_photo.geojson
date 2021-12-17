@@ -11,7 +11,9 @@
             },
             "properties": {
                 "description": "new_england_conservatory\n",
-                "name": "new_england_conservatory\n"
+                "name": "new_england_conservatory\n",
+                "title": "New England Conservatory"
+
             },
             "type": "Feature"
         },

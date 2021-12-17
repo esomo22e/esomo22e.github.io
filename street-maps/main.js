@@ -129,7 +129,15 @@ const coordinates = e.features[0].geometry.coordinates.slice();
  // }
 
  console.log(e.features[0].properties.title);
- createDiv(e.features[0].properties.name, e.features[0].properties.name);
+ // if(e.features[0].properties.name === "new_england_conservatory"){
+ //
+ // }
+ createDiv(e.features[0].properties.description, e.features[0].properties.name);
+
+ // else if(e.features[0].properties.name === "120_jersey_street"){
+ //   createDiv("120 Jersey Street", e.features[0].properties.name);
+ //
+ // }
 
 
 // copies of the feature are visible, the popup appears
