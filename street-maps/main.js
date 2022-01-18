@@ -4,7 +4,7 @@ const map = new mapboxgl.Map({
 container: 'map', // container ID
 // style: 'mapbox://styles/eesomonu/ckwln7njj0fjm14phobpmkhg8', // style URL
 style: 'mapbox://styles/mapbox/light-v10',
-center: [-71.0914, 42.3152],
+center: [-71.0964, 42.3352],
 zoom: 12.75
 // , // starting position [lng, lat]
 // minZoom: 10, // note the camel-case
@@ -14,27 +14,27 @@ zoom: 12.75
 map.on('load', () => {
 
 
-//Get segment of the regular streets
-  map.addSource('street-data', {
-  type: 'geojson',
-  // Use a URL for the value for the `data` property.
-  data: './data/Boston_Street_Segments.geojson'
-  });
-
-  map.addLayer({
-'id': 'streets',
-'type': 'line',
-'source': 'street-data',
-'layout': {
-'line-join': 'round',
-'line-cap': 'round'
-},
-'paint': {
-'line-color': '#888',
-'line-width': 2,
-'line-opacity': 0.4
-}
-});
+// //Get segment of the regular streets
+//   map.addSource('street-data', {
+//   type: 'geojson',
+//   // Use a URL for the value for the `data` property.
+//   data: './data/Boston_Street_Segments.geojson'
+//   });
+//
+//   map.addLayer({
+// 'id': 'streets',
+// 'type': 'line',
+// 'source': 'street-data',
+// 'layout': {
+// 'line-join': 'round',
+// 'line-cap': 'round'
+// },
+// 'paint': {
+// 'line-color': '#888',
+// 'line-width': 2,
+// 'line-opacity': 0.4
+// }
+// });
 
 // Get the segments that I walked around in Back Bay with circles
 map.addSource('walk-data-backBay', {
@@ -61,7 +61,7 @@ data: './data/test.geojson'
 map.addSource('walk-markers', {
 type: 'geojson',
 // Use a URL for the value for the `data` property.
-data: './data/map_marker2.geojson'
+data: './data/map_marker_photo.geojson'
 });
 
 
@@ -70,7 +70,7 @@ map.addLayer({
 'type': 'circle',
 'source': 'walk-markers',
 'paint': {
-'circle-radius': 7,
+'circle-radius': 10,
 'circle-stroke-width': 2,
 'circle-color': 'purple',
 'circle-opacity': 0.5,
@@ -127,6 +127,8 @@ const coordinates = e.features[0].geometry.coordinates.slice();
  //   map.getCanvas().style.cursor = 'pointer'
  //
  // }
+
+ console.log(e.features[0].properties.title);
  createDiv(e.features[0].properties.name, e.features[0].properties.name);
 
 
@@ -157,6 +159,7 @@ document.querySelector(".image-slider").style.display = "block";
 
 document.querySelector(".img_after").src = "./images/after_images/" + imgBefore +"_after.jpg";
 document.querySelector(".img_before").src = "./images/before_images/" + imgBefore+".jpg";
+document.querySelector(".intro-container").style.display = "none";
 
 
 //  divTitle = document.createElement("div"); // Create the H1 element
@@ -170,6 +173,8 @@ document.querySelector(".img_before").src = "./images/before_images/" + imgBefor
   // document.body.appendChild(div);
 }// Ensure that if the map is zoomed out such that multiple
 function removeElement() {
+    document.querySelector(".intro-container").style.display = "block";
+
   document.querySelector(".popup-content").style.display = "none";
   document.querySelector(".element-title").style.display = "none";
   document.querySelector(".image-slider").style.display = "none";
@@ -178,6 +183,6 @@ function removeElement() {
   // var t = document.removeTextNode("Your H2 text"); // Create a text element
   // h .removeChild(t); // Append the text node to the H1 element
 
-  document.querySelector(".popup-content").removeChild(h); // Append the H1 element to the document body
+  // document.querySelector(".popup-content").removeChild(h); // Append the H1 element to the document body
 
 }

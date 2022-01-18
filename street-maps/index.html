@@ -15,18 +15,16 @@
 
 </head>
 <body>
-  <h1>Streets Alternative to cars 2021</h1>
-<div id="map"></div>
-<div class="popup-content" style="display: none;">
-<button onclick="removeElement()">x</button>
-  <div class = "element-title"></div>
-  <div class="image-slider">
-    <div id="top-image">
-      <img class = "img_before" alt="Before" />
-    </div>
-    <img class = "img_after" alt="After" />
-    <input id="range-input" type="range" />
-  </div>
+  <!-- <div class = "total-wrapper">
+<div id="map"></div> -->
+<!-- -->
+<!--
+  <h1>Streets without Cars: Alternative views of our community</h1>
+
+<div class="popup-content"> -->
+
+<!-- -->
+
   <!-- <div class="container">
 
           <div class="mask-container">
@@ -39,7 +37,57 @@
           <div class="border"></div>
           <div class="circle"></div>
       </div> -->
+<!-- </div>
 </div>
+</div> -->
+<div class="container">
+    <div class="left">
+        <div class = "legend">
+
+            <div class = "dot-container">
+            <div class = "dot-element"></div><div class = "dot-name">Where I took photos</div>
+            </div>
+            <div class = "dot-container">
+
+            <div class = "line-element"></div>
+            <div class = "line-name">Where I walked</div>
+        </div>
+        </div>
+        <div id="map"></div>
+    </div>
+    <div class="right">
+        <div class = "title">Streets without Cars: Alternative views of our community</div>
+
+<div class = "intro-container">
+        <div class = "intro">For my project, I used photography and icons (created by both me and taken from the Noun project) to envision various streets that I walked through without cars. I want to explore alternative ways that one can fill up space without vehicles driving or parked in various streets and neighborhoods.</div>
+        <div class = "intro">I used Google maps, and QGIS to gather data from my walks and to gather data. I wanted the opportunity to focus on my own information and gather which part of the cities are surrounded by cars and parking and how can ways that it can be more walkable. </div>
+        <div class = "intro">In most American cities, wherever you look, you will see a landscape constructed primarily for the movement and storage of automobiles, not for the enjoyment of people: endless wide boulevards and freeways for cars to move swiftly; each road lined with parking spaces for cars at rest; retail establishments ringed with spots for cars; houses built around garages for cars; and a gas station, for cars to feed, on every other corner.</div>
+        <div class = "intro">In Boston especially, a lot of street space is dedicated to parking and driving of cars. I wanted to explore ways that allow for could give priority to more equitable and accessible ways of getting around, including an extensive system of bike “superhighways” or more accessible walkable areas, creating a service that allows for more housing and space for parks and predestrian promenades, improving of health, cleaner health, and more livability in Boston.</div>
+        <div class = "intro">Press on the circle markers to see the image of the street and how I altered them without cars.</div>
+</div>
+        <!-- <div id="control-panel">
+            <button id="btncenter">Center</button>
+        </div> -->
+        <div class = "pop-container">
+        <div class="popup-content" style="display: none;">
+            <button onclick="removeElement()">x</button>
+
+          <div class = "element-title"></div>
+          <div class="image-slider">
+            <div id="top-image">
+              <img class = "img_after" alt="After" />
+
+            </div>
+            <img class = "img_before" alt="Before" />
+
+            <input id="range-input" type="range" />
+          </div>
+          </div>
+          </div>
+        <div id="status"></div>
+    </div>
+</div>
+
 <script src = "./slider.js"></script>
 <script src = "./main.js"></script>
 
