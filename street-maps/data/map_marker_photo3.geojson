@@ -1,20 +1,6 @@
 {
     "features": [
-        {
-            "geometry": {
-                "coordinates": [
-                    -71.0869448,
-                    42.3439686
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "whole_foods_area",
-                "name": "whole_foods_area",
-                "title": "hello"
-            },
-            "type": "Feature"
-        },
+
         {
             "geometry": {
                 "coordinates": [
@@ -26,8 +12,8 @@
             "properties": {
                 "description": "new_england_conservatory\n",
                 "name": "new_england_conservatory\n",
-                "title": "hello"
-            },
+                "title": "New England Conservatory"
+
             },
             "type": "Feature"
         },
@@ -40,30 +26,13 @@
                 "type": "Point"
             },
             "properties": {
-                "description": "177 st botolph",
+                "description": "177_st_botolph",
                 "name": "177_st_botolph",
-                "title": "hello"
-
+                "title": "177 St Botolph"
             },
             "type": "Feature"
         },
-        {
-            "geometry": {
-                "coordinates": [
-                    -71.0768975,
-                    42.3365454
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "1754_washington_street",
-                "name": "1754_washington_street",
-                "title": "hello"
 
-            },
-            },
-            "type": "Feature"
-        },
         {
             "geometry": {
                 "coordinates": [
@@ -75,9 +44,7 @@
             "properties": {
                 "description": "120_jersey_street",
                 "name": "120_jersey_street",
-                "title": "hello"
-
-            },
+                "title": "120 Jersey Street"
             },
             "type": "Feature"
         },
@@ -92,29 +59,11 @@
             "properties": {
                 "description": "7_custer_street\n",
                 "name": "7_custer_street\n",
-                "title": "hello"
-
-            },
+                "title": "7 Custer Street"
             },
             "type": "Feature"
         },
-        {
-            "geometry": {
-                "coordinates": [
-                    -71.1148145,
-                    42.3104721
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "757_centre_street",
-                "name": "757_centre_street",
-                "title": "hello"
 
-            },
-            },
-            "type": "Feature"
-        },
         {
             "geometry": {
                 "coordinates": [
@@ -124,10 +73,9 @@
                 "type": "Point"
             },
             "properties": {
-                "description": "593_centre_street",
-                "name": "593_centre_street",
-                "title": "hello"
-
+                "description": "593_centre_Street",
+                "name": "593_centre_Street",
+                "title": "593 Centre Street"
             },
             "type": "Feature"
         },
@@ -142,26 +90,7 @@
             "properties": {
                 "description": "2_pond_street",
                 "name": "2_pond_street",
-                "title": "hello"
-
-            },
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    -71.1167062,
-                    42.3090569
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "801_centre_street",
-                "name": "801_centre_street",
-                "title": "hello"
-
-            },
+                "title": "2 Pond Street"
             },
             "type": "Feature"
         }
