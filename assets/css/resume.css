@@ -1,0 +1,17 @@
+.title{
+  font-size: 40px;
+  font-weight: 900;
+  margin: 20px 0;
+}
+
+.job_tit{
+  font-weight: 900;
+  font-size: 20px;
+
+}
+
+p.time{
+  font-size: 15px;
+  font-weight: 900;
+  margin: 5px 0;
+}
