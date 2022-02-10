@@ -15,10 +15,14 @@ h1.page_title{
 }
 
 p.intro_content{
-    margin:0 2em 3em 2em;
+    margin:0 2em 2em ;
     padding:10px;
 }
 
+.tile_content{
+  margin:0 2em 2em ;
+padding: 10px;
+}
 img{
     max-width:100%;
     padding: 20px;
