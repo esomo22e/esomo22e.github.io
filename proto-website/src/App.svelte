@@ -1,31 +1,28 @@
 <script>
-import { onMount } from 'svelte';
+import { onMount, afterUpdate } from 'svelte';
 import * as d3 from 'd3';
-import { csv, json } from 'd3-fetch'
+import {csv} from "d3-fetch";
+	// import * as portfolioTest from '../public/datasets/project-list.json'
+	// import * as bannedLearning from '../public/datasets/banned-learning.json'
+	import data from '../public/datasets/banned-learning.json';
 
-
-	export let name;
+		export let name;
 	export let world;
-	world = "Eunice Esomonu";
+	world = "Little Girly";
 
-	const REMOTE_URL = "";
-
-	$: bookData = [];
-
-	// THIS ACCESSES AND PROCESSES THE GOOGLE SHEET"
-	// THIS ACCESSES AND PROCESSES THE GOOGLE SHEET"
-// json(url).then(function(data,i){
-// 	let rowcount = ((data.feed.entry.length / headings.length)-1)
-// 	let loadeddata = []
-// 	bookData = loadeddata;
-//
-// })
-
+	// const REMOTE_URL = "https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv";
 </script>
 
 <main>
-	<h1>Hello {world}!</h1>
-<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
+<h1>Hello {world}!</h1>
+<div class = "total-wrapper">
+{#each data as item}
+<div class = "content">
+	{item.state}
+	</div>
+	{/each}
+	</div>
+	<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
 </main>
 
 <style>
