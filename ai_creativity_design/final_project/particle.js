@@ -82,7 +82,12 @@ function drawKeypoints()  {
     for (let j = 2; j < pose.keypoints.length; j=j+10) {
       for (let k = 3; k < pose.keypoints.length; k=k+10){
         for (let l = 4; l < pose.keypoints.length; l=l+10){
-          for (let m = 5; m < pose.keypoints.length; m=m+10){ // let keypoint = pose.keypoints[j]; // let keypoint2 = pose.keypoints[k]; // let keypoint3 = pose.keypoints[l]; // let keypoint4 = pose.keypoints[m]; // // if (keypoint.score &gt; 0.2) {
+          for (let m = 5; m < pose.keypoints.length; m=m+10){
+            let keypoint = pose.keypoints[j];
+            let keypoint2 = pose.keypoints[k];
+            let keypoint3 = pose.keypoints[l];
+            let keypoint4 = pose.keypoints[m]; //
+              // if (keypoint.score &gt; 0.2) {
         strokeWeight(1);
         stroke(255,0,0);
 
