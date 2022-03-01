@@ -19,10 +19,20 @@ import {csv} from "d3-fetch";
 <h1>Hello {world}!</h1>
 <div class = "total-wrapper">
 {#each dataPortfolio as item}
-<div class = "content-container">
+
+{#if item.selected_works === "yes"}
+	<div class = "content-container">
+	<span class="image">
+			<img src="" alt="" />
+		</span>
+		<a href="">
+
 	<div class = "project-name">{item.project_name}</div>
 	<div class = "project-excerpt">{item.tile_content}</div>
+		</a>
 	</div>
+
+	{/if}
 	{/each}
 	</div>
 	<!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
@@ -31,8 +41,8 @@ import {csv} from "d3-fetch";
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		/* padding: 1em;
+		max-width: 240px; */
 		margin: 0 auto;
 	}
 
@@ -45,6 +55,17 @@ import {csv} from "d3-fetch";
 
 	.content-container{
 		margin: 20px;
+	}
+
+	.total-wrapper{
+		display: grid;
+		grid-auto-columns: 1fr;
+ grid-template-columns: repeat(3, 1fr);
+ grid-template-rows: repeat(4, 1fr);
+ padding: 0 20px;
+ /* gap: 30px 30px; */
+		/* display: grid;
+		grid-template-columns: auto auto auto; */
 	}
 
 	@media (min-width: 640px) {
