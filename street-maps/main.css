@@ -1,12 +1,99 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   padding: 0;
 }
 
+=======
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+.dot-element {
+  height: 20px;
+  width: 20px;
+  color: white;
+  background-color: purple;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-name{
+    color: #000;
+}
+
+.dot-container{
+    /* background: #fff; */
+    display: flex;
+    margin: 0 10px;
+}
+
+.line-container{
+    display: flex;
+
+    /* margin: 0 10px; */
+}
+
+
+.line-element{
+    /* border: 10px solid magenta; */
+    /* border-radius: 5px; */
+  /* border-top: 4px solid magenta; */
+  /* margin: 10px 20px; */
+  background: magenta;
+  /* display: block; */
+  height: 10px;
+  width: 25px;
+  margin: 0 10px 0 0px;
+
+}
+
+.line-name{
+    color: #000;
+}
+
+.legend{
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    padding: 10px;
+    font-family: 'Merriweather', serif;
+
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  color: #FFFAFA;
+}
+.left {
+
+  /* flex: 1
+  ;
+    */
+    width: 40%;
+    height: 100vw;
+
+}
+.right {
+    flex: 1;
+    background-color: #242582;
+    height: 100vw;
+
+}
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e
 #map {
   position: absolute;
   top: 0;
   bottom: 0;
+<<<<<<< HEAD
   width: 100%;
 }
 
@@ -15,3 +102,194 @@ h1{
 z-index: 1;
 background: cadetblue;
 }
+=======
+  width: 40%;
+  cursor: pointer;
+}
+
+.pop-container{
+  display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.title{
+    font-size: 48px;
+    font-weight: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    margin: 20px;
+
+}
+
+div.intro{
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.element-title{
+    font-size: 16px;
+    margin: 10px 0;
+    font-family: 'Merriweather', serif;
+    padding: 20px 0;
+
+}
+/* h1{
+  /* position: absolute; */
+/* z-index: 1; */
+/* background: cadetblue; */
+/* hello */
+/* } */
+
+/* .pop-container{
+  width: 60%;
+}
+
+.popup-content{
+
+  padding: 20px;
+  background-color: #fff;
+
+  z-index: 1;
+  height: 100%;
+  left: 60%;
+}
+
+.close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
+
+/* SLIDER */
+.image-slider {
+  position: relative;
+  display: inline-block;
+  /* width: 640px; */
+  width: 800px;
+
+}
+
+img{
+    width: 800px;
+    height: 600px;
+  /* width:640px;
+  height:480px; */
+}
+
+.image-slider > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+
+
+.image-slider img {
+  display: block;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+
+.image-slider input {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: -10%;
+  bottom: 10px;
+  height: 100%;
+  width: 120%;
+  background: transparent;
+}
+
+.image-slider input::before {
+  content: '';
+  height: 100%;
+  width: 5px;
+  background: white;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 1em;
+  height: 1em;
+  border:  4px solid magenta;
+  border-radius: 100%;
+  background: radial-gradient(circle, #812D88 90%, #ED94CA 90%);
+  background-blend-mode: overlay;
+  padding: 3.5em 3.4em;
+  cursor: ew-resize;
+}
+
+#top-image {
+  border-right: 4px solid #E7489F;
+
+}  */
+
+
+/* .container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url(https://raw.githubusercontent.com/ivanmmarkovic/misc/master/images/large/aerial-shot-bird-s-eye-view-forest-1660004.jpg);
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.mask-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+.mask-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://raw.githubusercontent.com/ivanmmarkovic/misc/master/images/large/aerial-view-color-daylight-1125278.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.border {
+    position: absolute;
+    width: 4px;
+    height: 100vh;
+    left: 50%;
+    margin-left: -2px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.circle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: steelblue;
+    top: 50%;
+    margin-top: -25px;
+    left: 50%;
+    margin-left: -25px;
+    opacity: 0.9;
+    cursor: ew-resize;
+} */
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e

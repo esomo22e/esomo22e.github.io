@@ -10,7 +10,7 @@
     /* right: 1em; */
     padding: 1em 10px;
     /* background-color: #8d309b; */
-    background-color: #e9eff4;
+    background-color: #ffc4ae;
     display: flex;
     justify-content:space-between;
     z-index: 1000;
@@ -73,7 +73,7 @@ h1.name a{
 .footer {
     position: absolute;
     /* padding: 2em 0 0 0 ; */
-    background-color: #e9eff4;
+    background-color: #ffc4ae;
     width:100%;
     height: 20px;
     z-index: 1000;

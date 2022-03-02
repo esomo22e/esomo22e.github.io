@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web type example</title>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.js"></script>
+<link rel = "stylesheet" href = "https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css" />
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.container .left {
+    width: 40%;
+    background: silver;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.map {
+}
+
+.container .right {
+    padding: 1em;
+    width: 60%;
+    color: white;
+    background: black;
+    overflow-y: scroll; /* allow long text to scroll */
+}
+
+.intro-container {
+    margin: 0 auto;
+    max-width: 32em; /* constrain max width so you have a reasonable line length */
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1;
+}
+
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+p {
+    line-height: 1.5;
+}
+
+p + p {
+    margin-top: 1.5em;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left">
+      <div class="map"></div>
+        <!-- <div class="map">[map]</div> -->
+    </div>
+    <div class="right">
+       <div class="intro-container">
+            <h1>Streets without Cars: <br>Alternative views of our&nbsp;community</h1><!-- use nonbreaking space to preven awkward line breaks -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem atque voluptas tempora cum minima autem deserunt odit ea adipisci corporis placeat aperiam, vitae itaque doloremque quae delectus ullam dolores, cumque.
+                Soluta vero error non laborum earum distinctio eum doloremque debitis animi dicta, facere quaerat dignissimos, magni sequi dolore? Eligendi consectetur sequi tenetur, minus temporibus dolores laudantium quas sit iusto ut!
+                Pariatur ipsam rem harum voluptatem ex! Dolorem unde ad, quisquam asperiores labore. Minus saepe, sit, doloribus a neque quisquam, vel laudantium, iusto id odit maxime nihil ipsa harum voluptate ducimus!
+                Labore voluptatum nobis tempore rem, consectetur facere, quas. Nisi aperiam nobis quos iure consequuntur temporibus recusandae nulla quis optio quisquam ducimus enim debitis expedita culpa quidem, ad, tempore. Consectetur, reiciendis!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, amet ipsam, minus incidunt dolorem nobis magnam, culpa nostrum iure iste inventore saepe similique. Amet qui quo, iste rerum esse quos.
+                Non tenetur dolores iste nihil delectus asperiores dicta suscipit cumque labore eaque incidunt soluta, sapiente velit. Dolorum fugiat maiores magnam id error vero alias iure vel impedit similique? Facilis, repudiandae.
+                Distinctio optio vitae repellendus dolorum repellat voluptatum natus quam alias, sequi, temporibus impedit architecto perspiciatis ipsa provident quia nam vero laudantium, nostrum, voluptas fugit. Ratione voluptatibus eveniet itaque sunt aperiam.
+                Sunt, voluptatum, hic quam beatae molestiae nam. Aut ipsa aspernatur beatae ex labore, nesciunt magni vitae, delectus. Incidunt harum, odio, soluta deserunt illum eius sit eos quis impedit quibusdam iure!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ipsam fuga debitis praesentium quam velit ipsa molestiae, aspernatur excepturi sunt molestias voluptate reprehenderit odit consequuntur, labore, doloremque dicta. Ipsam, sunt.
+                Labore nesciunt numquam quidem quaerat voluptas veniam velit porro sint, incidunt nobis perspiciatis vero asperiores harum temporibus, hic exercitationem ipsam voluptate ex? Itaque, consequatur cupiditate tempore laborum, aliquid asperiores ullam.
+                Eveniet debitis veniam quos! Molestias architecto harum molestiae quae fugiat asperiores sint reiciendis ab quis, atque temporibus, debitis cupiditate, quasi iste dolorem incidunt dolor delectus laborum, voluptates tempora facere laboriosam.
+                Nihil quae illo, earum! Similique voluptatum voluptates asperiores voluptatem cumque repudiandae voluptas repellendus id laborum tenetur iusto est, soluta quia. Eum iste fuga quis, nemo cupiditate labore error numquam rerum.
+            </p>
+
+       </div>
+       </div>
+</div>
+
+<script src = "./slider.js"></script>
+<script src = "./main.js"></script>
+</body>
+</html>
