@@ -4,15 +4,48 @@ const map = new mapboxgl.Map({
 container: 'map', // container ID
 // style: 'mapbox://styles/eesomonu/ckwln7njj0fjm14phobpmkhg8', // style URL
 style: 'mapbox://styles/mapbox/light-v10',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+center: [-71.0892, 42.3398], // starting position [lng, lat]
+minZoom: 12, // note the camel-case
+    maxZoom: 14
+=======
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 center: [-71.0964, 42.3352],
 zoom: 12.75
 // , // starting position [lng, lat]
 // minZoom: 10, // note the camel-case
 //     maxZoom: 14
+<<<<<<< HEAD
+=======
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 });
 
 map.on('load', () => {
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+//   map.addSource('earthquakes', {
+// type: 'geojson',
+// // Use a URL for the value for the `data` property.
+// data: {
+// 'type': 'Feature',
+// 'geometry': {
+// 'type': 'Polygon',
+// // These coordinates outline Maine.
+// 'coordinates': [
+// [
+// [-71.1151, 42.3097],
+// [-71.0765, 42.3388],
+// [-71.0892, 42.3398]
+// ]
+// ]
+// }
+=======
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 
 // //Get segment of the regular streets
 //   map.addSource('street-data', {
@@ -97,10 +130,26 @@ map.addLayer({
 // 'paint': {
 // 'line-color': 'magenta',
 // 'line-width': 4
+<<<<<<< HEAD
+=======
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 // }
 // });
 //
 // map.addLayer({
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+// 'id': 'earthquakes-layer',
+// 'type': 'circle',
+// 'source': 'earthquakes',
+// 'paint': {
+// 'circle-radius': 20,
+// 'circle-stroke-width': 2,
+// 'circle-color': 'red',
+=======
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 // 'id': 'circle-walking2',
 // 'type': 'circle',
 // 'source': 'walking-data',
@@ -108,6 +157,10 @@ map.addLayer({
 // 'circle-radius': 10,
 // 'circle-stroke-width': 2,
 // 'circle-color': 'purple',
+<<<<<<< HEAD
+=======
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 // 'circle-opacity': 0.5,
 // 'circle-stroke-color': 'white'
 // }
@@ -117,6 +170,16 @@ map.addLayer({
 // location of the feature, with description HTML from its properties.
 map.on('click', 'earthquakes-layer', (e) => {
 // Copy coordinates array.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+const coordinates = e.features[0].geometry.coordinates.slice();
+// const description = e.features[0].properties.description;
+
+ console.log(coordinates)
+// Ensure that if the map is zoomed out such that multiple
+=======
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 console.log(e.features[0].properties)
 const coordinates = e.features[0].geometry.coordinates.slice();
 // const description = e.features[0].properties.description;
@@ -154,6 +217,10 @@ const coordinates = e.features[0].geometry.coordinates.slice();
  //
  // },
  // "type": "Feature"
+<<<<<<< HEAD
+=======
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 // copies of the feature are visible, the popup appears
 // // over the copy being pointed to.
 // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
@@ -164,6 +231,35 @@ const coordinates = e.features[0].geometry.coordinates.slice();
 // .setLngLat(coordinates)
 // .setHTML(description)
 // .addTo(map);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+});
+//
+// map.addSource('mapbox-terrain', {
+// type: 'vector',
+// // Use any Mapbox-hosted tileset using its tileset id.
+// // Learn more about where to find a tileset id:
+// // https://docs.mapbox.com/help/glossary/tileset-id/
+// url: 'mapbox://mapbox.mapbox-terrain-v2'
+// });
+// map.addLayer({
+// 'id': 'terrain-data',
+// 'type': 'line',
+// 'source': 'mapbox-terrain',
+// 'source-layer': 'contour',
+// 'layout': {
+// 'line-join': 'round',
+// 'line-cap': 'round'
+// },
+// 'paint': {
+// 'line-color': '#ff69b4',
+// 'line-width': 1
+// }
+// });
+});
+=======
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
 
 });
 //
@@ -208,3 +304,7 @@ function removeElement() {
   // document.querySelector(".popup-content").removeChild(h); // Append the H1 element to the document body
 
 }
+<<<<<<< HEAD
+=======
+>>>>>>> 827505fd3a590ccada95311631aef136ceb7778e
+>>>>>>> ac9015a5f1ec6b829f2041777790bcb99141e5c6
