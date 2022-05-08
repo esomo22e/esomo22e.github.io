@@ -153,7 +153,7 @@ map.on('click', 'earthquakes-layer', (e) => {
 // const coordinates = e.features[0].geometry.coordinates.slice();
 // const description = e.features[0].properties.description;
 
- console.log(coordinates)
+ // console.log(coordinates)
 // Ensure that if the map is zoomed out such that multiple
 
 console.log(e.features[0].properties)
