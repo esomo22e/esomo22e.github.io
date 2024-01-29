@@ -6,16 +6,24 @@ const GridContainer = styled.div`
   flex-direction: column;
   height: 250px;
   border: 1px solid #ccc;
+
+  @media (max-width: 600px) {
+    height: 200px;
+  }
 `;
 
-const GridImage = styled.image`
+const GridImage = styled.img`
   width: 100%;
   height: auto;
   max-height: 100%;
 `;
 
 const DetailsContainer = styled.div`
-  padding: 10px;
+  position: absolute;
+  width: 300px;
+  height: 250px;
+  /* position: absolute;
+  text-align: center; */
 `;
 const GridTitle = styled.h3``;
 
@@ -24,11 +32,11 @@ const GridDesc = styled.div``;
 function GridItem({ title, description, imgUrl }) {
   return (
     <GridContainer>
-      <GridImage src={imgUrl} alt={title} className={title} />
       <DetailsContainer>
         <GridTitle>{title}</GridTitle>
         <GridDesc>{description}</GridDesc>
       </DetailsContainer>
+      <GridImage src={imgUrl} alt={title} className={title} />
     </GridContainer>
   );
 }
