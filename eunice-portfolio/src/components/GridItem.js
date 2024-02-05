@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const GridContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 250px;
+  position: relative;
   border: 1px solid #ccc;
 
   @media (max-width: 600px) {
@@ -16,14 +14,22 @@ const GridImage = styled.img`
   width: 100%;
   height: auto;
   max-height: 100%;
+  object-fit: cover;
 `;
 
 const DetailsContainer = styled.div`
-  position: absolute;
-  width: 300px;
-  height: 250px;
-  /* position: absolute;
-  text-align: center; */
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+z-index: 1;
+
 `;
 const GridTitle = styled.h3``;
 
