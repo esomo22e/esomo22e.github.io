@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GridItem from "./GridItem";
-import portfolioItems from "../data/portfolioData.json"; // Import your portfolio data
+import portfolioItems from "../data/featuredPortfolioData.json"; // Import your portfolio data
 import ames from "./ames.jpg";
 const FeaturedWrapper = styled.div`
   display: grid;
