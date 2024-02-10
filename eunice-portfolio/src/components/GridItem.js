@@ -4,6 +4,7 @@ import styled from "styled-components";
 const GridContainer = styled.div`
   position: relative;
   border: 1px solid #ccc;
+  height: 300px;
 
   @media (max-width: 600px) {
     height: 200px;
@@ -18,18 +19,22 @@ const GridImage = styled.img`
 `;
 
 const DetailsContainer = styled.div`
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
-z-index: 1;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Adjust the background color and opacity as needed */
+  z-index: 1;
 `;
 const GridTitle = styled.h3``;
 

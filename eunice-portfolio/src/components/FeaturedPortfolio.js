@@ -7,7 +7,7 @@ const FeaturedWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding: 20px;
+  padding: 50px;
   position: relative;
 
   @media (max-width: 900px) {
