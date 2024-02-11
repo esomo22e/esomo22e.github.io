@@ -28,9 +28,16 @@ const NavLink = styled.a`
   }
 `;
 
-const LinkContainer = styled.div``;
-const NameContainer = styled.div`
+const LinkContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const NameContainer = styled.a`
   font-weight: 900;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
 
   @media (max-width: 600px) {
     /* display: none; */
@@ -38,6 +45,7 @@ const NameContainer = styled.div`
 `;
 const SocialContainer = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   @media (max-width: 600px) {
     display: none;
@@ -46,7 +54,7 @@ const SocialContainer = styled.div`
 
 const SocialLink = styled.a`
   color: white;
-  margin-right: 10px;
+  margin-right: 30px;
   text-decoration: none;
 
   &:hover {
@@ -69,13 +77,14 @@ function Navigation({ onPageChange }) {
   return (
     <Nav>
       <LinkContainer>
-        <NavLink onClick={() => onPageChange("home")}>Home</NavLink>
         <NavLink onClick={() => onPageChange("about")}>About</NavLink>
         <NavLink onClick={() => onPageChange("resume")}>Resume</NavLink>
         <NavLink onClick={() => onPageChange("portfolio")}>Portfolio</NavLink>
         {/* Add more navigation links for other pages */}
       </LinkContainer>
-      <NameContainer>Eunice Esomonu</NameContainer>
+      <NameContainer onClick={() => onPageChange("home")}>
+        Eunice Esomonu
+      </NameContainer>
       <SocialContainer>
         <SocialLink href="https://www.linkedin.com/in/eesomonu/">
           <FontAwesomeIcon icon={faLinkedin} size="lg" />

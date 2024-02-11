@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import PortfolioPage from "../pages/PortfolioPage";
-import { Link } from "react-router-dom";
 
-const GridContainer = styled.a`
+const GridContainer = styled.div`
   position: relative;
   border: 1px solid #ccc;
-  display: block; /* Change display to block */
   height: 300px;
   overflow: hidden; /* Ensure overflow is hidden to hide DetailsContainer overflow */
   cursor: pointer; /* Add pointer cursor */
   z-index: 1; /* Ensure GridContainer doesn't cover PopupWrapper */
-  text-decoration: none; /* Remove default link underline */
 
   &:hover .details-container {
     background: rgba(255, 255, 255, 0.8); /* Change background on hover */
@@ -81,52 +77,48 @@ const GridTitle = styled.h3`
   }
 `;
 
-// const PopupWrapper = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background: #fff;
-//   /* display: flex; */
-//   /* justify-content: center;
-//   align-items: center; */
-//   z-index: 2; /* Ensure the popup is above the rest of the content */
-// `;
+const PopupWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
+  z-index: 2; /* Ensure the popup is above the rest of the content */
+`;
 
-// const PopupContent = styled.div`
-//   overflow: auto; /* Make the content scrollable if it exceeds the height */
-//   /* background: pink; */
-//   /* padding: 20px;
-//   border-radius: 5px; */
-// `;
+const PopupContent = styled.div`
+  overflow: auto; /* Make the content scrollable if it exceeds the height */
+  /* background: pink; */
+  /* padding: 20px;
+  border-radius: 5px; */
+`;
 
-// const CloseButton = styled.button`
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-//   background: none;
-//   border: none;
-//   cursor: pointer;
-//   font-size: 16px;
-//   color: #333;
-// `;
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+`;
 
 const GridDesc = styled.div``;
 
-const GoToPortfolioButton = styled(Link)`
-  // Button styles...
-`;
+function GridItem({ title, description, imgUrl }) {
+  const [popupOpen, setPopupOpen] = useState(false);
 
-function GridItem({ title, description, imgUrl, externalLink }) {
+  const handleGridItemClick = () => {
+    setPopupOpen(true);
+  };
   return (
     <>
-      {/* <GridContainer onClick={handleGridItemClick}> */}
-      <GridContainer
-        href={externalLink}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <GridContainer onClick={handleGridItemClick}>
         <DetailsContainer className="details-container">
           <GridTitle className="grid-title">{title}</GridTitle>
           <GridDesc className="grid-desc">{description}</GridDesc>
