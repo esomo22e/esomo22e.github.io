@@ -78,7 +78,12 @@ function Navigation({ onPageChange }) {
     <Nav>
       <LinkContainer>
         <NavLink onClick={() => onPageChange("about")}>About</NavLink>
-        <NavLink onClick={() => onPageChange("resume")}>Resume</NavLink>
+        <NavLink
+          href="https://eesomonu.com/EuniceEsomonu-Resume.pdf"
+          target="_blank"
+        >
+          Resume
+        </NavLink>{" "}
         <NavLink onClick={() => onPageChange("portfolio")}>Portfolio</NavLink>
         {/* Add more navigation links for other pages */}
       </LinkContainer>
