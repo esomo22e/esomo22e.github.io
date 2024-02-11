@@ -9,6 +9,7 @@ const PortfolioTitle = styled.div`
   font-weight: 900;
   padding: 30px 50px 10px;
   text-align: center;
+  background-color: #f0eefe;
 
   @media (max-width: 600px) {
     font-size: 20px;
@@ -37,7 +38,6 @@ function PortfolioPage() {
 
   return (
     <>
-      <div>Work</div>
       <PortfolioWrapper>
         {portfolioItems.map((item, index) => (
           <GridItem
