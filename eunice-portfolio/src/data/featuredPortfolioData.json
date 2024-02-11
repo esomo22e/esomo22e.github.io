@@ -2,7 +2,7 @@
   {
     "title": "Item 1",
     "description": "Description 1",
-    "imgUrl": "./ames.jpg"
+    "imgUrl": "ames"
   },
   {
     "title": "Item 2",

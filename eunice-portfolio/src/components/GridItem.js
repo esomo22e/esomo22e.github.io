@@ -5,9 +5,38 @@ const GridContainer = styled.div`
   position: relative;
   border: 1px solid #ccc;
   height: 300px;
+  overflow: hidden; /* Ensure overflow is hidden to hide DetailsContainer overflow */
+  cursor: pointer; /* Add pointer cursor */
 
-  @media (max-width: 600px) {
-    height: 200px;
+  &:hover .details-container {
+    background: rgba(255, 255, 255, 0.8); /* Change background on hover */
+  }
+
+  /* Hide GridTitle and GridDesc by default */
+  .details-container {
+    .grid-title,
+    .grid-desc {
+      visibility: hidden;
+    }
+  }
+
+  /* Show GridTitle and GridDesc on hover */
+  &:hover .details-container {
+    .grid-title,
+    .grid-desc {
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: 640px) {
+    height: 250px;
+    text-align: left;
+    .details-container {
+      .grid-title,
+      .grid-desc {
+        visibility: visible;
+      }
+    }
   }
 `;
 
@@ -24,28 +53,37 @@ const DetailsContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Adjust the background color and opacity as needed */
+  background: rgba(255, 255, 255, 0, 1); /* Initial background */
+  transition: background 0.3s ease; /* Add smooth transition */
   z-index: 1;
+  display: flex;
+
+  @media (max-width: 640px) {
+    text-align: left;
+    justify-content: start;
+    align-items: start;
+    padding: 20px;
+    top: 150px;
+  }
 `;
-const GridTitle = styled.h3``;
+const GridTitle = styled.h3`
+  @media (max-width: 640px) {
+    margin: 0;
+  }
+`;
 
 const GridDesc = styled.div``;
 
 function GridItem({ title, description, imgUrl }) {
+  console.log(imgUrl);
   return (
     <GridContainer>
-      <DetailsContainer>
-        <GridTitle>{title}</GridTitle>
-        <GridDesc>{description}</GridDesc>
+      <DetailsContainer className="details-container">
+        <GridTitle className="grid-title">{title}</GridTitle>
+        <GridDesc className="grid-desc">{description}</GridDesc>
       </DetailsContainer>
       <GridImage src={imgUrl} alt={title} className={title} />
     </GridContainer>

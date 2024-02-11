@@ -10,6 +10,11 @@ const Nav = styled.nav`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-flow: column-reverse;
+  }
 `;
 
 const NavLink = styled.a`
@@ -26,10 +31,17 @@ const NavLink = styled.a`
 const LinkContainer = styled.div``;
 const NameContainer = styled.div`
   font-weight: 900;
+
+  @media (max-width: 600px) {
+    /* display: none; */
+  }
 `;
 const SocialContainer = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const SocialLink = styled.a`
@@ -40,6 +52,16 @@ const SocialLink = styled.a`
   &:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+`;
+
+const MobileNavColumn = styled.div`
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.open ? "flex" : "none")};
   }
 `;
 

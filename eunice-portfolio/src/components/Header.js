@@ -1,25 +1,52 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const gradientAnimation = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
 
 const HeaderWrapper = styled.div`
   height: 50vh;
   background: pink;
   height: 50vh;
-  background: pink;
+  background: linear-gradient(
+    -45deg,
+    #e1bc29,
+    #ee7752,
+    #e15554,
+    #7768ae,
+    #3bb273,
+    #4d9de0
+  );
+  background-size: 200% 200%;
+  animation: ${gradientAnimation} 10s ease infinite;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Center content vertically */
-  text-align: center; /* Center content horizontally */
+  align-items: center;
+  padding: 20px;
 `;
 
 const HeaderContent = styled.div`
   font-size: 45px;
   font-weight: 900;
+
+  @media (max-width: 600px) {
+    font-size: 30px;
+  }
 `;
 
 const Arrow = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border: solid black;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);

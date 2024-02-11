@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GridItem from "./GridItem";
 import portfolioItems from "../data/featuredPortfolioData.json"; // Import your portfolio data
 import ames from "./ames.jpg";
+
 const FeaturedWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,6 +13,7 @@ const FeaturedWrapper = styled.div`
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
+    padding: 25px;
   }
 
   @media (max-width: 600px) {
@@ -19,19 +21,25 @@ const FeaturedWrapper = styled.div`
   }
 `;
 
+const FeaturedTitle = styled.div``;
 function FeaturedPortfolio() {
+  const imageUrls = [ames];
+
   return (
-    <FeaturedWrapper>
-      {portfolioItems.map((item, index) => (
-        <GridItem
-          key={index}
-          title={item.title}
-          description={item.description}
-          imgUrl={ames}
-          //   imgUrl={item.imgUrl}
-        />
-      ))}
-    </FeaturedWrapper>
+    <>
+      <FeaturedTitle>Featured Projects</FeaturedTitle>
+      <FeaturedWrapper>
+        {portfolioItems.map((item, index) => (
+          <GridItem
+            key={index}
+            title={item.title}
+            description={item.description}
+            // imgUrl={imageUrls[index]}
+            imgUrl={ames}
+          />
+        ))}
+      </FeaturedWrapper>
+    </>
   );
 }
 
