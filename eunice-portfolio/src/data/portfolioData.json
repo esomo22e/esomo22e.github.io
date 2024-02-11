@@ -17,7 +17,12 @@
     "imgUrl": "url4.jpg",
     "externalLink": ""
   },
-
+  {
+    "title": "Timeline Template",
+    "description": "Description 2",
+    "imgUrl": "url4.jpg",
+    "externalLink": ""
+  },
   {
     "title": "Birth to Death",
     "description": "Description 1",
@@ -30,6 +35,19 @@
     "imgUrl": "url6.jpg",
     "externalLink": ""
   },
+  {
+    "title": "Expressive Movement",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Here Every Beanpot's Results Ever",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+
   {
     "title": "Northeastern Svelte Template Graphics",
     "description": "Description 2",
@@ -50,7 +68,85 @@
     "externalLink": ""
   },
   {
-    "title": "Item 1",
+    "title": "Water Networks in Boston",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Best Places for #NU2020 Selfie",
+    "description": "Description 1",
+    "imgUrl": "url5.jpg",
+    "externalLink": ""
+  },
+  {
+    "title": "Looking for a good book for summer? Try these recommendations.",
+    "description": "Description 2",
+    "imgUrl": "url6.jpg",
+    "externalLink": ""
+  },
+  {
+    "title": "Fresh Truck Stop throughout Boston Communities",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Your complete guide to Northeastern's herb garden",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Do women publish less than men",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Enhancer Networks",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Boston Globe Graphics",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "When to pick apples in Massachusetts",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "English Language Learners: How your state doing?",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Digital Growth",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Triange Reconstruction",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "E-Motion Movement",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Tangible Graffiti",
     "description": "Description 1",
     "imgUrl": "ames",
     "externalLink": "https://www.northeastern.edu/"
