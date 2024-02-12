@@ -20,7 +20,7 @@
   {
     "title": "AP Embedded Graphics",
     "description": "Description 2",
-    "imgUrl": "url6.jpg",
+    "imgUrl": "embedded_ap",
     "externalLink": "https://apnews.com/article/edtech-school-software-app-spending-pandemic-e2c803a30c5b6d34620956c228de7987"
   },
   {
@@ -134,7 +134,7 @@
     "externalLink": "https://www.northeastern.edu/"
   },
   {
-    "title": "Triange Reconstruction",
+    "title": "Triangle Reconstruction",
     "description": "Description 1",
     "imgUrl": "ames",
     "externalLink": "https://www.northeastern.edu/"

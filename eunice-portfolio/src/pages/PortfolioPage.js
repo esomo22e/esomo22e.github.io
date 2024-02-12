@@ -7,6 +7,7 @@ import mass_shooting from "../image/portfolio/mass-shooting.png";
 import missing_children from "../image/portfolio/missing-children.png";
 import election_2022 from "../image/portfolio/election-2022.jpg";
 import b_2_d from "../image/portfolio/birth-to-death.png";
+import embedded_ap from "../image/portfolio/embedded-ap.png";
 
 const PortfolioTitle = styled.div`
   font-size: 30px;
@@ -42,6 +43,7 @@ function PortfolioPage() {
     missing_children,
     election_2022,
     b_2_d,
+    embedded_ap,
     ames,
     mass_shooting,
   ];
