@@ -39,6 +39,7 @@ const HeaderWrapper = styled.div`
 const HeaderContent = styled.div`
   font-size: 45px;
   font-weight: 900;
+  padding: 100px;
 
   @media (max-width: 600px) {
     font-size: 30px;
