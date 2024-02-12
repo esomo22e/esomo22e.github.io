@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.84e85f83.css",
+    "main.js": "/static/js/main.531d3cf4.js",
+    "static/js/592.6f184f3d.chunk.js": "/static/js/592.6f184f3d.chunk.js",
+    "static/media/portfolio_photo.jpg": "/static/media/portfolio_photo.f2241297039d68fcea5e.jpg",
+    "static/media/missing-children.png": "/static/media/missing-children.7bb50a8c82c6ae727d94.png",
+    "static/media/boston-globe.png": "/static/media/boston-globe.87f506366f999fc1a83a.png",
+    "static/media/election-2022.jpg": "/static/media/election-2022.b1e8efd6f34f9167bff7.jpg",
+    "static/media/virus.png": "/static/media/virus.98fc44885561426dafef.png",
+    "static/media/birth-to-death.png": "/static/media/birth-to-death.02065f3f9c86623724cd.png",
+    "static/media/expressive-movement.png": "/static/media/expressive-movement.cb3159245de9cb79930e.png",
+    "static/media/growth.jpg": "/static/media/growth.5e1222737cc004b6b62d.jpg",
+    "static/media/graffiti.png": "/static/media/graffiti.80427d1cd1c4b0fc2b74.png",
+    "static/media/banned-books.png": "/static/media/banned-books.5283ee49b7ee8adfb50b.png",
+    "static/media/emotion.png": "/static/media/emotion.9f87fd4d3ef8ba403cf3.png",
+    "static/media/svelte-templates.png": "/static/media/svelte-templates.7b867d36b46e0150dc2a.png",
+    "static/media/mass-shooting.png": "/static/media/mass-shooting.ee791078865438205e5d.png",
+    "static/media/embedded-ap.png": "/static/media/embedded-ap.e6df162ecf2782c01867.png",
+    "static/media/fresh-truck.jpg": "/static/media/fresh-truck.7d977703214370a94465.jpg",
+    "static/media/beanpot.jpg": "/static/media/beanpot.1efcd0fb33b3b26c255b.jpg",
+    "static/media/nail-process.png": "/static/media/nail-process.cda8c1bc3230ff39ce54.png",
+    "static/media/applepicking.jpg": "/static/media/applepicking.861089be415b6b554c7b.jpg",
+    "static/media/ames.jpg": "/static/media/ames.67413ab5f76d4b4924e0.jpg",
+    "static/media/water.jpg": "/static/media/water.dbb8737854e7c383e853.jpg",
+    "static/media/mappingNortheastern.jpg": "/static/media/mappingNortheastern.bd56f8213abb56009bf4.jpg",
+    "static/media/enhancer.jpg": "/static/media/enhancer.a2232f76941a23bf8325.jpg",
+    "static/media/ell.jpg": "/static/media/ell.aad9752e17d752033a37.jpg",
+    "static/media/science-gender.jpg": "/static/media/science-gender.fe5f950051311bc9b0f8.jpg",
+    "index.html": "/index.html",
+    "main.84e85f83.css.map": "/static/css/main.84e85f83.css.map",
+    "main.531d3cf4.js.map": "/static/js/main.531d3cf4.js.map",
+    "592.6f184f3d.chunk.js.map": "/static/js/592.6f184f3d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84e85f83.css",
+    "static/js/main.531d3cf4.js"
+  ]
+}
