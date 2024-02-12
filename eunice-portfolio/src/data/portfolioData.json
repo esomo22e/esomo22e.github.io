@@ -9,31 +9,19 @@
     "title": "AP News 2022 Midterm",
     "description": "Description 1",
     "imgUrl": "election_2022",
-    "externalLink": ""
-  },
-  {
-    "title": "Design System/AP-React Components",
-    "description": "Description 2",
-    "imgUrl": "url4.jpg",
-    "externalLink": ""
-  },
-  {
-    "title": "Timeline Template",
-    "description": "Description 2",
-    "imgUrl": "url4.jpg",
-    "externalLink": ""
+    "externalLink": "https://eesomonu.com/election-2022-full.pdf"
   },
   {
     "title": "Birth to Death",
     "description": "Description 1",
-    "imgUrl": "url5.jpg",
-    "externalLink": ""
+    "imgUrl": "b_2_d.jpg",
+    "externalLink": "https://projects.apnews.com/features/2023/from-birth-to-death/index.html"
   },
   {
     "title": "AP Embedded Graphics",
     "description": "Description 2",
     "imgUrl": "url6.jpg",
-    "externalLink": ""
+    "externalLink": "https://apnews.com/article/edtech-school-software-app-spending-pandemic-e2c803a30c5b6d34620956c228de7987"
   },
   {
     "title": "Expressive Movement",
