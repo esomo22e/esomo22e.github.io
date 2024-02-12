@@ -19,12 +19,12 @@ const HeaderWrapper = styled.div`
   height: 50vh;
   background: linear-gradient(
     -45deg,
-    #e1bc29,
-    #ee7752,
-    #e15554,
-    #7768ae,
-    #3bb273,
-    #4d9de0
+    #00008B,
+    #C06832,
+    #814663,
+    #412395,
+    #0200C6
+  
   );
   background-size: 200% 200%;
   animation: ${gradientAnimation} 10s ease infinite;
@@ -33,6 +33,7 @@ const HeaderWrapper = styled.div`
   justify-content: center; /* Center content vertically */
   align-items: center;
   padding: 20px;
+  color: #fffafa;
 `;
 
 const HeaderContent = styled.div`
@@ -47,10 +48,10 @@ const HeaderContent = styled.div`
 const Arrow = styled.div`
   width: 25px;
   height: 25px;
-  border: solid black;
+  border: solid #fffafa;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
-  margin-bottom: 20px;
+  margin-bottom=: 20px;
   margin: 0 auto; /* Center the arrow horizontally */
 `;
 
@@ -60,7 +61,7 @@ const ScrollText = styled.div`
 `;
 
 const ArrowContainer = styled.div`
-  padding: 20px 0;
+  padding: 40px 0;
 `;
 
 function Header({ onPageChange }) {

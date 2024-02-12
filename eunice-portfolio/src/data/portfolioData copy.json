@@ -36,66 +36,61 @@
     "externalLink": "https://eesomonu.com/nail_process/"
   },
   {
-    "title": "Here's every Bean Pot Result Ever",
-    "description": "Description 2",
-    "imgUrl": "url4.jpg",
-    "externalLink": "https://news.northeastern.edu/2020/01/31/heres-every-result-ever-from-bostons-beanpot-hockey-tournament/"
+    "title": "Here Every Beanpot's Results Ever",
+    "description": "Description 1",
+    "imgUrl": "beanpot",
+    "externalLink": "https://www.northeastern.edu/"
   },
 
   {
     "title": "Northeastern Svelte Template Graphics",
     "description": "Description 2",
-    "imgUrl": "svelte_templates",
+    "imgUrl": "url4.jpg",
     "externalLink": "https://news.northeastern.edu/2022/01/25/at-home-covid-test-reports/"
   },
 
   {
     "title": "Mapping Northeastern Territory",
     "description": "Description 2",
-    "imgUrl": "mappingNortheastern",
+    "imgUrl": "url6.jpg",
     "externalLink": "https://eesomonu.com/mapping_northeastern_territory.png"
   },
   {
-    "title": "Fresh Truck: A mobile market bringing healthy food to communities who need it the most",
-    "description": "Description 2",
-    "imgUrl": "fresh_truck",
-    "externalLink": "https://web.archive.org/web/20220522043144/https://news.northeastern.edu/2021/10/19/fresh-trucks-mobile-market-bringing-healthy-food-to-boston/s"
-  },
-  {
-    "title": "Boston Water Atlas",
+    "title": "Water Networks in Boston",
     "description": "Description 1",
-    "imgUrl": "water",
+    "imgUrl": "ames",
     "externalLink": "https://eesomonu.com/boston_water_atlas_revised2.pdf"
   },
   {
     "title": "Which books are banned, and where? A state-by-state guide to banned learning in the US.",
     "description": "Description 1",
-    "imgUrl": "banned_books",
+    "imgUrl": "url5.jpg",
     "externalLink": "https://web.archive.org/web/20220323181827/https://news.northeastern.edu/2022/03/22/banned-books/"
   },
+
   {
     "title": "Do women publish less than men",
     "description": "Description 1",
-    "imgUrl": "science_gender",
-    "externalLink": "https://web.archive.org/web/20211213204819/https://news.northeastern.edu/2020/03/05/do-women-publish-less-than-men-in-scientific-fields-turns-out-scientists-have-been-asking-the-wrong-question/"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   },
   {
     "title": "Enhancer Networks",
     "description": "Description 1",
-    "imgUrl": "enhancer",
-    "externalLink": "http://rstats.immgen.org/EnhancerControl/index.html"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   },
   {
     "title": "Boston Globe Graphics",
     "description": "Description 1",
-    "imgUrl": "boston_globe",
-    "externalLink": "https://eesomonu.com/posts/old/hurricaneflorence/"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   },
   {
     "title": "When to pick apples in Massachusetts",
     "description": "Description 1",
-    "imgUrl": "apple-picking",
-    "externalLink": "https://eesomonu.com/posts/old/applepicking"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   },
   {
     "title": "Most Mass Shootings Are Smaller, Domestic Tragedies",
@@ -106,31 +101,37 @@
   {
     "title": "English Language Learners: How your state doing?",
     "description": "Description 1",
-    "imgUrl": "ell",
+    "imgUrl": "ames",
     "externalLink": "https://www.npr.org/sections/ed/2017/02/23/512451228/5-million-english-language-learners-a-vast-pool-of-talent-at-risk"
   },
   {
     "title": "Map: Find Out What New Viruses are Emerging In Your Backyard",
     "description": "Description 1",
-    "imgUrl": "virus",
+    "imgUrl": "ames",
     "externalLink": "https://www.npr.org/2017/06/05/530519844/most-mass-shootings-are-smaller-domestic-tragedies"
   },
   {
     "title": "Digital Growth",
     "description": "Description 1",
-    "imgUrl": "growth",
-    "externalLink": "https://github.com/esomo22e/Mimic-3D"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
+  },
+  {
+    "title": "Triangle Reconstruction",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   },
   {
     "title": "E-Motion Movement",
     "description": "Description 1",
-    "imgUrl": "emotion",
-    "externalLink": "https://github.com/esomo22e/E-Motion-Movement"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   },
   {
     "title": "Tangible Graffiti",
     "description": "Description 1",
-    "imgUrl": "graffiti",
-    "externalLink": "https://github.com/esomo22e/captureBubbles/blob/captures/captureBubbles.pde"
+    "imgUrl": "ames",
+    "externalLink": "https://www.northeastern.edu/"
   }
 ]

@@ -1,39 +1,38 @@
 [
   {
-    "title": "Item 1",
-    "description": "Description 1",
-    "imgUrl": "ames",
-    "externalLink": "https://www.northeastern.edu/"
-  },
-  {
-    "title": "Item 2",
+    "title": "The Pandemics Missing Children",
     "description": "Description 2",
-    "imgUrl": "url2.jpg",
-    "externalLink": ""
+    "imgUrl": "missing_children",
+    "externalLink": "https://projects.apnews.com/features/2023/missing-children/index.html"
   },
   {
-    "title": "Item 1",
+    "title": "AP News 2022 Midterm",
     "description": "Description 1",
-    "imgUrl": "url3.jpg",
-    "externalLink": ""
+    "imgUrl": "election_2022",
+    "externalLink": "https://eesomonu.com/election-2022-full.pdf"
   },
   {
-    "title": "Item 2",
-    "description": "Description 2",
-    "imgUrl": "url4.jpg",
-    "externalLink": ""
-  },
-
-  {
-    "title": "Item 1",
+    "title": "Which books are banned, and where? A state-by-state guide to banned learning in the US.",
     "description": "Description 1",
-    "imgUrl": "url5.jpg",
-    "externalLink": ""
+    "imgUrl": "banned_books",
+    "externalLink": "https://web.archive.org/web/20220323181827/https://news.northeastern.edu/2022/03/22/banned-books/"
   },
   {
-    "title": "Item 2",
+    "title": "Mapping Northeastern Territory",
     "description": "Description 2",
-    "imgUrl": "url6.jpg",
-    "externalLink": ""
+    "imgUrl": "mappingNortheastern.jpg",
+    "externalLink": "https://eesomonu.com/mapping_northeastern_territory.png"
+  },
+  {
+    "title": "Nail Process",
+    "description": "Description 1",
+    "imgUrl": "nail_process",
+    "externalLink": "https://eesomonu.com/nail_process/"
+  },
+  {
+    "title": "Enhancer Networks",
+    "description": "Description 1",
+    "imgUrl": "enhancer",
+    "externalLink": "http://rstats.immgen.org/EnhancerControl/index.html"
   }
 ]

@@ -79,8 +79,15 @@ const DetailsContainer = styled.div`
 `;
 
 const GridTitle = styled.h3`
+color: #00008B;
+
   @media (max-width: 640px) {
     margin: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  opacity: ;
+  color: #00008B;
+  border-radius: 6px;
   }
 `;
 
@@ -132,7 +139,7 @@ function GridItem({ title, description, imgUrl, externalLink }) {
       >
         <DetailsContainer className="details-container">
           <GridTitle className="grid-title">{title}</GridTitle>
-          <GridDesc className="grid-desc">{description}</GridDesc>
+         { /* <GridDesc className="grid-desc">{description}</GridDesc>*/}
         </DetailsContainer>
         <GridImage src={imgUrl} alt={title} className={title} />
       </GridContainer>

@@ -7,6 +7,14 @@ import Button from "./Button";
 import PortfolioPage from "../pages/PortfolioPage";
 import Header from "./Header"; // Import Header component
 
+import missing_children from "../image/portfolio/missing-children.png";
+import election_2022 from "../image/portfolio/election-2022.jpg";
+import banned_books from "../image/portfolio/banned-books.png";
+import b_2_d from "../image/portfolio/birth-to-death.png";
+import mappingNortheastern from "../image/portfolio/mappingNortheastern.jpg";
+import nail_process from "../image/portfolio/nail-process.png";
+import enhancer from "../image/portfolio/enhancer.jpg";
+
 const FeaturedWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -25,10 +33,11 @@ const FeaturedWrapper = styled.div`
 `;
 
 const FeaturedTitle = styled.div`
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 900;
   padding: 30px 50px 10px;
   text-align: center;
+  color: #00008B;
 
   @media (max-width: 600px) {
     font-size: 20px;
@@ -37,7 +46,7 @@ const FeaturedTitle = styled.div`
   }
 `;
 function FeaturedPortfolio() {
-  const imageUrls = [ames];
+  const imageUrls = [missing_children, election_2022,banned_books, mappingNortheastern,nail_process, enhancer ];
   const [portfolioPage, setPortfolioPage] = useState("home");
   const [isVisible, setIsVisible] = useState(true);
 

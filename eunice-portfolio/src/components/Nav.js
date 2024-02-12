@@ -19,7 +19,7 @@ const Nav = styled.nav`
 
 const NavLink = styled.a`
   color: white;
-  margin-right: 15px;
+  margin: 0 20px;
   text-decoration: none;
 
   &:hover {
