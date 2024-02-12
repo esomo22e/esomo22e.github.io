@@ -3,6 +3,9 @@ import styled from "styled-components";
 import portfolioItems from "../data/portfolioData.json"; // Import your portfolio data
 import GridItem from "../components/GridItem";
 import ames from "../components/ames.jpg";
+import mass_shooting from "../image/portfolio/mass-shooting.png";
+import missing_children from "../image/portfolio/missing-children.png";
+import election_2022 from "../image/portfolio/election-2022.jpg";
 
 const PortfolioTitle = styled.div`
   font-size: 30px;
@@ -34,7 +37,7 @@ const PortfolioWrapper = styled.div`
   }
 `;
 function PortfolioPage() {
-  const imageUrls = [ames];
+  const imageUrls = [missing_children, election_2022, ames, mass_shooting];
 
   return (
     <>

@@ -2,13 +2,13 @@
   {
     "title": "The Pandemics Missing Children",
     "description": "Description 2",
-    "imgUrl": "url2.jpg",
-    "externalLink": ""
+    "imgUrl": "missing_children",
+    "externalLink": "https://projects.apnews.com/features/2023/missing-children/index.html"
   },
   {
     "title": "AP News 2022 Midterm",
     "description": "Description 1",
-    "imgUrl": "url3.jpg",
+    "imgUrl": "election_2022",
     "externalLink": ""
   },
   {
@@ -65,7 +65,7 @@
     "title": "Mapping Northeastern Territory",
     "description": "Description 2",
     "imgUrl": "url6.jpg",
-    "externalLink": ""
+    "externalLink": "https://www.npr.org/sections/goatsandsoda/2017/02/07/512634375/map-find-out-what-new-viruses-are-emerging-in-your-backyard"
   },
   {
     "title": "Water Networks in Boston",
@@ -122,10 +122,22 @@
     "externalLink": "https://www.northeastern.edu/"
   },
   {
+    "title": "Most Mass Shootings Are Smaller, Domestic Tragedies",
+    "description": "Description 1",
+    "imgUrl": "mass_shooting",
+    "externalLink": "https://www.npr.org/2017/06/05/530519844/most-mass-shootings-are-smaller-domestic-tragedies"
+  },
+  {
     "title": "English Language Learners: How your state doing?",
     "description": "Description 1",
     "imgUrl": "ames",
-    "externalLink": "https://www.northeastern.edu/"
+    "externalLink": "https://www.npr.org/sections/ed/2017/02/23/512451228/5-million-english-language-learners-a-vast-pool-of-talent-at-risk"
+  },
+  {
+    "title": "Map: Find Out What New Viruses are Emerging In Your Backyard",
+    "description": "Description 1",
+    "imgUrl": "ames",
+    "externalLink": "https://www.npr.org/2017/06/05/530519844/most-mass-shootings-are-smaller-domestic-tragedies"
   },
   {
     "title": "Digital Growth",

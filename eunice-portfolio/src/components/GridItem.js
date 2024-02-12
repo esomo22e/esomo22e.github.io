@@ -12,7 +12,6 @@ const GridContainer = styled.a`
   cursor: pointer; /* Add pointer cursor */
   z-index: 1; /* Ensure GridContainer doesn't cover PopupWrapper */
   text-decoration: none; /* Remove default link underline */
-
   &:hover .details-container {
     background: rgba(255, 255, 255, 0.8); /* Change background on hover */
   }
@@ -47,9 +46,13 @@ const GridContainer = styled.a`
 
 const GridImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 300px;
   max-height: 100%;
   object-fit: cover;
+
+  @media (max-width: 640px) {
+    height: 250px;
+  }
 `;
 
 const DetailsContainer = styled.div`
