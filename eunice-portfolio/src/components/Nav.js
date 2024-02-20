@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from "react-router-dom";
 
 const Nav = styled.nav`
   background-color: #333;
@@ -17,7 +18,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavLink = styled.a`
+const PDFLink = styled.a`
   color: white;
   margin: 0 20px;
   text-decoration: none;
@@ -27,6 +28,18 @@ const NavLink = styled.a`
     cursor: pointer;
   }
 `;
+
+const NavLinkStyled = styled(NavLink)`
+  color: white;
+  margin: 0 20px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`
+
 
 const LinkContainer = styled.div`
   display: flex;
@@ -77,19 +90,28 @@ function Navigation({ onPageChange }) {
   return (
     <Nav>
       <LinkContainer>
-        <NavLink onClick={() => onPageChange("about")} target="_blank">About</NavLink>
-        <NavLink
+        {/* <PDFLink onClick={() => onPageChange("about")} target="_blank">About</PDFLink>
+        <PDFLink
           href="https://eesomonu.com/EuniceEsomonu-Resume.pdf"
           target="_blank"
         >
           Resume
-        </NavLink>{" "}
-        <NavLink onClick={() => onPageChange("portfolio")}>Portfolio</NavLink>
+        </PDFLink>{" "}
+        <PDFLink onClick={() => onPageChange("portfolio")}>Portfolio</PDFLink> */}
+       <NavLinkStyled to="../pages/about">About</NavLinkStyled>
+       <PDFLink
+          href="https://eesomonu.com/EuniceEsomonu-Resume.pdf"
+          target="_blank"
+        >
+          Resume
+        </PDFLink>
+        <NavLinkStyled to="/portfolio">Portfolio</NavLinkStyled>
         {/* Add more navigation links for other pages */}
       </LinkContainer>
-      <NameContainer onClick={() => onPageChange("home")}>
+      <NavLinkStyled to="/" style={{fontWeight: "bold", fontSize: "30px"}}>
+
         Eunice Esomonu
-      </NameContainer>
+      </NavLinkStyled>
       <SocialContainer>
         <SocialLink href="https://www.linkedin.com/in/eesomonu/">
           <FontAwesomeIcon icon={faLinkedin} size="lg" />

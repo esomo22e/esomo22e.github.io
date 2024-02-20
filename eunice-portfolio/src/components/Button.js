@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import PortfolioPage from "../pages/PortfolioPage";
 
-const ButtonWrapper = styled.a`
+const ButtonWrapper = styled(Link)`
   color: #00008B;
   background-color: lavender;
 `;
@@ -12,9 +14,9 @@ const ButtonContent = styled.div`
     text-decoration:underline;
 `;
 
-function Button({ onPageChange }) {
+function Button({ to }) {
   return (
-    <ButtonWrapper onClick={() => onPageChange("portfolio")}>
+    <ButtonWrapper to={to}> 
       <ButtonContent>View Work</ButtonContent>
     </ButtonWrapper>
   );

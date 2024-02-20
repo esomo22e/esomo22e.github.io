@@ -6,7 +6,6 @@ import ames from "./ames.jpg";
 import Button from "./Button";
 import PortfolioPage from "../pages/PortfolioPage";
 import Header from "./Header"; // Import Header component
-
 import missing_children from "../image/portfolio/missing-children.png";
 import election_2022 from "../image/portfolio/election-2022.jpg";
 import banned_books from "../image/portfolio/banned-books.png";
@@ -14,6 +13,8 @@ import b_2_d from "../image/portfolio/birth-to-death.png";
 import mappingNortheastern from "../image/portfolio/mappingNortheastern.jpg";
 import nail_process from "../image/portfolio/nail-process.png";
 import enhancer from "../image/portfolio/enhancer.jpg";
+import { useNavigate } from "react-router-dom"; // Import useHistory hook
+import GoogleFontLoader from 'react-google-font-loader';
 
 const FeaturedWrapper = styled.div`
   display: grid;
@@ -47,6 +48,8 @@ const FeaturedTitle = styled.div`
 `;
 function FeaturedPortfolio() {
   const imageUrls = [missing_children, election_2022,banned_books, mappingNortheastern,nail_process, enhancer ];
+
+  const navigate = useNavigate(); // Initialize useHistory hook
   const [portfolioPage, setPortfolioPage] = useState("home");
   const [isVisible, setIsVisible] = useState(true);
 
@@ -55,12 +58,18 @@ function FeaturedPortfolio() {
     setIsVisible(false); // Set isVisible to false when changing the page
   };
 
+  const handlePortfolioClick = () => {
+    navigate.push("/portfolio"); // Navigate to PortfolioPage
+  };
+
+
   return (
     <>
+          <GoogleFontLoader fonts={[{ font: 'Roboto', weights: [400, '700'] }]} />
       {isVisible && (
         <>
           <Header />
-          <FeaturedTitle>Featured Projects</FeaturedTitle>
+          <FeaturedTitle style={{ fontFamily: 'Roboto, sans-serif' }}>Featured Projects</FeaturedTitle>
 
           <FeaturedWrapper>
             {portfolioItems.map((item, index) => (
@@ -75,11 +84,14 @@ function FeaturedPortfolio() {
             ))}
           </FeaturedWrapper>
 
-          <Button onPageChange={handleChangePortfolio} />
+          {/* {/* <Button onPageChange={handleChangePortfolio} /> */}
+
+          {/* <Button onClick={handlePortfolioClick}>Go to Portfolio</Button>  */}
+          <Button to="/portfolio" />
         </>
       )}
       {/* Conditionally render based on portfolioPage */}
-      {portfolioPage === "portfolio" && <PortfolioPage />}
+      {/* {portfolioPage === "portfolio" && <PortfolioPage />} */}
       {/* Conditionally render based on isVisible */}
     </>
   );
