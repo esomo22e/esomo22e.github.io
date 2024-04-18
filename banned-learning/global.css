@@ -1,0 +1,34 @@
+#svelte-app {
+  margin: 32px calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
+}
+
+/* t.svelte-chart-container  {
+	max-width: 1000px;
+	margin: 1.5rem auto 0;
+	color: #333;
+	font-family: "akkurat", -apple-system, sans-serif;
+	position:relative;
+}
+
+.svelte-chart-container *+* {
+	margin: 0 auto 1rem;
+	position:relative;
+}
+
+.svelte-chart-container .tick text {
+	color: #333;
+	font-family: "akkurat", -apple-system, sans-serif;
+}
+
+body.dev-index {
+	margin:0;
+	padding:0;
+}
+
+body.dev-index footer {
+	display: block;
+	background-color: black;
+	height:400px;
+} */
