@@ -1,0 +1,337 @@
+[{
+        "state": "Alabama",
+        "code": "AL",
+        "bills": ["HB8","HB11"],
+        "details": "In October 2021, the Republican-majority state board of education voted to codify a resolution banning schools from teaching ",
+        "Link": "http://alisondb.legislature.state.al.us/Alison/default.aspx",
+        "status": "Signed",
+        "images": ["1619-project", "bluest-eye"]
+    },
+    {
+        "state": "Alaska",
+        "code": "AK",
+        "bills": ["HB 228"],
+        "details": "A bill introduced in January 2022 would ban teaching the 1619 Project, and teaching that one race or sex is ",
+        "Link": "https://www.akleg.gov/basis/Bill/Text/32?Hsid=HB0228A",
+        "status": "Proposed",
+        "images": ["1619-project", "bluest-eye"]
+
+    },
+    {
+        "state": "Arizona",
+        "code": "AZ",
+        "bills": ["HB2898","HCR2001"],
+        "details": "A bill introduced in January would prevent schools from teaching that one race or ethnic group is inherently superior, that individuals are racist because of their race, and other related concepts. Similar restrictions were included in a state budget bill passed in June 2021, though the Arizona Supreme Court found these restrictions unconstitutional in November under a provision in the state's constitution requiring bills to only address one subject. The state department of education has said that the law is unenforceable.",
+        "Link": "https://apps.azleg.gov/billstatus/BillOverview/76131",
+        "status": "Proposed",
+        "images": ["1619-project", "bluest-eye"]
+
+    },
+    {
+        "state": "Arkansas",
+        "code": "AR",
+        "bills": ["HB 1218"],
+        "details": "In March 2021, Republican legislators withdrew their bill that would have prohibited teaching that promotes ",
+        "Link": "https://legiscan.com/AR/bill/HB1218/2021",
+        "status": "Vetoed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Florida",
+        "code": "FL",
+        "bills": ["SB 148","H 7"],
+        "details": "In December 2021, Republican Gov. Ron DeSantis announced the Stop Wrongs Against Our Kids and Employees Act, or the Stop W.O.K.E. Act, which would prevent K-12 schools from using state funding to hire consultants that adhere to ",
+        "Link": "https://www.flrules.org/Faw/FAWDocuments/FAWVOLUMEFOLDERS2021/47114/47114doc.pdf",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Georgia",
+        "code": "GA",
+        "bills": "HB 888",
+        "details": "In June 2021, the governor-appointed state board of education adopted a resolution against lessons that ‚Äúindoctrinate‚Äù students or ‚Äúpromote one race or sex above another.‚Äù The resolution also opposes awarding credit for student service learning with advocacy groups. These restrictions have not been codified into rules, however. A bill proposed in January 2022 would prohibit teaching ",
+        "Link": "üîó",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Idaho",
+        "code": "ID",
+        "bills": ["HB 377"],
+        "details": "Gov. Brad Little, a Republican, signed a law in April 2021 limiting the ways that teachers can discuss race and gender and banning what the legislation called tenets of critical race theory.",
+        "Link": "https://legislature.idaho.gov/sessioninfo/2021/legislation/h0377/",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Indiana",
+        "code": "IN",
+        "bills": ["HB 377"],
+        "details": "Gov. Brad Little, a Republican, signed a law in April 2021 limiting the ways that teachers can discuss race and gender and banning what the legislation called tenets of critical race theory.",
+        "Link": "https://legislature.idaho.gov/sessioninfo/2021/legislation/h0377/",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Iowa",
+        "code": "IA",
+        "bills": ["HB 1040", "HB 1134", "SB 167"],
+        "details": "Indiana Republicans introduced three bills for the 2022 legislative session. One would require schools to establish curricular materials and advisory committees that include parents, allow parents to opt out of certain materials, and prohibit schools from requiring staff to teach ",
+        "Link": "üîó",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Kentucky",
+        "code": "KY",
+        "bills":[ "Bill requests 60","Bill requests 69"],
+        "details": "Republican legislators have prefiled two bills for the 2022 session that would prohibit teaching certain concepts related to race, sex, and religion, and would subject teachers who violate the law to disciplinary action.",
+        "Link": "https://apps.legislature.ky.gov/record/22rs/prefiled/BR60.html",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Louisiana",
+        "code": "LA",
+        "bills": ["HB 564"],
+        "details": "In April 2021, Rep. Ray Garofalo (R) voluntarily deferred a bill that would ban teaching of ",
+        "Link": "https://legis.la.gov/legis/BillInfo.aspx?i=240526",
+        "status": "Vetoed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Maine",
+        "code": "ME",
+        "bills": "LD 550",
+        "details": "In February 2021, Rep. Meldon Carmichael (R) introduced a bill that would prohibit public school teachers from ",
+        "Link": "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=550&snum=130",
+        "status": "Vetoed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Michigan",
+        "code": "MI",
+        "bills": ["HB 5097","SB 0460"],
+        "details": "In November 2021, the House passed a bill that would prohibit ",
+        "Link": "http://www.legislature.mi.gov/(S(jvjt1ig0oqxh53dtjtha2k4i))/mileg.aspx?page=GetObject&objectname=2021-HB-5097",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Minnesota",
+        "code": "MN",
+        "bills": ["HF 2778"],
+        "details": "A bill proposed in January 2022 would prevent schools from teaching ",
+        "Link": "https://www.revisor.mn.gov/bills/bill.php?b=House&f=HF2778&ssn=0&y=2021",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Mississippi",
+        "code": "MS",
+        "bills": ["HB 437", "SB 2098", "SB 2113", "SB 2171", "HB 1495", "HB 1496", "HB 1491", "HB 1492", "HB 1493", "HB 1494", "HB 1497"],
+        "details": "Republican representatives introduced 11 bills in January. Most ban ",
+        "Link": "https://www.edweek.org/policy-politics/map-where-critical-race-theory-is-under-attack/2021/06",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Missouri",
+        "code": "MO",
+        "bills": ["HB 1474", "HB 1634", "HB 1815", "HB 1995", "HB 2294", "SB 694"],
+        "details": "Republicans prefiled six bills for the 2022 legislative session. Four would ban ",
+        "Link": "https://www.house.mo.gov/Bill.aspx?bill=HB1474&year=2022&code=R",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Montana",
+        "code": "MT",
+        "bills": ["not named"],
+        "details": "At the request of Superintendent of Public Instruction Elsie Arntzen (R), Montana Attorney General Austin Knudsen (R) issued an opinion in May 2021 that prevents schools from asking students to reflect on privilege and bans teaching that assigns characteristics to individuals based on their race or sex. The opinion is legally binding.",
+        "Link": "https://dojmt.gov/attorney-general-knudsen-issues-binding-opinion-on-critical-race-theory/",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Nebraska",
+        "code": "NE",
+        "bills": ["LB1077"],
+        "details": "In January 2022, Republicans introduced a bill that would prohibit schools from providing student or staff training that promoted ",
+        "Link": "https://nebraskalegislature.gov/bills/view_bill.php?DocumentID=46904",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "New Hampshire",
+        "code": "NH",
+        "bills": ["HB 2","HB 1255"],
+        "details": "In June 2021, Republican Gov. Chris Sununu signed a state budget bill that included language banning teachers from discussing race, gender, and other identity characteristics in certain ways in class. A new bill, prefiled in December 2021 for the 2022 session, would prohibit teachers from advocating socialism, Marxism, or ",
+        "Link": "https://legiscan.com/NH/bill/HB2/2021",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "New Jersey",
+        "code": "NJ",
+        "bills": ["A783"," S598"],
+        "details": "Senate Republicans introduced a bill in November 2021 that would prohibit the teaching of ",
+        "Link": "https://www.njleg.state.nj.us/bill-search/2022/A783",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "New Mexico",
+        "code": "NM",
+        "bills": ["HB 91"],
+        "details": "A bill introduced in January 2022 would ban critical race theory in schools. This includes, according to the bill, the idea that ",
+        "Link": "https://www.nmlegis.gov/Legislation/Legislation?chamber=H&legtype=B&legno=91&year=22",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "New York",
+        "code": "NY",
+        "bills":["A8579,A8253"],
+        "details": "In December 2021, Republican lawmakers introduced a bill that would ban ",
+        "Link": "https://www.nysenate.gov/legislation/bills/2021/A8579",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "North Carolina",
+        "code": "NC",
+        "bills": ["H324"],
+        "details": "In September, 2021 Democratic Gov. Roy Cooper became the first governor to veto his state's proposed ban on certain classroom discussions about racism. The bill would have prevented teachers from promoting 13 concepts related to race or sex, including that meritocracy is racist or sexist, or that the United states was created to oppress members of one race or sex.",
+        "Link": "https://www.ncleg.gov/BillLookUp/2021/H324",
+        "status": "Vetoed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "North Dakota",
+        "code": "ND",
+        "bills": ["HB 1508"],
+        "details": "In November 2021, Republican Gov. Doug Burgum signed into law a bill that bans instruction in ",
+        "Link": "https://www.legis.nd.gov/assembly/67-2021/special-session/bill-actions/ba1508.html",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Ohio",
+        "code": "OH",
+        "bills": ["HB 322","HB 327"],
+        "details": "In May and June of 2021, Republican legislators introduced two bills: One would prohibit discussion of certain topics related to race and sex and forbid schools from awarding credit for student service learning with advocacy groups. If teachers promote any banned ideas, their classes cannot count toward graduation requirements for the students present. The other would prevent classroom conversations regarding ",
+        "Link": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-322",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Oklahoma",
+        "code": "OK",
+        "bills": ["HB 1775","SB 1401"],
+        "details": "In May 2021, Gov. Kevin Stitt, a Republican, signed a law limiting the ways that teachers can discuss racism and sexism in class. A new bill proposed in January 2022 would allow parents to challenge schools that teach ",
+        "Link": "http://oklegislature.gov/BillInfo.aspx?Bill=HB1775",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Pennsylvania",
+        "code": "PA",
+        "bills": ["HB 1532"],
+        "details": "In June 2021, Rep. Russ Diamond (R) introduced a bill that would limit how teachers can discuss racism and sexism and ban schools from hosting speakers or assigning books that advocate ",
+        "Link": "https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2021&body=H&type=B&bn=1532",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Rhode Island",
+        "code": "RI",
+        "bills": ["HB 6070"],
+        "details": "Rep. Patricia Morgan (R) introduced a bill in March 2021 that would prohibit the teaching of ",
+        "Link": "https://legiscan.com/RI/bill/H6070/2021",
+        "status": "Vetoed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "South Carolina",
+        "code": "SC",
+        "bills": ["H630", "H4605", "H4799"],
+        "details": "Under a section included in the state's budget bill, schools and districts are prohibited from using state funding to teach that certain races or sexes are superior to others, or that individuals have certain traits, experiences, or responsibilities because of their race or sex. Two bills introduced for the 2022 session would ban schools from teaching ‚Äúdiscriminatory concepts",
+        "Link": "https://www.scstatehouse.gov/sess124_2021-2022/appropriations2021/tap1b.htm#s1",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "South Dakota",
+        "code": "SD",
+        "bills": ["HB 1012"],
+        "details": "In February 2021, Republican legislators withdrew a bill (HB 1157) they had introduced that would ban schools from using materials that encourage the overthrow of the U.S. government or promote social justice for particular groups. In May 2021, Gov. Kristi Noem signed the ",
+        "Link": "https://sdlegislature.gov/Session/Bill/23006/226040",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Tennessee",
+        "code": "TN",
+        "bills": ["HB 0580"],
+        "details": "Gov. Bill Lee, a Republican, signed a law in May 2021 that limits how teachers can discuss racism and sexism in the classroom.",
+        "Link": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB0580",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Texas",
+        "code": "TX",
+        "bills": ["HB 3979"],
+        "details": "In May 2021, Republican Gov. Greg Abbott signed HB 3979 into law, prohibiting teachers from engaging in ",
+        "Link": "https://legiscan.com/TX/bill/HB3979/2021",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Utah",
+        "code": "UT",
+        "bills": ["not named"],
+        "details": "At the request of the legislature, the Utah state Board of Education approved a new rule in June 2021 that would limit how teachers can discuss racism and sexism.",
+        "Link": "https://schools.utah.gov/file/7858dc3a-deea-440b-8823-516fe7f4342e",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Virginia",
+        "code": "VA",
+        "bills": ["HB 1126", "HB 1032"],
+        "details": "On the first day of his term, Virginia's new Republican Gov. Glenn Youngkin signed an executive order banning ",
+        "Link": "https://www.governor.virginia.gov/media/governorvirginiagov/governor-of-virginia/pdf/74---eo/74---eo/EO-1---ENDING-THE-USE-OF-INHERENTLY-DIVISIVE-CONCEPTS,-INCLUDING-CRITICAL-RACE-THEORY,-AND-RESTORING-EXCELLEN.pdf",
+        "status": "Signed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Washington",
+        "code": "WA",
+        "bills": ["HB 1807"],
+        "details": "Republican lawmakers proposed two bills in January. One would ban schools from requiring teachers to participate in professional development that teaches that the United states is fundamentally or ",
+        "Link": "https://app.leg.wa.gov/billsummary?BillNumber=1807&Year=2021&Initiative=false",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "West Virginia",
+        "code": "WV",
+        "bills": ["SB 182"],
+        "details": "A bill proposed in January would prohibit curriculum that promotes critical race theory or ",
+        "Link": "http://www.wvlegislature.gov/Bill_status/bills_history.cfm?input=182&year=2022&sessiontype=RS&btype=bill",
+        "status": "Proposed",
+        "images": ["1619-project"]
+    },
+    {
+        "state": "Wisconsin",
+        "code": "WI",
+        "bills": ["SB 411"],
+        "details": "A bill introduced in June 2021 would prevent teachers from promoting ",
+        "Link": "https://docs.legis.wisconsin.gov/2021/proposals/sb411",
+        "status": "Vetoed",
+        "images": ["1619-project"]
+    }
+
+]

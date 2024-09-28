@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.84e85f83.css",
-    "main.js": "/static/js/main.fba5e80e.js",
+    "main.js": "/static/js/main.815bb1af.js",
     "static/js/592.6f184f3d.chunk.js": "/static/js/592.6f184f3d.chunk.js",
     "static/media/portfolio_photo.jpg": "/static/media/portfolio_photo.f2241297039d68fcea5e.jpg",
     "static/media/missing-children.png": "/static/media/missing-children.7bb50a8c82c6ae727d94.png",
@@ -29,11 +29,11 @@
     "static/media/science-gender.jpg": "/static/media/science-gender.fe5f950051311bc9b0f8.jpg",
     "index.html": "/index.html",
     "main.84e85f83.css.map": "/static/css/main.84e85f83.css.map",
-    "main.fba5e80e.js.map": "/static/js/main.fba5e80e.js.map",
+    "main.815bb1af.js.map": "/static/js/main.815bb1af.js.map",
     "592.6f184f3d.chunk.js.map": "/static/js/592.6f184f3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84e85f83.css",
-    "static/js/main.fba5e80e.js"
+    "static/js/main.815bb1af.js"
   ]
 }
