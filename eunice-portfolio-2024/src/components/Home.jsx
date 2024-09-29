@@ -1,20 +1,23 @@
 import React from 'react';
+import { ContentWrapper, Intro, TextCont, LinkText } from './styles';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
     return (
-      <div className="Home">
-        This is the homepage. hello hello
-        <div>Hi,I'm Eunice Esomonu. I am a data and visual journalist, artist, and technologist.</div>
-        <div>I am interested in using the intersection of data, design, and technology to  build 
-          tools for both reporters and audiences, produce strategies for digital projects,  and to create accessible,
-          engaging storytelling. i
-        </div>
-        <div>Currently, I work at the Associated Press as a Data Visualization Developer. I previously worked at News@ Notheastern, 
-          The Boston Globe, Harvard Medical School, and NPR</div>
-        <div>In the meantime in-between time, I like to cook/bake, crochet, and reading romance novels.</div>
-          <div>Want to know more? Let's chat</div>
-      </div>
+      <ContentWrapper className="Home">
+        <Intro>Hey, I am a data and visual journalist, artist, and technologist.</Intro>
+        <TextCont>I am interested in using the intersection of data, design, and technology to  build engagement tools, produce 
+          strategies for digital projects, and to create accessible, engaging visual storytelling. 
+        </TextCont>
+        <TextCont>
+          Currently, I work at the <LinkText href="https://apnews.com/">Associated Press</LinkText> as a Data Visualization Developer. I previously worked at <LinkText href="https://news.northeastern.edu/author/eesomonu/">News @ Notheastern</LinkText>, 
+          <LinkText href="https://www.bostonglobe.com/">The Boston Globe</LinkText>, <LinkText href = "https://hms.harvard.edu/">Harvard Medical School</LinkText>, and <LinkText href="https://www.npr.org/">NPR</LinkText>.
+          </TextCont>
+        <TextCont>In the meantime in-between time, I like to cook/bake, crochet, and reading romance novels.</TextCont>
+        <TextCont>Want to know more? <Link to="/contact" style={{ textDecoration: 'underline', fontWeight: "600", color: "#a23e17" }}>
+  Let's chat</Link></TextCont>
+      </ContentWrapper>
     )
   
 }
