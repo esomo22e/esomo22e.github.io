@@ -14,6 +14,10 @@ export const NavContainer = styled.nav`
     margin: 10px 60px;
     background-color: #085077;
     border-radius: 15px;
+
+    @media (max-width: 768px) {
+        margin: 10px;
+    }
    
 `
 
@@ -27,6 +31,17 @@ export const PageNav = styled.div`
             font-weight: 500;
 
     }
+
+    @media (max-width: 768px) {
+
+        ul{
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    }
+
+    
   
 `
 
@@ -36,11 +51,16 @@ export const IconCont = styled.div`
     display: flex;
     justify-content: right;
     margin: 0 50px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
     
 `
 
 export const IconLink = styled.a`
-    color: #e4d6e4;
+    /* color: #e4d6e4; */
+    color: #fff;
     font-size: 20px;
     margin: 0 20px;
 `
@@ -52,16 +72,31 @@ export const NameTitle = styled.div`
     padding: 20px 40px 20px;
     margin: 20px 35px 10px;
     color: #085077;
+    width: 325px;
+
+     @media (max-width: 768px) {
+        font-size: 30px;
+        padding: 0;
+        margin: 20px 10px 10px
+    }
 
 `
 
 export const NavTitle = styled.div`
     font-size: 20px;
-    color: #e4d6e4;
+    /* color: #e4d6e4; */
+    color: #fff;
 
         &:hover {
             font-weight: 500;
             color: #fff;
         }
+
+             @media (max-width: 768px) {
+                font-size: 14px;
+             }
 `
 
+export const PDFLink = styled.a`
+    text-decoration: none;
+`

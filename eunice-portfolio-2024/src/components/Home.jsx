@@ -15,7 +15,7 @@ function Home() {
           <LinkText href="https://www.bostonglobe.com/">The Boston Globe</LinkText>, <LinkText href = "https://hms.harvard.edu/">Harvard Medical School</LinkText>, and <LinkText href="https://www.npr.org/">NPR</LinkText>.
           </TextCont>
         <TextCont>In the meantime in-between time, I like to cook/bake, crochet, and reading romance novels.</TextCont>
-        <TextCont>Want to know more? <Link to="/contact" style={{ textDecoration: 'underline', fontWeight: "600", color: "#a23e17" }}>
+        <TextCont>Want to know more? <Link to="/contact" style={{ textDecoration: 'underline', fontWeight: "600", color: "#cd3800" }}>
   Let's chat</Link></TextCont>
       </ContentWrapper>
     )

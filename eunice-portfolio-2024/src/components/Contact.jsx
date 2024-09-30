@@ -1,24 +1,35 @@
 import React from 'react';
+import {  ContactHeader, ContactLink, ContactTitle, ContactWrapper, SocialCont, ContactCont } from './styles';
+
 
 function About() {
 
     return (
-      <div className="Contact">
-        <div>Hit me up.</div>
-        <div>Reach out about the AP?</div>
-        <a href="mailto:eesomonu@ap.com">eesomonu@ap.com</a>
-        <div>Or about me?</div>
-        <a href="mailto:eesomonu@gmail.com">eesomonu@gmail.com</a>
-         <div>On social media?</div>
-        <div>
-          <a href="https://www.linkedin.com/in/eesomonu/">LinkedIn</a>
-          <a href="https://www.instagram.com/eesomonu/">Instagram</a>
-           <a href="https://app.thestorygraph.com/profile/euni_reads">StoryGraph</a>
-        </div>
-         <div>Check out my Code</div>
-          <a href="https://github.com/esomo22e">Github</a>
+      <ContactWrapper className="Contact">
+        <ContactTitle>Hit me up!</ContactTitle>
+        
+        <ContactCont>
+            <ContactHeader>Reach out about the AP?</ContactHeader>
+            <ContactLink href="mailto:eesomonu@ap.com">eesomonu@ap.com</ContactLink>
+        </ContactCont>
+        <ContactCont>
+            <ContactHeader>Or want to know more about me?</ContactHeader>
+            <ContactLink href="mailto:eesomonu@gmail.com">eesomonu@gmail.com</ContactLink>
+        </ContactCont>
+        <ContactCont>
+            <ContactHeader>On social media?</ContactHeader>
+            <SocialCont>
+              <ContactLink href="https://www.linkedin.com/in/eesomonu/">LinkedIn</ContactLink>
+              <ContactLink href="https://www.instagram.com/eesomonu/">Instagram</ContactLink>
+              <ContactLink href="https://app.thestorygraph.com/profile/euni_reads">StoryGraph</ContactLink>
+            </SocialCont>
+        </ContactCont>
+        <ContactCont>
+          <ContactHeader>Check out my Code</ContactHeader>
+            <ContactLink href="https://github.com/esomo22e">Github</ContactLink>
+          </ContactCont>
 
-      </div>
+      </ContactWrapper>
     )
 
 }

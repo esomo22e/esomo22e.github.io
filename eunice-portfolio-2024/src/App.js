@@ -5,29 +5,43 @@ import {
   Route,
   NavLink
 } from 'react-router-dom';
+import styled from 'styled-components';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import Portfolio from './components/Portfolio';
-import { TotalWrapper, NavContainer, PageNav, IconCont, NameTitle, NavTitle, IconLink } from './styles';
+import { TotalWrapper, NavContainer, PageNav, IconCont, NameTitle, NavTitle, IconLink, PDFLink } from './styles';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import './App.css';
+
+const TitleNavLink = styled(NavLink)`
+  text-decoration: none;
+  width: 325px;
+  display: inline-block;
+  
+  &.selected {
+    font-weight: bold;
+  }
+
+   @media (max-width: 768px) {
+        margin: 10px;
+    }
+`;
 
 function App() {
   return (
     <TotalWrapper className="App">
       <Router>
           <div>
-               <NavLink 
+               <TitleNavLink 
                 exact to="/" 
                 activeClassName="selected"
-                style={{ textDecoration: 'none' }}
                 >
                 <NameTitle>
                     Eunice Esomonu
                 </NameTitle>
-              </NavLink>
+              </TitleNavLink>
           </div>
         <NavContainer>
         
@@ -35,17 +49,6 @@ function App() {
           <ul>
             
               <li>
-              <NavLink 
-                to="/resume" 
-                activeClassName="selected"
-                style={{ textDecoration: 'none' }}
-                >
-                <NavTitle>
-                   Resume
-                </NavTitle>
-              </NavLink>
-            </li>
-               <li>
               <NavLink 
                 to="/portfolio" 
                 activeClassName="selected"
@@ -56,9 +59,25 @@ function App() {
               </NavTitle>
               </NavLink>
             </li>
+              <li>
+              {/* <NavLink 
+                to="/resume" 
+                activeClassName="selected"
+                style={{ textDecoration: 'none' }}
+                >
+                <NavTitle>
+                   Resume
+                </NavTitle>
+              </NavLink> */}
+              <PDFLink href="https://eesomonu.com/EuniceEsomonu-Resume.pdf" target="_blank">
+                 <NavTitle>
+                   Resume
+                </NavTitle>
+              </PDFLink>
+            </li>
                 <li>
               <NavLink 
-                to="/about" 
+                to="/contact" 
                 activeClassName="selected"
                 style={{ textDecoration: 'none' }}
                 >

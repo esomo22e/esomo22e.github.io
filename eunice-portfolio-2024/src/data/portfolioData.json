@@ -1,0 +1,131 @@
+[
+  {
+    "title": "The Pandemics Missing Children",
+    "description": "Description 2",
+    "imgUrl": "../image/portfolio/missing-children.png",
+    "externalLink": "https://projects.apnews.com/features/2023/missing-children/index.html"
+  },
+  {
+    "title": "AP News 2022 Midterm",
+    "description": "Description 1",
+    "imgUrl": "election_2022",
+    "externalLink": "https://eesomonu.com/election-2022-full.pdf"
+  },
+  {
+    "title": "Birth to Death",
+    "description": "Description 1",
+    "imgUrl": "b_2_d.jpg",
+    "externalLink": "https://projects.apnews.com/features/2023/from-birth-to-death/index.html"
+  },
+  {
+    "title": "AP Embedded Graphics",
+    "description": "Description 2",
+    "imgUrl": "embedded_ap",
+    "externalLink": "https://apnews.com/article/edtech-school-software-app-spending-pandemic-e2c803a30c5b6d34620956c228de7987"
+  },
+
+  {
+    "title": "Nail Process",
+    "description": "Description 1",
+    "imgUrl": "nail_process",
+    "externalLink": "https://eesomonu.com/nail_process/"
+  },
+  {
+    "title": "Here's every Bean Pot Result Ever",
+    "description": "Description 2",
+    "imgUrl": "url4.jpg",
+    "externalLink": "https://news.northeastern.edu/2020/01/31/heres-every-result-ever-from-bostons-beanpot-hockey-tournament/"
+  },
+
+  {
+    "title": "Northeastern Svelte Template Graphics",
+    "description": "Description 2",
+    "imgUrl": "svelte_templates",
+    "externalLink": "https://news.northeastern.edu/2022/01/25/at-home-covid-test-reports/"
+  },
+
+  {
+    "title": "Mapping Northeastern Territory",
+    "description": "Description 2",
+    "imgUrl": "mappingNortheastern",
+    "externalLink": "https://eesomonu.com/mapping_northeastern_territory.png"
+  },
+  {
+    "title": "Fresh Truck: A mobile market bringing healthy food to communities who need it the most",
+    "description": "Description 2",
+    "imgUrl": "fresh_truck",
+    "externalLink": "https://web.archive.org/web/20220522043144/https://news.northeastern.edu/2021/10/19/fresh-trucks-mobile-market-bringing-healthy-food-to-boston/s"
+  },
+  {
+    "title": "Boston Water Atlas",
+    "description": "Description 1",
+    "imgUrl": "water",
+    "externalLink": "https://eesomonu.com/boston_water_atlas_revised2.pdf"
+  },
+  {
+    "title": "Which books are banned, and where? A state-by-state guide to banned learning in the US.",
+    "description": "Description 1",
+    "imgUrl": "banned_books",
+    "externalLink": "https://web.archive.org/web/20220323181827/https://news.northeastern.edu/2022/03/22/banned-books/"
+  },
+  {
+    "title": "Do women publish less than men",
+    "description": "Description 1",
+    "imgUrl": "science_gender",
+    "externalLink": "https://web.archive.org/web/20211213204819/https://news.northeastern.edu/2020/03/05/do-women-publish-less-than-men-in-scientific-fields-turns-out-scientists-have-been-asking-the-wrong-question/"
+  },
+  {
+    "title": "Enhancer Networks",
+    "description": "Description 1",
+    "imgUrl": "enhancer",
+    "externalLink": "http://rstats.immgen.org/EnhancerControl/index.html"
+  },
+  {
+    "title": "Boston Globe Graphics",
+    "description": "Description 1",
+    "imgUrl": "boston_globe",
+    "externalLink": "https://eesomonu.com/posts/old/hurricaneflorence/"
+  },
+  {
+    "title": "When to pick apples in Massachusetts",
+    "description": "Description 1",
+    "imgUrl": "apple-picking",
+    "externalLink": "https://eesomonu.com/posts/old/applepicking"
+  },
+  {
+    "title": "Most Mass Shootings Are Smaller, Domestic Tragedies",
+    "description": "Description 1",
+    "imgUrl": "mass_shooting",
+    "externalLink": "https://www.npr.org/2017/06/05/530519844/most-mass-shootings-are-smaller-domestic-tragedies"
+  },
+  {
+    "title": "English Language Learners: How your state doing?",
+    "description": "Description 1",
+    "imgUrl": "ell",
+    "externalLink": "https://www.npr.org/sections/ed/2017/02/23/512451228/5-million-english-language-learners-a-vast-pool-of-talent-at-risk"
+  },
+  {
+    "title": "Map: Find Out What New Viruses are Emerging In Your Backyard",
+    "description": "Description 1",
+    "imgUrl": "virus",
+    "externalLink": "https://www.npr.org/2017/06/05/530519844/most-mass-shootings-are-smaller-domestic-tragedies"
+  },
+  {
+    "title": "Digital Growth",
+    "description": "Description 1",
+    "imgUrl": "growth",
+    "externalLink": "https://github.com/esomo22e/Mimic-3D"
+  },
+  {
+    "title": "E-Motion Movement",
+    "description": "Description 1",
+    "imgUrl": "emotion",
+    "externalLink": "https://github.com/esomo22e/E-Motion-Movement"
+  },
+  {
+    "title": "Tangible Graffiti",
+    "description": "Description 1",
+    "imgUrl": "graffiti",
+    "externalLink": "https://github.com/esomo22e/captureBubbles/blob/captures/captureBubbles.pde"
+  }
+]
