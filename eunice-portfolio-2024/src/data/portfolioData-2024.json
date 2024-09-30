@@ -2,13 +2,13 @@
   {
     "title": "Advance Vote 2024",
     "description": "Description 2",
-    "imgUrl": "missing_children",
-    "externalLink": "https://projects.apnews.com/features/2023/missing-children/index.html"
+    "imgUrl": "advanceVote",
+    "externalLink": "https://apnews.com/projects/election-results-2024/2024-early-voting-tracker/"
   },
   {
     "title": "Olympics Medal Tracker 2024",
     "description": "Description 1",
-    "imgUrl": "b_2_d.jpg",
+    "imgUrl": "medalTracker",
     "externalLink": "https://projects.apnews.com/features/2023/from-birth-to-death/index.html"
   },
   {
@@ -26,20 +26,20 @@
   {
     "title": "Birth to Death",
     "description": "Description 1",
-    "imgUrl": "b_2_d.jpg",
+    "imgUrl": "b_2_d",
     "externalLink": "https://projects.apnews.com/features/2023/from-birth-to-death/index.html"
   },
   {
     "title": "COVID-19 Tracker",
     "description": "Description 1",
-    "imgUrl": "b_2_d.jpg",
-    "externalLink": "https://projects.apnews.com/features/2023/from-birth-to-death/index.html"
+    "imgUrl": "covid-tracker",
+    "externalLink": "https://web.archive.org/web/20211204200018/https:/news.northeastern.edu/coronavirus/reopening/testing-dashboard/"
   },
     {
     "title": "Which books are banned, and where? A state-by-state guide to banned learning in the US.",
     "description": "Description 1",
     "imgUrl": "banned_books",
-    "externalLink": "https://web.archive.org/web/20220323181827/https://news.northeastern.edu/2022/03/22/banned-books/"
+    "externalLink": "https://news.northeastern.edu/2022/03/22/banned-books/"
   },
   {
     "title": "Boston Water Atlas",

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { PortfolioGrid, PortfolioSquare, PortfolioWrapper, PortfolioPopUp, PortfolioContent, CloseButton, PortfolioCont, GridImage, GridTitle, DetailContainer} from './styles';
 import portfolioItems from "../data/portfolioData-2024.json"; 
-import advance_vote from "../image/portfolio/missing-children.png";
+import advance_vote from "../image/portfolio/advance-vote.png";
 import missing_children from "../image/portfolio/missing-children.png";
-import olympics_medal_tracker from "../image/portfolio/missing-children.png";
+import olympics_medal_tracker from "../image/portfolio/olympic-medal-tracker.png";
 import election_2022 from "../image/portfolio/election-2022.jpg";
 import b_2_d from "../image/portfolio/birth-to-death.png";
-import covid_tracker from "../image/portfolio/birth-to-death.png";
+import covid_tracker from "../image/portfolio/covid-tracker.png";
 import banned_books from "../image/portfolio/banned-books.png";
 import water from "../image/portfolio/water.jpg";
 import enhancer from "../image/portfolio/enhancer.jpg";
 import nail_process from "../image/portfolio/nail-process.png";
-import trump_quotes from "../image/portfolio/nail-process.png";
+import trump_quotes from "../image/portfolio/trump-quotes.png";
 import expressive_movement from "../image/portfolio/expressive-movement.png";
 
 // import mass_shooting from "../image/portfolio/mass-shooting.png";
@@ -85,6 +85,12 @@ function Portfolio() {
         <PortfolioWrapper className="portfolio-container">
             <PortfolioGrid className="portfolio-grid">
                 {portfolioItems.map((item, index) => (
+                     <a 
+                        key={index} 
+                        href={item.externalLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
                     <PortfolioSquare 
                         key={index} 
                         className="portfolio-square" 
@@ -97,10 +103,11 @@ function Portfolio() {
 
 
                     </PortfolioSquare>
+                    </a>
                 ))}
             </PortfolioGrid>
 
-            {activeSquare !== null && (
+            {/* {activeSquare !== null && (
                 <PortfolioPopUp className="portfolio-popup">
                     <PortfolioContent className="popup-content">
                         <CloseButton className="close-btn" onClick={handleClosePopup}>x</CloseButton>
@@ -113,7 +120,7 @@ function Portfolio() {
 
                     </PortfolioContent>
                 </PortfolioPopUp>
-            )}
+            )} */}
         </PortfolioWrapper>
     );
 }

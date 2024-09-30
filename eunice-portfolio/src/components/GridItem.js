@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const GridContainer = styled.a`
   position: relative;
   border: 1px solid #ccc;
-  display: block; /* Change display to block */
+  display: block; 
   height: 300px;
   overflow: hidden; /* Ensure overflow is hidden to hide DetailsContainer overflow */
   cursor: pointer; /* Add pointer cursor */

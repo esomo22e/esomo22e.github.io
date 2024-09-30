@@ -214,10 +214,11 @@ export const PortfolioCont = styled.div`
 
 export const GridImage = styled.img`
     width: 100%;
-    height: auto;
+    height: 215px;
+    /* height: auto; */
     max-height: 350px;
     object-fit: cover;
-    object-position: center;
+    object-position: center; 
     border-radius: 20px;
 `
 
