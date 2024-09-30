@@ -7,17 +7,32 @@ export const ContentWrapper = styled.div`
     /* color: #264653; */
     /* color: #083D77; */
     color: #085077;
+
+     @media (max-width: 768px) {
+        padding: 15px 25px;
+    }
 `
 export const  Intro = styled.div`
     font-size: 45px;
     font-weight: 600;
-    padding: 25px 0;
+    margin: 25px 0;
+
+     @media (max-width: 768px) {
+        font-size: 26px;
+        margin: 10px 0;
+    }
 
 `
 export const TextCont = styled.div`
     font-size: 32px;
     font-weight: 400;
     margin: 20px auto;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
 `
 
 export const LinkText = styled.a`
@@ -39,18 +54,39 @@ export const ContactWrapper = styled.div`
     padding: 10px 100px;
     margin: 10px auto;
     color: #085077;
+
+    @media (max-width: 768px) {
+        padding: 20px;
+        margin: 10px auto;
+
+    }
     
 
 `
 
 export const ContactTitle = styled.h2`
     font-size: 54px;
+
+    @media (max-width: 768px) {
+
+     font-size: 32px;
+
+    }
+
+     
 `
 
 export const ContactHeader = styled.div`
     font-size: 20px;
     font-weight: 650;
     margin: 10px 0;
+
+
+    @media (max-width: 768px) {
+
+     font-size: 16px;
+
+    }
 `
 
 export const ContactLink = styled.a`
@@ -58,6 +94,12 @@ export const ContactLink = styled.a`
     font-weight: 675;
     font-size: 32px;
     color: #cd3800;
+
+     @media (max-width: 768px) {
+
+     font-size: 20px;
+
+    }
 ;
 
 `
